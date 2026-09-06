@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { BRAND } from "@/config/brand";
 import { fetchPublicGift } from "@/lib/gift/public";
 import { isShortId } from "@/lib/gift/short-id";
 
@@ -25,7 +26,7 @@ export default async function Image({ params }: { params: Promise<{ shortId: str
           {name}, {line} 💌
         </div>
         <div style={{ marginTop: 18, fontSize: 30, color: "rgba(250,247,242,0.6)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>{sub}</div>
-        <div style={{ position: "absolute", bottom: 40, fontSize: 24, color: "rgba(250,247,242,0.45)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>ethoslove.com</div>
+        <div style={{ position: "absolute", bottom: 40, fontSize: 24, color: "rgba(250,247,242,0.45)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>{BRAND.domain}</div>
       </div>
     ),
     { ...size },

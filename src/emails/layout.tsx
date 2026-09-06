@@ -1,8 +1,9 @@
 import { Body, Button, Container, Head, Heading, Hr, Html, Img, Link, Preview, Section, Text } from "@react-email/components";
 import type { ReactNode } from "react";
 import { SITE_URL } from "@/config/site";
+import { BRAND } from "@/config/brand";
 
-export const EMAIL_BRAND = { name: "Ethos", site: SITE_URL, from: process.env.EMAIL_FROM || "Ethos <hello@ethoslove.com>" };
+export const EMAIL_BRAND = { name: "Ethos", site: SITE_URL, from: process.env.EMAIL_FROM || `${BRAND.name} <${BRAND.supportEmail}>` };
 
 const paper = "#FAF7F2";
 const ink = "#1A1614";

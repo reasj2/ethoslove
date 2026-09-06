@@ -18,7 +18,7 @@ export const SITE = {
   /** Base path for shareable gift links. Keep short: it goes on QR codes. */
   giftPath: "/g",
   ogImage: "/og-default.png",
-  twitterHandle: "@ethoslove",
+  twitterHandle: "@tryethos",
 } as const;
 
 /** Length of the public short id on gift links (base58, ~52 bits of entropy). */

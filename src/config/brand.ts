@@ -9,12 +9,12 @@ export const BRAND = {
     en: "Gifts that open like a story.",
     es: "Regalos que se abren como una historia.",
   },
-  domain: "ethoslove.com",
-  supportEmail: "hello@ethoslove.com",
+  domain: "tryethos.io",
+  supportEmail: "hello@tryethos.io",
   socials: {
-    tiktok: "https://www.tiktok.com/@ethoslove",
-    instagram: "https://www.instagram.com/ethoslove",
-    youtube: "https://www.youtube.com/@ethoslove",
+    tiktok: "https://www.tiktok.com/@tryethos",
+    instagram: "https://www.instagram.com/tryethos",
+    youtube: "https://www.youtube.com/@tryethos",
   },
   /** Shown on free-tier gifts. Keep it short; it is the viral hook. */
   watermark: {

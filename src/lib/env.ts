@@ -21,7 +21,7 @@ export const env = {
   stripePublishableKey: read("NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY"),
 
   resendApiKey: read("RESEND_API_KEY"),
-  emailFrom: read("EMAIL_FROM") ?? "Ethos <hello@ethoslove.com>",
+  emailFrom: read("EMAIL_FROM") ?? "Ethos <hello@tryethos.io>",
 
   posthogKey: read("NEXT_PUBLIC_POSTHOG_KEY"),
   posthogHost: read("NEXT_PUBLIC_POSTHOG_HOST") ?? "https://us.i.posthog.com",
