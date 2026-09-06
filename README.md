@@ -29,8 +29,14 @@ third-party account.
 ## Connecting Supabase
 
 1. Create a project at supabase.com and copy the URL + publishable key into `.env.local`.
-2. Apply the schema: `supabase link --project-ref <ref>` then `npm run db:push`
-   (or paste `supabase/migrations/0001_init.sql` into the SQL editor).
+2. Apply the schema. The direct `db.<ref>.supabase.co` host is IPv6-only, so from an IPv4 network
+   push through the session pooler (region from the dashboard's Connect panel):
+
+   ```bash
+   supabase db push --db-url "postgresql://postgres.<ref>:<DB_PASSWORD>@aws-1-<region>.pooler.supabase.com:5432/postgres"
+   ```
+
+   (or paste `supabase/migrations/0001_init.sql` into the SQL editor). This project: `aws-1-eu-west-1`.
 3. Auth → URL configuration: set Site URL to your domain and add `/auth/callback` and `/auth/confirm`
    as redirect URLs.
 4. Auth → Providers: enable Google (and Apple, then set `NEXT_PUBLIC_AUTH_APPLE_ENABLED=true`).

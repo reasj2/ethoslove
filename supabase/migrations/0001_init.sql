@@ -229,7 +229,7 @@ begin
   v_unlocked := g.unlock_at is null or g.unlock_at <= now();
   v_needs_pw := g.password_hash is not null;
   v_pw_ok    := (not v_needs_pw)
-                or (p_password is not null and g.password_hash = crypt(p_password, g.password_hash));
+                or (p_password is not null and g.password_hash = extensions.crypt(p_password, g.password_hash));
 
   return jsonb_build_object(
     'id',               g.id,
@@ -260,7 +260,7 @@ begin
   update public.gifts
   set password_hash = case
     when p_password is null or length(trim(p_password)) = 0 then null
-    else crypt(p_password, gen_salt('bf', 10))
+    else extensions.crypt(p_password, extensions.gen_salt('bf', 10))
   end
   where id = p_gift_id and user_id = auth.uid();
   if not found then

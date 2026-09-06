@@ -118,7 +118,9 @@ export const useEditor = create<EditorState>((set, get) => {
   const touch = () => {
     set({ dirty: true });
     persistLocal();
-    if (get().authed && get().giftId) persistRemote();
+    // Signed in: sync to the server. The first sync creates the draft row, which is what
+    // lets uploads start — so this must run even before a giftId exists.
+    if (get().authed) persistRemote();
   };
 
   const uploadAsset = async (id: string) => {
