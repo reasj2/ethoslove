@@ -15,12 +15,25 @@ export const giftPhotoSchema = z.object({
 });
 
 export const giftMusicSchema = z.object({
-  source: z.enum(["upload", "library"]),
+  /** upload = the sender's file · library = bundled track · catalog = 30-second preview of a real song */
+  source: z.enum(["upload", "library", "catalog"]),
   url: z.string().min(1),
   trackId: z.string().optional(),
   title: z.string().max(120).optional(),
+  artist: z.string().max(120).optional(),
+  artwork: z.string().max(500).optional(),
+  provider: z.enum(["itunes"]).optional(),
+  /** Where the recipient can find the full song. */
+  externalUrl: z.string().max(500).optional(),
   /** Seconds into the track to start from. */
   startAt: z.number().min(0).default(0),
+});
+
+/** A short spoken message from the sender, played at the end. Premium. */
+export const giftVoiceNoteSchema = z.object({
+  url: z.string().min(1),
+  /** Seconds. */
+  duration: z.number().min(0).max(180).optional(),
 });
 
 export const giftVideoSchema = z.object({
@@ -60,6 +73,7 @@ export const giftDataBaseSchema = z.object({
   messageStyle: z.enum(["typewriter", "fade"]).default("typewriter"),
   photos: z.array(giftPhotoSchema).max(20).default([]),
   music: giftMusicSchema.optional(),
+  voiceNote: giftVoiceNoteSchema.optional(),
   video: giftVideoSchema.optional(),
   countdown: giftCountdownSchema.optional(),
   surprise: giftSurpriseSchema.optional(),

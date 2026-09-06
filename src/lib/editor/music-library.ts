@@ -1,4 +1,4 @@
-export type TrackMood = "warm" | "dreamy" | "calm" | "hopeful" | "cinematic";
+export type TrackMood = "warm" | "romantic" | "dreamy" | "calm" | "hopeful" | "playful" | "cinematic";
 
 export type LibraryTrack = {
   id: string;
@@ -12,18 +12,21 @@ export type LibraryTrack = {
 };
 
 /**
- * Bundled royalty-free library. The current files are placeholder ambient pads rendered
- * by scripts/gen-demo-audio.mjs — swap in licensed tracks before launch (same shape).
+ * Bundled library, rendered by scripts/gen-library.mjs (our own synthesis, so it's fully
+ * cleared for use in gifts). Every track loops seamlessly.
  */
 export const LIBRARY_TRACKS: LibraryTrack[] = [
-  { id: "still-light", title: "Still Light", mood: "warm", url: "/audio/library/still-light.wav", duration: 48, note: "Soft pad · slow" },
-  { id: "paper-boats", title: "Paper Boats", mood: "dreamy", url: "/audio/library/paper-boats.wav", duration: 48, note: "Floating · gentle" },
-  { id: "golden-hour", title: "Golden Hour", mood: "hopeful", url: "/audio/library/golden-hour.wav", duration: 48, note: "Bright · unhurried" },
-  { id: "night-train", title: "Night Train", mood: "cinematic", url: "/audio/library/night-train.wav", duration: 48, note: "Low · widescreen" },
-  { id: "first-snow", title: "First Snow", mood: "calm", url: "/audio/library/first-snow.wav", duration: 48, note: "Sparse · still" },
+  { id: "first-light", title: "First Light", mood: "warm", url: "/audio/library/first-light.mp3", duration: 58, note: "Felt piano · slow" },
+  { id: "paper-boats", title: "Paper Boats", mood: "dreamy", url: "/audio/library/paper-boats.mp3", duration: 53, note: "Music box · floating" },
+  { id: "sunday-slowly", title: "Sunday, Slowly", mood: "calm", url: "/audio/library/sunday-slowly.mp3", duration: 51, note: "Fingerpicked guitar" },
+  { id: "golden-hour", title: "Golden Hour", mood: "hopeful", url: "/audio/library/golden-hour.mp3", duration: 46, note: "Piano · bright" },
+  { id: "slow-dance", title: "Slow Dance", mood: "romantic", url: "/audio/library/slow-dance.mp3", duration: 46, note: "Electric piano · waltz" },
+  { id: "under-the-stars", title: "Under the Stars", mood: "cinematic", url: "/audio/library/under-the-stars.mp3", duration: 51, note: "Pads · wide" },
+  { id: "home", title: "Home", mood: "playful", url: "/audio/library/home.mp3", duration: 40, note: "Ukulele · sunny" },
+  { id: "quiet-hours", title: "Quiet Hours", mood: "calm", url: "/audio/library/quiet-hours.mp3", duration: 64, note: "Piano · sparse" },
 ];
 
-export const TRACK_MOODS: TrackMood[] = ["warm", "dreamy", "calm", "hopeful", "cinematic"];
+export const TRACK_MOODS: TrackMood[] = ["warm", "romantic", "dreamy", "calm", "hopeful", "playful", "cinematic"];
 
 export function findTrack(id: string | undefined): LibraryTrack | undefined {
   return LIBRARY_TRACKS.find((t) => t.id === id);

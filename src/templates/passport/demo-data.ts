@@ -14,8 +14,8 @@ const shared = {
   watermark: false,
   music: {
     source: "library" as const,
-    url: "/audio/library/night-train.wav",
-    trackId: "night-train",
+    url: "/audio/library/under-the-stars.mp3",
+    trackId: "under-the-stars",
     title: "Night Train",
     startAt: 0,
   },

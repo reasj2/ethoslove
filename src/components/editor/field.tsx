@@ -33,11 +33,14 @@ export function Field({
   );
 }
 
-export function SectionHeader({ n, title, blurb }: { n: string; title: string; blurb: string }) {
+export function SectionHeader({ n, title, blurb, badge }: { n: string; title: string; blurb: string; badge?: React.ReactNode }) {
   return (
     <header className="mb-6">
       <p className="font-display text-[13px] tracking-[0.2em] text-coral italic">{n}</p>
-      <h2 className="font-display mt-1 text-[1.65rem] leading-tight">{title}</h2>
+      <h2 className="font-display mt-1 flex items-center gap-2.5 text-[1.65rem] leading-tight">
+        {title}
+        {badge}
+      </h2>
       <p className="mt-1.5 text-sm text-muted-foreground">{blurb}</p>
     </header>
   );

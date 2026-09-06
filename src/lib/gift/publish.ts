@@ -26,12 +26,23 @@ export function decidePublish(
   const problems = readinessProblems(manifest, data);
   if (problems.length > 0) return { ok: false, reason: "not_ready", problems };
 
-  const needsUnlock =
-    manifest.tier === "premium" || options.removeWatermark || options.schedule || options.password || data.photos.length > 10;
+  const needsUnlock = manifest.tier === "premium" || options.removeWatermark || options.schedule || options.password || premiumExtras(data).length > 0;
 
   if (needsUnlock && !entitlement.unlocked) return { ok: false, reason: "payment_required" };
 
   return { ok: true, watermark: !entitlement.unlocked, isPremium: manifest.tier === "premium" };
+}
+
+export type PremiumExtra = "song" | "video" | "voiceNote" | "morePhotos";
+
+/** Content-level extras that need an unlock on any template (the free tier stays a real gift, these are the upsell). */
+export function premiumExtras(data: GiftData): PremiumExtra[] {
+  const extras: PremiumExtra[] = [];
+  if (data.music?.source === "catalog") extras.push("song");
+  if (data.video) extras.push("video");
+  if (data.voiceNote) extras.push("voiceNote");
+  if (data.photos.length > 10) extras.push("morePhotos");
+  return extras;
 }
 
 /** Human-readable blockers, keyed for translation on the client. */
@@ -45,5 +56,6 @@ export function readinessProblems(manifest: TemplateManifest, data: GiftData): s
   if (data.photos.some((p) => !isStoragePath(p.url) && !p.url.startsWith("http"))) problems.push("uploadsPending");
   if (data.music?.source === "upload" && !isStoragePath(data.music.url) && !data.music.url.startsWith("http")) problems.push("uploadsPending");
   if (data.video && !isStoragePath(data.video.url) && !data.video.url.startsWith("http")) problems.push("uploadsPending");
+  if (data.voiceNote && !isStoragePath(data.voiceNote.url) && !data.voiceNote.url.startsWith("http")) problems.push("uploadsPending");
   return Array.from(new Set(problems));
 }

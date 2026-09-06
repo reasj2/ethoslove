@@ -12,7 +12,7 @@ const shared = {
   fontPairing: "editorial" as const,
   showReactionCta: true,
   watermark: false,
-  music: { source: "library" as const, url: "/audio/library/night-train.wav", trackId: "night-train", title: "Night Train", startAt: 0 },
+  music: { source: "library" as const, url: "/audio/library/under-the-stars.mp3", trackId: "under-the-stars", title: "Under the Stars", startAt: 0 },
   video: undefined,
   surprise: undefined,
   countdown: { targetAt: "2027-01-01T00:00:00+01:00", timezone: "Europe/Madrid", label: "Until midnight" },

@@ -105,6 +105,15 @@ SMTP with host `smtp.resend.com`, port `465`, user `resend`, password = your Res
 **Authentication → Email templates → Magic Link**, include `{{ .Token }}` in the body so the
 6-digit code the sign-in form accepts appears alongside the link.
 
+## Music and premium extras
+
+Free gifts get the bundled library (`public/audio/library`, rendered by `scripts/gen-library.mjs`:
+eight loopable pieces synthesised in-house, so nothing needs licensing) and up to 10 photos, with
+the footer. Extras that need any unlock, on any template: a real song (30-second preview from
+Apple's catalogue via `/api/music/search`, credited at the end), a video clip, a voice message
+from the sender, more than 10 photos, scheduling, passwords. The rules live in
+`src/lib/gift/publish.ts` (`premiumExtras`).
+
 ## Scheduled gifts
 
 Scheduled gifts flip to live (and email the sender) the first time they're opened after their

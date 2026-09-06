@@ -1,0 +1,58 @@
+[
+  {
+    "id": "first-light",
+    "seconds": 58,
+    "mood": "warm",
+    "note": "Felt piano · slow",
+    "kb": 910
+  },
+  {
+    "id": "paper-boats",
+    "seconds": 53,
+    "mood": "dreamy",
+    "note": "Music box · floating",
+    "kb": 834
+  },
+  {
+    "id": "sunday-slowly",
+    "seconds": 51,
+    "mood": "calm",
+    "note": "Fingerpicked guitar",
+    "kb": 790
+  },
+  {
+    "id": "golden-hour",
+    "seconds": 46,
+    "mood": "hopeful",
+    "note": "Piano · bright",
+    "kb": 715
+  },
+  {
+    "id": "slow-dance",
+    "seconds": 46,
+    "mood": "romantic",
+    "note": "Electric piano · waltz",
+    "kb": 715
+  },
+  {
+    "id": "under-the-stars",
+    "seconds": 51,
+    "mood": "cinematic",
+    "note": "Pads · wide",
+    "kb": 804
+  },
+  {
+    "id": "home",
+    "seconds": 40,
+    "mood": "playful",
+    "note": "Ukulele · sunny",
+    "kb": 626
+  },
+  {
+    "id": "quiet-hours",
+    "seconds": 64,
+    "mood": "calm",
+    "note": "Piano · sparse",
+    "kb": 1000
+  }
+]

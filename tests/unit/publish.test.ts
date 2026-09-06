@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { decidePublish, readinessProblems } from "@/lib/gift/publish";
+import { decidePublish, premiumExtras, readinessProblems } from "@/lib/gift/publish";
 import { manifest as letter } from "@/templates/the-letter/manifest";
 import type { GiftData } from "@/lib/gift/schema";
 
@@ -42,6 +42,20 @@ describe("publish rules", () => {
   it("more than ten photos is a premium feature", () => {
     const many = { ...base, photos: Array.from({ length: 11 }, (_, i) => photo(`gifts/g/${i}.webp`)) };
     expect(decidePublish(letter, many, { unlocked: false }, none)).toEqual({ ok: false, reason: "payment_required" });
+  });
+  it("a real song, a video clip or a voice note is a premium extra on any template", () => {
+    const song = { ...base, music: { source: "catalog" as const, url: "https://audio.example/p.m4a", title: "Perfect", artist: "Ed", startAt: 0 } };
+    expect(premiumExtras(song)).toEqual(["song"]);
+    expect(decidePublish(letter, song, { unlocked: false }, none)).toEqual({ ok: false, reason: "payment_required" });
+    expect(decidePublish(letter, song, { unlocked: true }, none)).toEqual({ ok: true, watermark: false, isPremium: false });
+    const clip = { ...base, video: { url: "gifts/g1/v.webm" } };
+    expect(premiumExtras(clip)).toEqual(["video"]);
+    const voice = { ...base, voiceNote: { url: "gifts/g1/vn.webm", duration: 12 } };
+    expect(premiumExtras(voice)).toEqual(["voiceNote"]);
+    expect(decidePublish(letter, voice, { unlocked: false }, none)).toEqual({ ok: false, reason: "payment_required" });
+    const lib = { ...base, music: { source: "library" as const, url: "/audio/library/first-light.mp3", trackId: "first-light", startAt: 0 } };
+    expect(premiumExtras(lib)).toEqual([]);
+    expect(readinessProblems(letter, { ...base, voiceNote: { url: "blob:x" } })).toContain("uploadsPending");
   });
   it("blocks when uploads are pending or fields are missing", () => {
     expect(readinessProblems(letter, { ...base, photos: [photo("blob:x")] })).toContain("uploadsPending");

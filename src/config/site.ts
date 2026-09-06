@@ -35,4 +35,6 @@ export const LIMITS = {
   messageMaxChars: 4000,
   captionMaxChars: 140,
   voiceNoteMaxSeconds: 20,
+  /** The sender's voice message inside a gift (premium). */
+  senderVoiceMaxSeconds: 60,
 } as const;

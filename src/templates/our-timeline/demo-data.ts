@@ -12,7 +12,7 @@ const shared = {
   fontPairing: "editorial" as const,
   showReactionCta: true,
   watermark: false,
-  music: { source: "library" as const, url: "/audio/library/still-light.wav", trackId: "still-light", title: "Still Light", startAt: 0 },
+  music: { source: "library" as const, url: "/audio/library/first-light.mp3", trackId: "first-light", title: "First Light", startAt: 0 },
   video: undefined,
   surprise: undefined,
   countdown: { targetAt: "2027-06-14T00:00:00+02:00", timezone: "Europe/Madrid", label: "Until four" },

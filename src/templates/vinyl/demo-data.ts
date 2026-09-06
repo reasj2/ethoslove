@@ -12,7 +12,7 @@ const shared = {
   fontPairing: "editorial" as const,
   showReactionCta: true,
   watermark: false,
-  music: { source: "library" as const, url: "/audio/library/golden-hour.wav", trackId: "golden-hour", title: "Golden Hour", startAt: 0 },
+  music: { source: "library" as const, url: "/audio/library/golden-hour.mp3", trackId: "golden-hour", title: "Golden Hour", startAt: 0 },
   video: undefined,
   countdown: undefined,
   surprise: undefined,

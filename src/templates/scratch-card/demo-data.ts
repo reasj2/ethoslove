@@ -12,7 +12,7 @@ const shared = {
   fontPairing: "editorial" as const,
   showReactionCta: true,
   watermark: false,
-  music: { source: "library" as const, url: "/audio/library/first-snow.wav", trackId: "first-snow", title: "First Snow", startAt: 0 },
+  music: { source: "library" as const, url: "/audio/library/quiet-hours.mp3", trackId: "quiet-hours", title: "Quiet Hours", startAt: 0 },
   video: undefined,
   countdown: undefined,
   surprise: undefined,

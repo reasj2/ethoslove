@@ -298,6 +298,11 @@
         "n": "04b",
         "title": "A short clip",
         "blurb": "Optional. A few seconds of them laughing beats a paragraph. Plays muted until they tap."
+      },
+      "voice": {
+        "n": "04c",
+        "title": "Your voice",
+        "blurb": "Say it out loud. Up to a minute, played at the very end. Premium."
       }
     },
     "fields": {
@@ -360,9 +365,18 @@
         "dreamy": "Dreamy",
         "calm": "Calm",
         "hopeful": "Hopeful",
-        "cinematic": "Cinematic"
+        "cinematic": "Cinematic",
+        "romantic": "Romantic",
+        "playful": "Playful"
       },
-      "licenseNote": "Library tracks are cleared for use in gifts."
+      "licenseNote": "Library tracks are cleared for use in gifts.",
+      "song": "A real song",
+      "songPremium": "Premium",
+      "songSearch": "Search a song or artist",
+      "songHint": "Plays a 30-second preview of the real recording, on loop, with the song credited at the end.",
+      "songNone": "No songs found. Try the artist's name.",
+      "songSelected": "Playing in the gift",
+      "songPreviewNote": "Previews come from Apple Music's catalogue and are cleared for embedding with credit."
     },
     "extras": {
       "countdown": "Countdown",
@@ -413,7 +427,11 @@
       "publishScheduled": "Schedule it",
       "publishing": "Publishing…",
       "notConfigured": "Publishing needs Supabase. Add the keys to .env.local and restart.",
-      "error": "Publishing failed: {error}"
+      "error": "Publishing failed: {error}",
+      "featureSong": "a real song",
+      "featureVideo": "a video clip",
+      "featureVoiceNote": "a voice message",
+      "featureMorePhotos": "more than 10 photos"
     },
     "share": {
       "title": "It's live.",
@@ -477,6 +495,13 @@
       "local": "On this device",
       "failed": "Upload failed",
       "remove": "Remove"
+    },
+    "voice": {
+      "record": "Record a voice message",
+      "recorded": "Voice message · {seconds}s",
+      "remove": "Remove",
+      "premium": "Premium",
+      "hint": "Works best somewhere quiet. Recipients hear it after the last screen."
     }
   },
   "gift": {
@@ -542,11 +567,11 @@
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Pay once. Keep it forever.",
-    "subtitle": "Two templates are free, with a small footer. Unlock the ones you love with a single payment — no subscription, no renewals, no surprises.",
+    "subtitle": "Two templates are free, with a small footer. Real songs, video, voice messages and the other templates unlock with a single payment — no subscription, no renewals, no surprises.",
     "oneTime": "No subscription. Pay once, keep forever.",
     "bestValue": "Best value",
     "priority": "Includes priority support",
-    "freeNote": "Free gifts include 10 photos and the “Made with Ethos” footer. Scheduling, passwords and voice reactions come with any unlock.",
+    "freeNote": "Free gifts include 10 photos, our music library and the “Made with Ethos” footer. Real songs, video clips, voice messages, scheduling and passwords come with any unlock.",
     "comingSoon": "Payments open soon. Free templates publish today.",
     "checkoutError": "Couldn't start checkout. Please try again.",
     "plans": {
@@ -557,9 +582,9 @@
         "features": [
           "One premium template, forever",
           "Unlimited gifts with it",
-          "No footer, 20 photos, video",
-          "Scheduling and password",
-          "QR designer and voice reactions"
+          "Real songs, video and voice messages",
+          "No footer, 20 photos",
+          "Scheduling and password"
         ]
       },
       "pick3": {
@@ -580,8 +605,8 @@
         "features": [
           "All templates, now and future",
           "Unlimited gifts, forever",
-          "No footer, 20 photos, video",
-          "Scheduling, passwords, voice replies",
+          "Real songs, video and voice messages",
+          "No footer, 20 photos, scheduling, passwords",
           "First access to new templates"
         ]
       }
@@ -599,7 +624,7 @@
       },
       {
         "q": "What does the free tier actually include?",
-        "a": "Two full templates (The Letter and Constellations), unlimited gifts, up to 10 photos per gift, background music, a countdown and a hidden final surprise. Free gifts show a small “Made with Ethos” footer."
+        "a": "Two full templates (The Letter and Constellations), unlimited gifts, up to 10 photos per gift, our music library, a countdown and a hidden final surprise. Free gifts show a small “Made with Ethos” footer. Real songs, video clips and voice messages are premium extras."
       },
       {
         "q": "Can I try a template before paying?",

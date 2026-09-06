@@ -15,6 +15,7 @@ import { WordsSection } from "./sections/words";
 import { PhotosSection } from "./sections/photos";
 import { MusicSection } from "./sections/music";
 import { VideoSection } from "./sections/video";
+import { VoiceSection } from "./sections/voice";
 import { LookSection } from "./sections/look";
 import { ExtrasSection } from "./sections/extras";
 import { PublishSheet } from "./publish-sheet";
@@ -121,6 +122,7 @@ export function EditorShell({ slug, manifest, user, remote, supabaseConfigured, 
                 <PhotosSection manifest={manifest} />
                 {manifest.features.music ? <MusicSection /> : null}
                 {manifest.features.video ? <VideoSection /> : null}
+                <VoiceSection />
                 <LookSection manifest={manifest} mod={mod} locale={locale} />
                 <ExtrasSection manifest={manifest} />
               </div>

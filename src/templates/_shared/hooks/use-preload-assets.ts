@@ -36,7 +36,7 @@ function preloadAudio(url: string): Promise<void> {
  */
 export function usePreloadAssets(data: GiftData | null | undefined, enabled = true): PreloadState {
   const [state, setState] = useState<PreloadState>({ progress: 0, done: false });
-  const key = data ? JSON.stringify([data.photos.map((p) => p.url), data.music?.url, data.video?.poster]) : "";
+  const key = data ? JSON.stringify([data.photos.map((p) => p.url), data.music?.url, data.video?.poster, data.voiceNote?.url]) : "";
 
   useEffect(() => {
     if (!enabled || !data) return;

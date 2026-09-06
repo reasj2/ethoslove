@@ -298,6 +298,11 @@
         "n": "04b",
         "title": "Un vídeo corto",
         "blurb": "Opcional. Unos segundos riéndose valen más que un párrafo. Se reproduce sin sonido hasta que toquen."
+      },
+      "voice": {
+        "n": "04c",
+        "title": "Tu voz",
+        "blurb": "Dilo en voz alta. Hasta un minuto, al final del todo. Premium."
       }
     },
     "fields": {
@@ -360,9 +365,18 @@
         "dreamy": "Soñadora",
         "calm": "Tranquila",
         "hopeful": "Esperanzada",
-        "cinematic": "Cinemática"
+        "cinematic": "Cinemática",
+        "romantic": "Romántica",
+        "playful": "Alegre"
       },
-      "licenseNote": "Las pistas de la biblioteca tienen licencia para usarse en regalos."
+      "licenseNote": "Las pistas de la biblioteca tienen licencia para usarse en regalos.",
+      "song": "Una canción de verdad",
+      "songPremium": "Premium",
+      "songSearch": "Busca una canción o artista",
+      "songHint": "Reproduce en bucle un fragmento de 30 segundos de la grabación original, con el crédito al final.",
+      "songNone": "No hay resultados. Prueba con el nombre del artista.",
+      "songSelected": "Sonando en el regalo",
+      "songPreviewNote": "Los fragmentos vienen del catálogo de Apple Music y pueden usarse con crédito."
     },
     "extras": {
       "countdown": "Cuenta atrás",
@@ -413,7 +427,11 @@
       "publishScheduled": "Programarlo",
       "publishing": "Publicando…",
       "notConfigured": "Para publicar hace falta Supabase. Añade las claves a .env.local y reinicia.",
-      "error": "No se pudo publicar: {error}"
+      "error": "No se pudo publicar: {error}",
+      "featureSong": "una canción real",
+      "featureVideo": "un vídeo",
+      "featureVoiceNote": "un mensaje de voz",
+      "featureMorePhotos": "más de 10 fotos"
     },
     "share": {
       "title": "Ya está publicado.",
@@ -477,6 +495,13 @@
       "local": "En este dispositivo",
       "failed": "Error al subir",
       "remove": "Quitar"
+    },
+    "voice": {
+      "record": "Grabar un mensaje de voz",
+      "recorded": "Mensaje de voz · {seconds}s",
+      "remove": "Quitar",
+      "premium": "Premium",
+      "hint": "Mejor en un sitio tranquilo. Lo escucharán después de la última pantalla."
     }
   },
   "gift": {
@@ -542,11 +567,11 @@
   "pricing": {
     "eyebrow": "Precios",
     "title": "Paga una vez. Quédatelo para siempre.",
-    "subtitle": "Dos plantillas son gratis, con un pequeño pie. Desbloquea las que te encanten con un único pago: sin suscripción, sin renovaciones, sin sorpresas.",
+    "subtitle": "Dos plantillas son gratis, con un pequeño pie. Las canciones reales, el vídeo, los mensajes de voz y el resto de plantillas se desbloquean con un solo pago: sin suscripción, sin renovaciones, sin sorpresas.",
     "oneTime": "Sin suscripción. Pagas una vez y es tuyo para siempre.",
     "bestValue": "Mejor valor",
     "priority": "Incluye soporte prioritario",
-    "freeNote": "Los regalos gratis incluyen 10 fotos y el pie «Hecho con Ethos». La programación, las contraseñas y las reacciones de voz vienen con cualquier desbloqueo.",
+    "freeNote": "Los regalos gratis incluyen 10 fotos, nuestra biblioteca musical y el pie «Hecho con Ethos». Canciones reales, vídeos, mensajes de voz, programación y contraseñas vienen con cualquier desbloqueo.",
     "comingSoon": "Los pagos se abren pronto. Las plantillas gratis ya se pueden publicar.",
     "checkoutError": "No se pudo iniciar el pago. Inténtalo de nuevo.",
     "plans": {
@@ -557,9 +582,9 @@
         "features": [
           "Una plantilla premium, para siempre",
           "Regalos ilimitados con ella",
-          "Sin pie, 20 fotos, vídeo",
-          "Programación y contraseña",
-          "Diseñador de QR y reacciones de voz"
+          "Canciones reales, vídeo y mensajes de voz",
+          "Sin pie, 20 fotos",
+          "Programación y contraseña"
         ]
       },
       "pick3": {
@@ -580,8 +605,8 @@
         "features": [
           "Todas las plantillas, actuales y futuras",
           "Regalos ilimitados, para siempre",
-          "Sin pie, 20 fotos, vídeo",
-          "Programación, contraseñas, respuestas de voz",
+          "Canciones reales, vídeo y mensajes de voz",
+          "Sin pie, 20 fotos, programación, contraseñas",
           "Acceso anticipado a plantillas nuevas"
         ]
       }
@@ -599,7 +624,7 @@
       },
       {
         "q": "¿Qué incluye exactamente el plan gratis?",
-        "a": "Dos plantillas completas (La carta y Constelaciones), regalos ilimitados, hasta 10 fotos por regalo, música de fondo, una cuenta atrás y una sorpresa final oculta. Los regalos gratis muestran un pequeño pie «Hecho con Ethos»."
+        "a": "Dos plantillas completas (La carta y Constelaciones), regalos ilimitados, hasta 10 fotos por regalo, nuestra biblioteca musical, una cuenta atrás y una sorpresa final oculta. Los regalos gratis muestran un pequeño pie «Hecho con Ethos». Las canciones reales, los vídeos y los mensajes de voz son extras premium."
       },
       {
         "q": "¿Puedo probar una plantilla antes de pagar?",

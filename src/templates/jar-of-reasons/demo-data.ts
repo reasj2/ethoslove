@@ -12,7 +12,7 @@ const shared = {
   fontPairing: "handwritten" as const,
   showReactionCta: true,
   watermark: false,
-  music: { source: "library" as const, url: "/audio/library/paper-boats.wav", trackId: "paper-boats", title: "Paper Boats", startAt: 0 },
+  music: { source: "library" as const, url: "/audio/library/paper-boats.mp3", trackId: "paper-boats", title: "Paper Boats", startAt: 0 },
   video: undefined,
   countdown: undefined,
   surprise: undefined,

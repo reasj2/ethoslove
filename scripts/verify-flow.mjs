@@ -22,9 +22,15 @@ const { data: created, error: createErr } = await admin.auth.admin.createUser({ 
 if (createErr) throw createErr;
 const userId = created.user.id;
 console.log("user:", userId);
+// The gift below carries a video clip and a voice message, both premium extras, so the
+// throwaway user gets an "Everything" unlock (what a buyer would have). Cleaned up with the user.
+{
+  const { error: unlockErr } = await admin.from("template_unlocks").insert({ user_id: userId, template_slug: "*" });
+  if (unlockErr) throw unlockErr;
+}
 
-const browser = await chromium.launch();
-const context = await browser.newContext({ viewport: { width: 1400, height: 900 }, locale: "en-US" });
+const browser = await chromium.launch({ args: ["--use-fake-ui-for-media-stream", "--use-fake-device-for-media-stream"] });
+const context = await browser.newContext({ viewport: { width: 1400, height: 900 }, locale: "en-US", permissions: ["microphone"] });
 const page = await context.newPage();
 const errors = [];
 page.on("pageerror", (e) => errors.push(`pageerror: ${e.message}`));
@@ -55,6 +61,13 @@ try {
   await page.getByText("Uploaded").first().waitFor({ timeout: 40000 });
   // video clip (reuse a captured preview so no encoder is needed)
   await page.locator('input[type="file"][accept*="video"]').setInputFiles("public/templates/constellations/preview.webm");
+  // voice message (fake microphone)
+  const rec = page.getByTestId("voice-record");
+  await rec.scrollIntoViewIfNeeded();
+  await rec.click();
+  await page.waitForTimeout(2200);
+  await rec.click();
+  await page.getByText(/Voice message · \d+s/).waitFor({ timeout: 10000 });
   await page.getByText(/^Uploaded · /).waitFor({ timeout: 60000 });
   await page.waitForTimeout(2500); // debounced remote save
   await shot("02-editor");
@@ -90,6 +103,8 @@ try {
   await rp.screenshot({ path: join(out, "flow-06-recipient-letter.png") });
   const clip = await rp.locator("video").count();
   console.log("recipient sees video element:", clip > 0);
+  const voice = await rp.getByText(/A voice message/).count();
+  console.log("recipient sees voice note:", voice > 0);
   const scroller = rp.locator('[class*="scroller"]').first();
   await scroller.evaluate((el) => el.scrollTo({ top: el.scrollHeight, behavior: "instant" }));
   await rp.waitForTimeout(1500);

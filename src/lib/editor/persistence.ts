@@ -61,5 +61,6 @@ export function localAssetIds(data: GiftData): string[] {
   if (data.music?.source === "upload" && data.music.trackId && isLocalRef(data.music.url)) ids.push(data.music.trackId);
   if (data.video?.url.startsWith("idb:")) ids.push(data.video.url.slice(4));
   if (data.video?.poster?.startsWith("idb:")) ids.push(data.video.poster.slice(4));
+  if (data.voiceNote?.url.startsWith("idb:")) ids.push(data.voiceNote.url.slice(4));
   return ids;
 }

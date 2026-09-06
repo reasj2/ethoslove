@@ -14,8 +14,8 @@ const shared = {
   watermark: false,
   music: {
     source: "library" as const,
-    url: "/audio/library/still-light.wav",
-    trackId: "still-light",
+    url: "/audio/library/first-light.mp3",
+    trackId: "first-light",
     title: "Still Light",
     startAt: 0,
   },
