@@ -112,6 +112,27 @@ const SCRIPTS = {
     for (let i = 0; i < 26; i++) { const x = box.x + 10 + ((i * 41) % (box.width - 20)); await page.mouse.move(x, box.y + box.height - 20); await page.mouse.down(); await page.mouse.up(); await page.waitForTimeout(260); }
     return poster;
   },
+  passport: async (page) => {
+    await page.getByRole("button", { name: /^open$/i }).waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1500);
+    const poster = await page.screenshot();
+    await page.getByRole("button", { name: /^open$/i }).click();
+    await page.waitForTimeout(11000);
+    return poster;
+  },
+  bloom: async (page) => {
+    await page.locator("[data-hold]").waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1500);
+    const hold = await page.locator("[data-hold]").boundingBox();
+    await page.mouse.move(hold.x + hold.width / 2, hold.y + hold.height / 2);
+    await page.mouse.down();
+    await page.waitForTimeout(2200);
+    const poster = await page.screenshot();
+    await page.waitForTimeout(2800);
+    await page.mouse.up();
+    await page.waitForTimeout(3500);
+    return poster;
+  },
   "the-letter": async (page) => {
     await page.getByRole("button", { name: /tap the seal/i }).waitFor({ timeout: 15000 });
     await page.waitForTimeout(1400);

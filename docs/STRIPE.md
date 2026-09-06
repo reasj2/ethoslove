@@ -1,71 +1,128 @@
 # Stripe setup
 
-Everything below is what the code in `src/lib/pricing`, `src/app/api/stripe/*` and
-`src/app/actions/checkout.ts` expects. Do it once in **test mode**, then repeat in **live mode**.
+This is the exact click-path for the Stripe Dashboard, written against the current
+"Add a product" dialog. The account is shared with other products (Migla.io), so every
+name below is prefixed with **Ethos** and the code sets the statement descriptor suffix
+`ETHOS` so the charges stay recognisable.
 
-## 1. Products and prices (Dashboard → Product catalog)
+Do everything once with the **Test mode** toggle on, run a test purchase, then repeat in
+live mode. Nothing in the code changes between the two except the keys.
 
-Create **three products**, each with **one one-time Price** that has multi-currency amounts
-(open the price → "Add another currency"). Prices are tax-inclusive where you sell to consumers
-in the EU; enable Stripe Tax if you want it calculated automatically.
+## 1. Three products, one price each
 
-| Product name (Stripe) | Description shown at checkout                                   | USD    | EUR    | GBP    |
-| --------------------- | --------------------------------------------------------------- | ------ | ------ | ------ |
-| Ethos — Single Template | One premium template, unlocked forever. No subscription.       | 7.99   | 7.49   | 6.49   |
-| Ethos — Pick 3        | Any three templates, unlocked forever. No subscription.         | 11.99  | 10.99  | 9.49   |
-| Ethos — Everything    | Every template, current and future, forever. Priority support.  | 24.99  | 22.99  | 19.99  |
+Product catalog → **Add product**. Fill the dialog like this, three times:
 
-Copy each **Price ID** (`price_…`), not the product ID.
+| Field                      | Single template                                                                 | Pick 3                                                                 | Everything                                                                              |
+| -------------------------- | ------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| **Name**                   | `Ethos — One template`                                                          | `Ethos — Pick three`                                                   | `Ethos — Everything`                                                                    |
+| **Description**            | One premium gift template, unlocked on your account forever. No subscription.   | Any three premium templates, unlocked forever. No subscription.        | Every template, current and future, unlocked forever. No subscription.                  |
+| **Image**                  | optional (`public/icon-email.png` works)                                        | optional                                                               | optional                                                                                |
+| **Product category**       | keep the preset **General – Electronically Supplied Services**                  | same                                                                   | same                                                                                    |
+| **Pricing**                | **One-off** (not Recurring — the dialog defaults to Recurring)                  | One-off                                                                | One-off                                                                                 |
+| **Amount**                 | `7.49` EUR                                                                      | `10.99` EUR                                                            | `22.99` EUR                                                                             |
+| **Include tax in price**   | **Yes**                                                                         | Yes                                                                    | Yes                                                                                     |
 
-## 2. Keys and env vars
+Then **Add product**. Leave *Billing period* alone; it disappears once One-off is selected.
 
-From Developers → API keys:
+Why these settings:
+
+- **One-off** is what the code sends (`mode: "payment"`). A recurring price would make Checkout fail.
+- **Electronically Supplied Services** is the tax category for digital goods sold to consumers
+  in the EU (VAT is due where the buyer lives). It only matters if Stripe Tax is on.
+- **Include tax in price = Yes** because the site shows consumer prices with VAT included
+  (Terms, section 5). With Stripe Tax on, Stripe carves the VAT out of the 7.49 instead of
+  adding it on top; buyers outside the EU pay the same 7.49 with no tax line.
+- EUR is the account's settlement currency, so it is the price's base currency. The code
+  asks Stripe which currencies a price carries and falls back to EUR for everyone else, so
+  **you can stop here**. If you later want local pricing, open the product → the price →
+  add currency options `USD 7.99 / 11.99 / 24.99` and `GBP 6.49 / 9.49 / 19.99`
+  (those are the amounts in `src/lib/pricing/products.ts`).
+
+After saving, open each product and copy the **Price ID** — it starts with `price_`, not
+`prod_`. You need three of them.
+
+## 2. Keys → `.env.local`
+
+Developers → API keys (test mode):
 
 ```
-STRIPE_SECRET_KEY=sk_test_…            # server only
+STRIPE_SECRET_KEY=sk_test_…             # "Secret key" — server only, never NEXT_PUBLIC
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_…
-STRIPE_PRICE_SINGLE=price_…
-STRIPE_PRICE_PICK3=price_…
-STRIPE_PRICE_EVERYTHING=price_…
+STRIPE_PRICE_SINGLE=price_…             # Ethos — One template
+STRIPE_PRICE_PICK3=price_…              # Ethos — Pick three
+STRIPE_PRICE_EVERYTHING=price_…         # Ethos — Everything
 ```
 
-## 3. Webhook
+Restart `npm run dev` after editing `.env.local`.
 
-Developers → Webhooks → Add endpoint:
+## 3. Statement descriptor (once per account)
 
-- URL: `https://<your-domain>/api/stripe/webhook` (locally: `stripe listen --forward-to localhost:3000/api/stripe/webhook`)
+Settings → Business → Public details → **Statement descriptor**. The code appends the
+suffix `ETHOS` to whatever short descriptor the account has (Stripe shows it as
+`MIGLA* ETHOS`-style). The account's *shortened descriptor* must be set and the total
+must stay under 22 characters, or Stripe rejects the suffix at checkout.
+
+## 4. Tax (optional, recommended before going live)
+
+Settings → Tax:
+
+1. Add the Latvian VAT registration (LV40203733943) and, if you sell across the EU, the
+   **OSS (One-Stop Shop)** registration.
+2. Turn on Stripe Tax, then set in `.env.local`:
+
+```
+STRIPE_AUTOMATIC_TAX=true
+```
+
+With that flag the checkout session is created with `automatic_tax: { enabled: true }` and
+Stripe works out the VAT from the buyer's billing address. Without it, Stripe charges the
+gross amount and tax stays your accountant's job. Either way the code works.
+
+## 5. Webhook (after the first deploy)
+
+Developers → Webhooks → **Add endpoint**:
+
+- Endpoint URL: `https://<your-domain>/api/stripe/webhook`
 - Events: `checkout.session.completed`, `checkout.session.async_payment_succeeded`,
   `checkout.session.async_payment_failed`, `charge.refunded`
-- Copy the **signing secret**:
+- Copy the **Signing secret**:
 
 ```
 STRIPE_WEBHOOK_SECRET=whsec_…
 ```
 
-The webhook is the only place unlocks are granted. The success page never trusts the browser.
+Until the webhook exists, the success page fulfils the purchase itself by re-reading the
+session from Stripe, so local testing works without the Stripe CLI. The webhook is still
+required in production: it is what handles refunds and payments that finish after the
+buyer closed the tab.
 
-## 4. Checkout settings
+## 6. Checkout settings worth switching on
 
-- Settings → Checkout & Payment Links: enable **Apple Pay / Google Pay / Link** (wallets are on by default).
-- Settings → Customer emails: enable "Successful payments" receipts (Stripe sends them; we also email our own).
-- Payment methods: cards, Apple/Google Pay, and local methods for EUR (iDEAL, Bancontact, SEPA) if you like.
+- Settings → Checkout & Payment Links: Apple Pay, Google Pay and Link (on by default).
+- Settings → Payment methods: cards plus iDEAL, Bancontact and SEPA for EUR buyers.
+- Settings → Customer emails: "Successful payments" on. Stripe sends its receipt; the app
+  sends its own confirmation with the unlocked templates.
+- Product catalog → Coupons: create a coupon, then **Add promotion code** (for example
+  `VALENTINE`, 20% off, expiring mid-February). Checkout already allows promotion codes.
 
-## 5. Promo codes
+## 7. Test it
 
-Product catalog → Coupons → create a coupon (e.g. `VALENTINE` 20% off, redeem-by Feb 15), then
-"Add promotion code" so customers can type it. Checkout is created with `allow_promotion_codes: true`.
+1. Sign in on the site, open Pricing, pick **Everything**.
+2. Pay with `4242 4242 4242 4242`, any future expiry, any CVC. `4000 0000 0000 3220`
+   forces a 3-D Secure challenge.
+3. You should land on `/checkout/success`, get the receipt email (if Resend is set up),
+   and see the unlock on the dashboard. Publishing a premium template now works.
+4. Refund the payment in the Dashboard: the webhook (once configured) removes the unlock.
 
-## 6. Test cards
+## What the code does with all of it
 
-`4242 4242 4242 4242` (any future date / any CVC) succeeds; `4000 0000 0000 3220` triggers 3-D Secure.
-
-## What the code does with it
-
-1. `POST /api/stripe/checkout` — signed-in user picks a product (+ template slugs for Single/Pick 3).
-   Creates a `purchases` row (`pending`) and a Checkout Session with `client_reference_id = purchase id`,
-   `metadata.user_id`, `metadata.product`, `metadata.template_slugs`, `automatic_tax`, and
-   `success_url` back to the editor or pricing page.
+1. `POST /api/stripe/checkout` — signed-in user picks a product (+ template slugs for
+   Single/Pick 3). Creates a `purchases` row (`pending`), reads the price's currency options,
+   and creates a Checkout Session with `client_reference_id = purchase id`, metadata
+   (`user_id`, `product`, `template_slugs`), `allow_promotion_codes`, the `ETHOS` descriptor
+   suffix, optional `automatic_tax`, and a `success_url` back to the editor or dashboard.
 2. `POST /api/stripe/webhook` — verifies the signature, marks the purchase `paid`, inserts
-   `template_unlocks` (slug rows, or `'*'` for Everything), and emails a receipt. Refunds mark the
+   `template_unlocks` (slug rows, or `'*'` for Everything), emails a receipt. Refunds mark the
    purchase `refunded` and remove the unlocks it granted.
-3. Publishing checks `has_template_unlock(user, slug)` — that's the entitlement.
+3. Publishing checks `has_template_unlock(user, slug)`. That is the entitlement; nothing
+   client-side is trusted.
