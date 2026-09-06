@@ -4,6 +4,7 @@ import { z } from "zod";
 import { env, isConfigured } from "@/lib/env";
 import { OCCASIONS } from "@/config/occasions";
 import { rateLimit } from "@/lib/rate-limit";
+import { getCurrentUser } from "@/lib/auth/get-user";
 
 const input = z.object({
   occasion: z.enum(OCCASIONS),
@@ -27,8 +28,10 @@ Rules:
 export async function POST(request: Request) {
   if (!isConfigured.ai) return NextResponse.json({ error: "not_configured" }, { status: 503 });
 
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "anon";
-  const allowed = await rateLimit(`ai:${ip}`, { limit: 12, windowSeconds: 3600 });
+  // Paid upstream call: signed-in users only, limited per account rather than per (spoofable) IP.
+  const user = await getCurrentUser();
+  if (!user) return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
+  const allowed = await rateLimit(`ai:${user.id}`, { limit: 12, windowSeconds: 3600 });
   if (!allowed) return NextResponse.json({ error: "rate_limited" }, { status: 429 });
 
   const parsed = input.safeParse(await request.json().catch(() => null));

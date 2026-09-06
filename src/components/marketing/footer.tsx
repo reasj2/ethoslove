@@ -10,11 +10,11 @@ export async function MarketingFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-border bg-paper-deep/60">
+    <footer className="mt-auto border-t border-line bg-paper">
       <div className="container-x grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="max-w-xs">
           <Logo />
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t("footer.blurb")}</p>
+          <p className="font-display mt-4 text-xl leading-snug text-ink-soft italic">{t("footer.blurb")}</p>
         </div>
         <FooterColumn title={t("footer.product")}>
           <FooterLink href="/templates">{t("nav.templates")}</FooterLink>
@@ -39,9 +39,9 @@ export async function MarketingFooter() {
           </a>
         </FooterColumn>
       </div>
-      <div className="container-x flex flex-col items-start justify-between gap-4 border-t border-border py-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
+      <div className="container-x text-mono-meta flex flex-col items-start justify-between gap-4 border-t border-line py-6 text-muted-foreground sm:flex-row sm:items-center">
         <p>{t("footer.rights", { year })}</p>
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-5">
           <p className="hidden sm:block">{t("footer.madeWith")}</p>
           <LocaleSwitcher className="h-8 text-xs" />
         </div>
@@ -53,7 +53,7 @@ export async function MarketingFooter() {
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <p className="text-eyebrow mb-4 text-ink-soft">{title}</p>
+      <p className="text-eyebrow mb-4 text-muted-foreground">{title}</p>
       <ul className="flex flex-col gap-2.5">{children}</ul>
     </div>
   );

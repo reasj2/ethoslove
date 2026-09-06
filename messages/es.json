@@ -2,7 +2,7 @@
   "common": {
     "brand": "Ethos",
     "createGift": "Crear un regalo",
-    "createGiftFree": "Crea un regalo — empezar es gratis",
+    "createGiftFree": "Crea un regalo. Empezar es gratis.",
     "login": "Iniciar sesión",
     "signup": "Crear cuenta",
     "logout": "Cerrar sesión",
@@ -20,7 +20,7 @@
     "comingSoon": "Muy pronto",
     "free": "Gratis",
     "premium": "Premium",
-    "noSubscription": "Sin suscripción. Pagas una vez y es tuyo para siempre.",
+    "noSubscription": "Un solo pago, sin suscripción. Tuyo para siempre.",
     "language": "Idioma",
     "theme": "Tema",
     "themeLight": "Claro",
@@ -44,41 +44,48 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Para las personas en las que no dejas de pensar",
+      "eyebrow": "Regalos digitales. Diez minutos para hacerlo, años para guardarlo.",
       "h1a": "Regálale un momento que",
       "h1b": "abrirá una",
       "h1c": "y otra vez.",
-      "sub": "Una página-regalo personalizada y animada con tus fotos, su canción y tus palabras. Se comparte con un enlace o un código QR. Se hace en diez minutos y se recuerda durante años.",
-      "cta": "Crea un regalo — empezar es gratis",
+      "sub": "Una página-regalo personal y animada con tus fotos, su canción y tus palabras. Se envía como enlace o código QR y se abre en su móvil.",
+      "cta": "Crear un regalo",
       "demo": "Ver la demo",
       "videoAlt": "Plantilla La carta: un sello de lacre se rompe, una carta se despliega, las fotos caen sobre un escritorio.",
       "caption": "La carta, una de las dos plantillas gratis. Es real, no una maqueta.",
       "facts": {
         "free": {
-          "a": "2 plantillas",
-          "b": "gratis, para siempre"
+          "a": "02",
+          "b": "plantillas gratis"
         },
         "noAccount": {
-          "a": "Sin cuenta",
-          "b": "hasta que publicas"
+          "a": "00",
+          "b": "cuentas para empezar"
         },
         "once": {
-          "a": "Pagas una vez",
-          "b": "nunca una suscripción"
+          "a": "01",
+          "b": "pago, y ya"
         },
         "langs": {
-          "a": "Español e inglés",
-          "b": "en el regalo y en la web"
+          "a": "ES/EN",
+          "b": "regalo y web"
         }
+      },
+      "ctaNote": "Empezar es gratis. Sin cuenta hasta que publicas.",
+      "card": {
+        "to": "para Ana",
+        "from": "de Marco",
+        "opened": "Abierto 3 veces"
       }
     },
     "templates": {
-      "eyebrow": "Plantillas",
-      "title": "Cada plantilla es una experiencia completa. {free} son gratis.",
+      "eyebrow": "La colección",
+      "title": "Cada plantilla es una experiencia entera.",
       "blurb": "No es una tarjeta con hueco para una foto. Cada una es una escena que el destinatario recorre: tocando, deslizando, manteniendo pulsado, a veces soplando velas.",
       "all": "Ver todas las plantillas",
       "moreTitle": "Más cada mes",
-      "moreBlurb": "Llegan plantillas nuevas con regularidad. Quien compra Todo recibe las futuras, para siempre."
+      "moreBlurb": "Llegan plantillas nuevas con regularidad. Quien compra Todo recibe las futuras, para siempre.",
+      "count": "{n} plantillas, {free} gratis"
     },
     "reactions": {
       "eyebrow": "Mira la reacción",
@@ -88,7 +95,7 @@
         {
           "from": "Marco",
           "to": "Ana",
-          "sent": "Te he hecho algo. Ábrelo con el sonido 💌",
+          "sent": "Te he hecho algo. Ábrelo con el sonido.",
           "reply": "Estoy en el trabajo llorando en las escaleras. Tres años. TRES.",
           "emoji": "😭",
           "time": "22:41"
@@ -110,11 +117,11 @@
           "time": "09:58"
         }
       ],
-      "placeholderNote": "Ilustraciones de muestra. Las cambiaremos por reacciones reales conforme lleguen."
+      "placeholderNote": "Reacciones de muestra. Las reales las sustituyen conforme llegan."
     },
     "how": {
       "eyebrow": "Cómo funciona",
-      "title": "Diez minutos, de verdad.",
+      "title": "Diez minutos, de principio a fin.",
       "steps": [
         {
           "title": "Elige una plantilla",
@@ -142,15 +149,15 @@
     }
   },
   "footer": {
-    "blurb": "Regalos que se abren como una historia. Para las personas en las que no dejas de pensar.",
+    "blurb": "Regalos que se abren como una historia.",
     "product": "Producto",
     "company": "Empresa",
     "legal": "Legal",
     "terms": "Términos",
     "privacy": "Privacidad",
     "contact": "Contacto",
-    "rights": "© {year} Ethos. Todos los derechos reservados.",
-    "madeWith": "Hecho con cariño desde varias zonas horarias."
+    "rights": "© {year} Ethos · SIA MIGLAI, Letonia",
+    "madeWith": "Hecho en Riga y Madrid."
   },
   "auth": {
     "loginTitle": "Hola de nuevo",
@@ -484,7 +491,8 @@
       "factsPlaceholder": "Tararea cuando cocina\nNos perdimos en Lisboa a propósito\nSiempre me deja el asiento de la ventana",
       "generate": "Escribir tres versiones",
       "use": "Usar esta",
-      "error": "El asistente de escritura no está disponible ahora mismo."
+      "error": "El asistente de escritura no está disponible ahora mismo.",
+      "signIn": "Inicia sesión para usar el asistente de escritura. Tu borrador se queda en este dispositivo."
     },
     "video": {
       "add": "Añadir un vídeo",
@@ -514,7 +522,7 @@
   "templates": {
     "title": "Plantillas",
     "subtitle": "Todas tienen una demo completa en vivo. Pruébala antes de comprar.",
-    "eyebrow": "Doce maneras de decirlo",
+    "eyebrow": "Quince maneras de decirlo",
     "playDemo": "Ver la demo",
     "details": "Detalles",
     "useTemplate": "Usar esta plantilla",
@@ -568,7 +576,7 @@
     "eyebrow": "Precios",
     "title": "Paga una vez. Quédatelo para siempre.",
     "subtitle": "Dos plantillas son gratis, con un pequeño pie. Las canciones reales, el vídeo, los mensajes de voz y el resto de plantillas se desbloquean con un solo pago: sin suscripción, sin renovaciones, sin sorpresas.",
-    "oneTime": "Sin suscripción. Pagas una vez y es tuyo para siempre.",
+    "oneTime": "Un solo pago. Tuyo para siempre.",
     "bestValue": "Mejor valor",
     "priority": "Incluye soporte prioritario",
     "freeNote": "Los regalos gratis incluyen 10 fotos, nuestra biblioteca musical y el pie «Hecho con Ethos». Canciones reales, vídeos, mensajes de voz, programación y contraseñas vienen con cualquier desbloqueo.",
@@ -600,7 +608,7 @@
       },
       "everything": {
         "name": "Todo",
-        "blurb": "Todas las plantillas que hemos hecho, y todas las que haremos.",
+        "blurb": "Cada plantilla que hemos hecho, y cada una que haremos.",
         "cta": "Desbloquear todo",
         "features": [
           "Todas las plantillas, actuales y futuras",

@@ -9,8 +9,9 @@ import { notifyUnlocked } from "@/lib/email/notify";
  * once a day; on Pro you can switch the schedule back to every few minutes.
  */
 export async function GET(request: NextRequest) {
+  // Fail closed: without a configured secret nobody can trigger the cron.
   const secret = process.env.CRON_SECRET;
-  if (secret && request.headers.get("authorization") !== `Bearer ${secret}`) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  if (!secret || request.headers.get("authorization") !== `Bearer ${secret}`) return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   const admin = getSupabaseAdminClient();
   if (!admin) return NextResponse.json({ error: "not_configured" }, { status: 503 });
 

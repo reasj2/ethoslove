@@ -4,8 +4,9 @@ import { env } from "@/lib/env";
 
 /** AES-GCM helpers for small server-side secrets (gift password cookies). */
 async function key(): Promise<CryptoKey> {
-  const material = env.supabaseServiceRoleKey ?? "dev-only-secret-change-me";
-  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`ethos:cookie:${material}`));
+  const material = env.supabaseServiceRoleKey;
+  if (!material && process.env.NODE_ENV === "production") throw new Error("SUPABASE_SERVICE_ROLE_KEY is required to seal cookies");
+  const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`ethos:cookie:${material ?? "dev-only-secret-change-me"}`));
   return crypto.subtle.importKey("raw", digest, "AES-GCM", false, ["encrypt", "decrypt"]);
 }
 

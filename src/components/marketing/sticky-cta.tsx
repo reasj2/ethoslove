@@ -21,7 +21,7 @@ export function StickyCta() {
           transition={{ type: "spring", stiffness: 380, damping: 32, mass: 0.8 }}
           className="fixed inset-x-0 bottom-0 z-40 flex justify-center px-5 pb-[max(1rem,env(safe-area-inset-bottom))] md:hidden"
         >
-          <Button asChild size="lg" className="h-12 w-full max-w-sm rounded-full text-base shadow-glow">
+          <Button asChild size="lg" className="h-12 w-full max-w-sm rounded-full text-base shadow-lift">
             <Link href="/templates">{t("createGiftFree")}</Link>
           </Button>
         </motion.div>

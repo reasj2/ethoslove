@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { OCCASIONS, OCCASION_META } from "@/config/occasions";
+import { ArrowUpRight } from "lucide-react";
+import { OCCASIONS } from "@/config/occasions";
 import { PageHeader } from "@/components/shared/page-header";
 
 export async function generateMetadata({ params }: Omit<PageProps<"/[locale]/occasions">, "searchParams">): Promise<Metadata> {
@@ -17,21 +18,17 @@ export default async function OccasionsIndexPage({ params }: PageProps<"/[locale
   return (
     <>
       <PageHeader title={t("title")} />
-      <ul className="container-x grid grid-cols-2 gap-4 pb-24 sm:grid-cols-3 lg:grid-cols-4">
-        {OCCASIONS.map((o) => (
-          <li key={o}>
-            <Link
-              href={`/occasions/${o}`}
-              className="group flex aspect-[4/3] flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-soft transition-[transform,box-shadow] duration-300 ease-[var(--ease-out-quint)] hover:-translate-y-1 hover:shadow-lift"
-            >
-              <span className="text-3xl" aria-hidden="true">
-                {OCCASION_META[o].emoji}
-              </span>
-              <span className="font-display text-xl">{t(o)}</span>
+      <ol className="container-x grid border-t border-line pb-24 sm:grid-cols-2 sm:gap-x-10 lg:grid-cols-3">
+        {OCCASIONS.map((o, i) => (
+          <li key={o} className="border-b border-line">
+            <Link href={`/occasions/${o}`} className="group flex items-baseline gap-4 py-5 transition-colors hover:text-coral">
+              <span className="text-mono-meta w-7 text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
+              <span className="font-display text-[1.75rem] leading-none">{t(o)}</span>
+              <ArrowUpRight className="ml-auto size-4 opacity-0 transition-opacity group-hover:opacity-100" aria-hidden="true" />
             </Link>
           </li>
         ))}
-      </ul>
+      </ol>
     </>
   );
 }

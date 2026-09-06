@@ -3,6 +3,7 @@ import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { REACTIONS_BUCKET, extensionForMime } from "@/lib/gift/assets";
 import { isShortId } from "@/lib/gift/short-id";
 import { rateLimit } from "@/lib/rate-limit";
+import { clientIp } from "@/lib/request-ip";
 import { notifyReaction } from "@/lib/email/notify";
 
 const EMOJI = new Set(["❤️", "😭", "🥹", "😂", "😮"]);
@@ -15,7 +16,7 @@ export async function POST(request: NextRequest, ctx: RouteContext<"/api/gift/[s
   if (!isShortId(shortId)) return NextResponse.json({ ok: false }, { status: 404 });
   const admin = getSupabaseAdminClient();
   if (!admin) return NextResponse.json({ ok: false }, { status: 503 });
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "anon";
+  const ip = clientIp(request.headers);
   if (!(await rateLimit(`react:${ip}:${shortId}`, { limit: 5, windowSeconds: 3600 }))) {
     return NextResponse.json({ ok: false, error: "rate_limited" }, { status: 429 });
   }

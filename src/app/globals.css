@@ -8,53 +8,55 @@
 /* Brand tokens — the only place raw colours live.                     */
 /* ------------------------------------------------------------------ */
 :root {
-  --brand-paper: #faf7f2;
-  --brand-paper-deep: #f1ebe1;
-  --brand-ink: #1a1614;
-  --brand-ink-soft: #3d3531;
-  --brand-coral: #e8604c;
-  --brand-coral-deep: #cf4d3a;
-  --brand-rose: #f4c7c3;
-  --brand-rose-soft: #fbe9e6;
-  --brand-gold: #d4a853;
-  --brand-gold-deep: #b98d3c;
-  --brand-moss: #2f6b4f;
-  --brand-night: #141110;
-  --brand-night-raised: #1e1a17;
+  /* Paper, ink, one wax-red accent. Everything else is a tint of these. */
+  --brand-paper: #f6f1e8;
+  --brand-paper-deep: #ece5d8;
+  --brand-ink: #17130f;
+  --brand-ink-soft: #4a423b;
+  --brand-coral: #c63d22;
+  --brand-coral-deep: #a3301a;
+  --brand-rose: #efd9cf;
+  --brand-rose-soft: #f7ece5;
+  --brand-gold: #b8903f;
+  --brand-gold-deep: #94722f;
+  --brand-moss: #2e6b4e;
+  --brand-night: #14110e;
+  --brand-night-raised: #1e1a16;
+  --brand-line: #d9cfbf;
 
   /* shadcn semantic tokens mapped onto the brand */
   --background: var(--brand-paper);
   --foreground: var(--brand-ink);
-  --card: #fffdfa;
+  --card: #fbf8f2;
   --card-foreground: var(--brand-ink);
-  --popover: #fffdfa;
+  --popover: #fbf8f2;
   --popover-foreground: var(--brand-ink);
   --primary: var(--brand-coral);
-  --primary-foreground: #fff8f4;
+  --primary-foreground: #fbf6ee;
   --secondary: var(--brand-paper-deep);
   --secondary-foreground: var(--brand-ink);
-  --muted: #f1ece4;
-  --muted-foreground: #6f665f;
+  --muted: #ede6d9;
+  --muted-foreground: #6b625a;
   --accent: var(--brand-rose-soft);
   --accent-foreground: var(--brand-ink);
-  --destructive: #c8452f;
-  --border: #e6dfd4;
-  --input: #e6dfd4;
-  --ring: var(--brand-coral);
+  --destructive: #b5341c;
+  --border: var(--brand-line);
+  --input: var(--brand-line);
+  --ring: var(--brand-ink);
   --chart-1: var(--brand-coral);
   --chart-2: var(--brand-gold);
   --chart-3: var(--brand-rose);
   --chart-4: var(--brand-moss);
   --chart-5: var(--brand-ink-soft);
-  --radius: 0.75rem;
-  --sidebar: #f5f0e8;
+  --radius: 0.625rem;
+  --sidebar: #f1ebe0;
   --sidebar-foreground: var(--brand-ink);
   --sidebar-primary: var(--brand-coral);
-  --sidebar-primary-foreground: #fff8f4;
-  --sidebar-accent: #ebe4d9;
+  --sidebar-primary-foreground: #fbf6ee;
+  --sidebar-accent: #e6dfd2;
   --sidebar-accent-foreground: var(--brand-ink);
-  --sidebar-border: #e6dfd4;
-  --sidebar-ring: var(--brand-coral);
+  --sidebar-border: var(--brand-line);
+  --sidebar-ring: var(--brand-ink);
 
   /* Motion — never linear. */
   --ease-spring: linear(
@@ -78,7 +80,7 @@
   --card-foreground: #f4efe7;
   --popover: #241f1b;
   --popover-foreground: #f4efe7;
-  --primary: #f0715e;
+  --primary: #e4603f;
   --primary-foreground: #1a0d0a;
   --secondary: #2a2521;
   --secondary-foreground: #f4efe7;
@@ -147,11 +149,13 @@
   --color-gold-deep: var(--brand-gold-deep);
   --color-moss: var(--brand-moss);
   --color-night: var(--brand-night);
+  --color-line: var(--brand-line);
 
   --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: var(--font-display), "Iowan Old Style", Georgia, serif;
+  --font-gift-display: var(--font-gift-display), "Iowan Old Style", Georgia, serif;
   --font-hand: var(--font-hand), "Bradley Hand", "Segoe Print", cursive;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
   --font-heading: var(--font-display);
 
   --radius-sm: calc(var(--radius) * 0.6);
@@ -167,9 +171,9 @@
   --ease-out-expo: var(--ease-out-expo);
   --ease-in-out-quart: var(--ease-in-out-quart);
 
-  --shadow-soft: 0 1px 2px rgba(26, 22, 20, 0.04), 0 8px 24px -12px rgba(26, 22, 20, 0.18);
-  --shadow-lift: 0 2px 4px rgba(26, 22, 20, 0.05), 0 24px 48px -20px rgba(26, 22, 20, 0.28);
-  --shadow-glow: 0 0 0 1px rgba(232, 96, 76, 0.18), 0 18px 40px -16px rgba(232, 96, 76, 0.45);
+  --shadow-soft: 0 1px 1px rgba(23, 19, 15, 0.04), 0 6px 18px -10px rgba(23, 19, 15, 0.16);
+  --shadow-lift: 0 1px 2px rgba(23, 19, 15, 0.05), 0 20px 40px -18px rgba(23, 19, 15, 0.3);
+  --shadow-glow: 0 10px 26px -12px rgba(198, 61, 34, 0.5);
 }
 
 @layer base {
@@ -183,7 +187,7 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
-    font-feature-settings: "cv11", "ss01", "ss03";
+    font-feature-settings: "kern", "liga";
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
@@ -197,8 +201,20 @@
   h3,
   .font-display {
     font-family: var(--font-display);
+    font-variation-settings: "opsz" 72;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+  /* Gift templates were designed on Fraunces; keep them on it regardless of the site font. */
+  .gift-root {
+    --font-display: var(--font-gift-display);
+  }
+  .gift-root :is(h1, h2, h3, .font-display) {
     font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
     letter-spacing: -0.015em;
+  }
+  em {
+    font-style: italic;
   }
   h1 {
     text-wrap: balance;
@@ -232,20 +248,54 @@
 @utility container-narrow {
   @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
 }
+/* Small labels are set in the mono, like a printed index, not tracked-out caps in the sans. */
 @utility text-eyebrow {
-  @apply text-xs font-medium tracking-[0.18em] uppercase;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+@utility text-mono-meta {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.01em;
+  font-variant-numeric: tabular-nums;
 }
 @utility display-hero {
-  @apply font-display text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-[5.25rem];
+  @apply font-display;
+  font-size: clamp(2.75rem, 7vw, 5.75rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
 }
 @utility display-xl {
-  @apply font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl;
+  @apply font-display;
+  font-size: clamp(2.125rem, 4.4vw, 3.5rem);
+  line-height: 1.02;
+  letter-spacing: -0.025em;
 }
 @utility display-lg {
-  @apply font-display text-3xl leading-[1.08] sm:text-4xl md:text-5xl;
+  @apply font-display;
+  font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+  line-height: 1.06;
+  letter-spacing: -0.02em;
 }
 @utility display-md {
-  @apply font-display text-2xl leading-[1.12] sm:text-3xl;
+  @apply font-display;
+  font-size: clamp(1.4rem, 2.2vw, 1.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+}
+@utility animate-ticker {
+  animation: ticker 48s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
 }
 @utility grain {
   position: relative;

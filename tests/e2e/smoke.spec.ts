@@ -3,7 +3,7 @@ import { expect, test } from "@playwright/test";
 test("homepage renders the hero in English", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("heading", { level: 1 })).toContainText("open again and again");
-  await expect(page.getByRole("link", { name: /free to start/i }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: /make a gift/i }).first()).toBeVisible();
 });
 
 test("Spanish homepage is served at /es", async ({ page }) => {

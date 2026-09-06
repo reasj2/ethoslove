@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Check, Crown, Loader2, Sparkles } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { useRouter } from "@/i18n/navigation";
@@ -73,27 +73,24 @@ export function PricingCards({
             <article
               key={id}
               className={cn(
-                "relative flex flex-col rounded-[1.75rem] border p-7 sm:p-8",
-                dominant ? "border-ink bg-ink text-paper shadow-lift lg:-my-4 lg:py-12" : "border-border bg-card",
+                "relative flex flex-col rounded-xl border p-7 sm:p-8",
+                dominant ? "border-night bg-night text-paper shadow-lift" : "border-line bg-card",
               )}
             >
               {dominant ? (
-                <span className="absolute -top-3 left-7 flex items-center gap-1.5 rounded-full bg-gold px-3 py-1 text-[11px] font-semibold tracking-wide text-ink uppercase">
-                  <Crown className="size-3" />
-                  {t("bestValue")}
-                </span>
+                <span className="text-eyebrow absolute -top-3 left-7 rounded-sm bg-paper px-2.5 py-1 text-ink">{t("bestValue")}</span>
               ) : null}
-              <h3 className="font-display text-2xl">{t(`plans.${id}.name`)}</h3>
+              <h3 className="font-display text-[1.75rem] leading-tight">{t(`plans.${id}.name`)}</h3>
               <p className={cn("mt-1 text-sm", dominant ? "text-paper/65" : "text-muted-foreground")}>{t(`plans.${id}.blurb`)}</p>
               <div className="mt-6 flex items-end gap-2">
-                <span className="font-display text-[3.2rem] leading-none tracking-tight">{formatAmount(p.amounts[currency], currency, locale)}</span>
+                <span className="font-display text-[3.4rem] leading-none tracking-tight">{formatAmount(p.amounts[currency], currency, locale)}</span>
                 {p.compareAt ? <span className={cn("mb-2 text-sm line-through", dominant ? "text-paper/45" : "text-muted-foreground")}>{formatAmount(p.compareAt[currency], currency, locale)}</span> : null}
               </div>
-              <p className={cn("mt-2 text-xs", dominant ? "text-paper/60" : "text-muted-foreground")}>{t("oneTime")}</p>
+              <p className={cn("text-mono-meta mt-3", dominant ? "text-paper/60" : "text-muted-foreground")}>{t("oneTime")}</p>
               <ul className="mt-6 flex flex-col gap-2.5 text-sm">
                 {features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <Check className={cn("mt-0.5 size-4 shrink-0", dominant ? "text-gold" : "text-coral")} />
+                    <Check className={cn("mt-0.5 size-4 shrink-0", dominant ? "text-paper/70" : "text-coral")} />
                     <span>{f}</span>
                   </li>
                 ))}
@@ -104,10 +101,10 @@ export function PricingCards({
                 disabled={busy}
                 className={cn(
                   "mt-8 flex h-12 items-center justify-center gap-2 rounded-full text-[15px] font-semibold transition-transform active:scale-[0.98]",
-                  dominant ? "bg-coral text-paper shadow-glow" : "border border-ink bg-transparent text-ink hover:bg-ink hover:text-paper",
+                  dominant ? "bg-coral text-paper hover:bg-coral-deep" : "border border-ink bg-transparent text-ink hover:bg-ink hover:text-paper",
                 )}
               >
-                {busy ? <Loader2 className="size-4 animate-spin" /> : dominant ? <Sparkles className="size-4" /> : null}
+                {busy ? <Loader2 className="size-4 animate-spin" /> : null}
                 {t(`plans.${id}.cta`)}
               </button>
               {dominant ? <p className="mt-3 text-center text-xs text-paper/55">{t("priority")}</p> : null}
@@ -130,7 +127,7 @@ export function PricingCards({
                   <button
                     type="button"
                     onClick={() => setChosen((c) => (on ? c.filter((s) => s !== m.slug) : c.length < needed ? [...c, m.slug] : c))}
-                    className={cn("flex w-full items-center gap-3 rounded-xl border p-3 text-left", on ? "border-ink bg-ink/5" : "border-border")}
+                    className={cn("flex w-full items-center gap-3 rounded-lg border p-3 text-left", on ? "border-ink bg-ink/5" : "border-line")}
                   >
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={m.thumbnail.poster} alt="" className="h-14 w-10 rounded-md object-cover" />

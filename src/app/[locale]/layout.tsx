@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter, Caveat } from "next/font/google";
+import { Caveat, Fraunces, JetBrains_Mono, Newsreader, Schibsted_Grotesk } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -8,15 +8,32 @@ import { SITE } from "@/config/site";
 import { Providers } from "@/components/shared/providers";
 import "../globals.css";
 
-const inter = Inter({
+const sans = Schibsted_Grotesk({
   subsets: ["latin", "latin-ext"],
   variable: "--font-sans",
   display: "swap",
+  style: ["normal", "italic"],
 });
 
-const fraunces = Fraunces({
+const display = Newsreader({
   subsets: ["latin", "latin-ext"],
   variable: "--font-display",
+  display: "swap",
+  style: ["normal", "italic"],
+  axes: ["opsz"],
+});
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
+  weight: ["400", "500"],
+});
+
+// The gift templates keep Fraunces (their type was tuned to it); the site itself uses Newsreader.
+const fraunces = Fraunces({
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-gift-display",
   display: "swap",
   axes: ["opsz", "SOFT", "WONK"],
 });
@@ -53,7 +70,7 @@ export async function generateMetadata({
 }
 
 export const viewport: Viewport = {
-  themeColor: "#FAF7F2",
+  themeColor: "#F6F1E8",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -68,7 +85,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${inter.variable} ${fraunces.variable} ${caveat.variable} h-full`}
+      className={`${sans.variable} ${fraunces.variable} ${display.variable} ${mono.variable} ${caveat.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>

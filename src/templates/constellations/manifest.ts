@@ -8,7 +8,7 @@ export const manifest: TemplateManifest = {
     es: "Cada foto es una estrella. Encuéntralas todas.",
   },
   description: {
-    en: "A living night sky. Each memory is a star — tap one to fly to it. Connect them all and they draw a constellation in the shape of a heart, then your message appears under the stars.",
+    en: "A living night sky. Each memory is a star, tap one to fly to it. Connect them all and they draw a constellation in the shape of a heart, then your message appears under the stars.",
     es: "Un cielo nocturno vivo. Cada recuerdo es una estrella: toca una para volar hasta ella. Conéctalas todas y dibujarán una constelación con forma de corazón; después, tu mensaje aparece bajo las estrellas.",
   },
   occasions: ["long-distance", "anniversary", "valentines", "birthday", "just-because", "graduation"],

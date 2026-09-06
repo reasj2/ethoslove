@@ -4,6 +4,7 @@ import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { viewerHash } from "@/lib/crypto";
 import { isShortId } from "@/lib/gift/short-id";
 import { rateLimit } from "@/lib/rate-limit";
+import { clientIp } from "@/lib/request-ip";
 import { notifyFirstOpen } from "@/lib/email/notify";
 
 function device(ua: string): string {
@@ -19,7 +20,7 @@ export async function POST(request: NextRequest, ctx: RouteContext<"/api/gift/[s
   if (!isShortId(shortId)) return NextResponse.json({ ok: false }, { status: 404 });
   const admin = getSupabaseAdminClient();
   if (!admin) return NextResponse.json({ ok: false }, { status: 503 });
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ?? "anon";
+  const ip = clientIp(request.headers);
   const ua = request.headers.get("user-agent") ?? "";
   if (!(await rateLimit(`view:${ip}`, { limit: 60, windowSeconds: 600 }))) return NextResponse.json({ ok: false }, { status: 429 });
 

@@ -45,6 +45,18 @@ export function premiumExtras(data: GiftData): PremiumExtra[] {
   return extras;
 }
 
+/**
+ * Editing a gift that is already live or scheduled must not sneak premium content past the
+ * paywall: anything that would have needed an unlock at publish time needs one now too.
+ */
+export function liveEditNeedsUnlock(
+  manifest: TemplateManifest,
+  data: Pick<GiftData, "music" | "video" | "voiceNote" | "photos">,
+  row: { hasSchedule: boolean; hasPassword: boolean; watermark: boolean },
+): boolean {
+  return manifest.tier === "premium" || premiumExtras(data as GiftData).length > 0 || row.hasSchedule || row.hasPassword || !row.watermark;
+}
+
 /** Human-readable blockers, keyed for translation on the client. */
 export function readinessProblems(manifest: TemplateManifest, data: GiftData): string[] {
   const problems: string[] = [];

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { decidePublish, premiumExtras, readinessProblems } from "@/lib/gift/publish";
+import { decidePublish, liveEditNeedsUnlock, premiumExtras, readinessProblems } from "@/lib/gift/publish";
 import { manifest as letter } from "@/templates/the-letter/manifest";
 import type { GiftData } from "@/lib/gift/schema";
 
@@ -56,6 +56,15 @@ describe("publish rules", () => {
     const lib = { ...base, music: { source: "library" as const, url: "/audio/library/first-light.mp3", trackId: "first-light", startAt: 0 } };
     expect(premiumExtras(lib)).toEqual([]);
     expect(readinessProblems(letter, { ...base, voiceNote: { url: "blob:x" } })).toContain("uploadsPending");
+  });
+  it("edits to a live gift are held to the publish rules", () => {
+    const plain = { hasSchedule: false, hasPassword: false, watermark: true };
+    expect(liveEditNeedsUnlock(letter, base, plain)).toBe(false);
+    expect(liveEditNeedsUnlock(letter, { ...base, video: { url: "gifts/g/v.webm" } }, plain)).toBe(true);
+    expect(liveEditNeedsUnlock(letter, { ...base, voiceNote: { url: "gifts/g/vn.webm" } }, plain)).toBe(true);
+    expect(liveEditNeedsUnlock(letter, base, { ...plain, hasPassword: true })).toBe(true);
+    expect(liveEditNeedsUnlock(letter, base, { ...plain, watermark: false })).toBe(true);
+    expect(liveEditNeedsUnlock(premium, base, plain)).toBe(true);
   });
   it("blocks when uploads are pending or fields are missing", () => {
     expect(readinessProblems(letter, { ...base, photos: [photo("blob:x")] })).toContain("uploadsPending");

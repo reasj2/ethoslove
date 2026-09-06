@@ -21,7 +21,7 @@ export function DemoStage({ slug, backHref = "/templates" }: { slug: string; bac
 
   return (
     <div className="flex h-dvh w-full flex-col bg-night">
-      <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-night px-3 pt-[env(safe-area-inset-top)]">
+      <div data-demo-chrome className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-night px-3 pt-[env(safe-area-inset-top)]">
         <Link href={backHref} className="flex h-8 items-center gap-1.5 rounded-full px-2 text-xs font-medium text-white/80 hover:bg-white/10">
           <LogoMark className="size-5" />
           <ArrowLeft className="size-3.5" />

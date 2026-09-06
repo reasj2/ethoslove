@@ -28,7 +28,7 @@ export function MarketingHeader() {
       className={cn(
         "sticky top-0 z-40 transition-[background-color,box-shadow,backdrop-filter] duration-300",
         scrolled
-          ? "bg-paper/80 shadow-[0_1px_0_0_var(--border)] backdrop-blur-xl supports-[backdrop-filter]:bg-paper/70"
+          ? "bg-paper/85 shadow-[0_1px_0_0_var(--brand-line)] backdrop-blur-xl supports-[backdrop-filter]:bg-paper/75"
           : "bg-transparent",
       )}
     >
@@ -48,7 +48,7 @@ export function MarketingHeader() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full px-3.5 py-2 text-sm font-medium text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink"
+              className="rounded-full px-3.5 py-2 text-[15px] font-medium text-ink-soft transition-colors hover:bg-ink/5 hover:text-ink"
             >
               {item.label}
             </Link>
@@ -61,7 +61,7 @@ export function MarketingHeader() {
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
-          <Button asChild size="lg" className="h-10 rounded-full px-4">
+          <Button asChild size="lg" className="h-10 rounded-full bg-ink px-4 text-paper hover:bg-ink/90">
             <Link href="/templates">{t("common.createGift")}</Link>
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
@@ -80,7 +80,7 @@ export function MarketingHeader() {
                       key={item.href}
                       href={item.href}
                       onClick={() => setOpen(false)}
-                      className="font-display border-b border-border py-4 text-2xl"
+                      className="font-display border-b border-line py-4 text-[1.75rem]"
                     >
                       {item.label}
                     </Link>

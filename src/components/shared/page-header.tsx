@@ -14,11 +14,11 @@ export function PageHeader({
   children?: React.ReactNode;
 }) {
   return (
-    <header className={cn("container-x pt-14 pb-10 sm:pt-20 sm:pb-14", className)}>
-      {eyebrow ? <p className="text-eyebrow mb-4 text-coral">{eyebrow}</p> : null}
+    <header className={cn("container-x pt-12 pb-10 sm:pt-16 sm:pb-12", className)}>
+      {eyebrow ? <p className="text-eyebrow mb-5 text-ink-soft">{eyebrow}</p> : null}
       <h1 className="display-xl max-w-3xl">{title}</h1>
       {subtitle ? (
-        <p className="mt-5 max-w-2xl text-lg text-muted-foreground sm:text-xl">{subtitle}</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">{subtitle}</p>
       ) : null}
       {children ? <div className="mt-8">{children}</div> : null}
     </header>

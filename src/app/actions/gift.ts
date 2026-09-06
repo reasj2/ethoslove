@@ -4,7 +4,7 @@ import { z } from "zod";
 import { revalidatePath } from "next/cache";
 import { createGiftSchema, giftDataBaseSchema, type GiftData, type GiftLocale } from "@/lib/gift/schema";
 import { generateShortId } from "@/lib/gift/short-id";
-import { decidePublish } from "@/lib/gift/publish";
+import { decidePublish, liveEditNeedsUnlock } from "@/lib/gift/publish";
 import { GIFTS_BUCKET, storageObjectKey } from "@/lib/gift/assets";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/auth/get-user";
@@ -57,6 +57,28 @@ export async function saveDraft(raw: unknown): Promise<ActionResult<{ savedAt: s
   // Drafts may be incomplete: validate loosely (base shape) but never accept junk.
   const loose = giftDataBaseSchema.partial({ recipientName: true, senderName: true }).safeParse(input.data.data);
   if (!loose.success) return { ok: false, error: "invalid_data", problems: loose.error.issues.map((i) => i.path.join(".")) };
+
+  // A live or scheduled gift is what recipients see: edits to it are held to the publish rules.
+  const { data: row } = await ctx.supabase
+    .from("gifts")
+    .select("status, template_slug, unlock_at, password_hash, watermark")
+    .eq("id", input.data.giftId)
+    .eq("user_id", ctx.user.id)
+    .single();
+  if (!row) return { ok: false, error: "not_found" };
+  if (row.status !== "draft") {
+    const manifest = getManifest(row.template_slug);
+    if (!manifest) return { ok: false, error: "unknown_template" };
+    const needs = liveEditNeedsUnlock(manifest, { music: loose.data.music, video: loose.data.video, voiceNote: loose.data.voiceNote, photos: loose.data.photos ?? [] }, {
+      hasSchedule: row.unlock_at !== null,
+      hasPassword: row.password_hash !== null,
+      watermark: row.watermark,
+    });
+    if (needs) {
+      const { data: unlocked } = await ctx.supabase.rpc("has_template_unlock", { p_user: ctx.user.id, p_slug: row.template_slug });
+      if (!unlocked) return { ok: false, error: "payment_required" };
+    }
+  }
 
   const { error } = await ctx.supabase
     .from("gifts")

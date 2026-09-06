@@ -39,7 +39,7 @@ export function rgba(hex: string, alpha: number): string {
 export function giftThemeVars(accent: string, fontPairing: FontPairing): CSSProperties {
   const onAccent = luminance(accent) > 0.45 ? "#1A1614" : "#FFF8F4";
   const fonts: Record<FontPairing, { display: string; body: string }> = {
-    editorial: { display: "var(--font-display), Georgia, serif", body: "var(--font-sans), system-ui, sans-serif" },
+    editorial: { display: "var(--font-gift-display), Georgia, serif", body: "var(--font-sans), system-ui, sans-serif" },
     modern: { display: "var(--font-sans), system-ui, sans-serif", body: "var(--font-sans), system-ui, sans-serif" },
     handwritten: { display: "var(--font-hand), cursive", body: "var(--font-sans), system-ui, sans-serif" },
   };

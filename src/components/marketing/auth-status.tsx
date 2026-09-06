@@ -46,7 +46,7 @@ export function AuthStatus({ onNavigate, block }: { onNavigate?: () => void; blo
           </Link>
         </Button>
       )}
-      <Button asChild size="lg" className={cn("rounded-full px-5", block && "h-11")}>
+      <Button asChild size="lg" className={cn("rounded-full bg-ink px-5 text-paper hover:bg-ink/90", block && "h-11")}>
         <Link href="/templates" onClick={onNavigate}>
           {t("createGift")}
         </Link>

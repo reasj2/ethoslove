@@ -32,10 +32,11 @@ export function WritingHelper({ open, onOpenChange, onUse }: { open: boolean; on
         body: JSON.stringify({ occasion, relationship, facts, locale, recipientName: data.recipientName, senderName: data.senderName }),
       });
       const json = (await res.json()) as { drafts?: string[]; error?: string };
+      if (res.status === 401) throw new Error("unauthenticated");
       if (!res.ok || !json.drafts) throw new Error(json.error ?? "failed");
       setDrafts(json.drafts);
-    } catch {
-      toast.error(t("editor.writer.error"));
+    } catch (e) {
+      toast.error((e as Error).message === "unauthenticated" ? t("editor.writer.signIn") : t("editor.writer.error"));
     } finally {
       setLoading(false);
     }

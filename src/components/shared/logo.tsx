@@ -7,7 +7,7 @@ import { BRAND } from "@/config/brand";
  */
 export function LogoMark({ className, tone = "coral" }: { className?: string; tone?: "coral" | "ink" | "paper" }) {
   const fill = tone === "coral" ? "var(--brand-coral)" : tone === "ink" ? "var(--brand-ink)" : "var(--brand-paper)";
-  const inner = tone === "paper" ? "var(--brand-ink)" : "#FFF8F4";
+  const inner = tone === "paper" ? "var(--brand-ink)" : "#FBF6EE";
   return (
     <svg
       viewBox="0 0 32 32"
@@ -31,11 +31,8 @@ export function LogoMark({ className, tone = "coral" }: { className?: string; to
 export function Wordmark({ className }: { className?: string }) {
   return (
     <span
-      className={cn(
-        "font-display text-[1.45rem] leading-none tracking-tight italic",
-        className,
-      )}
-      style={{ fontVariationSettings: '"opsz" 72, "SOFT" 50, "WONK" 1' }}
+      className={cn("font-display text-[1.55rem] leading-none tracking-[-0.02em] italic", className)}
+      style={{ fontVariationSettings: '"opsz" 32' }}
     >
       {BRAND.name}
     </span>

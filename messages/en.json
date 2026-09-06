@@ -1,8 +1,8 @@
 {
   "common": {
     "brand": "Ethos",
-    "createGift": "Create a gift",
-    "createGiftFree": "Create a gift — it's free to start",
+    "createGift": "Make a gift",
+    "createGiftFree": "Make a gift. Free to start.",
     "login": "Log in",
     "signup": "Sign up",
     "logout": "Log out",
@@ -20,7 +20,7 @@
     "comingSoon": "Coming soon",
     "free": "Free",
     "premium": "Premium",
-    "noSubscription": "No subscription. Pay once, keep forever.",
+    "noSubscription": "One payment, no subscription. Yours for good.",
     "language": "Language",
     "theme": "Theme",
     "themeLight": "Light",
@@ -44,51 +44,58 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "For the people you can't stop thinking about",
+      "eyebrow": "Digital gifts. Ten minutes to make, years to keep.",
       "h1a": "Give them a moment they'll",
       "h1b": "open again",
       "h1c": "and again.",
-      "sub": "A personalised, animated gift page with your photos, their song and your words. Shared with a link or a QR code. Built in ten minutes, remembered for years.",
-      "cta": "Create a gift — it's free to start",
+      "sub": "A personal, animated gift page with your photos, their song and your words. Sent as a link or a QR code, opened on their phone.",
+      "cta": "Make a gift",
       "demo": "Watch the demo",
       "videoAlt": "The Letter template: a wax seal breaks, a letter unfolds, photos drop onto a desk.",
-      "caption": "The Letter, one of two free templates. That's the real thing, not a mockup.",
+      "caption": "The Letter, one of two free templates. The real thing, not a mockup.",
       "facts": {
         "free": {
-          "a": "2 templates",
-          "b": "free, forever"
+          "a": "02",
+          "b": "free templates"
         },
         "noAccount": {
-          "a": "No account",
-          "b": "until you publish"
+          "a": "00",
+          "b": "accounts needed to start"
         },
         "once": {
-          "a": "Pay once",
-          "b": "never a subscription"
+          "a": "01",
+          "b": "payment, ever"
         },
         "langs": {
-          "a": "English & Spanish",
-          "b": "for the gift and the site"
+          "a": "EN/ES",
+          "b": "gift and site"
         }
+      },
+      "ctaNote": "Free to start. No account until you publish.",
+      "card": {
+        "to": "for Ana",
+        "from": "from Marco",
+        "opened": "Opened 3 times"
       }
     },
     "templates": {
-      "eyebrow": "Templates",
-      "title": "Every template is a full experience. {free} are free.",
-      "blurb": "Not a themed card with a photo slot. Each one is a scene the recipient moves through — tapping, scrolling, holding, sometimes blowing out candles.",
+      "eyebrow": "The collection",
+      "title": "Every template is a whole experience.",
+      "blurb": "Not a card with a photo slot. Each one is a scene the recipient moves through: tapping, scrolling, holding, sometimes blowing out candles.",
       "all": "See all templates",
       "moreTitle": "More every month",
-      "moreBlurb": "New templates land regularly. Everything buyers get every future one, forever."
+      "moreBlurb": "New templates land regularly. Everything buyers get every future one, forever.",
+      "count": "{n} templates, {free} free"
     },
     "reactions": {
       "eyebrow": "See the reaction",
       "title": "The link goes out. The reply comes back.",
-      "blurb": "At the end of every gift there's a reaction button — an emoji, a note, or a 20-second voice message — delivered straight to you.",
+      "blurb": "At the end of every gift there is a reaction button: an emoji, a note, or a 20-second voice message, delivered straight to you.",
       "cards": [
         {
           "from": "Marco",
           "to": "Ana",
-          "sent": "I made you something. Open it with sound on 💌",
+          "sent": "I made you something. Open it with sound on.",
           "reply": "I'm at work and crying in the stairwell. Three years. THREE.",
           "emoji": "😭",
           "time": "22:41"
@@ -96,7 +103,7 @@
         {
           "from": "Lucas",
           "to": "Sofía",
-          "sent": "Look up. Well — look at your phone.",
+          "sent": "Look up. Well, look at your phone.",
           "reply": "You put the tent night in there. I found all six. Fourteen days.",
           "emoji": "🥹",
           "time": "07:12"
@@ -110,11 +117,11 @@
           "time": "09:58"
         }
       ],
-      "placeholderNote": "Illustrated placeholders. We'll swap in real recipient reactions as they come in."
+      "placeholderNote": "Sample reactions. Real ones replace these as they come in."
     },
     "how": {
       "eyebrow": "How it works",
-      "title": "Ten minutes, honestly.",
+      "title": "Ten minutes, start to finish.",
       "steps": [
         {
           "title": "Pick a template",
@@ -125,7 +132,7 @@
           "body": "Drop in photos, pick their song, write what you'd never say out loud. The preview updates as you type."
         },
         {
-          "title": "Share the link — or the card",
+          "title": "Share the link, or the card",
           "body": "Send it on WhatsApp, iMessage, anywhere. Or print the QR card and hide it in a book."
         }
       ]
@@ -137,20 +144,20 @@
     },
     "final": {
       "title": "Say the thing.",
-      "blurb": "The people we love mostly hear us in passing. This is the other way — a small, deliberate thing they can open twice.",
+      "blurb": "The people we love mostly hear us in passing. This is the other way: a small, deliberate thing they can open twice.",
       "cta": "Create a gift"
     }
   },
   "footer": {
-    "blurb": "Gifts that open like a story. Made for the people you can't stop thinking about.",
+    "blurb": "Gifts that open like a story.",
     "product": "Product",
     "company": "Company",
     "legal": "Legal",
     "terms": "Terms",
     "privacy": "Privacy",
     "contact": "Contact",
-    "rights": "© {year} Ethos. All rights reserved.",
-    "madeWith": "Made with care in many time zones."
+    "rights": "© {year} Ethos · SIA MIGLAI, Latvia",
+    "madeWith": "Made in Riga and Madrid."
   },
   "auth": {
     "loginTitle": "Welcome back",
@@ -484,7 +491,8 @@
       "factsPlaceholder": "She hums when she cooks\nWe got lost in Lisbon on purpose\nShe always gives me the window seat",
       "generate": "Write three drafts",
       "use": "Use this one",
-      "error": "The writing helper isn't available right now."
+      "error": "The writing helper isn't available right now.",
+      "signIn": "Sign in to use the writing helper. Your draft stays on this device."
     },
     "video": {
       "add": "Add a video clip",
@@ -514,7 +522,7 @@
   "templates": {
     "title": "Templates",
     "subtitle": "Every one has a full live demo. Try it before you buy it.",
-    "eyebrow": "Twelve ways to say it",
+    "eyebrow": "Fifteen ways to say it",
     "playDemo": "Play the demo",
     "details": "Details",
     "useTemplate": "Use this template",
@@ -532,7 +540,7 @@
     "photoRange": "{min}–{max} photos",
     "allTiers": "All",
     "allOccasions": "All occasions",
-    "noMatches": "No template matches that filter yet — try another occasion.",
+    "noMatches": "No template matches that filter yet. Try another occasion.",
     "demoReactionToast": "In a real gift, this sends the sender your reaction. Coming in Phase 4.",
     "tryDemo": "Try the live demo",
     "none": "No templates match that filter yet.",
@@ -567,8 +575,8 @@
   "pricing": {
     "eyebrow": "Pricing",
     "title": "Pay once. Keep it forever.",
-    "subtitle": "Two templates are free, with a small footer. Real songs, video, voice messages and the other templates unlock with a single payment — no subscription, no renewals, no surprises.",
-    "oneTime": "No subscription. Pay once, keep forever.",
+    "subtitle": "Two templates are free, with a small footer. Real songs, video, voice messages and the other templates unlock with one payment. No subscription, no renewals.",
+    "oneTime": "One payment. Yours for good.",
     "bestValue": "Best value",
     "priority": "Includes priority support",
     "freeNote": "Free gifts include 10 photos, our music library and the “Made with Ethos” footer. Real songs, video clips, voice messages, scheduling and passwords come with any unlock.",
@@ -600,7 +608,7 @@
       },
       "everything": {
         "name": "Everything",
-        "blurb": "Every template we've made — and every one we'll make.",
+        "blurb": "Every template we've made, and every one we'll make.",
         "cta": "Unlock everything",
         "features": [
           "All templates, now and future",
@@ -644,7 +652,7 @@
       },
       {
         "q": "Refunds?",
-        "a": "Unlocks are digital and delivered instantly, so we can't refund a change of heart — but if something doesn't work as described, write to us and we'll make it right."
+        "a": "Unlocks are digital and delivered instantly, so we can't refund a change of heart. If something doesn't work as described, write to us and we'll make it right."
       }
     ]
   },

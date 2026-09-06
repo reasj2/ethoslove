@@ -5,17 +5,17 @@ export async function Faq() {
   const t = await getTranslations("pricing");
   const faq = t.raw("faq") as { q: string; a: string }[];
   return (
-    <section className="border-b border-border py-20 lg:py-28">
-      <div className="container-x grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
-          <p className="text-eyebrow text-coral">FAQ</p>
-          <h2 className="display-xl mt-3">{t("faqTitle")}</h2>
+    <section className="border-b border-line py-20 lg:py-28">
+      <div className="container-x grid gap-10 lg:grid-cols-12">
+        <div className="lg:col-span-5">
+          <p className="text-eyebrow text-ink-soft">FAQ</p>
+          <h2 className="display-xl mt-4 max-w-[12ch]">{t("faqTitle")}</h2>
         </div>
-        <Accordion type="single" collapsible className="divide-y divide-border border-y border-border">
+        <Accordion type="single" collapsible className="divide-y divide-line border-y border-line lg:col-span-7">
           {faq.map((item, i) => (
             <AccordionItem key={i} value={`q${i}`} className="border-0">
-              <AccordionTrigger className="py-5 text-left text-base font-medium hover:no-underline">{item.q}</AccordionTrigger>
-              <AccordionContent className="pb-5 text-[15px] leading-relaxed text-ink-soft">{item.a}</AccordionContent>
+              <AccordionTrigger className="font-display py-5 text-left text-xl font-normal hover:no-underline">{item.q}</AccordionTrigger>
+              <AccordionContent className="max-w-2xl pb-6 text-[15px] leading-relaxed text-ink-soft">{item.a}</AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>

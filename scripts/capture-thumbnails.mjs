@@ -195,7 +195,7 @@ for (const [slug, run] of Object.entries(SCRIPTS)) {
   await page.goto(`${base}/demo/${slug}`, { waitUntil: "networkidle" });
   // Page chrome and the dev indicator do not belong in marketing assets.
   await page.addStyleTag({
-    content: 'a[href*="/templates/"], a[href="/?ref=watermark"], nextjs-portal { display: none !important; }',
+    content: '[data-demo-chrome], a[href*="/templates/"], a[href="/?ref=watermark"], nextjs-portal { display: none !important; }',
   });
   const poster = await run(page);
   await sharp(poster).jpeg({ quality: 82, mozjpeg: true }).toFile(join(dir, "poster.jpg"));

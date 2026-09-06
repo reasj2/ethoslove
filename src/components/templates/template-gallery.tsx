@@ -2,7 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { useTranslations } from "next-intl";
-import { OCCASIONS, OCCASION_META, type Occasion } from "@/config/occasions";
+import { OCCASIONS, type Occasion } from "@/config/occasions";
 import type { TemplateManifest, TemplateTier } from "@/templates/types";
 import { cn } from "@/lib/utils";
 import { TemplateCard } from "./template-card";
@@ -29,7 +29,7 @@ export function TemplateGallery({ manifests, initialOccasion }: { manifests: Tem
           </Chip>
           {OCCASIONS.map((o) => (
             <Chip key={o} active={occasion === o} onClick={() => setOccasion(o)}>
-              <span aria-hidden="true">{OCCASION_META[o].emoji}</span> {t(`occasions.${o}`)}
+              {t(`occasions.${o}`)}
             </Chip>
           ))}
         </div>
@@ -44,7 +44,7 @@ export function TemplateGallery({ manifests, initialOccasion }: { manifests: Tem
       {filtered.length === 0 ? (
         <p className="py-20 text-center text-muted-foreground">{t("templates.none")}</p>
       ) : (
-        <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {filtered.map((m, i) => (
             <TemplateCard key={m.slug} manifest={m} index={i} />
           ))}
@@ -62,7 +62,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
       aria-pressed={active}
       className={cn(
         "h-9 shrink-0 rounded-full border px-3.5 text-sm whitespace-nowrap transition-colors",
-        active ? "border-ink bg-ink text-paper" : "border-border bg-card text-ink-soft hover:border-ink/40",
+        active ? "border-ink bg-ink text-paper" : "border-line bg-transparent text-ink-soft hover:border-ink/50 hover:text-ink",
       )}
     >
       {children}

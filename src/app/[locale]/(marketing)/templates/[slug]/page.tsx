@@ -4,7 +4,6 @@ import { ArrowRight, Check, Maximize2 } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import type { GiftLocale } from "@/lib/gift/schema";
-import { OCCASION_META } from "@/config/occasions";
 import { TEMPLATE_SLUGS, getManifest } from "@/templates/registry";
 import { Button } from "@/components/ui/button";
 import { TemplatePhonePreview } from "@/components/templates/template-phone-preview";
@@ -46,21 +45,21 @@ export default async function TemplateDetailPage({ params }: PageProps<"/[locale
       </div>
       <div>
         <div className="flex items-center gap-2">
-          <span className={manifest.tier === "free" ? "rounded-full bg-ink/8 px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase" : "rounded-full bg-gold/90 px-2.5 py-1 text-[11px] font-semibold tracking-wide text-ink uppercase"}>
+          <span className={manifest.tier === "free" ? "text-eyebrow rounded-sm border border-ink px-2 py-1 text-ink" : "text-eyebrow rounded-sm bg-ink px-2 py-1 text-paper"}>
             {manifest.tier === "free" ? t("common.free") : t("common.premium")}
           </span>
           {manifest.styles.map((s) => (
-            <span key={s} className="rounded-full border border-border px-2.5 py-1 text-[11px] font-medium tracking-wide text-muted-foreground uppercase">
+            <span key={s} className="text-eyebrow rounded-sm border border-line px-2 py-1 text-muted-foreground">
               {t(`templates.style.${s}`)}
             </span>
           ))}
         </div>
-        <h1 className="display-xl mt-5">{manifest.name[l]}</h1>
-        <p className="mt-3 text-xl text-ink-soft">{manifest.tagline[l]}</p>
+        <h1 className="display-xl mt-6">{manifest.name[l]}</h1>
+        <p className="font-display mt-3 text-2xl text-ink-soft italic">{manifest.tagline[l]}</p>
         <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground">{manifest.description[l]}</p>
 
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Button asChild size="lg" className="h-12 rounded-full px-6 text-base shadow-glow">
+          <Button asChild size="lg" className="h-12 rounded-full px-6 text-base">
             <Link href={`/create/${manifest.slug}`}>
               {t("templates.useTemplate")}
               <ArrowRight className="size-4" data-icon="inline-end" />
@@ -75,7 +74,7 @@ export default async function TemplateDetailPage({ params }: PageProps<"/[locale
         </div>
         <p className="mt-3 text-sm text-muted-foreground">{t("common.noSubscription")}</p>
 
-        <h2 className="text-eyebrow mt-12 mb-4 text-ink-soft">{t("templates.included")}</h2>
+        <h2 className="text-eyebrow mt-12 mb-4 text-muted-foreground">{t("templates.included")}</h2>
         <ul className="grid gap-2 sm:grid-cols-2">
           {featureList.map(([on, label]) => (
             <li key={label} className={on ? "flex items-center gap-2 text-sm" : "flex items-center gap-2 text-sm text-muted-foreground/60 line-through"}>
@@ -93,7 +92,6 @@ export default async function TemplateDetailPage({ params }: PageProps<"/[locale
                 href={`/occasions/${o}`}
                 className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-sm transition-colors hover:border-ink/40"
               >
-                <span aria-hidden="true">{OCCASION_META[o].emoji}</span>
                 {t(`occasions.${o}`)}
               </Link>
             </li>
