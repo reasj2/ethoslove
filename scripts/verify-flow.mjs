@@ -91,7 +91,7 @@ try {
   await rp.getByRole("button", { name: /send marco a reaction/i }).click();
   await rp.getByText(/send marco a reaction/i).first().waitFor();
   await rp.locator("textarea").fill("I'm crying at work. Three years.");
-  await rp.getByRole("button", { name: /^send ❤️$/ }).click();
+  await rp.getByRole("button", { name: "Send ❤️", exact: true }).click();
   await rp.getByText(/sent to marco/i).waitFor({ timeout: 15000 });
   await rp.screenshot({ path: join(out, "flow-07-reaction-sent.png") });
   await recipient.close();
