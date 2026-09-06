@@ -13,8 +13,10 @@ test("Spanish homepage is served at /es", async ({ page }) => {
 });
 
 test("gift links never redirect by browser language", async ({ page }) => {
+  // An unknown gift is a 404 (or 200 with no database), but the URL must stay put —
+  // never a locale redirect, since these links live on printed cards.
   const response = await page.goto("/g/abc123def");
-  expect(response?.status()).toBe(200);
+  expect([200, 404]).toContain(response?.status());
   expect(page.url()).toMatch(/\/g\/abc123def$/);
 });
 

@@ -7,8 +7,12 @@ import { toast } from "sonner";
 import { Link, useRouter } from "@/i18n/navigation";
 import type { GiftLocale } from "@/lib/gift/schema";
 import { GiftRenderer } from "@/templates/_shared/GiftRenderer";
+import { LogoMark } from "@/components/shared/logo";
 
-/** Full-screen live demo of a template with a thin control strip. */
+/**
+ * Full-screen live demo. The control strip sits in its own row above the template so it
+ * never covers template controls (templates assume they own the whole viewport).
+ */
 export function DemoStage({ slug, backHref = "/templates" }: { slug: string; backHref?: string }) {
   const locale = useLocale() as GiftLocale;
   const router = useRouter();
@@ -16,40 +20,32 @@ export function DemoStage({ slug, backHref = "/templates" }: { slug: string; bac
   const [replayKey, setReplayKey] = useState(0);
 
   return (
-    <div className="relative h-dvh w-full bg-night">
-      <GiftRenderer
-        slug={slug}
-        mode="demo"
-        demoLocale={locale}
-        replayKey={replayKey}
-        onReact={() => toast(t("demoReactionToast"))}
-        onMakeOne={() => router.push(`/create/${slug}`)}
-      />
-      <div className="pointer-events-none absolute inset-x-0 top-[max(0.75rem,env(safe-area-inset-top))] z-[80] flex items-center justify-between px-3">
-        <Link
-          href={backHref}
-          className="pointer-events-auto flex h-9 items-center gap-1.5 rounded-full bg-black/40 px-3 text-xs font-medium text-white/90 backdrop-blur-md hover:bg-black/55"
-        >
+    <div className="flex h-dvh w-full flex-col bg-night">
+      <div className="flex h-12 shrink-0 items-center justify-between gap-2 border-b border-white/10 bg-night px-3 pt-[env(safe-area-inset-top)]">
+        <Link href={backHref} className="flex h-8 items-center gap-1.5 rounded-full px-2 text-xs font-medium text-white/80 hover:bg-white/10">
+          <LogoMark className="size-5" />
           <ArrowLeft className="size-3.5" />
           {t("backToGallery")}
         </Link>
-        <div className="pointer-events-auto flex items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setReplayKey((k) => k + 1)}
-            className="grid size-9 place-items-center rounded-full bg-black/40 text-white/90 backdrop-blur-md hover:bg-black/55"
-            aria-label={t("replay")}
-          >
+        <div className="flex items-center gap-1.5">
+          <button type="button" onClick={() => setReplayKey((k) => k + 1)} className="grid size-8 place-items-center rounded-full text-white/80 hover:bg-white/10" aria-label={t("replay")}>
             <RotateCcw className="size-3.5" />
           </button>
-          <Link
-            href={`/create/${slug}`}
-            className="flex h-9 items-center gap-1.5 rounded-full bg-coral px-3.5 text-xs font-semibold text-white shadow-glow hover:bg-coral-deep"
-          >
+          <Link href={`/create/${slug}`} className="flex h-8 items-center gap-1.5 rounded-full bg-coral px-3 text-xs font-semibold text-white hover:bg-coral-deep">
             <Sparkles className="size-3.5" />
             {t("useTemplate")}
           </Link>
         </div>
+      </div>
+      <div className="relative min-h-0 flex-1">
+        <GiftRenderer
+          slug={slug}
+          mode="demo"
+          demoLocale={locale}
+          replayKey={replayKey}
+          onReact={() => toast(t("demoReactionToast"))}
+          onMakeOne={() => router.push(`/create/${slug}`)}
+        />
       </div>
     </div>
   );

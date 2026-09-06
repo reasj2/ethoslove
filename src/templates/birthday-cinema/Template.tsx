@@ -122,7 +122,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
       <div className="absolute inset-x-0 bottom-0 h-[38%] bg-[linear-gradient(180deg,transparent,rgba(60,30,20,0.65))]" />
 
       {/* Marquee */}
-      <div className="absolute inset-x-0 top-[13%] z-30 flex justify-center px-6">
+      <div className={cn("absolute inset-x-0 top-[13%] z-30 flex justify-center px-6 transition-opacity duration-700", (stage === "film" || stage === "message") && "opacity-0")}>
         <Marquee text={marquee} reduced={!!reduce} />
       </div>
 
