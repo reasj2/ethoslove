@@ -1,0 +1,91 @@
+import type { GiftLocale } from "@/lib/gift/schema";
+
+/**
+ * Templates carry their own strings so they render with no app context
+ * (mobile WebView, demo iframe). Keep this list small and universal.
+ */
+const STRINGS = {
+  en: {
+    loadingFor: "Someone made this for you, {name}…",
+    loading: "Someone made this for you…",
+    tapToOpen: "Tap to open",
+    soundOn: "Turn your sound on",
+    tapSeal: "Tap the seal",
+    dear: "Dear {name},",
+    ps: "P.S.",
+    tapToReveal: "Tap to reveal",
+    holdToReveal: "Hold to reveal",
+    shakeToReveal: "Shake your phone to reveal",
+    orTap: "or tap here",
+    countdownTo: "Counting down to",
+    days: "days",
+    hours: "hours",
+    minutes: "min",
+    seconds: "sec",
+    theEnd: "The end. For now.",
+    madeBy: "Made by {sender} for {recipient}",
+    sendReaction: "Send {sender} a reaction",
+    makeOne: "Make one for someone you love",
+    replay: "Watch again",
+    mute: "Mute music",
+    unmute: "Play music",
+    tapAStar: "Tap a star",
+    findNext: "Find the next one",
+    constellationDone: "Every star, a memory. Together, they make us.",
+    enableMotion: "Enable motion",
+    continue: "Continue",
+    close: "Close",
+    scrollDown: "Scroll",
+    errorTitle: "This gift couldn't load",
+    errorRetry: "Try again",
+  },
+  es: {
+    loadingFor: "Alguien hizo esto para ti, {name}…",
+    loading: "Alguien hizo esto para ti…",
+    tapToOpen: "Toca para abrir",
+    soundOn: "Activa el sonido",
+    tapSeal: "Toca el sello",
+    dear: "Querida {name},",
+    ps: "P.D.",
+    tapToReveal: "Toca para revelar",
+    holdToReveal: "Mantén pulsado para revelar",
+    shakeToReveal: "Agita el teléfono para revelar",
+    orTap: "o toca aquí",
+    countdownTo: "Cuenta atrás para",
+    days: "días",
+    hours: "horas",
+    minutes: "min",
+    seconds: "seg",
+    theEnd: "Fin. Por ahora.",
+    madeBy: "Hecho por {sender} para {recipient}",
+    sendReaction: "Envíale una reacción a {sender}",
+    makeOne: "Haz uno para alguien que quieres",
+    replay: "Ver otra vez",
+    mute: "Silenciar música",
+    unmute: "Reproducir música",
+    tapAStar: "Toca una estrella",
+    findNext: "Encuentra la siguiente",
+    constellationDone: "Cada estrella, un recuerdo. Juntas, somos nosotros.",
+    enableMotion: "Activar movimiento",
+    continue: "Continuar",
+    close: "Cerrar",
+    scrollDown: "Desliza",
+    errorTitle: "Este regalo no se pudo cargar",
+    errorRetry: "Reintentar",
+  },
+} as const satisfies Record<GiftLocale, Record<string, string>>;
+
+export type GiftStringKey = keyof (typeof STRINGS)["en"];
+
+export function giftString(
+  locale: GiftLocale,
+  key: GiftStringKey,
+  vars: Record<string, string | number> = {},
+): string {
+  const table: Record<GiftStringKey, string> = STRINGS[locale] ?? STRINGS.en;
+  return table[key].replace(/\{(\w+)\}/g, (_, k: string) => String(vars[k] ?? ""));
+}
+
+export function useGiftStrings(locale: GiftLocale) {
+  return (key: GiftStringKey, vars?: Record<string, string | number>) => giftString(locale, key, vars);
+}

@@ -47,7 +47,7 @@ Local Supabase (needs Docker): `supabase start`, then use the printed local URL/
 | `npm run lint`        | ESLint                                          |
 | `npm run typecheck`   | Route typegen + `tsc --noEmit`                  |
 | `npm run test`        | Unit tests (Vitest)                             |
-| `npm run test:e2e`    | Playwright smoke tests (starts the server)      |
+| `npm run test:e2e`    | Playwright e2e (needs `npx playwright install chromium`) |
 | `npm run format`      | Prettier                                        |
 | `npm run db:push`     | Apply migrations to the linked Supabase project |
 | `npm run db:types`    | Regenerate `src/lib/supabase/types.ts`          |
@@ -79,7 +79,7 @@ Read `docs/ARCHITECTURE.md` before adding a template.
 ## Roadmap (build phases)
 
 1. ✅ Scaffold — Next, Tailwind, shadcn, Supabase, auth, i18n, design tokens, layout shell, CI
-2. Template engine + The Letter + Constellations
+2. ✅ Template engine + The Letter + Constellations (live demos at /templates, /demo/[slug])
 3. Editor
 4. Recipient page
 5. Payments + dashboard

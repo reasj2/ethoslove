@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { OCCASIONS, OCCASION_META, isOccasion } from "@/config/occasions";
+import { listManifests } from "@/templates/registry";
 import { PageHeader } from "@/components/shared/page-header";
-import { PhaseNote } from "@/components/shared/phase-note";
+import { TemplateGallery } from "@/components/templates/template-gallery";
 
 export function generateStaticParams() {
   return OCCASIONS.map((occasion) => ({ occasion }));
@@ -26,8 +27,9 @@ export default async function OccasionPage({ params }: PageProps<"/[locale]/occa
       <PageHeader
         eyebrow={`${OCCASION_META[occasion].emoji} ${t("occasions.title")}`}
         title={t("occasions.for", { occasion: t(`occasions.${occasion}`) })}
+        subtitle={t("templates.subtitle")}
       />
-      <PhaseNote>{t("templates.phaseNote")}</PhaseNote>
+      <TemplateGallery manifests={listManifests()} initialOccasion={occasion} />
     </>
   );
 }

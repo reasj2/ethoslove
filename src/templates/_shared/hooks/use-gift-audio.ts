@@ -1,0 +1,81 @@
+"use client";
+
+import { useCallback, useEffect, useRef, useState } from "react";
+import type { GiftMusic } from "@/lib/gift/schema";
+
+export type GiftAudio = {
+  /** Call from a user gesture (autoplay policies). Safe to call repeatedly. */
+  start: () => Promise<void>;
+  toggleMute: () => void;
+  muted: boolean;
+  playing: boolean;
+  hasMusic: boolean;
+};
+
+const FADE_MS = 1600;
+
+/** Background music with fade-in, start offset, loop and tab-visibility pause. */
+export function useGiftAudio(music: GiftMusic | undefined, enabled = true): GiftAudio {
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [muted, setMuted] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const fadeRef = useRef<number | null>(null);
+  const startAt = music?.startAt ?? 0;
+
+  useEffect(() => {
+    if (!music || !enabled) return;
+    const audio = new Audio(music.url);
+    audio.loop = true;
+    audio.preload = "auto";
+    audio.volume = 0;
+    audio.crossOrigin = "anonymous";
+    audioRef.current = audio;
+
+    const onVisibility = () => {
+      if (document.hidden) audio.pause();
+      else if (!audio.muted && audio.currentTime > 0) audio.play().catch(() => {});
+    };
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => {
+      document.removeEventListener("visibilitychange", onVisibility);
+      if (fadeRef.current) cancelAnimationFrame(fadeRef.current);
+      audio.pause();
+      audio.src = "";
+      audioRef.current = null;
+    };
+  }, [music, enabled]);
+
+  const fadeIn = useCallback((audio: HTMLAudioElement) => {
+    const startedAt = performance.now();
+    const tick = () => {
+      const t = Math.min(1, (performance.now() - startedAt) / FADE_MS);
+      audio.volume = t * t;
+      if (t < 1) fadeRef.current = requestAnimationFrame(tick);
+    };
+    fadeRef.current = requestAnimationFrame(tick);
+  }, []);
+
+  const start = useCallback(async () => {
+    const audio = audioRef.current;
+    if (!audio || !audio.paused) return;
+    try {
+      if (audio.currentTime === 0 && startAt > 0) audio.currentTime = startAt;
+      await audio.play();
+      setPlaying(true);
+      fadeIn(audio);
+    } catch {
+      // Autoplay blocked — the next gesture will retry.
+      setPlaying(false);
+    }
+  }, [fadeIn, startAt]);
+
+  const toggleMute = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.muted = !audio.muted;
+    setMuted(audio.muted);
+    if (!audio.muted && audio.paused) audio.play().catch(() => {});
+  }, []);
+
+  return { start, toggleMute, muted, playing, hasMusic: Boolean(music) };
+}

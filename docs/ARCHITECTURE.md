@@ -114,6 +114,28 @@ interface TemplateProps<TFields> {
 }
 ```
 
+### Runtime pieces
+
+- `_shared/GiftRenderer.tsx` — the only mount point. Lazy-loads the chunk, preloads photos/audio,
+  shows the branded loading screen (≥1.6s so the moment lands), applies theme variables
+  (`--gift-accent*`, `--gift-font-*`), wraps in an error boundary, adds the watermark.
+- `_shared/i18n.ts` — templates carry their own en/es strings so they render with no app context.
+- `_shared/hooks` — `useGiftAudio` (gesture-started, fade-in, tab-visibility pause),
+  `usePreloadAssets`, `useContainerSize` (templates size to their container, never the viewport),
+  `useGyroParallax` (iOS permission aware, pointer fallback), `useShake`, `useCountdown`.
+- `_shared/{Typewriter,RichMessage,Countdown,SurpriseReveal,EndScreen,SoundToggle}` — the pieces every
+  template composes so the base features feel identical across templates.
+- Demo assets: `public/demo/photos/*.webp` (generated, referenced by `_shared/demo-photos.ts`) and
+  `public/audio/library/still-light.wav` (synthesised by `scripts/gen-demo-audio.mjs`).
+
+### Scripts
+
+| Script | Purpose |
+| --- | --- |
+| `node scripts/verify-templates.mjs <outDir>` | Headless phone-size walkthrough of every template with screenshots (needs `npm run dev` + `npx playwright install chromium`). |
+| `node scripts/capture-thumbnails.mjs` | Regenerates `public/templates/<slug>/poster.jpg` and `preview.webm` for the gallery. |
+| `node scripts/gen-demo-audio.mjs` | Re-renders the demo ambient track. |
+
 ### Adding a template
 
 1. `mkdir src/templates/<slug>` and create the five files above.
