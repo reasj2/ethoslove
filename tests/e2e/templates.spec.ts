@@ -35,3 +35,15 @@ test.describe("template engine", () => {
     await expect(page.getByRole("button", { name: /continue/i })).toBeVisible({ timeout: 15000 });
   });
 });
+
+test.describe("second batch demos", () => {
+  for (const slug of ["birthday-cinema", "jar-of-reasons", "scratch-card", "midnight-countdown"]) {
+    test(`${slug} demo loads past the loading screen`, async ({ page }) => {
+      await page.goto(`/demo/${slug}`);
+      const loading = page.getByText(/someone made this for you/i);
+      await expect(loading).toBeVisible();
+      await expect(loading).toBeHidden({ timeout: 25000 });
+      await expect(page.locator("[data-template]").first()).toHaveAttribute("data-template", slug);
+    });
+  }
+});

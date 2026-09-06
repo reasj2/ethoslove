@@ -2,17 +2,25 @@ import type { Occasion } from "@/config/occasions";
 import type { TemplateManifest, TemplateModule, TemplateTier } from "./types";
 import { manifest as theLetter } from "./the-letter/manifest";
 import { manifest as constellations } from "./constellations/manifest";
+import { manifest as birthdayCinema } from "./birthday-cinema/manifest";
+import { manifest as jarOfReasons } from "./jar-of-reasons/manifest";
+import { manifest as scratchCard } from "./scratch-card/manifest";
+import { manifest as midnightCountdown } from "./midnight-countdown/manifest";
 
 /**
  * Manifests are eager (tiny, safe to import on the server).
  * Template code is lazy: each entry is its own chunk, loaded only when rendered.
  */
-export const TEMPLATE_MANIFESTS: readonly TemplateManifest[] = [theLetter, constellations];
+export const TEMPLATE_MANIFESTS: readonly TemplateManifest[] = [theLetter, constellations, birthdayCinema, jarOfReasons, scratchCard, midnightCountdown];
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 const loaders: Record<string, () => Promise<{ template: TemplateModule<any> }>> = {
   "the-letter": () => import("./the-letter"),
   constellations: () => import("./constellations"),
+  "birthday-cinema": () => import("./birthday-cinema"),
+  "jar-of-reasons": () => import("./jar-of-reasons"),
+  "scratch-card": () => import("./scratch-card"),
+  "midnight-countdown": () => import("./midnight-countdown"),
 };
 /* eslint-enable @typescript-eslint/no-explicit-any */
 

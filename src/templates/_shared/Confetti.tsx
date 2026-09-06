@@ -1,0 +1,78 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
+type Piece = { x: number; y: number; vx: number; vy: number; w: number; h: number; rot: number; vr: number; color: string; life: number };
+
+/**
+ * Canvas confetti cannon. Mount with a `burst` counter; each increment fires once from
+ * `origin` (fractions of the container). Cheap: rects only, no images.
+ */
+export function Confetti({ burst, colors, origin = { x: 0.5, y: 0.6 }, count = 160, className }: { burst: number; colors: string[]; origin?: { x: number; y: number }; count?: number; className?: string }) {
+  const ref = useRef<HTMLCanvasElement>(null);
+  const pieces = useRef<Piece[]>([]);
+  const raf = useRef(0);
+
+  useEffect(() => {
+    if (burst === 0) return;
+    const canvas = ref.current;
+    if (!canvas) return;
+    const parent = canvas.parentElement!;
+    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    const w = parent.clientWidth;
+    const h = parent.clientHeight;
+    canvas.width = w * dpr;
+    canvas.height = h * dpr;
+    canvas.style.width = `${w}px`;
+    canvas.style.height = `${h}px`;
+    const ctx = canvas.getContext("2d")!;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    for (let i = 0; i < count; i++) {
+      const a = -Math.PI / 2 + (Math.random() - 0.5) * 1.4;
+      const s = 520 + Math.random() * 520;
+      pieces.current.push({
+        x: w * origin.x,
+        y: h * origin.y,
+        vx: Math.cos(a) * s,
+        vy: Math.sin(a) * s,
+        w: 6 + Math.random() * 6,
+        h: 8 + Math.random() * 10,
+        rot: Math.random() * Math.PI,
+        vr: (Math.random() - 0.5) * 12,
+        color: colors[i % colors.length],
+        life: 2.6 + Math.random() * 1.4,
+      });
+    }
+    let last = performance.now();
+    cancelAnimationFrame(raf.current);
+    const tick = (now: number) => {
+      const dt = Math.min(0.04, (now - last) / 1000);
+      last = now;
+      ctx.clearRect(0, 0, w, h);
+      pieces.current = pieces.current.filter((p) => p.life > 0 && p.y < h + 40);
+      for (const p of pieces.current) {
+        p.life -= dt;
+        p.vy += 900 * dt;
+        p.vx *= 0.985;
+        p.vy *= 0.99;
+        p.x += p.vx * dt;
+        p.y += p.vy * dt;
+        p.rot += p.vr * dt;
+        ctx.save();
+        ctx.translate(p.x, p.y);
+        ctx.rotate(p.rot);
+        ctx.globalAlpha = Math.min(1, p.life);
+        ctx.fillStyle = p.color;
+        ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * Math.abs(Math.cos(p.rot * 1.7)));
+        ctx.restore();
+      }
+      if (pieces.current.length) raf.current = requestAnimationFrame(tick);
+      else ctx.clearRect(0, 0, w, h);
+    };
+    raf.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf.current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [burst]);
+
+  return <canvas ref={ref} className={className ?? "pointer-events-none absolute inset-0 z-30"} aria-hidden="true" />;
+}
