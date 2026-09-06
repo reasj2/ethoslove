@@ -32,7 +32,11 @@ export async function POST(request: NextRequest) {
   const needed = PRODUCTS[product].picks;
   if (Number.isFinite(needed) && slugs.length !== needed) return NextResponse.json({ error: "wrong_template_count", needed }, { status: 400 });
 
-  const currency: Currency = parsed.data.currency ?? currencyFor(request.headers.get("x-vercel-ip-country") ?? request.headers.get("accept-language")?.split(",")[0]);
+  const wanted: Currency = parsed.data.currency ?? currencyFor(request.headers.get("x-vercel-ip-country") ?? request.headers.get("accept-language")?.split(",")[0]);
+  // Only charge in a currency the Price actually carries; otherwise fall back to its default.
+  const priceObject = await stripe.prices.retrieve(price, { expand: ["currency_options"] });
+  const supported = new Set<string>([priceObject.currency, ...Object.keys(priceObject.currency_options ?? {})]);
+  const currency: Currency = supported.has(wanted) ? wanted : (priceObject.currency as Currency);
   const { data: purchase, error } = await supabase
     .from("purchases")
     .insert({ user_id: user.id, product, template_slugs: product === "everything" ? [] : slugs, amount: PRODUCTS[product].amounts[currency], currency, status: "pending" })
@@ -50,6 +54,8 @@ export async function POST(request: NextRequest) {
     client_reference_id: purchase.id,
     metadata: { purchase_id: purchase.id, user_id: user.id, product, template_slugs: slugs.join(",") },
     allow_promotion_codes: true,
+    // Shared Stripe account: make the charge recognisable on statements.
+    payment_intent_data: { statement_descriptor_suffix: "ETHOS" },
     automatic_tax: process.env.STRIPE_AUTOMATIC_TAX === "true" ? { enabled: true } : undefined,
     success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}&return=${encodeURIComponent(back)}`,
     cancel_url: `${origin}${back}`,
