@@ -3,9 +3,10 @@ import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { notifyUnlocked } from "@/lib/email/notify";
 
 /**
- * Flips scheduled gifts to live once their unlock time passes and emails the sender.
- * Recipients don't depend on this (the public RPC checks unlock_at itself); it keeps the
- * dashboard honest and sends the "it's time" email. Vercel Cron calls it every 5 minutes.
+ * Backstop for scheduled gifts: flips any whose unlock time passed to live and emails the
+ * sender. Recipients never wait on it (the public RPC checks unlock_at itself and the gift
+ * page promotes on first open). Vercel Hobby only allows daily crons, so vercel.json runs it
+ * once a day; on Pro you can switch the schedule back to every few minutes.
  */
 export async function GET(request: NextRequest) {
   const secret = process.env.CRON_SECRET;

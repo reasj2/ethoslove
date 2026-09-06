@@ -42,8 +42,12 @@ events `checkout.session.completed`, `checkout.session.async_payment_succeeded`,
 
 ## 4. Cron
 
-`vercel.json` already schedules `/api/cron/unlock` every five minutes. Vercel sends
-`Authorization: Bearer $CRON_SECRET` automatically once the variable exists.
+`vercel.json` schedules `/api/cron/unlock` once a day (`0 8 * * *`). That is the most the
+**Hobby** plan allows; a more frequent schedule makes every deployment fail instantly with a
+link to Vercel's cron pricing page. Scheduled gifts don't depend on it: the recipient page
+flips a gift to live (and emails you) the first time it is opened after its unlock time. On
+Pro you can change the schedule to `*/5 * * * *`. Vercel sends `Authorization: Bearer
+$CRON_SECRET` automatically once the variable exists.
 
 ## 5. Smoke test on the live URL
 

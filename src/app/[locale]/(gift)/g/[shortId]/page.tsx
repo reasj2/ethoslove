@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { fetchPublicGift, passwordCookieName } from "@/lib/gift/public";
+import { promoteScheduledGift } from "@/lib/gift/promote";
 import { unseal } from "@/lib/crypto";
 import { isShortId } from "@/lib/gift/short-id";
 import { SITE } from "@/config/site";
@@ -36,6 +37,8 @@ export default async function GiftPage({ params }: PageProps<"/[locale]/g/[short
   const password = await unseal(jar.get(passwordCookieName(shortId))?.value);
   const gift = await fetchPublicGift(shortId, password);
   if (!gift) notFound();
+  // Scheduled gifts go live on first open once their time has passed; the daily cron is a backstop.
+  if (gift.status === "scheduled" && gift.unlocked) await promoteScheduledGift(gift.id);
 
   if (!gift.unlocked && gift.unlockAt) {
     return <ScheduledScreen senderName={gift.senderName} unlockAt={gift.unlockAt} timezone={gift.timezone} locale={gift.locale} />;

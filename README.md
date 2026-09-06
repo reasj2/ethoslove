@@ -107,5 +107,6 @@ SMTP with host `smtp.resend.com`, port `465`, user `resend`, password = your Res
 
 ## Scheduled gifts
 
-`/api/cron/unlock` flips scheduled gifts to live once their time passes and emails the sender.
+Scheduled gifts flip to live (and email the sender) the first time they're opened after their
+unlock time; `/api/cron/unlock` is a daily backstop for the ones nobody opened yet.
 `vercel.json` runs it every five minutes; set `CRON_SECRET` so only Vercel can call it.
