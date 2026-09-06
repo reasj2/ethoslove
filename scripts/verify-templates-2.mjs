@@ -104,5 +104,46 @@ if (!only || only === "midnight") {
   await shot("midnight-03-gift");
 }
 
+if (!only || only === "timeline") {
+  await go("our-timeline");
+  await shot("timeline-01-cover");
+  await page.getByRole("button", { name: /scroll to begin/i }).click();
+  await page.waitForTimeout(1200);
+  const sc = page.locator(".overflow-y-auto").first();
+  for (let i = 0; i < 8; i++) {
+    await sc.evaluate((el) => el.scrollBy({ top: el.clientHeight * 0.9, behavior: "instant" }));
+    await page.waitForTimeout(500);
+    if (i === 2) await shot("timeline-02-milestone");
+  }
+  await page.waitForTimeout(1500);
+  await shot("timeline-03-ending");
+}
+
+if (!only || only === "vinyl") {
+  await go("vinyl");
+  await shot("vinyl-01-turntable");
+  await page.getByRole("button", { name: /drop the needle/i }).click();
+  await page.waitForTimeout(1800);
+  await shot("vinyl-02-playing");
+  const sc = page.locator(".overflow-y-auto").first();
+  await sc.evaluate((el) => el.scrollBy({ top: 700, behavior: "instant" }));
+  await page.waitForTimeout(1500);
+  await shot("vinyl-03-crate");
+}
+
+if (!only || only === "museum") {
+  await go("museum");
+  await shot("museum-01-entrance");
+  await page.getByRole("button", { name: /^enter$/i }).click();
+  await page.waitForTimeout(1500);
+  await shot("museum-02-room");
+  for (let i = 0; i < 6; i++) {
+    await page.getByRole("button", { name: /next room/i }).first().click().catch(() => {});
+    await page.waitForTimeout(700);
+  }
+  await page.waitForTimeout(1500);
+  await shot("museum-03-walltext");
+}
+
 await browser.close();
 console.log(errors.length ? `ERRORS:\n${errors.join("\n")}` : "no page errors");
