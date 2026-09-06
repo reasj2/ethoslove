@@ -145,5 +145,90 @@ if (!only || only === "museum") {
   await shot("museum-03-walltext");
 }
 
+if (!only || only === "frontpage") {
+  await go("front-page");
+  await page.waitForTimeout(1600);
+  await shot("frontpage-01-landed");
+  await page.getByRole("button", { name: /tap to read/i }).click();
+  await page.waitForTimeout(1500);
+  await shot("frontpage-02-top");
+  const sc = page.locator(".overflow-y-auto").first();
+  await sc.evaluate((el) => el.scrollBy({ top: 900, behavior: "instant" }));
+  await page.waitForTimeout(800);
+  await shot("frontpage-03-columns");
+  await sc.evaluate((el) => el.scrollTo({ top: el.scrollHeight, behavior: "instant" }));
+  await page.waitForTimeout(1200);
+  await shot("frontpage-04-back");
+}
+
+if (!only || only === "fortune") {
+  await go("fortune-cookie");
+  await shot("fortune-01-plate");
+  await page.locator("[data-cookie='0']").click();
+  await page.waitForTimeout(1200);
+  await shot("fortune-02-slip");
+  await page.mouse.click(195, 60);
+  await page.waitForTimeout(600);
+  for (let i = 1; i < 8; i++) {
+    await page.locator(`[data-cookie='${i}']`).click({ force: true });
+    await page.waitForTimeout(500);
+    await page.mouse.click(195, 60);
+    await page.waitForTimeout(400);
+  }
+  await page.waitForTimeout(1500);
+  await shot("fortune-03-finale");
+}
+
+if (!only || only === "thread") {
+  await go("text-thread");
+  await shot("thread-01-gate");
+  await page.getByRole("button", { name: /tap to open the chat/i }).click();
+  await page.waitForTimeout(4500);
+  await shot("thread-02-typing");
+  await page.getByText(/read this when you land|window seat|arrivals hall/i).first().waitFor({ timeout: 60000 });
+  await page.waitForTimeout(2500);
+  await shot("thread-03-letter");
+}
+
+if (!only || only === "arcade") {
+  await go("arcade");
+  await shot("arcade-01-title");
+  await page.getByRole("button", { name: /tap to start/i }).click();
+  await page.waitForTimeout(1500);
+  await shot("arcade-02-playing");
+  // cheat: drive the basket under the nearest good item via the exposed frame width
+  const frame = page.locator("canvas").first();
+  const box = await frame.boundingBox();
+  for (let i = 0; i < 40; i++) {
+    const x = box.x + 10 + ((i * 37) % (box.width - 20));
+    await page.mouse.move(x, box.y + box.height - 20);
+    await page.mouse.down();
+    await page.mouse.move(x + 5, box.y + box.height - 20);
+    await page.mouse.up();
+    await page.waitForTimeout(250);
+    if (await page.getByText(/level clear|you win|ouch/i).isVisible().catch(() => false)) break;
+  }
+  await page.waitForTimeout(600);
+  await shot("arcade-03-overlay");
+  const skip = page.getByRole("button", { name: /skip level/i });
+  for (let i = 0; i < 16; i++) {
+    if (await page.getByText(/you win/i).isVisible().catch(() => false)) break;
+    if (await skip.isVisible().catch(() => false)) {
+      await skip.click();
+      await page.waitForTimeout(500);
+    } else if (await page.getByRole("button", { name: /next level/i }).isVisible().catch(() => false)) {
+      await page.getByRole("button", { name: /next level/i }).click();
+      // stand still and lose on purpose; the fail screen has the skip button
+      await page.getByText(/ouch|level clear|you win/i).first().waitFor({ timeout: 40000 });
+      await page.waitForTimeout(400);
+    } else await page.waitForTimeout(800);
+  }
+  await page.waitForTimeout(800);
+  await shot("arcade-04-win");
+  await page.getByRole("button", { name: /read message/i }).click();
+  await page.waitForTimeout(2500);
+  await shot("arcade-05-message");
+}
+
 await browser.close();
 console.log(errors.length ? `ERRORS:\n${errors.join("\n")}` : "no page errors");

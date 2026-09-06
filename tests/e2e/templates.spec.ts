@@ -36,8 +36,8 @@ test.describe("template engine", () => {
   });
 });
 
-test.describe("second batch demos", () => {
-  for (const slug of ["birthday-cinema", "jar-of-reasons", "scratch-card", "midnight-countdown"]) {
+test.describe("later batch demos", () => {
+  for (const slug of ["birthday-cinema", "jar-of-reasons", "scratch-card", "midnight-countdown", "our-timeline", "vinyl", "museum", "front-page", "fortune-cookie", "text-thread", "arcade"]) {
     test(`${slug} demo loads past the loading screen`, async ({ page }) => {
       await page.goto(`/demo/${slug}`);
       const loading = page.getByText(/someone made this for you/i);

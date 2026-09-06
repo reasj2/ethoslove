@@ -78,6 +78,40 @@ const SCRIPTS = {
     await page.waitForTimeout(6000);
     return poster;
   },
+  "front-page": async (page) => {
+    await page.getByRole("button", { name: /tap to read/i }).waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1800);
+    const poster = await page.screenshot();
+    await page.getByRole("button", { name: /tap to read/i }).click();
+    await page.waitForTimeout(1200);
+    const sc = page.locator(".overflow-y-auto").first();
+    for (let i = 0; i < 4; i++) { await sc.evaluate((el) => el.scrollBy({ top: 380, behavior: "smooth" })); await page.waitForTimeout(900); }
+    return poster;
+  },
+  "fortune-cookie": async (page) => {
+    await page.locator("[data-cookie='0']").waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1400);
+    const poster = await page.screenshot();
+    for (let i = 0; i < 3; i++) { await page.locator(`[data-cookie='${i}']`).click({ force: true }); await page.waitForTimeout(1800); await page.mouse.click(195, 60); await page.waitForTimeout(600); }
+    return poster;
+  },
+  "text-thread": async (page) => {
+    await page.getByRole("button", { name: /tap to open the chat/i }).waitFor({ timeout: 15000 });
+    await page.getByRole("button", { name: /tap to open the chat/i }).click();
+    await page.waitForTimeout(5200);
+    const poster = await page.screenshot();
+    await page.waitForTimeout(3500);
+    return poster;
+  },
+  arcade: async (page) => {
+    await page.getByRole("button", { name: /tap to start/i }).waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1400);
+    const poster = await page.screenshot();
+    await page.getByRole("button", { name: /tap to start/i }).click();
+    const box = await page.locator("canvas").first().boundingBox();
+    for (let i = 0; i < 26; i++) { const x = box.x + 10 + ((i * 41) % (box.width - 20)); await page.mouse.move(x, box.y + box.height - 20); await page.mouse.down(); await page.mouse.up(); await page.waitForTimeout(260); }
+    return poster;
+  },
   "the-letter": async (page) => {
     await page.getByRole("button", { name: /tap the seal/i }).waitFor({ timeout: 15000 });
     await page.waitForTimeout(1400);
