@@ -19,11 +19,11 @@ function safeNext(value: string | null): string {
   return value;
 }
 
-export function AuthForm({ mode }: { mode: "login" | "signup" }) {
+export function AuthForm({ mode, next: nextOverride, compact = false }: { mode: "login" | "signup"; next?: string; compact?: boolean }) {
   const t = useTranslations("auth");
   const locale = useLocale();
   const search = useSearchParams();
-  const next = safeNext(search.get("next"));
+  const next = safeNext(nextOverride ?? search.get("next"));
   const callbackError = search.get("error") === "callback";
 
   const [email, setEmail] = useState("");
@@ -50,8 +50,8 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
   };
 
   return (
-    <div className="w-full max-w-md rounded-3xl border border-border bg-card p-7 shadow-lift sm:p-9">
-      <h1 className="display-md">{mode === "login" ? t("loginTitle") : t("signupTitle")}</h1>
+    <div className={compact ? "w-full" : "w-full max-w-md rounded-3xl border border-border bg-card p-7 shadow-lift sm:p-9"}>
+      <h1 className={compact ? "font-display text-xl" : "display-md"}>{mode === "login" ? t("loginTitle") : t("signupTitle")}</h1>
       <p className="mt-2 text-sm text-muted-foreground">
         {mode === "login" ? t("loginSubtitle") : t("signupSubtitle")}
       </p>

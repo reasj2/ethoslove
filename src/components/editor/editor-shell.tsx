@@ -1,0 +1,169 @@
+"use client";
+
+import { useEffect, useMemo, useState } from "react";
+import { useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
+import type { GiftData, GiftLocale } from "@/lib/gift/schema";
+import type { TemplateManifest, TemplateModule } from "@/templates/types";
+import { loadTemplate } from "@/templates/registry";
+import { useEditor, type RemoteGift } from "@/lib/editor/store";
+import { getSupabaseBrowserClient } from "@/lib/supabase/client";
+import { TopBar } from "./top-bar";
+import { PreviewPane } from "./preview-pane";
+import { WhoSection } from "./sections/who";
+import { WordsSection } from "./sections/words";
+import { PhotosSection } from "./sections/photos";
+import { MusicSection } from "./sections/music";
+import { LookSection } from "./sections/look";
+import { ExtrasSection } from "./sections/extras";
+import { PublishSheet } from "./publish-sheet";
+
+export type EditorShellProps = {
+  slug: string;
+  manifest: TemplateManifest;
+  user: { id: string; email: string } | null;
+  remote: RemoteGift | null;
+  supabaseConfigured: boolean;
+  aiEnabled: boolean;
+  paymentsEnabled: boolean;
+};
+
+function blankGift(manifest: TemplateManifest, locale: GiftLocale, mod: TemplateModule): GiftData {
+  let fields: Record<string, unknown> = {};
+  try {
+    fields = mod.fieldsSchema.parse({}) as Record<string, unknown>;
+  } catch {
+    fields = {};
+  }
+  return {
+    version: 1,
+    templateSlug: manifest.slug,
+    locale,
+    title: "",
+    recipientName: "",
+    senderName: "",
+    message: "",
+    messageStyle: "typewriter",
+    photos: [],
+    accentColor: manifest.defaultAccent,
+    fontPairing: "editorial",
+    showReactionCta: true,
+    watermark: true,
+    fields,
+  };
+}
+
+export function EditorShell({ slug, manifest, user, remote, supabaseConfigured, aiEnabled, paymentsEnabled }: EditorShellProps) {
+  const locale = useLocale() as GiftLocale;
+  const search = useSearchParams();
+  const [mod, setMod] = useState<TemplateModule | null>(null);
+  const [view, setView] = useState<"edit" | "preview">("edit");
+  const [publishOpen, setPublishOpen] = useState(false);
+  const [resumeDismissed, setResumeDismissed] = useState(false);
+  const resumePublish = search.get("resume") === "publish";
+  const hydrated = useEditor((s) => s.hydrated);
+  const save = useEditor((s) => s.save);
+  const authed = useEditor((s) => s.authed);
+
+  // Load the template module (schema + field meta), then hydrate the store.
+  useEffect(() => {
+    let active = true;
+    loadTemplate(slug).then((m) => {
+      if (!active || !m) return;
+      setMod(m);
+      void useEditor.getState().init({
+        slug,
+        manifest,
+        initial: blankGift(manifest, locale, m),
+        authed: Boolean(user),
+        userId: user?.id ?? null,
+        remote,
+      });
+    });
+    return () => {
+      active = false;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [slug]);
+
+  // Keep auth state fresh (login in another tab, magic link return).
+  useEffect(() => {
+    const supabase = getSupabaseBrowserClient();
+    if (!supabase) return;
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      useEditor.getState().setAuth(Boolean(session?.user), session?.user?.id ?? null);
+    });
+    return () => sub.subscription.unsubscribe();
+  }, []);
+
+  // Warn before leaving with unsaved local-only work being uploaded.
+  useEffect(() => {
+    const onBeforeUnload = (e: BeforeUnloadEvent) => {
+      if (useEditor.getState().save === "saving") e.preventDefault();
+    };
+    window.addEventListener("beforeunload", onBeforeUnload);
+    return () => window.removeEventListener("beforeunload", onBeforeUnload);
+  }, []);
+
+  const templateName = useMemo(() => manifest.name[locale], [manifest, locale]);
+
+  return (
+    <div className="flex min-h-dvh flex-col bg-paper">
+      <TopBar templateName={templateName} save={save} view={view} onView={setView} onPublish={() => setPublishOpen(true)} />
+      <div className="flex flex-1 md:grid md:grid-cols-[minmax(380px,460px)_1fr]">
+        <div className={view === "edit" ? "block" : "hidden md:block"}>
+          <div className="mx-auto max-w-[520px] px-5 pt-8 pb-32 sm:px-7 md:pb-16">
+            {hydrated && mod ? (
+              <div className="flex flex-col divide-y divide-border [&>section]:py-9 [&>section:first-child]:pt-0">
+                <WhoSection />
+                <WordsSection aiEnabled={aiEnabled} />
+                <PhotosSection manifest={manifest} />
+                {manifest.features.music ? <MusicSection /> : null}
+                <LookSection manifest={manifest} mod={mod} locale={locale} />
+                <ExtrasSection manifest={manifest} />
+              </div>
+            ) : (
+              <SkeletonForm />
+            )}
+          </div>
+        </div>
+        <div className={view === "preview" ? "block flex-1" : "hidden md:block"}>
+          <div className="md:sticky md:top-14 md:h-[calc(100dvh-3.5rem)]">
+            <div className="hidden h-full items-center justify-center bg-[radial-gradient(60%_50%_at_50%_45%,rgba(244,199,195,0.35),transparent)] p-8 md:flex">
+              <PreviewPane slug={slug} />
+            </div>
+            <div className="h-[calc(100dvh-3.5rem)] md:hidden">
+              <PreviewPane slug={slug} fullscreen />
+            </div>
+          </div>
+        </div>
+      </div>
+      <PublishSheet
+        open={publishOpen || (resumePublish && hydrated && authed && !resumeDismissed)}
+        onOpenChange={(v) => {
+          setPublishOpen(v);
+          if (!v) setResumeDismissed(true);
+        }}
+        manifest={manifest}
+        slug={slug}
+        supabaseConfigured={supabaseConfigured}
+        paymentsEnabled={paymentsEnabled}
+      />
+    </div>
+  );
+}
+
+function SkeletonForm() {
+  return (
+    <div className="flex flex-col gap-8" aria-hidden="true">
+      {[0, 1, 2].map((i) => (
+        <div key={i} className="flex flex-col gap-3">
+          <div className="h-3 w-10 rounded bg-ink/10" />
+          <div className="h-6 w-2/3 rounded bg-ink/10" />
+          <div className="h-11 rounded-xl bg-ink/5" />
+          <div className="h-11 rounded-xl bg-ink/5" />
+        </div>
+      ))}
+    </div>
+  );
+}

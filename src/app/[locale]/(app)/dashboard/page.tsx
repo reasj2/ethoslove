@@ -3,8 +3,11 @@ import { Plus } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { isConfigured } from "@/lib/env";
+import { getCurrentUser } from "@/lib/auth/get-user";
+import { listMyGifts } from "@/lib/gift/dashboard";
 import { Button } from "@/components/ui/button";
 import { NotConnected } from "@/components/app/not-connected";
+import { GiftCard } from "@/components/dashboard/gift-card";
 
 export async function generateMetadata({ params }: Omit<PageProps<"/[locale]/dashboard">, "searchParams">): Promise<Metadata> {
   const { locale } = await params;
@@ -16,6 +19,8 @@ export default async function DashboardPage({ params }: PageProps<"/[locale]/das
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("dashboard");
+  const user = await getCurrentUser();
+  const gifts = user ? await listMyGifts(user.id) : [];
 
   return (
     <div className="mx-auto w-full max-w-6xl px-6 py-10">
@@ -32,13 +37,21 @@ export default async function DashboardPage({ params }: PageProps<"/[locale]/das
         </Button>
       </div>
       {!isConfigured.supabase ? <NotConnected /> : null}
-      <div className="mt-12 flex flex-col items-center justify-center rounded-3xl border border-dashed border-border py-20 text-center">
-        <p className="font-display text-2xl">{t("empty")}</p>
-        <p className="mt-2 max-w-sm text-sm text-muted-foreground">{t("phaseNote")}</p>
-        <Button asChild variant="outline" className="mt-6 rounded-full">
-          <Link href="/templates">{t("emptyCta")}</Link>
-        </Button>
-      </div>
+      {gifts.length === 0 ? (
+        <div className="mt-12 flex flex-col items-center justify-center rounded-3xl border border-dashed border-border py-20 text-center">
+          <p className="font-display text-2xl">{t("empty")}</p>
+          <p className="mt-2 max-w-sm text-sm text-muted-foreground">{t("emptyBlurb")}</p>
+          <Button asChild variant="outline" className="mt-6 rounded-full">
+            <Link href="/templates">{t("emptyCta")}</Link>
+          </Button>
+        </div>
+      ) : (
+        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {gifts.map((g) => (
+            <GiftCard key={g.id} gift={g} />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

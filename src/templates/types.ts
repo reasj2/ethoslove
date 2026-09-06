@@ -50,9 +50,13 @@ export interface TemplateProps<TFields = Record<string, unknown>> {
   onMakeOne?: () => void;
 }
 
+export type FieldMeta = { label: string; help?: string; options?: Record<string, string> };
+
 export interface TemplateModule<TFields = Record<string, unknown>> {
   manifest: TemplateManifest;
   fieldsSchema: z.ZodType<TFields>;
+  /** Labels / help for the template-specific fields, per locale. Keys match the schema. */
+  fieldMeta?: Record<GiftLocale, Record<string, FieldMeta>>;
   /** One complete demo per locale; the gallery, editor and detail page use it. */
   demoData: Record<GiftLocale, GiftData<TFields>>;
   Template: ComponentType<TemplateProps<TFields>>;

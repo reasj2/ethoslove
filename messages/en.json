@@ -43,14 +43,103 @@
     "seeReactions": "Reactions"
   },
   "home": {
-    "eyebrow": "Digital gifts, made cinematic",
-    "headline": "Give them a moment they'll open again and again.",
-    "subheadline": "A personalised, animated gift page with your photos, their song and your words. Shared with a link or a QR code. Built in ten minutes, remembered for years.",
-    "cta": "Create a gift — it's free to start",
-    "secondaryCta": "See the templates",
-    "trust": "No account needed to start. No subscription, ever.",
-    "phoneCaption": "Someone made this for you, Ana…",
-    "scaffoldNote": "The full homepage lands in Phase 6. For now, this is the shell with the design system in place."
+    "hero": {
+      "eyebrow": "For the people you can't stop thinking about",
+      "h1a": "Give them a moment they'll",
+      "h1b": "open again",
+      "h1c": "and again.",
+      "sub": "A personalised, animated gift page with your photos, their song and your words. Shared with a link or a QR code. Built in ten minutes, remembered for years.",
+      "cta": "Create a gift — it's free to start",
+      "demo": "Watch the demo",
+      "videoAlt": "The Letter template: a wax seal breaks, a letter unfolds, photos drop onto a desk.",
+      "caption": "The Letter, one of two free templates. That's the real thing, not a mockup.",
+      "facts": {
+        "free": {
+          "a": "2 templates",
+          "b": "free, forever"
+        },
+        "noAccount": {
+          "a": "No account",
+          "b": "until you publish"
+        },
+        "once": {
+          "a": "Pay once",
+          "b": "never a subscription"
+        },
+        "langs": {
+          "a": "English & Spanish",
+          "b": "for the gift and the site"
+        }
+      }
+    },
+    "templates": {
+      "eyebrow": "Templates",
+      "title": "Every template is a full experience. {free} are free.",
+      "blurb": "Not a themed card with a photo slot. Each one is a scene the recipient moves through — tapping, scrolling, holding, sometimes blowing out candles.",
+      "all": "See all templates",
+      "moreTitle": "Ten more coming",
+      "moreBlurb": "{name}, Our Timeline, Vinyl, Bloom, Jar of Reasons, Passport, Scratch Card, Midnight Countdown, Museum, Arcade."
+    },
+    "reactions": {
+      "eyebrow": "See the reaction",
+      "title": "The link goes out. The reply comes back.",
+      "blurb": "At the end of every gift there's a reaction button — an emoji, a note, or a 20-second voice message — delivered straight to you.",
+      "cards": [
+        {
+          "from": "Marco",
+          "to": "Ana",
+          "sent": "I made you something. Open it with sound on 💌",
+          "reply": "I'm at work and crying in the stairwell. Three years. THREE.",
+          "emoji": "😭",
+          "time": "22:41"
+        },
+        {
+          "from": "Lucas",
+          "to": "Sofía",
+          "sent": "Look up. Well — look at your phone.",
+          "reply": "You put the tent night in there. I found all six. Fourteen days.",
+          "emoji": "🥹",
+          "time": "07:12"
+        },
+        {
+          "from": "Dani",
+          "to": "Mamá",
+          "sent": "Feliz día, ma. Tap the seal.",
+          "reply": "Quién te enseñó a hacer esto?? Lo vi cuatro veces ya.",
+          "emoji": "❤️",
+          "time": "09:58"
+        }
+      ],
+      "placeholderNote": "Illustrated placeholders. We'll swap in real recipient reactions as they come in."
+    },
+    "how": {
+      "eyebrow": "How it works",
+      "title": "Ten minutes, honestly.",
+      "steps": [
+        {
+          "title": "Pick a template",
+          "body": "Try any of them full-screen first. Two are free; the rest unlock once and stay yours."
+        },
+        {
+          "title": "Add your photos and words",
+          "body": "Drop in photos, pick their song, write what you'd never say out loud. The preview updates as you type."
+        },
+        {
+          "title": "Share the link — or the card",
+          "body": "Send it on WhatsApp, iMessage, anywhere. Or print the QR card and hide it in a book."
+        }
+      ]
+    },
+    "occasions": {
+      "eyebrow": "Occasions",
+      "title": "For the day, or for no reason at all.",
+      "blurb": "Templates are tagged by occasion, but nothing stops you sending a birthday sky in March."
+    },
+    "final": {
+      "title": "Say the thing.",
+      "blurb": "The people we love mostly hear us in passing. This is the other way — a small, deliberate thing they can open twice.",
+      "cta": "Create a gift"
+    }
   },
   "footer": {
     "blurb": "Gifts that open like a story. Made for the people you can't stop thinking about.",
@@ -91,7 +180,41 @@
     "empty": "You haven't made a gift yet.",
     "emptyCta": "Make your first one",
     "newGift": "New gift",
-    "phaseNote": "Gift cards, stats and reactions arrive in Phase 5."
+    "emptyBlurb": "Pick a template, add a few photos and your words. It takes about ten minutes.",
+    "untitled": "Untitled",
+    "status": {
+      "draft": "Draft",
+      "scheduled": "Scheduled",
+      "live": "Live",
+      "archived": "Archived"
+    },
+    "opens": "Opens",
+    "viewers": "People",
+    "reactions": "Reactions",
+    "watched": "Watched",
+    "actions": "Actions",
+    "open": "Open",
+    "copyLink": "Copy link",
+    "copied": "Link copied",
+    "stats": "Stats",
+    "qrCard": "QR card",
+    "edit": "Edit",
+    "duplicate": "Duplicate",
+    "duplicated": "Duplicated as a new draft",
+    "delete": "Delete",
+    "deleted": "Deleted",
+    "cancel": "Cancel",
+    "deleteTitle": "Delete this gift?",
+    "deleteBlurb": "The link stops working immediately and the photos are removed. This can't be undone.",
+    "opensOverTime": "Opens, last 30 days",
+    "share": "Share",
+    "draftShare": "Publish the gift to get a link.",
+    "reactionsTitle": "Reactions",
+    "noReactions": "No reactions yet. They arrive here the moment someone sends one.",
+    "opensTotal": "{n} opens in the last 30 days",
+    "showTable": "Show as table",
+    "showChart": "Show as chart",
+    "day": "Day"
   },
   "account": {
     "title": "Account",
@@ -99,11 +222,242 @@
     "profile": "Profile",
     "purchases": "Purchases",
     "danger": "Danger zone",
-    "signedInAs": "Signed in as {email}"
+    "signedInAs": "Signed in as {email}",
+    "unlocks": "Unlocked templates",
+    "noUnlocks": "Nothing unlocked yet. Free templates work without one.",
+    "seePricing": "See pricing",
+    "everything": "Everything — all templates, forever",
+    "noPurchases": "No purchases yet.",
+    "product": {
+      "single": "One template",
+      "pick3": "Pick three",
+      "everything": "Everything"
+    },
+    "purchaseStatus": {
+      "pending": "pending",
+      "paid": "paid",
+      "refunded": "refunded"
+    },
+    "dangerBlurb": "Export everything we hold about you, or delete the account and all of its gifts.",
+    "export": "Export my data",
+    "deleteAccount": "Delete account",
+    "deleteConfirm": "This removes your account, every gift, upload and reaction, within 30 days. Type {email} to confirm.",
+    "deleteForever": "Delete forever",
+    "cancel": "Cancel"
   },
   "editor": {
     "title": "Editor",
-    "phaseNote": "The editor is built in Phase 3. This route already resolves the template: {slug}."
+    "back": "All templates",
+    "publish": "Publish",
+    "preview": "Preview",
+    "edit": "Edit",
+    "playFromStart": "Play from the start",
+    "stopPlaying": "Back to editing",
+    "saved": "Saved",
+    "saving": "Saving…",
+    "savedLocally": "Saved on this device",
+    "saveError": "Couldn't save",
+    "unsaved": "Unsaved changes",
+    "sections": {
+      "who": {
+        "n": "01",
+        "title": "Who is it for?",
+        "blurb": "Names show up in the loading screen, the greeting and the ending."
+      },
+      "words": {
+        "n": "02",
+        "title": "Your words",
+        "blurb": "This is the heart of it. Specific beats poetic every time."
+      },
+      "photos": {
+        "n": "03",
+        "title": "Photos",
+        "blurb": "Drag to reorder. Tap a photo to caption, crop or rotate it."
+      },
+      "music": {
+        "n": "04",
+        "title": "Music",
+        "blurb": "Their song, or something from our library. Starts when they open it."
+      },
+      "look": {
+        "n": "05",
+        "title": "The look",
+        "blurb": "Accent colour, type, and this template's own details."
+      },
+      "extras": {
+        "n": "06",
+        "title": "Extras",
+        "blurb": "A countdown, a hidden surprise, a password, a schedule."
+      }
+    },
+    "fields": {
+      "recipientName": "Their name",
+      "senderName": "Your name",
+      "title": "Title",
+      "titleHelp": "Optional. Shown on some templates and in the link preview.",
+      "locale": "Language of the gift",
+      "message": "Message",
+      "messagePlaceholder": "Start with a moment only the two of you remember…",
+      "messageStyle": "How the words appear",
+      "typewriter": "Typed out",
+      "fade": "Fade in",
+      "bold": "Bold",
+      "italic": "Italic",
+      "emoji": "Emoji",
+      "helpWrite": "Help me write it",
+      "helpWriteSoon": "The writing helper needs an API key. It's wired and will light up as soon as one is added.",
+      "charsLeft": "{n} characters left",
+      "accentColor": "Accent colour",
+      "customColor": "Custom",
+      "fontPairing": "Type pairing",
+      "editorial": "Editorial",
+      "editorialHint": "Serif display, clean body",
+      "modern": "Modern",
+      "modernHint": "Clean sans throughout",
+      "handwritten": "Handwritten",
+      "handwrittenHint": "Script display, clean body",
+      "showReactionCta": "Ask for a reaction at the end",
+      "showReactionCtaHelp": "They can send you back an emoji, a note or a voice message."
+    },
+    "photos": {
+      "drop": "Drop photos here, or",
+      "browse": "choose from your device",
+      "formats": "JPG, PNG, WebP, HEIC · up to {max} photos",
+      "processing": "Preparing…",
+      "uploading": "Uploading…",
+      "uploaded": "Uploaded",
+      "local": "On this device",
+      "failed": "Failed",
+      "caption": "Caption",
+      "captionPlaceholder": "Where, when, or what you remember",
+      "remove": "Remove",
+      "rotate": "Rotate",
+      "crop": "Crop",
+      "done": "Done",
+      "tooMany": "This template holds up to {max} photos.",
+      "free10": "Free gifts hold 10 photos. Unlock the template for 20."
+    },
+    "music": {
+      "none": "No music",
+      "library": "From the library",
+      "upload": "Upload your own",
+      "uploadHint": "MP3 or M4A, up to {mb} MB",
+      "startAt": "Start from",
+      "previewPlay": "Preview",
+      "previewStop": "Stop",
+      "mood": {
+        "warm": "Warm",
+        "dreamy": "Dreamy",
+        "calm": "Calm",
+        "hopeful": "Hopeful",
+        "cinematic": "Cinematic"
+      },
+      "licenseNote": "Library tracks are cleared for use in gifts."
+    },
+    "extras": {
+      "countdown": "Countdown",
+      "countdownHelp": "A live timer to a date that matters — the wedding, the flight, their birthday.",
+      "countdownLabel": "Label",
+      "countdownLabelPlaceholder": "Until we meet again",
+      "dateTime": "Date and time",
+      "timezone": "Time zone",
+      "surprise": "Final surprise",
+      "surpriseHelp": "A hidden line revealed at the very end.",
+      "surpriseText": "The secret",
+      "reveal": "How they reveal it",
+      "tap": "Tap",
+      "hold": "Press and hold",
+      "shake": "Shake the phone",
+      "password": "Password",
+      "passwordHelp": "They'll need it to open the gift. Premium.",
+      "passwordPlaceholder": "Something only they'd know",
+      "schedule": "Schedule the reveal",
+      "scheduleHelp": "Lock the gift until a moment — midnight on their birthday, say. Premium.",
+      "unlockAt": "Unlocks at",
+      "removeWatermark": "Remove the “Made with Ethos” footer",
+      "premiumBadge": "Premium"
+    },
+    "publishSheet": {
+      "title": "Ready to send?",
+      "subtitle": "Here's what {name} will get.",
+      "checklist": "Checklist",
+      "problems": {
+        "recipientName": "Add their name",
+        "senderName": "Add your name",
+        "message": "Write a message",
+        "photosMin": "Add at least {min} photo(s)",
+        "photosMax": "Too many photos for this template",
+        "uploadsPending": "Photos are still uploading"
+      },
+      "signInTitle": "Sign in to publish",
+      "signInBlurb": "Your draft is saved on this device. Sign in and we'll pick up right here.",
+      "paymentTitle": "Unlock to publish",
+      "paymentBlurb": "This gift uses premium features: {features}. Unlock this template once and keep it forever.",
+      "paymentSoon": "Payments aren't connected yet in this build. Free templates publish with the footer; premium unlocks arrive with Stripe.",
+      "featurePremiumTemplate": "a premium template",
+      "featureNoWatermark": "no footer",
+      "featureSchedule": "scheduling",
+      "featurePassword": "password",
+      "featurePhotos": "more than 10 photos",
+      "publishNow": "Publish now",
+      "publishScheduled": "Schedule it",
+      "publishing": "Publishing…",
+      "notConfigured": "Publishing needs Supabase. Add the keys to .env.local and restart.",
+      "error": "Publishing failed: {error}"
+    },
+    "share": {
+      "title": "It's live.",
+      "scheduledTitle": "It's scheduled.",
+      "subtitle": "Send {name} the link — or hand them the card.",
+      "scheduledSubtitle": "It unlocks {when}. Share the link now; they'll see a countdown until then.",
+      "copy": "Copy link",
+      "copied": "Copied",
+      "open": "Open the gift",
+      "shareNative": "Share…",
+      "whatsapp": "WhatsApp",
+      "imessage": "Messages",
+      "instagram": "Instagram",
+      "instagramHint": "Copy the link, then paste it in a DM or your story.",
+      "shareText": "I made you something. Open it with your sound on 💌 {url}",
+      "qrTitle": "QR card",
+      "qrBlurb": "Print it, tuck it in a card, stick it on the fridge.",
+      "dashboard": "See it in your gifts",
+      "another": "Make another"
+    },
+    "qr": {
+      "frame": "Frame",
+      "frameNone": "None",
+      "frameCircle": "Circle",
+      "frameHeart": "Heart",
+      "dots": "Dots",
+      "dotsRounded": "Rounded",
+      "dotsSquare": "Square",
+      "dotsDots": "Dots",
+      "dotsClassy": "Classy",
+      "colour": "Colour",
+      "background": "Background",
+      "gradient": "Gradient",
+      "centre": "Centre",
+      "centreNone": "None",
+      "centreLogo": "Ethos mark",
+      "centrePhoto": "A photo",
+      "downloadPng": "Download PNG",
+      "downloadSvg": "Download SVG",
+      "printCard": "Print-ready card"
+    },
+    "writer": {
+      "title": "Help me write it",
+      "blurb": "Give me a few real details and I'll draft three openings. Keep what's true, cut the rest.",
+      "occasion": "Occasion",
+      "relationship": "Who are they to you?",
+      "relationshipPlaceholder": "My partner of three years, my mum, my best friend…",
+      "facts": "Three real things",
+      "factsHelp": "Specific moments beat adjectives: the trip, the joke, the habit. One per line.",
+      "factsPlaceholder": "She hums when she cooks\nWe got lost in Lisbon on purpose\nShe always gives me the window seat",
+      "generate": "Write three drafts",
+      "use": "Use this one",
+      "error": "The writing helper isn't available right now."
+    }
   },
   "gift": {
     "loadingFor": "Someone made this for you, {name}…",
@@ -167,9 +521,88 @@
     "just-because": "Just because"
   },
   "pricing": {
-    "title": "Pricing",
-    "subtitle": "Start free. Pay once for the templates you love, keep them forever.",
-    "phaseNote": "Pricing cards and checkout are wired in Phase 5."
+    "eyebrow": "Pricing",
+    "title": "Pay once. Keep it forever.",
+    "subtitle": "Two templates are free, with a small footer. Unlock the ones you love with a single payment — no subscription, no renewals, no surprises.",
+    "oneTime": "No subscription. Pay once, keep forever.",
+    "bestValue": "Best value",
+    "priority": "Includes priority support",
+    "freeNote": "Free gifts include 10 photos and the “Made with Ethos” footer. Scheduling, passwords and voice reactions come with any unlock.",
+    "comingSoon": "Payments open soon. Free templates publish today.",
+    "checkoutError": "Couldn't start checkout. Please try again.",
+    "plans": {
+      "single": {
+        "name": "One template",
+        "blurb": "The one you can't stop thinking about.",
+        "cta": "Unlock one",
+        "features": [
+          "One premium template, forever",
+          "Unlimited gifts with it",
+          "No footer, 20 photos, video",
+          "Scheduling and password",
+          "QR designer and voice reactions"
+        ]
+      },
+      "pick3": {
+        "name": "Pick three",
+        "blurb": "Birthday, anniversary, and the one for your mum.",
+        "cta": "Pick three",
+        "features": [
+          "Any three templates, forever",
+          "Everything in One template",
+          "Mix free and premium",
+          "Pay once for all three"
+        ]
+      },
+      "everything": {
+        "name": "Everything",
+        "blurb": "Every template we've made — and every one we'll make.",
+        "cta": "Unlock everything",
+        "features": [
+          "All templates, now and future",
+          "Unlimited gifts, forever",
+          "No footer, 20 photos, video",
+          "Scheduling, passwords, voice replies",
+          "First access to new templates"
+        ]
+      }
+    },
+    "pick": {
+      "title": "Choose {n}",
+      "blurb": "You can change a pick until you pay.",
+      "continue": "Continue ({n}/{total})"
+    },
+    "faqTitle": "Questions people ask",
+    "faq": [
+      {
+        "q": "Is this a subscription?",
+        "a": "No. Every price is a one-time payment. What you unlock stays on your account for as long as it exists."
+      },
+      {
+        "q": "What does the free tier actually include?",
+        "a": "Two full templates (The Letter and Constellations), unlimited gifts, up to 10 photos per gift, background music, a countdown and a hidden final surprise. Free gifts show a small “Made with Ethos” footer."
+      },
+      {
+        "q": "Can I try a template before paying?",
+        "a": "Every template has a full live demo, and the editor is free to use with a live preview. You only pay when you publish something that needs a premium feature."
+      },
+      {
+        "q": "Do gift links expire?",
+        "a": "No. Links are meant to be permanent. If we ever had to change that we'd give you at least 90 days' notice."
+      },
+      {
+        "q": "Can I edit a gift after it's live?",
+        "a": "Yes. Edits go live at the same link the moment you save."
+      },
+      {
+        "q": "Which currencies and payment methods?",
+        "a": "USD, EUR and GBP, with cards, Apple Pay and Google Pay via Stripe. Prices include VAT where it applies."
+      },
+      {
+        "q": "Refunds?",
+        "a": "Unlocks are digital and delivered instantly, so we can't refund a change of heart — but if something doesn't work as described, write to us and we'll make it right."
+      }
+    ]
   },
   "legal": {
     "terms": "Terms of Service",
@@ -185,5 +618,20 @@
     "title": "Something broke on our side",
     "detail": "We've been notified. Try again in a moment.",
     "retry": "Try again"
+  },
+  "checkout": {
+    "paid": {
+      "title": "Unlocked.",
+      "detail": "Your purchase is on your account. Go back and publish — no footer, no limits."
+    },
+    "pending": {
+      "title": "Almost there.",
+      "detail": "Your payment is still processing. This page will work once it clears; you'll also get an email."
+    },
+    "error": {
+      "title": "We couldn't confirm that.",
+      "detail": "If you were charged, your unlock will appear within a few minutes. Otherwise, try again from the pricing page."
+    },
+    "continue": "Continue"
   }
 }

@@ -43,14 +43,103 @@
     "seeReactions": "Reacciones"
   },
   "home": {
-    "eyebrow": "Regalos digitales, de cine",
-    "headline": "Regálale un momento que abrirá una y otra vez.",
-    "subheadline": "Una página-regalo personalizada y animada con tus fotos, su canción y tus palabras. Se comparte con un enlace o un código QR. Se hace en diez minutos y se recuerda durante años.",
-    "cta": "Crea un regalo — empezar es gratis",
-    "secondaryCta": "Ver las plantillas",
-    "trust": "No necesitas cuenta para empezar. Nunca hay suscripción.",
-    "phoneCaption": "Alguien hizo esto para ti, Ana…",
-    "scaffoldNote": "La página de inicio completa llega en la fase 6. Por ahora esto es la estructura con el sistema de diseño."
+    "hero": {
+      "eyebrow": "Para las personas en las que no dejas de pensar",
+      "h1a": "Regálale un momento que",
+      "h1b": "abrirá una",
+      "h1c": "y otra vez.",
+      "sub": "Una página-regalo personalizada y animada con tus fotos, su canción y tus palabras. Se comparte con un enlace o un código QR. Se hace en diez minutos y se recuerda durante años.",
+      "cta": "Crea un regalo — empezar es gratis",
+      "demo": "Ver la demo",
+      "videoAlt": "Plantilla La carta: un sello de lacre se rompe, una carta se despliega, las fotos caen sobre un escritorio.",
+      "caption": "La carta, una de las dos plantillas gratis. Es real, no una maqueta.",
+      "facts": {
+        "free": {
+          "a": "2 plantillas",
+          "b": "gratis, para siempre"
+        },
+        "noAccount": {
+          "a": "Sin cuenta",
+          "b": "hasta que publicas"
+        },
+        "once": {
+          "a": "Pagas una vez",
+          "b": "nunca una suscripción"
+        },
+        "langs": {
+          "a": "Español e inglés",
+          "b": "en el regalo y en la web"
+        }
+      }
+    },
+    "templates": {
+      "eyebrow": "Plantillas",
+      "title": "Cada plantilla es una experiencia completa. {free} son gratis.",
+      "blurb": "No es una tarjeta con hueco para una foto. Cada una es una escena que el destinatario recorre: tocando, deslizando, manteniendo pulsado, a veces soplando velas.",
+      "all": "Ver todas las plantillas",
+      "moreTitle": "Diez más en camino",
+      "moreBlurb": "{name}, Nuestra línea del tiempo, Vinilo, Bloom, Frasco de razones, Pasaporte, Rasca y gana, Cuenta atrás de medianoche, Museo, Arcade."
+    },
+    "reactions": {
+      "eyebrow": "Mira la reacción",
+      "title": "El enlace sale. La respuesta vuelve.",
+      "blurb": "Al final de cada regalo hay un botón de reacción: un emoji, una nota o un mensaje de voz de 20 segundos, directo a ti.",
+      "cards": [
+        {
+          "from": "Marco",
+          "to": "Ana",
+          "sent": "Te he hecho algo. Ábrelo con el sonido 💌",
+          "reply": "Estoy en el trabajo llorando en las escaleras. Tres años. TRES.",
+          "emoji": "😭",
+          "time": "22:41"
+        },
+        {
+          "from": "Lucas",
+          "to": "Sofía",
+          "sent": "Mira arriba. Bueno, mira el móvil.",
+          "reply": "Metiste la noche de la tienda. Encontré las seis. Catorce días.",
+          "emoji": "🥹",
+          "time": "07:12"
+        },
+        {
+          "from": "Dani",
+          "to": "Mamá",
+          "sent": "Feliz día, ma. Toca el sello.",
+          "reply": "¿¿Quién te enseñó a hacer esto?? Ya lo vi cuatro veces.",
+          "emoji": "❤️",
+          "time": "09:58"
+        }
+      ],
+      "placeholderNote": "Ilustraciones de muestra. Las cambiaremos por reacciones reales conforme lleguen."
+    },
+    "how": {
+      "eyebrow": "Cómo funciona",
+      "title": "Diez minutos, de verdad.",
+      "steps": [
+        {
+          "title": "Elige una plantilla",
+          "body": "Pruébalas todas a pantalla completa. Dos son gratis; el resto se desbloquean una vez y son tuyas."
+        },
+        {
+          "title": "Añade tus fotos y tus palabras",
+          "body": "Sube fotos, elige su canción, escribe lo que nunca dirías en voz alta. La vista previa cambia mientras escribes."
+        },
+        {
+          "title": "Comparte el enlace, o la tarjeta",
+          "body": "Envíalo por WhatsApp, iMessage, donde sea. O imprime la tarjeta QR y escóndela en un libro."
+        }
+      ]
+    },
+    "occasions": {
+      "eyebrow": "Ocasiones",
+      "title": "Para el día señalado, o sin motivo.",
+      "blurb": "Las plantillas van etiquetadas por ocasión, pero nada te impide enviar un cielo de cumpleaños en marzo."
+    },
+    "final": {
+      "title": "Di lo que sientes.",
+      "blurb": "A la gente que queremos casi siempre le hablamos de pasada. Esto es lo contrario: algo pequeño y deliberado que pueden abrir dos veces.",
+      "cta": "Crear un regalo"
+    }
   },
   "footer": {
     "blurb": "Regalos que se abren como una historia. Para las personas en las que no dejas de pensar.",
@@ -91,7 +180,41 @@
     "empty": "Todavía no has creado ningún regalo.",
     "emptyCta": "Crea el primero",
     "newGift": "Nuevo regalo",
-    "phaseNote": "Las tarjetas, estadísticas y reacciones llegan en la fase 5."
+    "emptyBlurb": "Elige una plantilla, añade unas fotos y tus palabras. Se tarda unos diez minutos.",
+    "untitled": "Sin título",
+    "status": {
+      "draft": "Borrador",
+      "scheduled": "Programado",
+      "live": "Publicado",
+      "archived": "Archivado"
+    },
+    "opens": "Aperturas",
+    "viewers": "Personas",
+    "reactions": "Reacciones",
+    "watched": "Visto",
+    "actions": "Acciones",
+    "open": "Abrir",
+    "copyLink": "Copiar enlace",
+    "copied": "Enlace copiado",
+    "stats": "Estadísticas",
+    "qrCard": "Tarjeta QR",
+    "edit": "Editar",
+    "duplicate": "Duplicar",
+    "duplicated": "Duplicado como nuevo borrador",
+    "delete": "Borrar",
+    "deleted": "Borrado",
+    "cancel": "Cancelar",
+    "deleteTitle": "¿Borrar este regalo?",
+    "deleteBlurb": "El enlace deja de funcionar al instante y las fotos se eliminan. No se puede deshacer.",
+    "opensOverTime": "Aperturas, últimos 30 días",
+    "share": "Compartir",
+    "draftShare": "Publica el regalo para obtener un enlace.",
+    "reactionsTitle": "Reacciones",
+    "noReactions": "Todavía no hay reacciones. Aparecerán aquí en cuanto alguien envíe una.",
+    "opensTotal": "{n} aperturas en los últimos 30 días",
+    "showTable": "Ver como tabla",
+    "showChart": "Ver como gráfico",
+    "day": "Día"
   },
   "account": {
     "title": "Cuenta",
@@ -99,11 +222,242 @@
     "profile": "Perfil",
     "purchases": "Compras",
     "danger": "Zona de peligro",
-    "signedInAs": "Sesión iniciada como {email}"
+    "signedInAs": "Sesión iniciada como {email}",
+    "unlocks": "Plantillas desbloqueadas",
+    "noUnlocks": "Todavía no has desbloqueado nada. Las plantillas gratis funcionan sin desbloqueo.",
+    "seePricing": "Ver precios",
+    "everything": "Todo: todas las plantillas, para siempre",
+    "noPurchases": "Todavía no hay compras.",
+    "product": {
+      "single": "Una plantilla",
+      "pick3": "Elige tres",
+      "everything": "Todo"
+    },
+    "purchaseStatus": {
+      "pending": "pendiente",
+      "paid": "pagado",
+      "refunded": "reembolsado"
+    },
+    "dangerBlurb": "Exporta todo lo que guardamos sobre ti, o elimina la cuenta y todos sus regalos.",
+    "export": "Exportar mis datos",
+    "deleteAccount": "Eliminar cuenta",
+    "deleteConfirm": "Esto elimina tu cuenta y todos los regalos, archivos y reacciones en un plazo de 30 días. Escribe {email} para confirmar.",
+    "deleteForever": "Eliminar para siempre",
+    "cancel": "Cancelar"
   },
   "editor": {
     "title": "Editor",
-    "phaseNote": "El editor se construye en la fase 3. Esta ruta ya resuelve la plantilla: {slug}."
+    "back": "Todas las plantillas",
+    "publish": "Publicar",
+    "preview": "Vista previa",
+    "edit": "Editar",
+    "playFromStart": "Reproducir desde el inicio",
+    "stopPlaying": "Volver a editar",
+    "saved": "Guardado",
+    "saving": "Guardando…",
+    "savedLocally": "Guardado en este dispositivo",
+    "saveError": "No se pudo guardar",
+    "unsaved": "Cambios sin guardar",
+    "sections": {
+      "who": {
+        "n": "01",
+        "title": "¿Para quién es?",
+        "blurb": "Los nombres aparecen en la pantalla de carga, el saludo y el final."
+      },
+      "words": {
+        "n": "02",
+        "title": "Tus palabras",
+        "blurb": "Aquí está el corazón del regalo. Lo concreto gana a lo poético, siempre."
+      },
+      "photos": {
+        "n": "03",
+        "title": "Fotos",
+        "blurb": "Arrastra para reordenar. Toca una foto para ponerle pie, recortarla o girarla."
+      },
+      "music": {
+        "n": "04",
+        "title": "Música",
+        "blurb": "Su canción, o algo de nuestra biblioteca. Empieza cuando lo abran."
+      },
+      "look": {
+        "n": "05",
+        "title": "El estilo",
+        "blurb": "Color de acento, tipografía y los detalles propios de esta plantilla."
+      },
+      "extras": {
+        "n": "06",
+        "title": "Extras",
+        "blurb": "Una cuenta atrás, una sorpresa oculta, una contraseña, una fecha."
+      }
+    },
+    "fields": {
+      "recipientName": "Su nombre",
+      "senderName": "Tu nombre",
+      "title": "Título",
+      "titleHelp": "Opcional. Aparece en algunas plantillas y en la vista previa del enlace.",
+      "locale": "Idioma del regalo",
+      "message": "Mensaje",
+      "messagePlaceholder": "Empieza con un momento que solo vosotros dos recordáis…",
+      "messageStyle": "Cómo aparecen las palabras",
+      "typewriter": "Escritas letra a letra",
+      "fade": "Fundido",
+      "bold": "Negrita",
+      "italic": "Cursiva",
+      "emoji": "Emoji",
+      "helpWrite": "Ayúdame a escribirlo",
+      "helpWriteSoon": "El asistente de escritura necesita una clave de API. Ya está conectado y se activará en cuanto la añadas.",
+      "charsLeft": "Quedan {n} caracteres",
+      "accentColor": "Color de acento",
+      "customColor": "Personalizado",
+      "fontPairing": "Tipografía",
+      "editorial": "Editorial",
+      "editorialHint": "Serif para títulos, limpia para el texto",
+      "modern": "Moderna",
+      "modernHint": "Sans limpia en todo",
+      "handwritten": "Manuscrita",
+      "handwrittenHint": "Caligrafía para títulos, limpia para el texto",
+      "showReactionCta": "Pedir una reacción al final",
+      "showReactionCtaHelp": "Podrán devolverte un emoji, una nota o un mensaje de voz."
+    },
+    "photos": {
+      "drop": "Suelta fotos aquí, o",
+      "browse": "elige desde tu dispositivo",
+      "formats": "JPG, PNG, WebP, HEIC · hasta {max} fotos",
+      "processing": "Preparando…",
+      "uploading": "Subiendo…",
+      "uploaded": "Subida",
+      "local": "En este dispositivo",
+      "failed": "Error",
+      "caption": "Pie de foto",
+      "captionPlaceholder": "Dónde, cuándo o qué recuerdas",
+      "remove": "Quitar",
+      "rotate": "Girar",
+      "crop": "Recortar",
+      "done": "Listo",
+      "tooMany": "Esta plantilla admite hasta {max} fotos.",
+      "free10": "Los regalos gratis admiten 10 fotos. Desbloquea la plantilla para 20."
+    },
+    "music": {
+      "none": "Sin música",
+      "library": "De la biblioteca",
+      "upload": "Subir la tuya",
+      "uploadHint": "MP3 o M4A, hasta {mb} MB",
+      "startAt": "Empezar en",
+      "previewPlay": "Escuchar",
+      "previewStop": "Parar",
+      "mood": {
+        "warm": "Cálida",
+        "dreamy": "Soñadora",
+        "calm": "Tranquila",
+        "hopeful": "Esperanzada",
+        "cinematic": "Cinemática"
+      },
+      "licenseNote": "Las pistas de la biblioteca tienen licencia para usarse en regalos."
+    },
+    "extras": {
+      "countdown": "Cuenta atrás",
+      "countdownHelp": "Un temporizador en vivo hasta una fecha que importa: la boda, el vuelo, su cumpleaños.",
+      "countdownLabel": "Etiqueta",
+      "countdownLabelPlaceholder": "Hasta que nos veamos",
+      "dateTime": "Fecha y hora",
+      "timezone": "Zona horaria",
+      "surprise": "Sorpresa final",
+      "surpriseHelp": "Una frase oculta que se revela al final del todo.",
+      "surpriseText": "El secreto",
+      "reveal": "Cómo la revelan",
+      "tap": "Tocar",
+      "hold": "Mantener pulsado",
+      "shake": "Agitar el teléfono",
+      "password": "Contraseña",
+      "passwordHelp": "La necesitarán para abrir el regalo. Premium.",
+      "passwordPlaceholder": "Algo que solo ellos sabrían",
+      "schedule": "Programar la apertura",
+      "scheduleHelp": "Bloquea el regalo hasta un momento concreto: la medianoche de su cumpleaños, por ejemplo. Premium.",
+      "unlockAt": "Se abre el",
+      "removeWatermark": "Quitar el pie «Hecho con Ethos»",
+      "premiumBadge": "Premium"
+    },
+    "publishSheet": {
+      "title": "¿Listo para enviarlo?",
+      "subtitle": "Esto es lo que recibirá {name}.",
+      "checklist": "Lista de comprobación",
+      "problems": {
+        "recipientName": "Añade su nombre",
+        "senderName": "Añade tu nombre",
+        "message": "Escribe un mensaje",
+        "photosMin": "Añade al menos {min} foto(s)",
+        "photosMax": "Demasiadas fotos para esta plantilla",
+        "uploadsPending": "Las fotos aún se están subiendo"
+      },
+      "signInTitle": "Inicia sesión para publicar",
+      "signInBlurb": "Tu borrador está guardado en este dispositivo. Inicia sesión y seguimos justo aquí.",
+      "paymentTitle": "Desbloquea para publicar",
+      "paymentBlurb": "Este regalo usa funciones premium: {features}. Desbloquea esta plantilla una vez y quédatela para siempre.",
+      "paymentSoon": "Los pagos aún no están conectados en esta versión. Las plantillas gratis se publican con el pie; los desbloqueos premium llegan con Stripe.",
+      "featurePremiumTemplate": "una plantilla premium",
+      "featureNoWatermark": "sin pie",
+      "featureSchedule": "programación",
+      "featurePassword": "contraseña",
+      "featurePhotos": "más de 10 fotos",
+      "publishNow": "Publicar ahora",
+      "publishScheduled": "Programarlo",
+      "publishing": "Publicando…",
+      "notConfigured": "Para publicar hace falta Supabase. Añade las claves a .env.local y reinicia.",
+      "error": "No se pudo publicar: {error}"
+    },
+    "share": {
+      "title": "Ya está publicado.",
+      "scheduledTitle": "Ya está programado.",
+      "subtitle": "Envíale el enlace a {name}, o dale la tarjeta.",
+      "scheduledSubtitle": "Se abre {when}. Comparte el enlace ya; verán una cuenta atrás hasta entonces.",
+      "copy": "Copiar enlace",
+      "copied": "Copiado",
+      "open": "Abrir el regalo",
+      "shareNative": "Compartir…",
+      "whatsapp": "WhatsApp",
+      "imessage": "Mensajes",
+      "instagram": "Instagram",
+      "instagramHint": "Copia el enlace y pégalo en un mensaje directo o en tu historia.",
+      "shareText": "Te he hecho algo. Ábrelo con el sonido activado 💌 {url}",
+      "qrTitle": "Tarjeta QR",
+      "qrBlurb": "Imprímela, métela en una tarjeta, pégala en la nevera.",
+      "dashboard": "Verlo en mis regalos",
+      "another": "Hacer otro"
+    },
+    "qr": {
+      "frame": "Marco",
+      "frameNone": "Ninguno",
+      "frameCircle": "Círculo",
+      "frameHeart": "Corazón",
+      "dots": "Puntos",
+      "dotsRounded": "Redondeados",
+      "dotsSquare": "Cuadrados",
+      "dotsDots": "Círculos",
+      "dotsClassy": "Elegantes",
+      "colour": "Color",
+      "background": "Fondo",
+      "gradient": "Degradado",
+      "centre": "Centro",
+      "centreNone": "Nada",
+      "centreLogo": "Símbolo de Ethos",
+      "centrePhoto": "Una foto",
+      "downloadPng": "Descargar PNG",
+      "downloadSvg": "Descargar SVG",
+      "printCard": "Tarjeta lista para imprimir"
+    },
+    "writer": {
+      "title": "Ayúdame a escribirlo",
+      "blurb": "Dame unos cuantos detalles reales y redactaré tres versiones. Quédate con lo que es verdad y quita el resto.",
+      "occasion": "Ocasión",
+      "relationship": "¿Quién es para ti?",
+      "relationshipPlaceholder": "Mi pareja desde hace tres años, mi madre, mi mejor amiga…",
+      "facts": "Tres cosas reales",
+      "factsHelp": "Los momentos concretos ganan a los adjetivos: el viaje, la broma, la costumbre. Uno por línea.",
+      "factsPlaceholder": "Tararea cuando cocina\nNos perdimos en Lisboa a propósito\nSiempre me deja el asiento de la ventana",
+      "generate": "Escribir tres versiones",
+      "use": "Usar esta",
+      "error": "El asistente de escritura no está disponible ahora mismo."
+    }
   },
   "gift": {
     "loadingFor": "Alguien hizo esto para ti, {name}…",
@@ -167,9 +521,88 @@
     "just-because": "Porque sí"
   },
   "pricing": {
-    "title": "Precios",
-    "subtitle": "Empieza gratis. Paga una vez por las plantillas que te encantan y quédatelas para siempre.",
-    "phaseNote": "Las tarjetas de precios y el pago se conectan en la fase 5."
+    "eyebrow": "Precios",
+    "title": "Paga una vez. Quédatelo para siempre.",
+    "subtitle": "Dos plantillas son gratis, con un pequeño pie. Desbloquea las que te encanten con un único pago: sin suscripción, sin renovaciones, sin sorpresas.",
+    "oneTime": "Sin suscripción. Pagas una vez y es tuyo para siempre.",
+    "bestValue": "Mejor valor",
+    "priority": "Incluye soporte prioritario",
+    "freeNote": "Los regalos gratis incluyen 10 fotos y el pie «Hecho con Ethos». La programación, las contraseñas y las reacciones de voz vienen con cualquier desbloqueo.",
+    "comingSoon": "Los pagos se abren pronto. Las plantillas gratis ya se pueden publicar.",
+    "checkoutError": "No se pudo iniciar el pago. Inténtalo de nuevo.",
+    "plans": {
+      "single": {
+        "name": "Una plantilla",
+        "blurb": "La que no te quitas de la cabeza.",
+        "cta": "Desbloquear una",
+        "features": [
+          "Una plantilla premium, para siempre",
+          "Regalos ilimitados con ella",
+          "Sin pie, 20 fotos, vídeo",
+          "Programación y contraseña",
+          "Diseñador de QR y reacciones de voz"
+        ]
+      },
+      "pick3": {
+        "name": "Elige tres",
+        "blurb": "Cumpleaños, aniversario y la de tu madre.",
+        "cta": "Elegir tres",
+        "features": [
+          "Tres plantillas cualesquiera, para siempre",
+          "Todo lo de Una plantilla",
+          "Mezcla gratis y premium",
+          "Un solo pago para las tres"
+        ]
+      },
+      "everything": {
+        "name": "Todo",
+        "blurb": "Todas las plantillas que hemos hecho, y todas las que haremos.",
+        "cta": "Desbloquear todo",
+        "features": [
+          "Todas las plantillas, actuales y futuras",
+          "Regalos ilimitados, para siempre",
+          "Sin pie, 20 fotos, vídeo",
+          "Programación, contraseñas, respuestas de voz",
+          "Acceso anticipado a plantillas nuevas"
+        ]
+      }
+    },
+    "pick": {
+      "title": "Elige {n}",
+      "blurb": "Puedes cambiar tu elección hasta que pagues.",
+      "continue": "Continuar ({n}/{total})"
+    },
+    "faqTitle": "Preguntas frecuentes",
+    "faq": [
+      {
+        "q": "¿Es una suscripción?",
+        "a": "No. Todos los precios son pagos únicos. Lo que desbloqueas se queda en tu cuenta mientras exista."
+      },
+      {
+        "q": "¿Qué incluye exactamente el plan gratis?",
+        "a": "Dos plantillas completas (La carta y Constelaciones), regalos ilimitados, hasta 10 fotos por regalo, música de fondo, una cuenta atrás y una sorpresa final oculta. Los regalos gratis muestran un pequeño pie «Hecho con Ethos»."
+      },
+      {
+        "q": "¿Puedo probar una plantilla antes de pagar?",
+        "a": "Todas las plantillas tienen una demo completa en vivo, y el editor es gratis con vista previa en directo. Solo pagas cuando publicas algo que necesita una función premium."
+      },
+      {
+        "q": "¿Caducan los enlaces?",
+        "a": "No. Los enlaces están pensados para ser permanentes. Si alguna vez tuviéramos que cambiarlo, avisaríamos con al menos 90 días."
+      },
+      {
+        "q": "¿Puedo editar un regalo ya publicado?",
+        "a": "Sí. Los cambios se publican en el mismo enlace en cuanto guardas."
+      },
+      {
+        "q": "¿Qué monedas y métodos de pago?",
+        "a": "USD, EUR y GBP, con tarjeta, Apple Pay y Google Pay a través de Stripe. Los precios incluyen IVA cuando corresponde."
+      },
+      {
+        "q": "¿Reembolsos?",
+        "a": "Los desbloqueos son digitales y se entregan al instante, así que no podemos reembolsar un cambio de opinión; pero si algo no funciona como se describe, escríbenos y lo arreglaremos."
+      }
+    ]
   },
   "legal": {
     "terms": "Términos del servicio",
@@ -185,5 +618,20 @@
     "title": "Algo falló de nuestro lado",
     "detail": "Ya lo sabemos. Inténtalo de nuevo en un momento.",
     "retry": "Reintentar"
+  },
+  "checkout": {
+    "paid": {
+      "title": "Desbloqueado.",
+      "detail": "Tu compra ya está en tu cuenta. Vuelve y publica: sin pie, sin límites."
+    },
+    "pending": {
+      "title": "Casi.",
+      "detail": "Tu pago aún se está procesando. Esta página funcionará en cuanto se confirme; también recibirás un correo."
+    },
+    "error": {
+      "title": "No pudimos confirmarlo.",
+      "detail": "Si se te ha cobrado, el desbloqueo aparecerá en unos minutos. Si no, inténtalo de nuevo desde la página de precios."
+    },
+    "continue": "Continuar"
   }
 }

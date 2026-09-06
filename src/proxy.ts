@@ -6,7 +6,15 @@ import { refreshSupabaseSession } from "@/lib/supabase/proxy";
 const handleI18n = createIntlMiddleware(routing);
 
 export async function proxy(request: NextRequest) {
-  const { pathname } = request.nextUrl;
+  const { pathname, searchParams } = request.nextUrl;
+
+  // Supabase sends OAuth / magic-link codes to the Site URL when the callback path is not
+  // on its allow list. Catch a stray ?code= anywhere and finish the exchange properly.
+  if (searchParams.has("code") && !pathname.startsWith("/auth/")) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/auth/callback";
+    return NextResponse.redirect(url);
+  }
 
   // Gift links (/g/abc123) are shared across languages and printed on QR codes.
   // They must never redirect based on the viewer's browser language: rewrite them

@@ -1,22 +1,54 @@
 import type { Metadata } from "next";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-import { LogoMark } from "@/components/shared/logo";
+import { cookies } from "next/headers";
+import { notFound } from "next/navigation";
+import { NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import { fetchPublicGift, passwordCookieName } from "@/lib/gift/public";
+import { unseal } from "@/lib/crypto";
+import { isShortId } from "@/lib/gift/short-id";
+import { SITE } from "@/config/site";
+import { GiftExperience } from "@/components/gift/gift-experience";
+import { LockScreen } from "@/components/gift/lock-screen";
+import { ScheduledScreen } from "@/components/gift/scheduled-screen";
 
-export async function generateMetadata(): Promise<Metadata> {
-  return { robots: { index: false, follow: false } };
+export async function generateMetadata({ params }: Omit<PageProps<"/[locale]/g/[shortId]">, "searchParams">): Promise<Metadata> {
+  const { shortId } = await params;
+  const gift = isShortId(shortId) ? await fetchPublicGift(shortId) : null;
+  if (!gift) return { title: "Gift", robots: { index: false, follow: false } };
+  const es = gift.locale === "es";
+  const title = es ? `${gift.recipientName}, alguien te ha hecho algo 💌` : `${gift.recipientName}, someone made you something 💌`;
+  const description = es ? "Ábrelo con el sonido activado." : "Open it with your sound on.";
+  return {
+    title,
+    description,
+    robots: { index: false, follow: false },
+    openGraph: { title, description, type: "website", url: `${SITE.url}/g/${shortId}` },
+    twitter: { card: "summary_large_image", title, description },
+  };
 }
 
 export default async function GiftPage({ params }: PageProps<"/[locale]/g/[shortId]">) {
   const { locale, shortId } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("gift");
+  if (!isShortId(shortId)) notFound();
+
+  const jar = await cookies();
+  const password = await unseal(jar.get(passwordCookieName(shortId))?.value);
+  const gift = await fetchPublicGift(shortId, password);
+  if (!gift) notFound();
+
+  if (!gift.unlocked && gift.unlockAt) {
+    return <ScheduledScreen senderName={gift.senderName} unlockAt={gift.unlockAt} timezone={gift.timezone} locale={gift.locale} />;
+  }
+  if (gift.requiresPassword && !gift.passwordOk) {
+    return <LockScreen shortId={shortId} senderName={gift.senderName} locale={gift.locale} />;
+  }
+  if (!gift.data) notFound();
+
+  const messages = (await import(`../../../../../../messages/${gift.locale}.json`)).default;
   return (
-    <div className="flex min-h-dvh flex-col items-center justify-center px-8 text-center">
-      <LogoMark className="size-14" />
-      <p className="font-display mt-8 text-2xl italic">{t("loading")}</p>
-      <p className="mt-6 max-w-xs text-sm text-paper/60">
-        {t("phaseNote")} <span className="font-mono">{shortId}</span>
-      </p>
-    </div>
+    <NextIntlClientProvider locale={gift.locale} messages={{ gift: messages.gift }}>
+      <GiftExperience shortId={shortId} data={gift.data} locale={gift.locale} />
+    </NextIntlClientProvider>
   );
 }

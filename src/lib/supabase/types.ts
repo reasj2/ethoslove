@@ -181,6 +181,7 @@ export interface Database {
           created_at?: string;
         };
         Update: {
+          stripe_session_id?: string | null;
           stripe_payment_intent_id?: string | null;
           status?: PurchaseStatus;
         };

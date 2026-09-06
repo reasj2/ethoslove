@@ -1,0 +1,58 @@
+/**
+ * Pricing catalogue. Amounts are minor units. Stripe Price IDs come from env so the same
+ * code runs against test and live accounts. Every product is a ONE-TIME payment.
+ */
+export type ProductId = "single" | "pick3" | "everything";
+export type Currency = "usd" | "eur" | "gbp";
+
+export type Product = {
+  id: ProductId;
+  /** How many template slugs the buyer picks (Infinity = all). */
+  picks: number;
+  amounts: Record<Currency, number>;
+  /** "from" price shown struck through on the pricing page (in minor units). */
+  compareAt?: Record<Currency, number>;
+  highlight: boolean;
+  envPriceKey: "STRIPE_PRICE_SINGLE" | "STRIPE_PRICE_PICK3" | "STRIPE_PRICE_EVERYTHING";
+};
+
+export const PRODUCTS: Record<ProductId, Product> = {
+  single: { id: "single", picks: 1, amounts: { usd: 799, eur: 749, gbp: 649 }, highlight: false, envPriceKey: "STRIPE_PRICE_SINGLE" },
+  pick3: { id: "pick3", picks: 3, amounts: { usd: 1199, eur: 1099, gbp: 949 }, compareAt: { usd: 2397, eur: 2247, gbp: 1947 }, highlight: false, envPriceKey: "STRIPE_PRICE_PICK3" },
+  everything: { id: "everything", picks: Infinity, amounts: { usd: 2499, eur: 2299, gbp: 1999 }, highlight: true, envPriceKey: "STRIPE_PRICE_EVERYTHING" },
+};
+
+export const PRODUCT_ORDER: ProductId[] = ["single", "pick3", "everything"];
+
+export function isProductId(v: string): v is ProductId {
+  return v in PRODUCTS;
+}
+
+export function formatAmount(minor: number, currency: Currency, locale = "en"): string {
+  return new Intl.NumberFormat(locale, { style: "currency", currency: currency.toUpperCase(), minimumFractionDigits: 2 }).format(minor / 100);
+}
+
+/** Rough currency guess from a locale/country; Stripe Checkout shows the final price. */
+export function currencyFor(countryOrLocale: string | null | undefined): Currency {
+  const v = (countryOrLocale ?? "").toUpperCase();
+  const eu = ["AT", "BE", "CY", "DE", "EE", "ES", "FI", "FR", "GR", "HR", "IE", "IT", "LT", "LU", "LV", "MT", "NL", "PT", "SI", "SK"];
+  if (v === "GB" || v.endsWith("-GB")) return "gbp";
+  if (eu.some((c) => v === c || v.endsWith(`-${c}`))) return "eur";
+  return "usd";
+}
+
+/**
+ * Which template_unlocks rows a paid product grants. "everything" is the wildcard '*'
+ * (all current AND future templates); the others unlock exactly the chosen slugs.
+ */
+export function unlocksFor(product: ProductId, chosenSlugs: string[]): string[] {
+  if (product === "everything") return ["*"];
+  const unique = Array.from(new Set(chosenSlugs.filter(Boolean)));
+  if (unique.length !== PRODUCTS[product].picks) throw new Error(`product ${product} needs exactly ${PRODUCTS[product].picks} template(s)`);
+  return unique;
+}
+
+/** True when the user's unlock rows cover a template. */
+export function hasUnlock(unlockSlugs: string[], templateSlug: string): boolean {
+  return unlockSlugs.includes("*") || unlockSlugs.includes(templateSlug);
+}
