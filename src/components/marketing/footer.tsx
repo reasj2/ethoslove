@@ -1,0 +1,70 @@
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
+import { BRAND } from "@/config/brand";
+import { OCCASIONS } from "@/config/occasions";
+import { Logo } from "@/components/shared/logo";
+import { LocaleSwitcher } from "./locale-switcher";
+
+export async function MarketingFooter() {
+  const t = await getTranslations();
+  const year = new Date().getFullYear();
+
+  return (
+    <footer className="mt-auto border-t border-border bg-paper-deep/60">
+      <div className="container-x grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div className="max-w-xs">
+          <Logo />
+          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{t("footer.blurb")}</p>
+        </div>
+        <FooterColumn title={t("footer.product")}>
+          <FooterLink href="/templates">{t("nav.templates")}</FooterLink>
+          <FooterLink href="/pricing">{t("nav.pricing")}</FooterLink>
+          <FooterLink href="/occasions">{t("nav.occasions")}</FooterLink>
+        </FooterColumn>
+        <FooterColumn title={t("nav.occasions")}>
+          {OCCASIONS.slice(0, 6).map((o) => (
+            <FooterLink key={o} href={`/occasions/${o}`}>
+              {t(`occasions.${o}`)}
+            </FooterLink>
+          ))}
+        </FooterColumn>
+        <FooterColumn title={t("footer.company")}>
+          <FooterLink href="/legal/terms">{t("footer.terms")}</FooterLink>
+          <FooterLink href="/legal/privacy">{t("footer.privacy")}</FooterLink>
+          <a
+            href={`mailto:${BRAND.supportEmail}`}
+            className="text-sm text-muted-foreground transition-colors hover:text-ink"
+          >
+            {t("footer.contact")}
+          </a>
+        </FooterColumn>
+      </div>
+      <div className="container-x flex flex-col items-start justify-between gap-4 border-t border-border py-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
+        <p>{t("footer.rights", { year })}</p>
+        <div className="flex items-center gap-4">
+          <p className="hidden sm:block">{t("footer.madeWith")}</p>
+          <LocaleSwitcher className="h-8 text-xs" />
+        </div>
+      </div>
+    </footer>
+  );
+}
+
+function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="text-eyebrow mb-4 text-ink-soft">{title}</p>
+      <ul className="flex flex-col gap-2.5">{children}</ul>
+    </div>
+  );
+}
+
+function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
+  return (
+    <li>
+      <Link href={href} className="text-sm text-muted-foreground transition-colors hover:text-ink">
+        {children}
+      </Link>
+    </li>
+  );
+}

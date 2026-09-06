@@ -1,0 +1,282 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ------------------------------------------------------------------ */
+/* Brand tokens — the only place raw colours live.                     */
+/* ------------------------------------------------------------------ */
+:root {
+  --brand-paper: #faf7f2;
+  --brand-paper-deep: #f1ebe1;
+  --brand-ink: #1a1614;
+  --brand-ink-soft: #3d3531;
+  --brand-coral: #e8604c;
+  --brand-coral-deep: #cf4d3a;
+  --brand-rose: #f4c7c3;
+  --brand-rose-soft: #fbe9e6;
+  --brand-gold: #d4a853;
+  --brand-gold-deep: #b98d3c;
+  --brand-moss: #2f6b4f;
+  --brand-night: #141110;
+  --brand-night-raised: #1e1a17;
+
+  /* shadcn semantic tokens mapped onto the brand */
+  --background: var(--brand-paper);
+  --foreground: var(--brand-ink);
+  --card: #fffdfa;
+  --card-foreground: var(--brand-ink);
+  --popover: #fffdfa;
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-coral);
+  --primary-foreground: #fff8f4;
+  --secondary: var(--brand-paper-deep);
+  --secondary-foreground: var(--brand-ink);
+  --muted: #f1ece4;
+  --muted-foreground: #6f665f;
+  --accent: var(--brand-rose-soft);
+  --accent-foreground: var(--brand-ink);
+  --destructive: #c8452f;
+  --border: #e6dfd4;
+  --input: #e6dfd4;
+  --ring: var(--brand-coral);
+  --chart-1: var(--brand-coral);
+  --chart-2: var(--brand-gold);
+  --chart-3: var(--brand-rose);
+  --chart-4: var(--brand-moss);
+  --chart-5: var(--brand-ink-soft);
+  --radius: 0.75rem;
+  --sidebar: #f5f0e8;
+  --sidebar-foreground: var(--brand-ink);
+  --sidebar-primary: var(--brand-coral);
+  --sidebar-primary-foreground: #fff8f4;
+  --sidebar-accent: #ebe4d9;
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: #e6dfd4;
+  --sidebar-ring: var(--brand-coral);
+
+  /* Motion — never linear. */
+  --ease-spring: linear(
+    0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077,
+    1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%,
+    1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%,
+    1.004 83.8%, 1
+  );
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+
+  color-scheme: light;
+}
+
+/* Dark mode: only the app shell opts in (see components/app/app-theme.tsx). */
+.dark {
+  --background: var(--brand-night);
+  --foreground: #f4efe7;
+  --card: var(--brand-night-raised);
+  --card-foreground: #f4efe7;
+  --popover: #241f1b;
+  --popover-foreground: #f4efe7;
+  --primary: #f0715e;
+  --primary-foreground: #1a0d0a;
+  --secondary: #2a2521;
+  --secondary-foreground: #f4efe7;
+  --muted: #2a2521;
+  --muted-foreground: #a79f95;
+  --accent: #3a2a26;
+  --accent-foreground: #f4efe7;
+  --destructive: #f07a67;
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.14);
+  --ring: #f0715e;
+  --sidebar: #181412;
+  --sidebar-foreground: #f4efe7;
+  --sidebar-primary: #f0715e;
+  --sidebar-primary-foreground: #1a0d0a;
+  --sidebar-accent: #2a2521;
+  --sidebar-accent-foreground: #f4efe7;
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-ring: #f0715e;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Brand colours as utilities: bg-coral, text-gold, border-rose … */
+  --color-paper: var(--brand-paper);
+  --color-paper-deep: var(--brand-paper-deep);
+  --color-ink: var(--brand-ink);
+  --color-ink-soft: var(--brand-ink-soft);
+  --color-coral: var(--brand-coral);
+  --color-coral-deep: var(--brand-coral-deep);
+  --color-rose: var(--brand-rose);
+  --color-rose-soft: var(--brand-rose-soft);
+  --color-gold: var(--brand-gold);
+  --color-gold-deep: var(--brand-gold-deep);
+  --color-moss: var(--brand-moss);
+  --color-night: var(--brand-night);
+
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--font-display), "Iowan Old Style", Georgia, serif;
+  --font-hand: var(--font-hand), "Bradley Hand", "Segoe Print", cursive;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+  --font-heading: var(--font-display);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  --ease-spring: var(--ease-spring);
+  --ease-out-quint: var(--ease-out-quint);
+  --ease-out-expo: var(--ease-out-expo);
+  --ease-in-out-quart: var(--ease-in-out-quart);
+
+  --shadow-soft: 0 1px 2px rgba(26, 22, 20, 0.04), 0 8px 24px -12px rgba(26, 22, 20, 0.18);
+  --shadow-lift: 0 2px 4px rgba(26, 22, 20, 0.05), 0 24px 48px -20px rgba(26, 22, 20, 0.28);
+  --shadow-glow: 0 0 0 1px rgba(232, 96, 76, 0.18), 0 18px 40px -16px rgba(232, 96, 76, 0.45);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "cv11", "ss01", "ss03";
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--brand-coral) 28%, transparent);
+  }
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 1;
+    letter-spacing: -0.015em;
+  }
+  h1 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Utilities                                                           */
+/* ------------------------------------------------------------------ */
+@utility container-x {
+  @apply mx-auto w-full max-w-7xl px-5 sm:px-8;
+}
+@utility container-narrow {
+  @apply mx-auto w-full max-w-3xl px-5 sm:px-8;
+}
+@utility text-eyebrow {
+  @apply text-xs font-medium tracking-[0.18em] uppercase;
+}
+@utility display-hero {
+  @apply font-display text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-[5.25rem];
+}
+@utility display-xl {
+  @apply font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl;
+}
+@utility display-lg {
+  @apply font-display text-3xl leading-[1.08] sm:text-4xl md:text-5xl;
+}
+@utility display-md {
+  @apply font-display text-2xl leading-[1.12] sm:text-3xl;
+}
+@utility grain {
+  position: relative;
+}
+@utility grain-overlay {
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+@utility scrollbar-none {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+@utility safe-bottom {
+  padding-bottom: max(1rem, env(safe-area-inset-bottom));
+}
+
+/* Long-form editorial text (legal, blog) */
+@utility prose-ethos {
+  & h2 {
+    @apply display-md mt-10 mb-3;
+  }
+  & p {
+    @apply mb-4 text-base leading-relaxed text-ink-soft;
+  }
+  & a {
+    @apply text-coral underline underline-offset-4;
+  }
+}

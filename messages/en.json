@@ -1,0 +1,155 @@
+{
+  "common": {
+    "brand": "Ethos",
+    "createGift": "Create a gift",
+    "createGiftFree": "Create a gift — it's free to start",
+    "login": "Log in",
+    "signup": "Sign up",
+    "logout": "Log out",
+    "dashboard": "My gifts",
+    "account": "Account",
+    "pricing": "Pricing",
+    "templates": "Templates",
+    "occasions": "Occasions",
+    "blog": "Blog",
+    "back": "Back",
+    "continue": "Continue",
+    "cancel": "Cancel",
+    "save": "Save",
+    "loading": "Loading…",
+    "comingSoon": "Coming soon",
+    "free": "Free",
+    "premium": "Premium",
+    "noSubscription": "No subscription. Pay once, keep forever.",
+    "language": "Language",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "skipToContent": "Skip to content"
+  },
+  "meta": {
+    "defaultTitle": "Ethos — Digital gifts that open like a story",
+    "titleTemplate": "%s · Ethos",
+    "description": "Create a personalised, animated digital gift for someone you love. Photos, their song, your words. Share with a link or QR code. Free to start."
+  },
+  "nav": {
+    "templates": "Templates",
+    "occasions": "Occasions",
+    "pricing": "Pricing",
+    "howItWorks": "How it works",
+    "seeReactions": "Reactions"
+  },
+  "home": {
+    "eyebrow": "Digital gifts, made cinematic",
+    "headline": "Give them a moment they'll open again and again.",
+    "subheadline": "A personalised, animated gift page with your photos, their song and your words. Shared with a link or a QR code. Built in ten minutes, remembered for years.",
+    "cta": "Create a gift — it's free to start",
+    "secondaryCta": "See the templates",
+    "trust": "No account needed to start. No subscription, ever.",
+    "phoneCaption": "Someone made this for you, Ana…",
+    "scaffoldNote": "The full homepage lands in Phase 6. For now, this is the shell with the design system in place."
+  },
+  "footer": {
+    "blurb": "Gifts that open like a story. Made for the people you can't stop thinking about.",
+    "product": "Product",
+    "company": "Company",
+    "legal": "Legal",
+    "terms": "Terms",
+    "privacy": "Privacy",
+    "contact": "Contact",
+    "rights": "© {year} Ethos. All rights reserved.",
+    "madeWith": "Made with care in many time zones."
+  },
+  "auth": {
+    "loginTitle": "Welcome back",
+    "loginSubtitle": "We'll email you a link. No password to remember.",
+    "signupTitle": "Create your account",
+    "signupSubtitle": "Free to start. You only pay when you publish a premium gift.",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@example.com",
+    "sendLink": "Email me a magic link",
+    "sending": "Sending…",
+    "linkSent": "Check your inbox",
+    "linkSentDetail": "We sent a sign-in link to {email}. It expires in one hour.",
+    "or": "or",
+    "continueWithGoogle": "Continue with Google",
+    "continueWithApple": "Continue with Apple",
+    "noAccount": "New here?",
+    "haveAccount": "Already have an account?",
+    "notConfiguredTitle": "Auth isn't connected yet",
+    "notConfiguredDetail": "Add your Supabase keys to .env.local and restart the dev server. Everything else works without it.",
+    "legalNote": "By continuing you agree to our <terms>Terms</terms> and <privacy>Privacy Policy</privacy>.",
+    "error": "Something went wrong. Please try again.",
+    "callbackError": "That sign-in link didn't work. It may have expired — request a new one."
+  },
+  "dashboard": {
+    "title": "My gifts",
+    "subtitle": "Everything you've made, in one place.",
+    "empty": "You haven't made a gift yet.",
+    "emptyCta": "Make your first one",
+    "newGift": "New gift",
+    "phaseNote": "Gift cards, stats and reactions arrive in Phase 5."
+  },
+  "account": {
+    "title": "Account",
+    "subtitle": "Profile, purchases and billing.",
+    "profile": "Profile",
+    "purchases": "Purchases",
+    "danger": "Danger zone",
+    "signedInAs": "Signed in as {email}"
+  },
+  "editor": {
+    "title": "Editor",
+    "phaseNote": "The editor is built in Phase 3. This route already resolves the template: {slug}."
+  },
+  "gift": {
+    "loadingFor": "Someone made this for you, {name}…",
+    "loading": "Someone made this for you…",
+    "tapToOpen": "Tap to open",
+    "soundOn": "Turn your sound on",
+    "phaseNote": "The recipient experience is built in Phase 4."
+  },
+  "templates": {
+    "title": "Templates",
+    "subtitle": "Every one has a full live demo. Try it before you buy it.",
+    "phaseNote": "The gallery arrives with the template engine in Phase 2."
+  },
+  "occasions": {
+    "title": "Occasions",
+    "for": "Digital gifts for {occasion}",
+    "birthday": "Birthday",
+    "anniversary": "Anniversary",
+    "valentines": "Valentine's Day",
+    "wedding": "Wedding",
+    "graduation": "Graduation",
+    "christmas": "Christmas",
+    "mothers-day": "Mother's Day",
+    "fathers-day": "Father's Day",
+    "apology": "Apology",
+    "long-distance": "Long distance",
+    "just-because": "Just because"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "subtitle": "Start free. Pay once for the templates you love, keep them forever.",
+    "phaseNote": "Pricing cards and checkout are wired in Phase 5."
+  },
+  "legal": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "lastUpdated": "Last updated {date}"
+  },
+  "notFound": {
+    "title": "This page wandered off",
+    "detail": "The link may be broken, or the page may have moved.",
+    "home": "Back to the homepage"
+  },
+  "error": {
+    "title": "Something broke on our side",
+    "detail": "We've been notified. Try again in a moment.",
+    "retry": "Try again"
+  }
+}

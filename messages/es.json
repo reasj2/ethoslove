@@ -1,0 +1,155 @@
+{
+  "common": {
+    "brand": "Ethos",
+    "createGift": "Crear un regalo",
+    "createGiftFree": "Crea un regalo — empezar es gratis",
+    "login": "Iniciar sesión",
+    "signup": "Crear cuenta",
+    "logout": "Cerrar sesión",
+    "dashboard": "Mis regalos",
+    "account": "Cuenta",
+    "pricing": "Precios",
+    "templates": "Plantillas",
+    "occasions": "Ocasiones",
+    "blog": "Blog",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "loading": "Cargando…",
+    "comingSoon": "Muy pronto",
+    "free": "Gratis",
+    "premium": "Premium",
+    "noSubscription": "Sin suscripción. Pagas una vez y es tuyo para siempre.",
+    "language": "Idioma",
+    "theme": "Tema",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "themeSystem": "Sistema",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "skipToContent": "Ir al contenido"
+  },
+  "meta": {
+    "defaultTitle": "Ethos — Regalos digitales que se abren como una historia",
+    "titleTemplate": "%s · Ethos",
+    "description": "Crea un regalo digital personalizado y animado para alguien que quieres. Fotos, su canción, tus palabras. Compártelo con un enlace o un código QR. Empezar es gratis."
+  },
+  "nav": {
+    "templates": "Plantillas",
+    "occasions": "Ocasiones",
+    "pricing": "Precios",
+    "howItWorks": "Cómo funciona",
+    "seeReactions": "Reacciones"
+  },
+  "home": {
+    "eyebrow": "Regalos digitales, de cine",
+    "headline": "Regálale un momento que abrirá una y otra vez.",
+    "subheadline": "Una página-regalo personalizada y animada con tus fotos, su canción y tus palabras. Se comparte con un enlace o un código QR. Se hace en diez minutos y se recuerda durante años.",
+    "cta": "Crea un regalo — empezar es gratis",
+    "secondaryCta": "Ver las plantillas",
+    "trust": "No necesitas cuenta para empezar. Nunca hay suscripción.",
+    "phoneCaption": "Alguien hizo esto para ti, Ana…",
+    "scaffoldNote": "La página de inicio completa llega en la fase 6. Por ahora esto es la estructura con el sistema de diseño."
+  },
+  "footer": {
+    "blurb": "Regalos que se abren como una historia. Para las personas en las que no dejas de pensar.",
+    "product": "Producto",
+    "company": "Empresa",
+    "legal": "Legal",
+    "terms": "Términos",
+    "privacy": "Privacidad",
+    "contact": "Contacto",
+    "rights": "© {year} Ethos. Todos los derechos reservados.",
+    "madeWith": "Hecho con cariño desde varias zonas horarias."
+  },
+  "auth": {
+    "loginTitle": "Hola de nuevo",
+    "loginSubtitle": "Te enviamos un enlace por correo. Sin contraseñas que recordar.",
+    "signupTitle": "Crea tu cuenta",
+    "signupSubtitle": "Empezar es gratis. Solo pagas cuando publicas un regalo premium.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "sendLink": "Enviarme un enlace mágico",
+    "sending": "Enviando…",
+    "linkSent": "Revisa tu correo",
+    "linkSentDetail": "Enviamos un enlace de acceso a {email}. Caduca en una hora.",
+    "or": "o",
+    "continueWithGoogle": "Continuar con Google",
+    "continueWithApple": "Continuar con Apple",
+    "noAccount": "¿Eres nuevo?",
+    "haveAccount": "¿Ya tienes cuenta?",
+    "notConfiguredTitle": "La autenticación aún no está conectada",
+    "notConfiguredDetail": "Añade tus claves de Supabase a .env.local y reinicia el servidor. Todo lo demás funciona sin ello.",
+    "legalNote": "Al continuar aceptas nuestros <terms>Términos</terms> y la <privacy>Política de privacidad</privacy>.",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "callbackError": "Ese enlace no funcionó. Puede haber caducado — pide uno nuevo."
+  },
+  "dashboard": {
+    "title": "Mis regalos",
+    "subtitle": "Todo lo que has creado, en un solo lugar.",
+    "empty": "Todavía no has creado ningún regalo.",
+    "emptyCta": "Crea el primero",
+    "newGift": "Nuevo regalo",
+    "phaseNote": "Las tarjetas, estadísticas y reacciones llegan en la fase 5."
+  },
+  "account": {
+    "title": "Cuenta",
+    "subtitle": "Perfil, compras y facturación.",
+    "profile": "Perfil",
+    "purchases": "Compras",
+    "danger": "Zona de peligro",
+    "signedInAs": "Sesión iniciada como {email}"
+  },
+  "editor": {
+    "title": "Editor",
+    "phaseNote": "El editor se construye en la fase 3. Esta ruta ya resuelve la plantilla: {slug}."
+  },
+  "gift": {
+    "loadingFor": "Alguien hizo esto para ti, {name}…",
+    "loading": "Alguien hizo esto para ti…",
+    "tapToOpen": "Toca para abrir",
+    "soundOn": "Activa el sonido",
+    "phaseNote": "La experiencia del destinatario se construye en la fase 4."
+  },
+  "templates": {
+    "title": "Plantillas",
+    "subtitle": "Todas tienen una demo completa en vivo. Pruébala antes de comprar.",
+    "phaseNote": "La galería llega con el motor de plantillas en la fase 2."
+  },
+  "occasions": {
+    "title": "Ocasiones",
+    "for": "Regalos digitales para {occasion}",
+    "birthday": "Cumpleaños",
+    "anniversary": "Aniversario",
+    "valentines": "San Valentín",
+    "wedding": "Boda",
+    "graduation": "Graduación",
+    "christmas": "Navidad",
+    "mothers-day": "Día de la Madre",
+    "fathers-day": "Día del Padre",
+    "apology": "Disculpa",
+    "long-distance": "A distancia",
+    "just-because": "Porque sí"
+  },
+  "pricing": {
+    "title": "Precios",
+    "subtitle": "Empieza gratis. Paga una vez por las plantillas que te encantan y quédatelas para siempre.",
+    "phaseNote": "Las tarjetas de precios y el pago se conectan en la fase 5."
+  },
+  "legal": {
+    "terms": "Términos del servicio",
+    "privacy": "Política de privacidad",
+    "lastUpdated": "Última actualización: {date}"
+  },
+  "notFound": {
+    "title": "Esta página se perdió",
+    "detail": "Puede que el enlace esté roto o que la página se haya movido.",
+    "home": "Volver al inicio"
+  },
+  "error": {
+    "title": "Algo falló de nuestro lado",
+    "detail": "Ya lo sabemos. Inténtalo de nuevo en un momento.",
+    "retry": "Reintentar"
+  }
+}
