@@ -10,6 +10,7 @@ import { cn } from "@/lib/utils";
 import type { TemplateProps } from "../types";
 import { useGiftStrings } from "../_shared/i18n";
 import { useGiftAudio } from "../_shared/hooks/use-gift-audio";
+import { useContainerSize } from "../_shared/hooks/use-container-size";
 import { RichMessage } from "../_shared/RichMessage";
 import { Typewriter } from "../_shared/Typewriter";
 import { Countdown } from "../_shared/Countdown";
@@ -29,15 +30,14 @@ const ROAD: Record<TimelineFields["road"], { stroke: string; width: number; dash
   ink: { stroke: "var(--gift-accent)", width: 4, dash: undefined, bg: "#f6f1e8", ink: "#1A1614", paper: "#ffffff" },
 };
 
-/** Winding path through N milestones, in a 100×(100·N) box. */
-function roadPath(n: number): string {
-  const H = 100;
-  let d = `M 50 -10`;
+/** Winding road through N milestones, in real pixels so the stroke stays uniform. */
+function roadPath(n: number, w: number, h: number): string {
+  const cx = w / 2;
+  let d = `M ${cx} ${-h * 0.1}`;
   for (let i = 0; i < n + 1; i++) {
-    const y0 = i * H;
-    const left = i % 2 === 0;
-    const x = left ? 22 : 78;
-    d += ` C 50 ${y0 + H * 0.25}, ${x} ${y0 + H * 0.35}, ${x} ${y0 + H * 0.5} S 50 ${y0 + H * 0.85}, 50 ${y0 + H}`;
+    const y0 = i * h;
+    const x = i % 2 === 0 ? w * 0.22 : w * 0.78;
+    d += ` C ${cx} ${y0 + h * 0.25}, ${x} ${y0 + h * 0.35}, ${x} ${y0 + h * 0.5} S ${cx} ${y0 + h * 0.85}, ${cx} ${y0 + h}`;
   }
   return d;
 }
@@ -47,6 +47,8 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
   const t = useGiftStrings(data.locale);
   const s = S[data.locale] ?? S.en;
   const audio = useGiftAudio(data.music, mode !== "preview");
+  const rootRef = useRef<HTMLDivElement>(null);
+  const size = useContainerSize(rootRef);
   const scroller = useRef<HTMLDivElement>(null);
   const roadRef = useRef<HTMLDivElement>(null);
   const [started, setStarted] = useState(mode === "preview");
@@ -54,7 +56,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
   const n = photos.length;
   const road = ROAD[data.fields.road] ?? ROAD.ink;
   const blocks = useMemo(() => parseRichText(data.message), [data.message]);
-  const path = useMemo(() => roadPath(n), [n]);
+  const path = useMemo(() => roadPath(n, size.width || 390, size.height || 844), [n, size.width, size.height]);
 
   const { scrollYProgress } = useScroll({ container: scroller, target: roadRef, offset: ["start 60%", "end 60%"] });
   const drawn = useSpring(scrollYProgress, { stiffness: 80, damping: 20, mass: 0.5 });
@@ -76,7 +78,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
   };
 
   return (
-    <div className="absolute inset-0 overflow-hidden select-none" style={{ background: road.bg, color: road.ink, fontFamily: "var(--gift-font-body)" }}>
+    <div ref={rootRef} className="absolute inset-0 overflow-hidden select-none" style={{ background: road.bg, color: road.ink, fontFamily: "var(--gift-font-body)" }}>
       <div className="grain-overlay" />
       <div ref={scroller} className="absolute inset-0 overflow-x-hidden overflow-y-auto overscroll-contain scrollbar-none">
         {/* Cover */}
@@ -95,8 +97,8 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
 
         {/* Road + milestones */}
         <div ref={roadRef} className="relative" style={{ height: `${n * 100}cqh` }}>
-          <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox={`0 0 100 ${n * 100}`} preserveAspectRatio="none" aria-hidden="true">
-            <motion.path d={path} fill="none" stroke={road.stroke} strokeWidth={road.width} strokeLinecap="round" strokeDasharray={road.dash} vectorEffect="non-scaling-stroke" style={{ pathLength: reduce ? 1 : drawn }} />
+          <svg className="pointer-events-none absolute inset-0 h-full w-full" viewBox={`0 0 ${size.width || 390} ${n * (size.height || 844)}`} preserveAspectRatio="none" aria-hidden="true">
+            <motion.path data-road="" d={path} fill="none" strokeWidth={road.width} strokeLinecap="round" strokeDasharray={road.dash} style={{ pathLength: reduce ? 1 : drawn, stroke: road.stroke }} />
           </svg>
           {photos.map((photo, i) => (
             <Milestone key={photo.id} photo={photo} index={i} date={data.fields.dates[i]} left={i % 2 === 0} scroller={scroller} paper={road.paper} chapter={s.chapter} reduce={!!reduce} progress={drawn} n={n} />
