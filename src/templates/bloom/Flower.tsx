@@ -118,7 +118,7 @@ function petalGeometry(length: number, width: number, curl: number) {
     const x = pos.getX(i);
     const y = pos.getY(i);
     const t = y / length;
-    const z = -curl * t * t * length + 0.35 * (x / width) ** 2 * width;
+    const z = curl * t * t * length - 0.35 * (x / width) ** 2 * width;
     pos.setZ(i, z);
   }
   pos.needsUpdate = true;
@@ -179,7 +179,7 @@ function Petals({
               }}
               rotation={[r.closed, 0, 0]}
             >
-              <mesh geometry={geos[pt.ring]} rotation={[-Math.PI / 2 + 0.2, 0, 0]}>
+              <mesh geometry={geos[pt.ring]}>
                 <meshStandardMaterial
                   color={c}
                   side={THREE.DoubleSide}
@@ -380,7 +380,7 @@ export function Flower({
     <Canvas
       className={className}
       dpr={[1, 1.75]}
-      camera={{ position: [0, 0.9, 3.1], fov: 40 }}
+      camera={{ position: [0, 1.05, 3.5], fov: 40 }}
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       onCreated={({ gl, camera }) => {
         gl.setClearColor(0x000000, 0);

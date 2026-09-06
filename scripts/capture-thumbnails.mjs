@@ -133,6 +133,28 @@ const SCRIPTS = {
     await page.waitForTimeout(3500);
     return poster;
   },
+  passport: async (page) => {
+    await page.getByRole("button", { name: /^open$/i }).waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1400);
+    await page.getByRole("button", { name: /^open$/i }).click();
+    await page.waitForTimeout(2600);
+    const poster = await page.screenshot();
+    await page.waitForTimeout(6000);
+    return poster;
+  },
+  bloom: async (page) => {
+    await page.locator("[data-hold]").waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1400);
+    const box = await page.locator("[data-hold]").boundingBox();
+    await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+    await page.mouse.down();
+    await page.waitForTimeout(2000);
+    const poster = await page.screenshot();
+    await page.waitForTimeout(2600);
+    await page.mouse.up();
+    await page.waitForTimeout(3000);
+    return poster;
+  },
   "the-letter": async (page) => {
     await page.getByRole("button", { name: /tap the seal/i }).waitFor({ timeout: 15000 });
     await page.waitForTimeout(1400);

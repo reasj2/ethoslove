@@ -38,8 +38,10 @@ Why these settings:
   add currency options `USD 7.99 / 11.99 / 24.99` and `GBP 6.49 / 9.49 / 19.99`
   (those are the amounts in `src/lib/pricing/products.ts`).
 
-After saving, open each product and copy the **Price ID** — it starts with `price_`, not
-`prod_`. You need three of them.
+After saving, copy either the three **Product IDs** (`prod_…`, shown in the product list)
+or the three **Price IDs** (`price_…`, inside each product). Product IDs are enough: the
+code charges each product's default price. Price IDs only matter if a product has several
+prices and you want a specific one.
 
 ## 2. Keys → `.env.local`
 
@@ -48,9 +50,10 @@ Developers → API keys (test mode):
 ```
 STRIPE_SECRET_KEY=sk_test_…             # "Secret key" — server only, never NEXT_PUBLIC
 NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_…
-STRIPE_PRICE_SINGLE=price_…             # Ethos — One template
-STRIPE_PRICE_PICK3=price_…              # Ethos — Pick three
-STRIPE_PRICE_EVERYTHING=price_…         # Ethos — Everything
+STRIPE_PRODUCT_SINGLE=prod_…            # Ethos — One template
+STRIPE_PRODUCT_PICK3=prod_…             # Ethos — Pick three
+STRIPE_PRODUCT_EVERYTHING=prod_…        # Ethos — Everything
+# or, instead of the products, STRIPE_PRICE_SINGLE / STRIPE_PRICE_PICK3 / STRIPE_PRICE_EVERYTHING
 ```
 
 Restart `npm run dev` after editing `.env.local`.

@@ -14,12 +14,14 @@ export type Product = {
   compareAt?: Record<Currency, number>;
   highlight: boolean;
   envPriceKey: "STRIPE_PRICE_SINGLE" | "STRIPE_PRICE_PICK3" | "STRIPE_PRICE_EVERYTHING";
+  /** Alternative to the price: the Stripe Product whose default price is charged. */
+  envProductKey: "STRIPE_PRODUCT_SINGLE" | "STRIPE_PRODUCT_PICK3" | "STRIPE_PRODUCT_EVERYTHING";
 };
 
 export const PRODUCTS: Record<ProductId, Product> = {
-  single: { id: "single", picks: 1, amounts: { usd: 799, eur: 749, gbp: 649 }, highlight: false, envPriceKey: "STRIPE_PRICE_SINGLE" },
-  pick3: { id: "pick3", picks: 3, amounts: { usd: 1199, eur: 1099, gbp: 949 }, compareAt: { usd: 2397, eur: 2247, gbp: 1947 }, highlight: false, envPriceKey: "STRIPE_PRICE_PICK3" },
-  everything: { id: "everything", picks: Infinity, amounts: { usd: 2499, eur: 2299, gbp: 1999 }, highlight: true, envPriceKey: "STRIPE_PRICE_EVERYTHING" },
+  single: { id: "single", picks: 1, amounts: { usd: 799, eur: 749, gbp: 649 }, highlight: false, envPriceKey: "STRIPE_PRICE_SINGLE", envProductKey: "STRIPE_PRODUCT_SINGLE" },
+  pick3: { id: "pick3", picks: 3, amounts: { usd: 1199, eur: 1099, gbp: 949 }, compareAt: { usd: 2397, eur: 2247, gbp: 1947 }, highlight: false, envPriceKey: "STRIPE_PRICE_PICK3", envProductKey: "STRIPE_PRODUCT_PICK3" },
+  everything: { id: "everything", picks: Infinity, amounts: { usd: 2499, eur: 2299, gbp: 1999 }, highlight: true, envPriceKey: "STRIPE_PRICE_EVERYTHING", envProductKey: "STRIPE_PRODUCT_EVERYTHING" },
 };
 
 export const PRODUCT_ORDER: ProductId[] = ["single", "pick3", "everything"];

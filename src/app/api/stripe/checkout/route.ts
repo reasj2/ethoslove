@@ -2,7 +2,7 @@ import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 import { SITE } from "@/config/site";
 import { PRODUCTS, currencyFor, isProductId, type Currency } from "@/lib/pricing/products";
-import { getStripe, priceIdFor } from "@/lib/stripe/server";
+import { getStripe, resolvePriceId } from "@/lib/stripe/server";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/auth/get-user";
 import { TEMPLATE_SLUGS } from "@/templates/registry";
@@ -25,7 +25,7 @@ export async function POST(request: NextRequest) {
   const parsed = input.safeParse(await request.json().catch(() => null));
   if (!parsed.success || !isProductId(parsed.data.product)) return NextResponse.json({ error: "invalid_input" }, { status: 400 });
   const { product, returnTo } = parsed.data;
-  const price = priceIdFor(product);
+  const price = await resolvePriceId(stripe, product).catch(() => undefined);
   if (!price) return NextResponse.json({ error: "price_not_configured" }, { status: 503 });
 
   const slugs = Array.from(new Set(parsed.data.templateSlugs.filter((s) => TEMPLATE_SLUGS.includes(s))));

@@ -277,5 +277,50 @@ if (!only || only === "bloom") {
   await shot("bloom-05-end");
 }
 
+if (!only || only === "passport") {
+  await go("passport");
+  await shot("passport-01-cover");
+  await page.getByRole("button", { name: /^open$/i }).click();
+  await page.waitForTimeout(2500);
+  await shot("passport-02-flight");
+  await page.getByText(/arrived/i).first().waitFor({ timeout: 20000 });
+  await page.waitForTimeout(600);
+  await shot("passport-03-arrived");
+  await page.getByText(/entries/i).first().waitFor({ timeout: 10000 });
+  await page.waitForTimeout(1200);
+  await shot("passport-04-pages");
+  const sc = page.locator(".overflow-y-auto").first();
+  await sc.evaluate((el) => el.scrollBy({ top: 700, behavior: "instant" }));
+  await page.waitForTimeout(1500);
+  await shot("passport-05-stamps");
+  await page.locator("[data-stamp='1']").click();
+  await page.waitForTimeout(800);
+  await shot("passport-06-lightbox");
+  await page.mouse.click(195, 40);
+  await sc.evaluate((el) => el.scrollTo({ top: el.scrollHeight, behavior: "instant" }));
+  await page.waitForTimeout(1500);
+  await shot("passport-07-visa");
+}
+
+if (!only || only === "bloom") {
+  await go("bloom");
+  await page.waitForTimeout(1200);
+  await shot("bloom-01-closed");
+  const hold = page.locator("[data-hold]");
+  const box = await hold.boundingBox();
+  await page.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await page.mouse.down();
+  await page.waitForTimeout(1800);
+  await shot("bloom-02-opening");
+  await page.waitForTimeout(2600);
+  await page.mouse.up();
+  await page.getByText(/it's open/i).waitFor({ timeout: 15000 });
+  await page.waitForTimeout(1800);
+  await shot("bloom-03-open");
+  await page.getByRole("button", { name: /read the note/i }).click();
+  await page.waitForTimeout(2500);
+  await shot("bloom-04-note");
+}
+
 await browser.close();
 console.log(errors.length ? `ERRORS:\n${errors.join("\n")}` : "no page errors");

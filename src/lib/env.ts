@@ -42,7 +42,9 @@ export const env = {
 export const isConfigured = {
   supabase: Boolean(env.supabaseUrl && env.supabaseAnonKey),
   supabaseAdmin: Boolean(env.supabaseUrl && env.supabaseServiceRoleKey),
-  stripe: Boolean(env.stripeSecretKey && env.stripeWebhookSecret),
+  // The webhook secret is checked by the webhook route itself; the success page fulfils
+  // purchases without it, so checkout only needs the secret key.
+  stripe: Boolean(env.stripeSecretKey),
   resend: Boolean(env.resendApiKey),
   posthog: Boolean(env.posthogKey),
   sentry: Boolean(env.sentryDsn),
