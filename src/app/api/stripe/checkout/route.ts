@@ -4,6 +4,7 @@ import { SITE } from "@/config/site";
 import { PRODUCTS, currencyFor, isProductId, type Currency } from "@/lib/pricing/products";
 import { getStripe, resolvePriceId } from "@/lib/stripe/server";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { getCurrentUser } from "@/lib/auth/get-user";
 import { TEMPLATE_SLUGS } from "@/templates/registry";
 
@@ -21,6 +22,10 @@ export async function POST(request: NextRequest) {
   const supabase = await getSupabaseServerClient();
   const user = await getCurrentUser();
   if (!supabase || !user) return NextResponse.json({ error: "unauthenticated" }, { status: 401 });
+  // Purchases are written with the service role: users can only read their own rows (RLS),
+  // and the amount/currency must come from the server, never the client.
+  const admin = getSupabaseAdminClient();
+  if (!admin) return NextResponse.json({ error: "payments_not_configured" }, { status: 503 });
 
   const parsed = input.safeParse(await request.json().catch(() => null));
   if (!parsed.success || !isProductId(parsed.data.product)) return NextResponse.json({ error: "invalid_input" }, { status: 400 });
@@ -37,12 +42,15 @@ export async function POST(request: NextRequest) {
   const priceObject = await stripe.prices.retrieve(price, { expand: ["currency_options"] });
   const supported = new Set<string>([priceObject.currency, ...Object.keys(priceObject.currency_options ?? {})]);
   const currency: Currency = supported.has(wanted) ? wanted : (priceObject.currency as Currency);
-  const { data: purchase, error } = await supabase
+  const { data: purchase, error } = await admin
     .from("purchases")
     .insert({ user_id: user.id, product, template_slugs: product === "everything" ? [] : slugs, amount: PRODUCTS[product].amounts[currency], currency, status: "pending" })
     .select("id")
     .single();
-  if (error || !purchase) return NextResponse.json({ error: "purchase_failed" }, { status: 500 });
+  if (error || !purchase) {
+    console.error("[stripe] purchase insert failed", error?.message);
+    return NextResponse.json({ error: "purchase_failed" }, { status: 500 });
+  }
 
   const origin = process.env.NEXT_PUBLIC_SITE_URL ?? SITE.url;
   const back = returnTo ?? "/dashboard";
@@ -60,6 +68,6 @@ export async function POST(request: NextRequest) {
     success_url: `${origin}/checkout/success?session_id={CHECKOUT_SESSION_ID}&return=${encodeURIComponent(back)}`,
     cancel_url: `${origin}${back}`,
   });
-  await supabase.from("purchases").update({ stripe_session_id: session.id }).eq("id", purchase.id);
+  await admin.from("purchases").update({ stripe_session_id: session.id }).eq("id", purchase.id);
   return NextResponse.json({ url: session.url });
 }

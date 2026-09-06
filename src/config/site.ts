@@ -1,8 +1,16 @@
 import { BRAND } from "./brand";
 
+const nonEmpty = (v: string | undefined) => (v && v.trim().length > 0 ? v.trim() : undefined);
+
+/**
+ * Public origin. Explicit NEXT_PUBLIC_SITE_URL wins; on Vercel the stable production domain
+ * is used, then the per-deployment URL (previews); locally, the dev server.
+ */
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
+  nonEmpty(process.env.NEXT_PUBLIC_SITE_URL)?.replace(/\/$/, "") ??
+  (nonEmpty(process.env.VERCEL_PROJECT_PRODUCTION_URL) ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : undefined) ??
+  (nonEmpty(process.env.VERCEL_URL) ? `https://${process.env.VERCEL_URL}` : undefined) ??
+  "http://localhost:3000";
 
 export const SITE = {
   name: BRAND.name,

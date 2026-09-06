@@ -5,15 +5,17 @@ needs from you is configuration, not code.
 
 ## 1. Environment variables (Vercel → Project → Settings → Environment Variables)
 
-Copy these from `.env.local`, for **Production** and **Preview**:
+Fastest route: keep a gitignored `.env.vercel` with the real values (the repo ignores it) and
+use **Import .env** on that page; tick Production and Preview. Otherwise copy these from
+`.env.local`, for **Production** and **Preview**:
 
 | Variable | Value |
 | --- | --- |
-| `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>` (the Vercel URL until the real domain is attached) |
+| `NEXT_PUBLIC_SITE_URL` | `https://<your-domain>`. Optional on Vercel: the code falls back to the project's production domain |
 | `NEXT_PUBLIC_SUPABASE_URL` | from Supabase → Project settings → API |
 | `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | same page |
 | `SUPABASE_SERVICE_ROLE_KEY` | same page, server only |
-| `STRIPE_SECRET_KEY` | Stripe → Developers → API keys (test key first, live key when you go live) |
+| `STRIPE_SECRET_KEY` | Stripe → Developers → API keys (test key first, live key when you go live). Products must be in the same mode as the key: `node scripts/stripe-create-test-products.mjs` creates the test-mode set |
 | `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` | same page |
 | `STRIPE_PRODUCT_SINGLE` / `STRIPE_PRODUCT_PICK3` / `STRIPE_PRODUCT_EVERYTHING` | the three `prod_…` IDs |
 | `STRIPE_WEBHOOK_SECRET` | after step 3 |
