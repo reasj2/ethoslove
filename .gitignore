@@ -45,3 +45,6 @@ next-env.d.ts
 /playwright-report/
 /.verify/
 /.tmp-video/
+
+# Vercel import file with real values
+.env.vercel
