@@ -4,7 +4,7 @@ import { useState, type FormEvent } from "react";
 import { Mail, MailCheck } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import { getSupabaseBrowserClient } from "@/lib/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,7 +28,24 @@ export function AuthForm({ mode, next: nextOverride, compact = false }: { mode: 
 
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [code, setCode] = useState("");
+  const [codeState, setCodeState] = useState<"idle" | "checking" | "wrong">("idle");
+  const router = useRouter();
   const supabase = getSupabaseBrowserClient();
+
+  /** The same email carries a 6-digit code; typing it here works even if the link opens elsewhere. */
+  const verifyCode = async (e: FormEvent) => {
+    e.preventDefault();
+    if (!supabase || code.length < 6) return;
+    setCodeState("checking");
+    const { error } = await supabase.auth.verifyOtp({ email, token: code.trim(), type: "email" });
+    if (error) {
+      setCodeState("wrong");
+      return;
+    }
+    router.push(next);
+    router.refresh();
+  };
 
   const redirectTo = () =>
     `${window.location.origin}/auth/callback?next=${encodeURIComponent(next)}`;
@@ -66,6 +83,32 @@ export function AuthForm({ mode, next: nextOverride, compact = false }: { mode: 
           <MailCheck className="size-8 text-coral" aria-hidden="true" />
           <p className="mt-3 font-medium">{t("linkSent")}</p>
           <p className="mt-1 text-sm text-muted-foreground">{t("linkSentDetail", { email })}</p>
+          <form onSubmit={verifyCode} className="mt-5 flex w-full max-w-xs flex-col gap-2">
+            <Label htmlFor="otp" className="text-xs text-muted-foreground">{t("codeLabel")}</Label>
+            <div className="flex gap-2">
+              <Input
+                id="otp"
+                inputMode="numeric"
+                autoComplete="one-time-code"
+                pattern="[0-9]*"
+                maxLength={8}
+                value={code}
+                onChange={(e) => {
+                  setCode(e.target.value.replace(/\D/g, ""));
+                  if (codeState === "wrong") setCodeState("idle");
+                }}
+                placeholder="123456"
+                className="h-11 text-center font-mono text-lg tracking-[0.3em]"
+              />
+              <Button type="submit" className="h-11 rounded-full px-5" disabled={code.length < 6 || codeState === "checking"}>
+                {codeState === "checking" ? "…" : t("verify")}
+              </Button>
+            </div>
+            {codeState === "wrong" ? <p role="alert" className="text-xs text-destructive">{t("codeWrong")}</p> : <p className="text-xs text-muted-foreground">{t("codeHint")}</p>}
+          </form>
+          <button type="button" onClick={() => { setStatus("idle"); setCode(""); }} className="mt-4 text-xs text-muted-foreground underline underline-offset-4">
+            {t("useAnotherEmail")}
+          </button>
         </div>
       ) : (
         <>

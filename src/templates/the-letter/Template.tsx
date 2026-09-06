@@ -18,6 +18,7 @@ import { Countdown } from "../_shared/Countdown";
 import { SurpriseReveal } from "../_shared/SurpriseReveal";
 import { EndScreen } from "../_shared/EndScreen";
 import { SoundToggle } from "../_shared/SoundToggle";
+import { GiftVideo } from "../_shared/GiftVideo";
 import type { LetterFields } from "./schema";
 import styles from "./letter.module.css";
 
@@ -465,6 +466,13 @@ function LetterReader({
 
         {data.photos.length > 0 ? (
           <Polaroids photos={data.photos} seed={hashString(data.recipientName + data.senderName)} wide={size.isLandscape} onOpen={onOpenPhoto} />
+        ) : null}
+
+        {data.video ? (
+          <div className={cn(styles.paper, styles.paperTexture, styles.postcard)}>
+            <p className={styles.postcardTitle}>{t("aClipForYou")}</p>
+            <GiftVideo video={data.video} locale={data.locale} className="aspect-video" rounded="rounded-[3px]" />
+          </div>
         ) : null}
 
         {data.countdown ? (

@@ -11,7 +11,7 @@ export const manifest: TemplateManifest = {
   occasions: ["anniversary", "wedding", "graduation", "long-distance", "just-because", "valentines"],
   styles: ["cinematic", "minimal"],
   tier: "premium",
-  features: { music: true, video: false, countdown: true, surprise: true, captions: true, photos: { min: 2, max: 20 } },
+  features: { music: true, video: true, countdown: true, surprise: true, captions: true, photos: { min: 2, max: 20 } },
   thumbnail: { poster: "/templates/our-timeline/poster.jpg", webm: "/templates/our-timeline/preview.webm" },
   defaultAccent: "#2E4A62",
   heavy: false,

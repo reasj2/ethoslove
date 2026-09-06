@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { welcomeIfNew } from "@/lib/email/welcome";
 
 function safeNext(value: string | null): string {
   if (!value || !value.startsWith("/") || value.startsWith("//")) return "/dashboard";
@@ -16,7 +17,10 @@ export async function GET(request: NextRequest) {
     const supabase = await getSupabaseServerClient();
     if (supabase) {
       const { error } = await supabase.auth.exchangeCodeForSession(code);
-      if (!error) return NextResponse.redirect(`${origin}${next}`);
+      if (!error) {
+        void welcomeIfNew(supabase).catch(() => {});
+        return NextResponse.redirect(`${origin}${next}`);
+      }
     }
   }
   return NextResponse.redirect(`${origin}/login?error=callback`);

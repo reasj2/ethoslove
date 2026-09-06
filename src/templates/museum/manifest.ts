@@ -11,7 +11,7 @@ export const manifest: TemplateManifest = {
   occasions: ["anniversary", "mothers-day", "fathers-day", "wedding", "graduation", "just-because"],
   styles: ["minimal", "cinematic"],
   tier: "premium",
-  features: { music: true, video: false, countdown: true, surprise: true, captions: true, photos: { min: 2, max: 20 } },
+  features: { music: true, video: true, countdown: true, surprise: true, captions: true, photos: { min: 2, max: 20 } },
   thumbnail: { poster: "/templates/museum/poster.jpg", webm: "/templates/museum/preview.webm" },
   defaultAccent: "#8C7B6B",
   heavy: false,

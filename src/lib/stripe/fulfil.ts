@@ -2,7 +2,9 @@ import "server-only";
 
 import type Stripe from "stripe";
 import { getSupabaseAdminClient } from "@/lib/supabase/admin";
-import { isProductId, unlocksFor } from "@/lib/pricing/products";
+import { PRODUCTS, formatAmount, isProductId, unlocksFor, type Currency } from "@/lib/pricing/products";
+import { notifyReceipt } from "@/lib/email/notify";
+import { getManifest } from "@/templates/registry";
 
 /**
  * Marks a purchase paid and grants unlocks. Idempotent: safe to call from the webhook
@@ -29,6 +31,11 @@ export async function fulfilCheckoutSession(session: Stripe.Checkout.Session): P
   const rows = unlocksFor(product, slugs).map((template_slug) => ({ user_id: userId, template_slug, purchase_id: purchaseId }));
   const { error } = await admin.from("template_unlocks").upsert(rows, { onConflict: "user_id,template_slug", ignoreDuplicates: true });
   if (error) return { ok: false, reason: error.message };
+  const currency = (session.currency ?? "usd") as Currency;
+  const amount = session.amount_total ?? PRODUCTS[product].amounts[currency] ?? 0;
+  const labels: Record<string, string> = { single: "One template", pick3: "Pick three", everything: "Everything" };
+  const unlockNames = product === "everything" ? ["All templates, current and future"] : slugs.map((s) => getManifest(s)?.name.en ?? s);
+  void notifyReceipt(userId, labels[product] ?? product, formatAmount(amount, currency), unlockNames).catch(() => {});
   return { ok: true };
 }
 

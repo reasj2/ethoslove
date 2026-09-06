@@ -18,6 +18,7 @@ import { SurpriseReveal } from "../_shared/SurpriseReveal";
 import { EndScreen } from "../_shared/EndScreen";
 import { SoundToggle } from "../_shared/SoundToggle";
 import { Confetti } from "../_shared/Confetti";
+import { GiftVideo } from "../_shared/GiftVideo";
 import type { CinemaFields } from "./schema";
 import { Flames, type FlameState } from "./Flames";
 
@@ -287,6 +288,15 @@ function FilmPanel({ data, mode, blocks, reduce, onEvent, onReact, onMakeOne, on
   return (
     <motion.div ref={scroller} initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0 z-[35] overflow-x-hidden overflow-y-auto overscroll-contain scrollbar-none">
       <div className="pt-[max(18cqh,110px)] pb-[max(2rem,env(safe-area-inset-bottom))]">
+        {data.video ? (
+          <div className="mx-auto mb-8 w-[min(92cqw,600px)]">
+            <p className="mb-2 text-center text-[11px] tracking-[0.3em] text-paper/55 uppercase">{t("aClipForYou")}</p>
+            <div className="rounded-[10px] border-[6px] border-[#1a1a1a] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.8)]">
+              <GiftVideo video={data.video} locale={data.locale} className="aspect-video" rounded="rounded-[4px]" />
+            </div>
+          </div>
+        ) : null}
+
         {/* Film strip */}
         <div className="relative -rotate-2 bg-[#111] py-3 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
           <Sprockets />

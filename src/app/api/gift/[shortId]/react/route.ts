@@ -3,6 +3,7 @@ import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { REACTIONS_BUCKET, extensionForMime } from "@/lib/gift/assets";
 import { isShortId } from "@/lib/gift/short-id";
 import { rateLimit } from "@/lib/rate-limit";
+import { notifyReaction } from "@/lib/email/notify";
 
 const EMOJI = new Set(["❤️", "😭", "🥹", "😂", "😮"]);
 const MAX_AUDIO_BYTES = 3 * 1024 * 1024;
@@ -44,5 +45,6 @@ export async function POST(request: NextRequest, ctx: RouteContext<"/api/gift/[s
 
   const { data, error } = await admin.rpc("add_reaction", { p_short_id: shortId, p_emoji: emoji, p_text: text || null, p_audio_path: audioPath });
   if (error) return NextResponse.json({ ok: false, error: "failed" }, { status: 500 });
+  void notifyReaction(giftId, emoji, text || null, Boolean(audioPath)).catch(() => {});
   return NextResponse.json({ ok: true, id: data });
 }

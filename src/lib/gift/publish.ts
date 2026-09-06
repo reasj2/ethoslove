@@ -44,5 +44,6 @@ export function readinessProblems(manifest: TemplateManifest, data: GiftData): s
   if (data.photos.length > manifest.features.photos.max) problems.push("photosMax");
   if (data.photos.some((p) => !isStoragePath(p.url) && !p.url.startsWith("http"))) problems.push("uploadsPending");
   if (data.music?.source === "upload" && !isStoragePath(data.music.url) && !data.music.url.startsWith("http")) problems.push("uploadsPending");
+  if (data.video && !isStoragePath(data.video.url) && !data.video.url.startsWith("http")) problems.push("uploadsPending");
   return Array.from(new Set(problems));
 }

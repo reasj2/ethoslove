@@ -172,7 +172,12 @@
     "notConfiguredDetail": "Añade tus claves de Supabase a .env.local y reinicia el servidor. Todo lo demás funciona sin ello.",
     "legalNote": "Al continuar aceptas nuestros <terms>Términos</terms> y la <privacy>Política de privacidad</privacy>.",
     "error": "Algo salió mal. Inténtalo de nuevo.",
-    "callbackError": "Ese enlace no funcionó. Puede haber caducado — pide uno nuevo."
+    "callbackError": "Ese enlace no funcionó. Puede haber caducado — pide uno nuevo.",
+    "codeLabel": "O escribe el código de 6 dígitos del correo",
+    "verify": "Verificar",
+    "codeHint": "Útil si el enlace se abre en otro dispositivo.",
+    "codeWrong": "Ese código no coincide. Mira el correo más reciente.",
+    "useAnotherEmail": "Usar otro correo"
   },
   "dashboard": {
     "title": "Mis regalos",
@@ -288,6 +293,11 @@
         "n": "06",
         "title": "Extras",
         "blurb": "Una cuenta atrás, una sorpresa oculta, una contraseña, una fecha."
+      },
+      "video": {
+        "n": "04b",
+        "title": "Un vídeo corto",
+        "blurb": "Opcional. Unos segundos riéndose valen más que un párrafo. Se reproduce sin sonido hasta que toquen."
       }
     },
     "fields": {
@@ -457,6 +467,16 @@
       "generate": "Escribir tres versiones",
       "use": "Usar esta",
       "error": "El asistente de escritura no está disponible ahora mismo."
+    },
+    "video": {
+      "add": "Añadir un vídeo",
+      "hint": "MP4 o MOV, hasta {mb} MB. Mejor si dura menos de un minuto.",
+      "tooBig": "Ese vídeo pasa de {mb} MB. Recórtalo o expórtalo más pequeño.",
+      "uploaded": "Subido",
+      "uploading": "Subiendo…",
+      "local": "En este dispositivo",
+      "failed": "Error al subir",
+      "remove": "Quitar"
     }
   },
   "gift": {

@@ -53,10 +53,13 @@ try {
   await page.getByLabel("Message").fill("Three years ago you asked if the seat next to me was taken. **It wasn't.**\n\nIt still isn't.");
   await page.locator('input[type="file"]').first().setInputFiles(["public/demo/photos/p1.webp", "public/demo/photos/p2.webp"]);
   await page.getByText("Uploaded").first().waitFor({ timeout: 40000 });
+  // video clip (reuse a captured preview so no encoder is needed)
+  await page.locator('input[type="file"][accept*="video"]').setInputFiles("public/templates/constellations/preview.webm");
+  await page.getByText(/^Uploaded · /).waitFor({ timeout: 60000 });
   await page.waitForTimeout(2500); // debounced remote save
   await shot("02-editor");
   const { data: drafts } = await admin.from("gifts").select("id, short_id, status, data").eq("user_id", userId);
-  console.log("draft rows:", drafts?.map((d) => ({ id: d.id, status: d.status, photos: d.data?.photos?.length, firstUrl: d.data?.photos?.[0]?.url })));
+  console.log("draft rows:", drafts?.map((d) => ({ id: d.id, status: d.status, photos: d.data?.photos?.length, firstUrl: d.data?.photos?.[0]?.url, video: d.data?.video })));
   const { data: files } = await admin.storage.from("gifts").list(drafts[0].id);
   console.log("storage objects:", files?.map((f) => f.name));
 
@@ -85,6 +88,8 @@ try {
   await rp.getByRole("button", { name: /tap the seal/i }).click({ force: true });
   await rp.getByText("Marco", { exact: true }).waitFor({ timeout: 60000 });
   await rp.screenshot({ path: join(out, "flow-06-recipient-letter.png") });
+  const clip = await rp.locator("video").count();
+  console.log("recipient sees video element:", clip > 0);
   const scroller = rp.locator('[class*="scroller"]').first();
   await scroller.evaluate((el) => el.scrollTo({ top: el.scrollHeight, behavior: "instant" }));
   await rp.waitForTimeout(1500);

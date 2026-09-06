@@ -92,3 +92,20 @@ Read `docs/ARCHITECTURE.md` before adding a template.
 6. Marketing site
 7. Templates 3–12
 8. Polish — emails, analytics, Sentry, tests, Lighthouse, Spanish, accessibility
+
+## Email
+
+Transactional email goes through [Resend](https://resend.com). Set `RESEND_API_KEY` and
+`EMAIL_FROM` (a verified domain sender). Without a key, every send is logged and skipped, so
+development never blocks on it. Templates live in `src/emails/`, triggers in `src/lib/email/notify.ts`.
+
+Supabase's built-in sign-in emails are rate-limited (a few per hour) and unbranded. Once your
+Resend domain is verified, point Supabase at it: **Authentication → SMTP settings** → enable custom
+SMTP with host `smtp.resend.com`, port `465`, user `resend`, password = your Resend API key. Then in
+**Authentication → Email templates → Magic Link**, include `{{ .Token }}` in the body so the
+6-digit code the sign-in form accepts appears alongside the link.
+
+## Scheduled gifts
+
+`/api/cron/unlock` flips scheduled gifts to live once their time passes and emails the sender.
+`vercel.json` runs it every five minutes; set `CRON_SECRET` so only Vercel can call it.

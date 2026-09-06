@@ -4,6 +4,7 @@ import { getSupabaseAdminClient } from "@/lib/supabase/admin";
 import { viewerHash } from "@/lib/crypto";
 import { isShortId } from "@/lib/gift/short-id";
 import { rateLimit } from "@/lib/rate-limit";
+import { notifyFirstOpen } from "@/lib/email/notify";
 
 function device(ua: string): string {
   if (/iPhone|iPad|iPod/i.test(ua)) return "ios";
@@ -24,6 +25,8 @@ export async function POST(request: NextRequest, ctx: RouteContext<"/api/gift/[s
 
   const { data, error } = await admin.rpc("record_gift_view", { p_short_id: shortId, p_viewer_hash: await viewerHash(ip, ua, shortId), p_device: device(ua) });
   if (error || !data) return NextResponse.json({ ok: false }, { status: 404 });
+  const { data: view } = await admin.from("gift_views").select("gift_id").eq("id", data).single();
+  if (view) void notifyFirstOpen(view.gift_id).catch(() => {});
   return NextResponse.json({ ok: true, viewId: data });
 }
 

@@ -16,7 +16,7 @@ export const manifest: TemplateManifest = {
   tier: "free",
   features: {
     music: true,
-    video: false,
+    video: true,
     countdown: true,
     surprise: true,
     captions: true,

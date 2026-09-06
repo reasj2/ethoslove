@@ -16,6 +16,7 @@ import { Countdown } from "../_shared/Countdown";
 import { SurpriseReveal } from "../_shared/SurpriseReveal";
 import { EndScreen } from "../_shared/EndScreen";
 import { SoundToggle } from "../_shared/SoundToggle";
+import { GiftVideo } from "../_shared/GiftVideo";
 import type { MuseumFields } from "./schema";
 
 const WALL: Record<MuseumFields["wall"], { wall: string; floor: string; ink: string; muted: string; plaque: string; tone: "light" | "dark" }> = {
@@ -91,6 +92,19 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
         {data.photos.map((photo, i) => (
           <Room key={photo.id} photo={photo} index={i} total={data.photos.length} years={data.fields.years} frame={FRAME[data.fields.frame] ?? FRAME.oak} palette={palette} scroller={scroller} reduce={!!reduce} roomLabel={s.room} untitled={s.untitled} onNext={next} />
         ))}
+
+        {data.video ? (
+          <section className="relative flex h-full w-full shrink-0 snap-start flex-col items-center justify-center bg-[#0d0c0b] px-6 pb-[14%] text-paper">
+            <span className="absolute top-[7%] left-6 text-[10px] tracking-[0.3em] uppercase text-paper/50" style={{ fontFamily: "var(--gift-font-body)" }}>{s.room} {data.photos.length + 1}</span>
+            <div className="w-[min(88cqw,520px)] rounded-[6px] border border-white/10 p-2 shadow-[0_40px_60px_-24px_rgba(0,0,0,0.8)]">
+              <GiftVideo video={data.video} locale={data.locale} className="aspect-video" rounded="rounded-[3px]" />
+            </div>
+            <p className="mt-5 text-[13px] italic">{t("aClipForYou")}</p>
+            <button type="button" onClick={next} aria-label="Next room" className="absolute right-2 top-1/2 grid size-11 -translate-y-1/2 place-items-center rounded-full bg-white/10 text-paper backdrop-blur hover:bg-white/20">
+              <ChevronRight className="size-5" />
+            </button>
+          </section>
+        ) : null}
 
         {/* Wall text room */}
         <section className="relative flex h-full w-full shrink-0 snap-start items-start justify-center overflow-y-auto px-7 pt-[10cqh] pb-[max(2rem,env(safe-area-inset-bottom))] scrollbar-none">

@@ -17,6 +17,7 @@ import { Countdown } from "../_shared/Countdown";
 import { SurpriseReveal } from "../_shared/SurpriseReveal";
 import { EndScreen } from "../_shared/EndScreen";
 import { SoundToggle } from "../_shared/SoundToggle";
+import { GiftVideo } from "../_shared/GiftVideo";
 import type { TimelineFields } from "./schema";
 
 const S = {
@@ -174,6 +175,11 @@ function EndingSection({ data, mode, blocks, reduce, ending, paper, onEvent, onR
       <motion.p initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9 }} className="max-w-sm text-center text-[clamp(1.7rem,8cqw,2.4rem)] leading-tight italic" style={{ fontFamily: "var(--gift-font-display)" }}>
         {ending}
       </motion.p>
+      {data.video ? (
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9, delay: 0.2 }} className="mt-8 w-full max-w-md rounded-2xl p-3 shadow-soft" style={{ background: paper }}>
+          <GiftVideo video={data.video} locale={data.locale} className="aspect-video" rounded="rounded-xl" />
+        </motion.div>
+      ) : null}
       {data.countdown ? (
         <motion.div initial={{ opacity: 0, y: 16 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.9, delay: 0.3 }} className="mt-8 w-full max-w-sm rounded-2xl p-5 shadow-soft" style={{ background: paper }}>
           <Countdown countdown={data.countdown} locale={data.locale} tone={data.fields.road === "chalk" ? "dark" : "light"} />

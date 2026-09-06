@@ -10,6 +10,7 @@ import { getSupabaseServerClient } from "@/lib/supabase/server";
 import { getCurrentUser } from "@/lib/auth/get-user";
 import { getManifest, loadTemplate } from "@/templates/registry";
 import type { Json } from "@/lib/supabase/types";
+import { notifyPublished } from "@/lib/email/notify";
 
 export type ActionResult<T> = { ok: true; data: T } | { ok: false; error: string; problems?: string[] };
 
@@ -130,6 +131,10 @@ export async function publishGift(raw: unknown): Promise<ActionResult<{ shortId:
 
   const { data: row } = await ctx.supabase.from("gifts").select("short_id").eq("id", gift.id).single();
   revalidatePath("/dashboard");
+  void notifyPublished(
+    gift.id,
+    scheduled ? new Intl.DateTimeFormat(data.locale, { dateStyle: "long", timeStyle: "short", timeZone: input.data.schedule?.timezone }).format(new Date(input.data.schedule!.unlockAt)) : undefined,
+  ).catch(() => {});
   return { ok: true, data: { shortId: row?.short_id ?? "", status } };
 }
 

@@ -57,6 +57,7 @@ async function signAssets(data: GiftData, watermark: boolean): Promise<GiftData>
     ...data.photos.map((p) => p.url).filter(isStoragePath),
     ...(data.music?.source === "upload" && isStoragePath(data.music.url) ? [data.music.url] : []),
     ...(data.video && isStoragePath(data.video.url) ? [data.video.url] : []),
+    ...(data.video?.poster && isStoragePath(data.video.poster) ? [data.video.poster] : []),
   ];
   const map: Record<string, string> = {};
   if (paths.length) {
@@ -70,7 +71,7 @@ async function signAssets(data: GiftData, watermark: boolean): Promise<GiftData>
     watermark,
     photos: data.photos.map((p) => ({ ...p, url: map[p.url] ?? p.url })),
     music: data.music ? { ...data.music, url: map[data.music.url] ?? data.music.url } : undefined,
-    video: data.video ? { ...data.video, url: map[data.video.url] ?? data.video.url } : undefined,
+    video: data.video ? { url: map[data.video.url] ?? data.video.url, poster: data.video.poster ? (map[data.video.poster] ?? data.video.poster) : undefined } : undefined,
   };
 }
 

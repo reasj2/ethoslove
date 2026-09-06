@@ -53,6 +53,9 @@ export type EditorState = {
   setMusicStart: (seconds: number) => void;
   clearMusic: () => void;
 
+  setUploadedVideo: (file: File) => Promise<void>;
+  clearVideo: () => void;
+
   ensureRemote: () => Promise<string | null>;
   uploadPending: () => Promise<void>;
   syncNow: () => Promise<boolean>;
@@ -87,6 +90,40 @@ function assetRefs(state: Pick<EditorState, "assets">): Record<string, string | 
   return refs;
 }
 
+/** Object URL → persistent ref, for assets addressed by URL rather than id (video + poster). */
+function refsByUrl(state: Pick<EditorState, "assets">): Record<string, string | undefined> {
+  const refs: Record<string, string | undefined> = {};
+  for (const a of Object.values(state.assets)) if (a.objectUrl) refs[a.objectUrl] = a.storagePath ?? (a.local ? `idb:${a.id}` : undefined);
+  return refs;
+}
+
+/** Grabs a frame ~0.6s in as a WebP poster. */
+async function captureVideoPoster(file: File): Promise<Blob | null> {
+  try {
+    const url = URL.createObjectURL(file);
+    const video = document.createElement("video");
+    video.muted = true;
+    video.playsInline = true;
+    video.preload = "auto";
+    video.src = url;
+    await new Promise<void>((resolve, reject) => {
+      video.onloadedmetadata = () => resolve();
+      video.onerror = () => reject(new Error("video metadata"));
+    });
+    video.currentTime = Math.min(0.6, Math.max(0, video.duration / 4));
+    await new Promise<void>((resolve) => (video.onseeked = () => resolve()));
+    const canvas = document.createElement("canvas");
+    const scale = Math.min(1, 1280 / Math.max(video.videoWidth, video.videoHeight));
+    canvas.width = Math.round(video.videoWidth * scale);
+    canvas.height = Math.round(video.videoHeight * scale);
+    canvas.getContext("2d")!.drawImage(video, 0, 0, canvas.width, canvas.height);
+    URL.revokeObjectURL(url);
+    return await new Promise<Blob | null>((resolve) => canvas.toBlob(resolve, "image/webp", 0.85));
+  } catch {
+    return null;
+  }
+}
+
 export const useEditor = create<EditorState>((set, get) => {
   const persistLocal = () => {
     window.clearTimeout(localTimer);
@@ -105,7 +142,7 @@ export const useEditor = create<EditorState>((set, get) => {
         removeWatermark: s.removeWatermark,
         updatedAt: Date.now(),
       };
-      writeLocalDraft(draftScope(s.slug, s.giftId), serializeForLocal(draft, assetRefs(s)));
+      writeLocalDraft(draftScope(s.slug, s.giftId), serializeForLocal(draft, assetRefs(s), refsByUrl(s)));
       if (!s.authed || !s.giftId) set({ save: s.authed ? "saving" : "offline", savedAt: Date.now() });
     }, LOCAL_DEBOUNCE);
   };
@@ -182,6 +219,8 @@ export const useEditor = create<EditorState>((set, get) => {
         const paths = [
           ...remote.data.photos.map((p) => p.url).filter(isStoragePath),
           ...(remote.data.music?.source === "upload" && isStoragePath(remote.data.music.url) ? [remote.data.music.url] : []),
+          ...(remote.data.video && isStoragePath(remote.data.video.url) ? [remote.data.video.url] : []),
+          ...(remote.data.video?.poster && isStoragePath(remote.data.video.poster) ? [remote.data.video.poster] : []),
         ];
         const signed = paths.length ? await signAssetUrls(paths) : { ok: true as const, data: {} as Record<string, string> };
         const map = signed.ok ? signed.data : {};
@@ -189,7 +228,15 @@ export const useEditor = create<EditorState>((set, get) => {
           ...data,
           photos: data.photos.map((p) => ({ ...p, url: map[p.url] ?? p.url })),
           music: data.music && data.music.source === "upload" ? { ...data.music, url: map[data.music.url] ?? data.music.url } : data.music,
+          video: data.video ? { url: map[data.video.url] ?? data.video.url, poster: data.video.poster ? (map[data.video.poster] ?? data.video.poster) : undefined } : undefined,
         };
+        if (remote.data.video && isStoragePath(remote.data.video.url)) {
+          const vid = remote.data.video.url.split("/").pop()!.split(".")[0];
+          assets[vid] = { id: vid, kind: "video", local: false, storagePath: remote.data.video.url, status: "uploaded", progress: 1, objectUrl: map[remote.data.video.url] };
+          if (remote.data.video.poster && isStoragePath(remote.data.video.poster)) {
+            assets[`${vid}p`] = { id: `${vid}p`, kind: "photo", local: false, storagePath: remote.data.video.poster, status: "uploaded", progress: 1, objectUrl: map[remote.data.video.poster] };
+          }
+        }
         for (const p of remote.data.photos) {
           if (isStoragePath(p.url)) assets[p.id] = { id: p.id, kind: "photo", local: false, storagePath: p.url, status: "uploaded", progress: 1 };
         }
@@ -342,6 +389,49 @@ export const useEditor = create<EditorState>((set, get) => {
       touch();
     },
 
+    async setUploadedVideo(file) {
+      get().clearVideo();
+      const id = nanoid(10);
+      const posterId = `${id}p`;
+      const mime = file.type || "video/mp4";
+      await putBlob(id, file);
+      const objectUrl = URL.createObjectURL(file);
+      const poster = await captureVideoPoster(file);
+      let posterUrl: string | undefined;
+      if (poster) {
+        await putBlob(posterId, poster);
+        posterUrl = URL.createObjectURL(poster);
+      }
+      set((s) => ({
+        assets: {
+          ...s.assets,
+          [id]: { id, kind: "video", local: true, objectUrl, mime, bytes: file.size, status: "local", progress: 0 },
+          ...(poster && posterUrl ? { [posterId]: { id: posterId, kind: "photo" as const, local: true, objectUrl: posterUrl, mime: "image/webp", bytes: poster.size, status: "local" as const, progress: 0 } } : {}),
+        },
+        data: { ...s.data, video: { url: objectUrl, poster: posterUrl } },
+      }));
+      touch();
+      void uploadAsset(id);
+      if (poster) void uploadAsset(posterId);
+    },
+
+    clearVideo() {
+      const s = get();
+      const video = s.data.video;
+      if (!video) return;
+      const ids = Object.values(s.assets).filter((a) => a.objectUrl && (a.objectUrl === video.url || a.objectUrl === video.poster)).map((a) => a.id);
+      set((st) => {
+        const assets = { ...st.assets };
+        for (const id of ids) {
+          if (assets[id]?.objectUrl) URL.revokeObjectURL(assets[id].objectUrl!);
+          delete assets[id];
+          void deleteBlob(id);
+        }
+        return { assets, data: { ...st.data, video: undefined } };
+      });
+      touch();
+    },
+
     clearMusic() {
       const s = get();
       const id = s.data.music?.source === "upload" ? s.data.music.trackId : undefined;
@@ -395,8 +485,10 @@ export const useEditor = create<EditorState>((set, get) => {
       const s = get();
       if (!s.data) return s.data;
       const refs = assetRefs(s);
+      const byUrl = refsByUrl(s);
       return {
         ...s.data,
+        video: s.data.video ? { url: byUrl[s.data.video.url] ?? s.data.video.url, poster: s.data.video.poster ? (byUrl[s.data.video.poster] ?? s.data.video.poster) : undefined } : undefined,
         photos: s.data.photos.map((p) => ({ ...p, url: refs[p.id] ?? (isLocalRef(p.url) ? `idb:${p.id}` : p.url) })),
         music:
           s.data.music && s.data.music.source === "upload" && s.data.music.trackId
@@ -454,7 +546,27 @@ async function rehydrate(local: EditorDraft, existing: Record<string, AssetRecor
       } else music = undefined;
     }
   }
-  return { data: { ...local.data, photos, music }, assets };
+  let video = local.data.video;
+  if (video) {
+    const resolve = (ref: string | undefined, kind: "video" | "photo"): string | undefined => {
+      if (!ref) return undefined;
+      if (isStoragePath(ref)) return ref;
+      if (!ref.startsWith("idb:")) return ref;
+      const id = ref.slice(4);
+      const blob = blobs.get(id);
+      if (!blob) return undefined;
+      const objectUrl = URL.createObjectURL(blob);
+      assets[id] = { id, kind, local: true, objectUrl, mime: blob.type, bytes: blob.size, status: "local", progress: 0 };
+      return objectUrl;
+    };
+    const url = resolve(video.url, "video");
+    video = url ? { url, poster: resolve(video.poster, "photo") } : undefined;
+    if (video && isStoragePath(video.url)) {
+      const id = video.url.split("/").pop()!.split(".")[0];
+      assets[id] = { id, kind: "video", local: false, storagePath: video.url, status: "uploaded", progress: 1 };
+    }
+  }
+  return { data: { ...local.data, photos, music, video }, assets };
 }
 
 /** Preview data: whatever the store has, with a non-empty recipient so templates render. */

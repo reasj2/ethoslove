@@ -30,6 +30,7 @@ export const env = {
 
   anthropicApiKey: read("ANTHROPIC_API_KEY"),
 
+  cronSecret: read("CRON_SECRET"),
   upstashRedisUrl: read("UPSTASH_REDIS_REST_URL"),
   upstashRedisToken: read("UPSTASH_REDIS_REST_TOKEN"),
 

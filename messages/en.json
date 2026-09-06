@@ -172,7 +172,12 @@
     "notConfiguredDetail": "Add your Supabase keys to .env.local and restart the dev server. Everything else works without it.",
     "legalNote": "By continuing you agree to our <terms>Terms</terms> and <privacy>Privacy Policy</privacy>.",
     "error": "Something went wrong. Please try again.",
-    "callbackError": "That sign-in link didn't work. It may have expired — request a new one."
+    "callbackError": "That sign-in link didn't work. It may have expired — request a new one.",
+    "codeLabel": "Or type the 6-digit code from the email",
+    "verify": "Verify",
+    "codeHint": "Handy when the link opens on another device.",
+    "codeWrong": "That code didn't match. Check the newest email.",
+    "useAnotherEmail": "Use a different email"
   },
   "dashboard": {
     "title": "My gifts",
@@ -288,6 +293,11 @@
         "n": "06",
         "title": "Extras",
         "blurb": "A countdown, a hidden surprise, a password, a schedule."
+      },
+      "video": {
+        "n": "04b",
+        "title": "A short clip",
+        "blurb": "Optional. A few seconds of them laughing beats a paragraph. Plays muted until they tap."
       }
     },
     "fields": {
@@ -457,6 +467,16 @@
       "generate": "Write three drafts",
       "use": "Use this one",
       "error": "The writing helper isn't available right now."
+    },
+    "video": {
+      "add": "Add a video clip",
+      "hint": "MP4 or MOV, up to {mb} MB. Keep it under a minute.",
+      "tooBig": "That clip is over {mb} MB. Trim it or export smaller.",
+      "uploaded": "Uploaded",
+      "uploading": "Uploading…",
+      "local": "On this device",
+      "failed": "Upload failed",
+      "remove": "Remove"
     }
   },
   "gift": {

@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import type { EmailOtpType } from "@supabase/supabase-js";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { welcomeIfNew } from "@/lib/email/welcome";
 
 function safeNext(value: string | null): string {
   if (!value || !value.startsWith("/") || value.startsWith("//")) return "/dashboard";
@@ -18,7 +19,10 @@ export async function GET(request: NextRequest) {
     const supabase = await getSupabaseServerClient();
     if (supabase) {
       const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type });
-      if (!error) return NextResponse.redirect(`${origin}${next}`);
+      if (!error) {
+        void welcomeIfNew(supabase).catch(() => {});
+        return NextResponse.redirect(`${origin}${next}`);
+      }
     }
   }
   return NextResponse.redirect(`${origin}/login?error=callback`);

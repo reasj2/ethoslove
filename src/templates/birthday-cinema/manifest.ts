@@ -11,7 +11,7 @@ export const manifest: TemplateManifest = {
   occasions: ["birthday", "graduation", "just-because"],
   styles: ["cinematic", "playful"],
   tier: "premium",
-  features: { music: true, video: false, countdown: true, surprise: true, captions: true, photos: { min: 1, max: 20 }, needs: ["microphone"] },
+  features: { music: true, video: true, countdown: true, surprise: true, captions: true, photos: { min: 1, max: 20 }, needs: ["microphone"] },
   thumbnail: { poster: "/templates/birthday-cinema/poster.jpg", webm: "/templates/birthday-cinema/preview.webm" },
   defaultAccent: "#E8604C",
   heavy: false,
