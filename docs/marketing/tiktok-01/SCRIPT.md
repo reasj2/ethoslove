@@ -79,6 +79,68 @@ Cream, Walnut, black ink · Greeting empty · Sign-off `Nora says hi,` · Reacti
 Countdown off · Final surprise on with the line above · Password empty · Schedule off ·
 Footer: leave it.
 
+## Gift slides, take two: Jar of Reasons (use this instead of The Letter)
+
+The Letter is one long screen. The jar gives you a new punchline per slide: a closed jar,
+then one note at a time, then the letter, then the surprise. Every slide has one line of
+text big enough to read at thumbnail size, and the pastel notes are the exact aesthetic
+this audience screenshots. It is also premium, which sells the $7.99 in the comments.
+
+### Editor fields (tryethos.io → Jar of Reasons)
+
+Their name `Ana` · Your name `Marco` · Title `Just look at this first` (link preview) ·
+Jar label `12 reasons it was always you` · Note paper `Pastel mix` · Accent: the forest
+green (it pays off the "green thing" line) · Typed out · Reaction on · Countdown off ·
+Final surprise on, reveal by holding: `Sunday, 11am. Wear the green thing.` · Music:
+library "Quiet Hours" (the TikTok gets its own sound anyway) · Password empty · Schedule off.
+
+### The 12 reasons, one per line in the Reasons box (max 160 characters each)
+
+Photos attach to the first notes in order, so reasons 1 to 4 carry the pictures.
+
+1. `The girl at the station is my sister. Her name is Nora. She has wanted to meet you since March.`
+2. `You fell asleep on the train with your mouth open and I still thought: yeah. That one.`
+3. `You send me 14 tiktoks a day and I watch every single one. Even the cat ones. Especially the cat ones.`
+4. `You cried at the dog video in the kebab place and blamed the onions. There were no onions.`
+5. `Oat, no sugar, "not too hot". I hate that I know your order better than mine.`
+6. `Three days of you not replying was the worst part of this whole year. Nothing else came close.`
+7. `You wear my hoodie to bed and act like it just ended up there.`
+8. `You put your ice-cold feet on me every night like it's a legal right.`
+9. `You remember my mum's birthday. I forgot yours last year and you still made me a cake on mine.`
+10. `Nora picked the photos. She said "the train one, obviously". My whole family is on your side.`
+11. `I said "what girl" because I panicked, not because there was one. There was never one.`
+12. `I'm bad at saying things. So here are 12. I'll say the rest to your face on Sunday.`
+
+### Photos, in this order (captions in the box under each)
+
+1. The station photo, the one Lea sent: `nora. my sister. the arm-around-her at the station.`
+2. Her asleep on the train: `the train one. nora's pick.`
+3. A screenshot-of-a-screenshot of your chat with 14 unread tiktoks: `14. in one day.`
+4. The kebab place, both of you, bad lighting: `no onions.`
+5. Her in your hoodie, from behind: `"it just ended up here"`
+6. Anything with something green on her: `sunday. 11am.`
+
+### Message (the "Read the letter" screen). Paste the v3 letter above, then add these two lines at the end
+
+`Nora says hi.`
+`M`
+
+### Gift slides, new order (after the nine chat slides)
+
+| # | What is on screen | Why it is there |
+|---|---|---|
+| 10 | Closed jar. `MARCO → ANA`, `12 reasons it was always you`, `12/12` | "he made her a jar" |
+| 11 | Note 1 open, with the station photo | the plot twist |
+| 12 | Note 2 open, the train photo | the melt |
+| 13 | Note 6 open, text only | the gut punch |
+| 14 | The letter half typed, cursor still moving | proof it is real |
+| 15 | The surprise revealed: `Sunday, 11am. Wear the green thing.` above `Made by Marco for Ana` | the ending people save |
+
+Capture notes: add the gift to your home screen first (Share → Add to Home Screen) so
+it opens without Safari bars. Tap "Enable motion" once before you start shooting so the
+black pill disappears. Tap the jar to pull a note, tap the note to fold it back, and use
+"Read the letter" when you have the four notes you want.
+
 ## Caption, tags, sound
 
 Caption (pick one):
