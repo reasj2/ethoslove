@@ -3,10 +3,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { AlertCircle, Check, Loader2, Lock } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useRouter } from "@/i18n/navigation";
 import type { GiftLocale } from "@/lib/gift/schema";
 import type { TemplateManifest } from "@/templates/types";
 import { decidePublish, readinessProblems, premiumExtras } from "@/lib/gift/publish";
+import { PRODUCTS, currencyFor, formatAmount, type ProductId } from "@/lib/pricing/products";
+import { toast } from "sonner";
 import { useEditor } from "@/lib/editor/store";
 import { getEntitlement, publishGift } from "@/app/actions/gift";
 import { Button } from "@/components/ui/button";
@@ -37,13 +38,17 @@ export function PublishSheet({
   paymentsEnabled: boolean;
 }) {
   const t = useTranslations("editor.publishSheet");
+  const tCommon = useTranslations("common");
   const locale = useLocale() as GiftLocale;
-  const router = useRouter();
   const state = useEditor();
   const [fetchedEntitlement, setFetchedEntitlement] = useState<{ unlocked: boolean } | null>(null);
   const entitlement = state.authed ? fetchedEntitlement : { unlocked: false };
   const [busy, setBusy] = useState(false);
+  const [paying, setPaying] = useState<ProductId | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const currency = currencyFor(locale === "es" ? "ES" : "US");
+  const priceOne = formatAmount(PRODUCTS.single.amounts[currency], currency, locale);
+  const priceAll = formatAmount(PRODUCTS.everything.amounts[currency], currency, locale);
   const [published, setPublished] = useState<{
     shortId: string;
     status: "live" | "scheduled";
@@ -121,6 +126,25 @@ export function PublishSheet({
   };
 
   const next = `/create/${slug}?resume=publish`;
+  // Anything that would need an unlock at publish time, shown before sign-in as a price hint.
+  const wouldNeedPayment = manifest.tier === "premium" || options.removeWatermark || options.schedule || options.password || (serialized ? premiumExtras(serialized).length > 0 : false);
+
+  const checkout = async (product: ProductId) => {
+    setPaying(product);
+    try {
+      const res = await fetch("/api/stripe/checkout", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ product, templateSlugs: product === "single" ? [slug] : [], currency, returnTo: next }),
+      });
+      const json = (await res.json().catch(() => ({}))) as { url?: string };
+      if (!json.url) throw new Error("no_url");
+      window.location.assign(json.url);
+    } catch {
+      setPaying(null);
+      toast.error(t("error", { error: "checkout" }));
+    }
+  };
   if (!state.hydrated) return null;
 
   return (
@@ -190,29 +214,34 @@ export function PublishSheet({
             {!state.authed && supabaseConfigured ? (
               <section className="mt-7 rounded-2xl border border-border bg-card p-5">
                 <p className="font-display text-xl">{t("signInTitle")}</p>
-                <p className="mt-1 mb-4 text-sm text-muted-foreground">{t("signInBlurb")}</p>
+                <p className="mt-1 mb-4 text-sm text-muted-foreground">{wouldNeedPayment && paymentsEnabled ? t("signInBlurbPaid", { price: priceOne }) : t("signInBlurb")}</p>
                 <AuthForm mode="login" next={next} compact />
               </section>
             ) : null}
 
             {state.authed && decision && !decision.ok && decision.reason === "payment_required" ? (
-              <section className="mt-7 rounded-2xl border border-gold/60 bg-gold/5 p-5">
-                <p className="flex items-center gap-2 font-display text-xl">
-                  <Lock className="size-4 text-gold-deep" />
-                  {t("paymentTitle")}
-                </p>
-                <p className="mt-1 text-sm text-ink-soft">
-                  {t("paymentBlurb", { features: premiumFeatures.join(", ") })}
-                </p>
+              <section className="mt-7 rounded-xl border border-ink bg-card p-5" data-testid="pay-panel">
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="flex items-center gap-2 font-display text-xl">
+                      <Lock className="size-4 text-coral" />
+                      {t("payTitle")}
+                    </p>
+                    <p className="mt-1 text-sm text-ink-soft">{t("payBlurb", { features: premiumFeatures.join(", ") })}</p>
+                  </div>
+                  <p className="font-display shrink-0 text-[2rem] leading-none tracking-tight">{priceOne}</p>
+                </div>
                 {paymentsEnabled ? (
-                  <Button
-                    className="mt-4 h-11 rounded-full"
-                    onClick={() =>
-                      router.push(`/pricing?template=${slug}&return=${encodeURIComponent(next)}`)
-                    }
-                  >
-                    {t("paymentTitle")}
-                  </Button>
+                  <>
+                    <Button className="mt-5 h-12 w-full rounded-full text-base" disabled={paying !== null} onClick={() => checkout("single")} data-testid="pay-single">
+                      {paying === "single" ? <Loader2 className="size-4 animate-spin" /> : null}
+                      {paying === "single" ? t("paying") : t("payButton", { price: priceOne })}
+                    </Button>
+                    <button type="button" disabled={paying !== null} onClick={() => checkout("everything")} className="mt-3 w-full text-center text-sm font-medium text-ink-soft underline-offset-4 hover:text-ink hover:underline disabled:opacity-50">
+                      {t("payAll", { price: priceAll })}
+                    </button>
+                    <p className="text-mono-meta mt-3 text-center text-muted-foreground">{t("payNote")}</p>
+                  </>
                 ) : (
                   <Notice tone="info" className="mt-4">
                     {t("paymentSoon")}
@@ -228,7 +257,7 @@ export function PublishSheet({
             ) : null}
 
             <Button
-              className="mt-8 h-12 w-full rounded-full text-base shadow-glow"
+              className={cn("mt-8 h-12 w-full rounded-full text-base", decision && !decision.ok && decision.reason === "payment_required" && "hidden")}
               disabled={
                 !supabaseConfigured || !state.authed || busy || problems.length > 0 || !decision?.ok
               }
@@ -241,11 +270,7 @@ export function PublishSheet({
                   ? t("publishScheduled")
                   : t("publishNow")}
             </Button>
-            <p className="mt-3 text-center text-xs text-muted-foreground">
-              {locale === "es"
-                ? "Sin suscripción. Pagas una vez y es tuyo para siempre."
-                : "No subscription. Pay once, keep forever."}
-            </p>
+            <p className="mt-3 text-center text-xs text-muted-foreground">{tCommon("noSubscription")}</p>
           </div>
         )}
       </SheetContent>

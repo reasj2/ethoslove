@@ -438,7 +438,14 @@
       "featureSong": "a real song",
       "featureVideo": "a video clip",
       "featureVoiceNote": "a voice message",
-      "featureMorePhotos": "more than 10 photos"
+      "featureMorePhotos": "more than 10 photos",
+      "payTitle": "One payment, then it's sent",
+      "payBlurb": "This gift uses {features}. Pay once and this template is yours for good, with everything in it.",
+      "payButton": "Pay {price} and send",
+      "payAll": "Or unlock every template for {price}",
+      "payNote": "No subscription. Card, Apple Pay or Google Pay.",
+      "paying": "Opening secure checkout…",
+      "signInBlurbPaid": "Your draft is saved on this device. Sign in, pay {price} once, and it's sent."
     },
     "share": {
       "title": "It's live.",
@@ -555,7 +562,12 @@
       "romantic": "Romantic",
       "retro": "Retro",
       "3d": "3D"
-    }
+    },
+    "makeThis": "Make this gift",
+    "priceOnce": "{price} once",
+    "priceFree": "Free",
+    "detailPriceFree": "Free, forever. Add a real song, a video or a voice message for {price}, paid once.",
+    "detailPricePaid": "Try it first, no account needed. {price} once when you send it, then it's yours forever."
   },
   "occasions": {
     "title": "Occasions",

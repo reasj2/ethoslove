@@ -37,7 +37,9 @@ export function rgba(hex: string, alpha: number): string {
 
 /** CSS variables every template can rely on. Spread onto the template root. */
 export function giftThemeVars(accent: string, fontPairing: FontPairing): CSSProperties {
-  const onAccent = luminance(accent) > 0.45 ? "#1A1614" : "#FFF8F4";
+  // WCAG contrast against ink vs. paper; whichever reads better wins.
+  const l = luminance(accent);
+  const onAccent = (l + 0.05) / (0.011 + 0.05) >= (1.0 + 0.05) / (l + 0.05) ? "#1A1614" : "#FFF8F4";
   const fonts: Record<FontPairing, { display: string; body: string }> = {
     editorial: { display: "var(--font-gift-display), Georgia, serif", body: "var(--font-sans), system-ui, sans-serif" },
     modern: { display: "var(--font-sans), system-ui, sans-serif", body: "var(--font-sans), system-ui, sans-serif" },

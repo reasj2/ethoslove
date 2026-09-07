@@ -438,7 +438,14 @@
       "featureSong": "una canción real",
       "featureVideo": "un vídeo",
       "featureVoiceNote": "un mensaje de voz",
-      "featureMorePhotos": "más de 10 fotos"
+      "featureMorePhotos": "más de 10 fotos",
+      "payTitle": "Un pago y se envía",
+      "payBlurb": "Este regalo usa {features}. Pagas una vez y esta plantilla es tuya para siempre, con todo lo que lleva.",
+      "payButton": "Pagar {price} y enviar",
+      "payAll": "O desbloquea todas las plantillas por {price}",
+      "payNote": "Sin suscripción. Tarjeta, Apple Pay o Google Pay.",
+      "paying": "Abriendo el pago seguro…",
+      "signInBlurbPaid": "Tu borrador está guardado en este dispositivo. Inicia sesión, paga {price} una vez y se envía."
     },
     "share": {
       "title": "Ya está publicado.",
@@ -555,7 +562,12 @@
       "romantic": "Romántica",
       "retro": "Retro",
       "3d": "3D"
-    }
+    },
+    "makeThis": "Hacer este regalo",
+    "priceOnce": "{price} una vez",
+    "priceFree": "Gratis",
+    "detailPriceFree": "Gratis, para siempre. Añade una canción real, un vídeo o un mensaje de voz por {price}, pagado una vez.",
+    "detailPricePaid": "Pruébalo primero, sin cuenta. {price} una sola vez al enviarlo, y es tuyo para siempre."
   },
   "occasions": {
     "title": "Ocasiones",

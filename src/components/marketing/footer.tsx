@@ -31,12 +31,11 @@ export async function MarketingFooter() {
         <FooterColumn title={t("footer.company")}>
           <FooterLink href="/legal/terms">{t("footer.terms")}</FooterLink>
           <FooterLink href="/legal/privacy">{t("footer.privacy")}</FooterLink>
-          <a
-            href={`mailto:${BRAND.supportEmail}`}
-            className="text-sm text-muted-foreground transition-colors hover:text-ink"
-          >
-            {t("footer.contact")}
-          </a>
+          <li>
+            <a href={`mailto:${BRAND.supportEmail}`} className="inline-block py-1 text-sm text-muted-foreground transition-colors hover:text-ink">
+              {t("footer.contact")}
+            </a>
+          </li>
         </FooterColumn>
       </div>
       <div className="container-x text-mono-meta flex flex-col items-start justify-between gap-4 border-t border-line py-6 text-muted-foreground sm:flex-row sm:items-center">
@@ -54,7 +53,7 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
   return (
     <div>
       <p className="text-eyebrow mb-4 text-muted-foreground">{title}</p>
-      <ul className="flex flex-col gap-2.5">{children}</ul>
+      <ul className="flex flex-col gap-1.5">{children}</ul>
     </div>
   );
 }
@@ -62,7 +61,7 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="text-sm text-muted-foreground transition-colors hover:text-ink">
+      <Link href={href} className="inline-block py-1 text-sm text-muted-foreground transition-colors hover:text-ink">
         {children}
       </Link>
     </li>

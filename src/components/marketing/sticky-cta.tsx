@@ -2,14 +2,17 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { useScrolledPast } from "@/hooks/use-scrolled-past";
 
 /** Mobile-only floating "Create" button that appears once the hero scrolls away. */
 export function StickyCta() {
   const t = useTranslations("common");
-  const visible = useScrolledPast(480);
+  const pathname = usePathname();
+  // Only where the page has no strong call to action of its own: home, gallery, occasions.
+  const wanted = pathname === "/" || pathname === "/templates" || pathname.startsWith("/occasions");
+  const visible = useScrolledPast(480) && wanted;
 
   return (
     <AnimatePresence>

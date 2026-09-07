@@ -2,13 +2,14 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { useRef, useState } from "react";
-import { ArrowUpRight, Play } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Play } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { motion } from "motion/react";
 import { Link } from "@/i18n/navigation";
 import type { GiftLocale } from "@/lib/gift/schema";
 import type { TemplateManifest } from "@/templates/types";
 import { GiftRenderer } from "@/templates/_shared/GiftRenderer";
+import { PRODUCTS, currencyFor, formatAmount } from "@/lib/pricing/products";
 import { cn } from "@/lib/utils";
 
 /**
@@ -20,6 +21,8 @@ export function TemplateCard({ manifest, index = 0 }: { manifest: TemplateManife
   const t = useTranslations();
   const [live, setLive] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const currency = currencyFor(locale === "es" ? "ES" : "US");
+  const price = formatAmount(PRODUCTS.single.amounts[currency], currency, locale);
 
   const play = () => {
     const v = videoRef.current;
@@ -86,21 +89,25 @@ export function TemplateCard({ manifest, index = 0 }: { manifest: TemplateManife
           {manifest.tier === "free" ? t("common.free") : t("common.premium")}
         </span>
       </div>
-      <div className="mt-4 flex items-start justify-between gap-3 px-0.5">
-        <div className="min-w-0">
-          <div className="flex items-baseline gap-3">
-            <span className="text-mono-meta text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
-            <h3 className="font-display truncate text-[1.35rem] leading-tight">{manifest.name[locale]}</h3>
+      <div className="mt-4 px-0.5">
+        <div className="flex items-baseline justify-between gap-3">
+          <div className="flex min-w-0 items-baseline gap-3">
+            <span className="text-mono-meta shrink-0 text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
+            <h3 className="font-display text-[1.3rem] leading-tight text-balance">{manifest.name[locale]}</h3>
           </div>
-          <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{manifest.tagline[locale]}</p>
+          <span className="text-mono-meta shrink-0 text-ink-soft">{manifest.tier === "free" ? t("templates.priceFree") : t("templates.priceOnce", { price })}</span>
         </div>
-        <Link
-          href={`/templates/${manifest.slug}`}
-          className="mt-0.5 inline-flex shrink-0 items-center gap-1 text-sm font-medium text-ink underline-offset-4 hover:underline"
-        >
-          {t("templates.details")}
-          <ArrowUpRight className="size-3.5" />
-        </Link>
+        <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{manifest.tagline[locale]}</p>
+        <div className="mt-3 flex items-center gap-4">
+          <Link href={`/create/${manifest.slug}`} className="inline-flex h-10 flex-1 items-center justify-center gap-1.5 rounded-full bg-ink px-4 text-sm font-medium text-paper transition-colors hover:bg-ink/90 sm:flex-none">
+            {t("templates.makeThis")}
+            <ArrowRight className="size-3.5" />
+          </Link>
+          <Link href={`/templates/${manifest.slug}`} className="-my-1.5 inline-flex shrink-0 items-center gap-1 py-1.5 text-sm font-medium text-ink-soft underline-offset-4 hover:text-ink hover:underline">
+            {t("templates.details")}
+            <ArrowUpRight className="size-3.5" />
+          </Link>
+        </div>
       </div>
     </motion.article>
   );

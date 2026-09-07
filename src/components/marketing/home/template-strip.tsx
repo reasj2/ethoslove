@@ -20,7 +20,7 @@ export function TemplateStrip({ manifests }: { manifests: TemplateManifest[] }) 
           <p className="max-w-md text-lg leading-relaxed text-ink-soft">{t("blurb")}</p>
           <div className="mt-5 flex items-center gap-5">
             <span className="text-mono-meta text-muted-foreground">{t("count", { n: manifests.length, free })}</span>
-            <Link href="/templates" className="group inline-flex items-center gap-1.5 text-sm font-medium text-ink underline-offset-4 hover:underline">
+            <Link href="/templates" className="group -my-2 inline-flex items-center gap-1.5 py-2 text-sm font-medium text-ink underline-offset-4 hover:underline">
               {t("all")}
               <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" />
             </Link>

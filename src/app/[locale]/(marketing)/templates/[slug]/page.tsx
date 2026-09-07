@@ -7,6 +7,7 @@ import type { GiftLocale } from "@/lib/gift/schema";
 import { TEMPLATE_SLUGS, getManifest } from "@/templates/registry";
 import { Button } from "@/components/ui/button";
 import { TemplatePhonePreview } from "@/components/templates/template-phone-preview";
+import { PRODUCTS, currencyFor, formatAmount } from "@/lib/pricing/products";
 
 export function generateStaticParams() {
   return TEMPLATE_SLUGS.map((slug) => ({ slug }));
@@ -27,6 +28,8 @@ export default async function TemplateDetailPage({ params }: PageProps<"/[locale
   setRequestLocale(locale);
   const l = locale as GiftLocale;
   const t = await getTranslations();
+  const currency = currencyFor(l === "es" ? "ES" : "US");
+  const price = formatAmount(PRODUCTS.single.amounts[currency], currency, l);
 
   const featureList: [boolean, string][] = [
     [true, t("templates.featurePhotos", { max: manifest.features.photos.max })],
@@ -61,7 +64,7 @@ export default async function TemplateDetailPage({ params }: PageProps<"/[locale
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Button asChild size="lg" className="h-12 rounded-full px-6 text-base">
             <Link href={`/create/${manifest.slug}`}>
-              {t("templates.useTemplate")}
+              {t("templates.makeThis")}
               <ArrowRight className="size-4" data-icon="inline-end" />
             </Link>
           </Button>
@@ -72,12 +75,12 @@ export default async function TemplateDetailPage({ params }: PageProps<"/[locale
             </Link>
           </Button>
         </div>
-        <p className="mt-3 text-sm text-muted-foreground">{t("common.noSubscription")}</p>
+        <p className="mt-3 max-w-md text-sm text-muted-foreground">{manifest.tier === "free" ? t("templates.detailPriceFree", { price }) : t("templates.detailPricePaid", { price })}</p>
 
         <h2 className="text-eyebrow mt-12 mb-4 text-muted-foreground">{t("templates.included")}</h2>
         <ul className="grid gap-2 sm:grid-cols-2">
           {featureList.map(([on, label]) => (
-            <li key={label} className={on ? "flex items-center gap-2 text-sm" : "flex items-center gap-2 text-sm text-muted-foreground/60 line-through"}>
+            <li key={label} className={on ? "flex items-center gap-2 text-sm" : "flex items-center gap-2 text-sm text-muted-foreground line-through"}>
               <Check className={on ? "size-4 text-coral" : "size-4 opacity-30"} />
               {label}
             </li>
