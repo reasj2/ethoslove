@@ -71,10 +71,11 @@
 }
 .candle {
   position: absolute;
-  top: -2%;
-  right: 6%;
-  width: 26px;
-  height: 22%;
+  /* Below the mute button and to the right of the paper, so it never hides under either. */
+  top: 8%;
+  right: 3%;
+  width: 24px;
+  height: 20%;
   pointer-events: none;
 }
 .candleBody {
@@ -304,9 +305,10 @@
   display: none;
 }
 .column {
-  width: min(88cqw, 560px);
+  width: min(84cqw, 560px);
   margin: 0 auto;
-  padding: max(6cqh, 40px) 0 0;
+  /* Starts below the mute button, so the date line is never under it; ends above the watermark chip. */
+  padding: max(9cqh, 68px) 0 calc(72px + env(safe-area-inset-bottom));
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -411,7 +413,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 18px 14px;
-  padding: 10px 6px 20px;
+  /* Room for the tilt: a rotated polaroid needs ~6% of the width on each side. */
+  padding: 10px 7% 20px;
 }
 .polaroidsWide {
   grid-template-columns: repeat(3, 1fr);
