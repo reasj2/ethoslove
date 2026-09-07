@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { AlertCircle, Check, Loader2, Lock } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { GiftLocale } from "@/lib/gift/schema";
@@ -29,12 +29,15 @@ export function PublishSheet({
   slug,
   supabaseConfigured,
   paymentsEnabled,
+  resume = false,
 }: {
   open: boolean;
   onOpenChange: (v: boolean) => void;
   manifest: TemplateManifest;
   slug: string;
   supabaseConfigured: boolean;
+  /** Back from checkout with ?resume=publish: publish as soon as everything is in place. */
+  resume?: boolean;
   paymentsEnabled: boolean;
 }) {
   const t = useTranslations("editor.publishSheet");
@@ -45,6 +48,8 @@ export function PublishSheet({
   const entitlement = state.authed ? fetchedEntitlement : { unlocked: false };
   const [busy, setBusy] = useState(false);
   const [paying, setPaying] = useState<ProductId | null>(null);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const autoPublished = useRef(false);
   const [error, setError] = useState<string | null>(null);
   const currency = currencyFor(locale === "es" ? "ES" : "US");
   const priceOne = formatAmount(PRODUCTS.single.amounts[currency], currency, locale);
@@ -127,7 +132,16 @@ export function PublishSheet({
 
   const next = `/create/${slug}?resume=publish`;
   // Anything that would need an unlock at publish time, shown before sign-in as a price hint.
-  const wouldNeedPayment = manifest.tier === "premium" || options.removeWatermark || options.schedule || options.password || (serialized ? premiumExtras(serialized).length > 0 : false);
+  const wouldNeedPayment =
+    manifest.tier === "premium" ||
+    options.removeWatermark ||
+    options.schedule ||
+    options.password ||
+    (serialized ? premiumExtras(serialized).length > 0 : false);
+
+  const guestCanPay = wouldNeedPayment && paymentsEnabled;
+  // Guests can't upload before they have an account; those uploads run right after payment.
+  const guestProblems = problems.filter((p) => p !== "uploadsPending");
 
   const checkout = async (product: ProductId) => {
     setPaying(product);
@@ -135,7 +149,13 @@ export function PublishSheet({
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ product, templateSlugs: product === "single" ? [slug] : [], currency, returnTo: next }),
+        body: JSON.stringify({
+          product,
+          templateSlugs: product === "single" ? [slug] : [],
+          currency,
+          returnTo: next,
+          locale,
+        }),
       });
       const json = (await res.json().catch(() => ({}))) as { url?: string };
       if (!json.url) throw new Error("no_url");
@@ -145,6 +165,23 @@ export function PublishSheet({
       toast.error(t("error", { error: "checkout" }));
     }
   };
+  // Back from Stripe, signed in, everything in place: one less tap.
+  const canAutoPublish =
+    resume &&
+    open &&
+    state.authed &&
+    Boolean(decision?.ok) &&
+    !busy &&
+    !published &&
+    problems.every((p) => p === "uploadsPending");
+  useEffect(() => {
+    if (!canAutoPublish || autoPublished.current) return;
+    autoPublished.current = true;
+    const id = window.setTimeout(() => void publish(), 0);
+    return () => window.clearTimeout(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- publish is recreated every render; the flag above gates it
+  }, [canAutoPublish]);
+
   if (!state.hydrated) return null;
 
   return (
@@ -184,63 +221,141 @@ export function PublishSheet({
               <ul className="divide-y divide-border rounded-2xl border border-border bg-card">
                 {(
                   ["recipientName", "senderName", "message", "photosMin", "uploadsPending"] as const
-                ).map((key) => {
-                  const bad = problems.includes(key);
-                  const label = t(`problems.${key}`, { min: manifest.features.photos.min });
-                  return (
-                    <li
-                      key={key}
-                      className={cn(
-                        "flex items-center gap-3 px-4 py-3 text-sm",
-                        bad ? "text-ink" : "text-muted-foreground line-through decoration-moss/60",
-                      )}
-                    >
-                      {bad ? (
-                        key === "uploadsPending" ? (
-                          <Loader2 className="size-4 animate-spin text-coral" />
+                )
+                  .filter((key) => state.authed || key !== "uploadsPending")
+                  .map((key) => {
+                    const bad = problems.includes(key);
+                    const label = t(`problems.${key}`, { min: manifest.features.photos.min });
+                    return (
+                      <li
+                        key={key}
+                        className={cn(
+                          "flex items-center gap-3 px-4 py-3 text-sm",
+                          bad
+                            ? "text-ink"
+                            : "text-muted-foreground line-through decoration-moss/60",
+                        )}
+                      >
+                        {bad ? (
+                          key === "uploadsPending" ? (
+                            <Loader2 className="size-4 animate-spin text-coral" />
+                          ) : (
+                            <AlertCircle className="size-4 text-coral" />
+                          )
                         ) : (
-                          <AlertCircle className="size-4 text-coral" />
-                        )
-                      ) : (
-                        <Check className="size-4 text-moss" />
-                      )}
-                      {label}
-                    </li>
-                  );
-                })}
+                          <Check className="size-4 text-moss" />
+                        )}
+                        {label}
+                      </li>
+                    );
+                  })}
               </ul>
             </section>
 
-            {!state.authed && supabaseConfigured ? (
-              <section className="mt-7 rounded-2xl border border-border bg-card p-5">
-                <p className="font-display text-xl">{t("signInTitle")}</p>
-                <p className="mt-1 mb-4 text-sm text-muted-foreground">{wouldNeedPayment && paymentsEnabled ? t("signInBlurbPaid", { price: priceOne }) : t("signInBlurb")}</p>
-                <AuthForm mode="login" next={next} compact />
-              </section>
-            ) : null}
-
-            {state.authed && decision && !decision.ok && decision.reason === "payment_required" ? (
-              <section className="mt-7 rounded-xl border border-ink bg-card p-5" data-testid="pay-panel">
+            {!state.authed && supabaseConfigured && guestCanPay && !showSignIn ? (
+              <section
+                className="mt-7 rounded-xl border border-ink bg-card p-5"
+                data-testid="pay-panel"
+              >
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <p className="flex items-center gap-2 font-display text-xl">
                       <Lock className="size-4 text-coral" />
                       {t("payTitle")}
                     </p>
-                    <p className="mt-1 text-sm text-ink-soft">{t("payBlurb", { features: premiumFeatures.join(", ") })}</p>
+                    <p className="mt-1 text-sm text-ink-soft">
+                      {t("payGuestBlurb", {
+                        features: premiumFeatures.join(", "),
+                        price: priceOne,
+                      })}
+                    </p>
                   </div>
-                  <p className="font-display shrink-0 text-[2rem] leading-none tracking-tight">{priceOne}</p>
+                  <p className="shrink-0 font-display text-[2rem] leading-none tracking-tight">
+                    {priceOne}
+                  </p>
+                </div>
+                <Button
+                  className="mt-5 h-12 w-full rounded-full text-base"
+                  disabled={paying !== null || guestProblems.length > 0}
+                  onClick={() => checkout("single")}
+                  data-testid="pay-single"
+                >
+                  {paying === "single" ? <Loader2 className="size-4 animate-spin" /> : null}
+                  {paying === "single" ? t("paying") : t("payButton", { price: priceOne })}
+                </Button>
+                <button
+                  type="button"
+                  disabled={paying !== null || guestProblems.length > 0}
+                  onClick={() => checkout("everything")}
+                  className="mt-3 w-full text-center text-sm font-medium text-ink-soft underline-offset-4 hover:text-ink hover:underline disabled:opacity-50"
+                >
+                  {t("payAll", { price: priceAll })}
+                </button>
+                <p className="mt-3 text-center text-mono-meta text-muted-foreground">
+                  {t("payNote")} {t("uploadsAfterPay")}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setShowSignIn(true)}
+                  className="mt-4 w-full text-center text-sm text-muted-foreground underline-offset-4 hover:text-ink hover:underline"
+                >
+                  {t("signInInstead")}
+                </button>
+              </section>
+            ) : null}
+            {!state.authed && supabaseConfigured && (!guestCanPay || showSignIn) ? (
+              <section className="mt-7 rounded-xl border border-line bg-card p-5">
+                <p className="font-display text-xl">{t("signInTitle")}</p>
+                <p className="mt-1 mb-4 text-sm text-muted-foreground">
+                  {wouldNeedPayment && paymentsEnabled
+                    ? t("signInBlurbPaid", { price: priceOne })
+                    : t("signInBlurb")}
+                </p>
+                <AuthForm mode="login" next={next} compact />
+              </section>
+            ) : null}
+
+            {state.authed && decision && !decision.ok && decision.reason === "payment_required" ? (
+              <section
+                className="mt-7 rounded-xl border border-ink bg-card p-5"
+                data-testid="pay-panel"
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div>
+                    <p className="flex items-center gap-2 font-display text-xl">
+                      <Lock className="size-4 text-coral" />
+                      {t("payTitle")}
+                    </p>
+                    <p className="mt-1 text-sm text-ink-soft">
+                      {t("payBlurb", { features: premiumFeatures.join(", ") })}
+                    </p>
+                  </div>
+                  <p className="shrink-0 font-display text-[2rem] leading-none tracking-tight">
+                    {priceOne}
+                  </p>
                 </div>
                 {paymentsEnabled ? (
                   <>
-                    <Button className="mt-5 h-12 w-full rounded-full text-base" disabled={paying !== null} onClick={() => checkout("single")} data-testid="pay-single">
+                    <Button
+                      className="mt-5 h-12 w-full rounded-full text-base"
+                      disabled={paying !== null}
+                      onClick={() => checkout("single")}
+                      data-testid="pay-single"
+                    >
                       {paying === "single" ? <Loader2 className="size-4 animate-spin" /> : null}
                       {paying === "single" ? t("paying") : t("payButton", { price: priceOne })}
                     </Button>
-                    <button type="button" disabled={paying !== null} onClick={() => checkout("everything")} className="mt-3 w-full text-center text-sm font-medium text-ink-soft underline-offset-4 hover:text-ink hover:underline disabled:opacity-50">
+                    <button
+                      type="button"
+                      disabled={paying !== null}
+                      onClick={() => checkout("everything")}
+                      className="mt-3 w-full text-center text-sm font-medium text-ink-soft underline-offset-4 hover:text-ink hover:underline disabled:opacity-50"
+                    >
                       {t("payAll", { price: priceAll })}
                     </button>
-                    <p className="text-mono-meta mt-3 text-center text-muted-foreground">{t("payNote")}</p>
+                    <p className="mt-3 text-center text-mono-meta text-muted-foreground">
+                      {t("payNote")}
+                    </p>
                   </>
                 ) : (
                   <Notice tone="info" className="mt-4">
@@ -257,7 +372,12 @@ export function PublishSheet({
             ) : null}
 
             <Button
-              className={cn("mt-8 h-12 w-full rounded-full text-base", decision && !decision.ok && decision.reason === "payment_required" && "hidden")}
+              className={cn(
+                "mt-8 h-12 w-full rounded-full text-base",
+                ((decision && !decision.ok && decision.reason === "payment_required") ||
+                  (!state.authed && guestCanPay && !showSignIn)) &&
+                  "hidden",
+              )}
               disabled={
                 !supabaseConfigured || !state.authed || busy || problems.length > 0 || !decision?.ok
               }
@@ -270,7 +390,9 @@ export function PublishSheet({
                   ? t("publishScheduled")
                   : t("publishNow")}
             </Button>
-            <p className="mt-3 text-center text-xs text-muted-foreground">{tCommon("noSubscription")}</p>
+            <p className="mt-3 text-center text-xs text-muted-foreground">
+              {tCommon("noSubscription")}
+            </p>
           </div>
         )}
       </SheetContent>

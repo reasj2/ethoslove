@@ -445,7 +445,10 @@
       "payAll": "O desbloquea todas las plantillas por {price}",
       "payNote": "Sin suscripción. Tarjeta, Apple Pay o Google Pay.",
       "paying": "Abriendo el pago seguro…",
-      "signInBlurbPaid": "Tu borrador está guardado en este dispositivo. Inicia sesión, paga {price} una vez y se envía."
+      "signInBlurbPaid": "Tu borrador está guardado en este dispositivo. Inicia sesión, paga {price} una vez y se envía.",
+      "payGuestBlurb": "Este regalo usa {features}. Pagas {price} una vez y se envía. Tu cuenta se crea con el email que das al pagar, sin contraseña.",
+      "signInInstead": "¿Ya tienes cuenta? Inicia sesión",
+      "uploadsAfterPay": "Las fotos se suben justo después del pago."
     },
     "share": {
       "title": "Ya está publicado.",
@@ -686,7 +689,7 @@
   "checkout": {
     "paid": {
       "title": "Desbloqueado.",
-      "detail": "Tu compra ya está en tu cuenta. Vuelve y publica: sin pie, sin límites."
+      "detail": "Tu compra está en tu cuenta. Vuelve y publica: sin pie, sin límites."
     },
     "pending": {
       "title": "Casi.",

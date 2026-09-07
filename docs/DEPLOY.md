@@ -55,3 +55,8 @@ $CRON_SECRET` automatically once the variable exists.
 2. Create a gift from a free template, publish, open the link in a private window.
 3. Pricing → Everything → pay with `4242 4242 4242 4242` (test keys) → publish a premium template.
 4. Check the dashboard shows the open and any reaction you leave.
+
+## 6. Going live with real payments
+
+See `docs/STRIPE.md` → "Going live": six Vercel variables change (live keys, live product IDs,
+live webhook secret) and a redeploy. Nothing in the code changes.

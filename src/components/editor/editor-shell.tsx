@@ -152,6 +152,7 @@ export function EditorShell({ slug, manifest, user, remote, supabaseConfigured, 
         slug={slug}
         supabaseConfigured={supabaseConfigured}
         paymentsEnabled={paymentsEnabled}
+        resume={resumePublish}
       />
     </div>
   );

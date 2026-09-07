@@ -117,6 +117,37 @@ buyer closed the tab.
    and see the unlock on the dashboard. Publishing a premium template now works.
 4. Refund the payment in the Dashboard: the webhook (once configured) removes the unlock.
 
+## Going live (the switch from test to real money)
+
+Everything below already runs against Stripe's real API in test mode, so going live is a
+configuration change, not code:
+
+1. In Stripe, leave the sandbox (toggle **Test mode** off). Make sure the account is fully
+   activated (Settings → Business details: legal entity, bank account, identity). Stripe won't
+   accept live card payments until that's done.
+2. Developers → API keys (live): copy the **Secret key** (`sk_live_…`) and **Publishable key**
+   (`pk_live_…`).
+3. The three live products already exist (`Ethos — One template / Pick three / Everything`);
+   their `prod_…` IDs are in `.env.vercel` as comments.
+4. Developers → Webhooks (live mode) → Add endpoint `https://tryethos.io/api/stripe/webhook`
+   with the same four events; copy its signing secret.
+5. In Vercel → Environment Variables replace these six values and redeploy:
+   `STRIPE_SECRET_KEY`, `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY`, `STRIPE_PRODUCT_SINGLE`,
+   `STRIPE_PRODUCT_PICK3`, `STRIPE_PRODUCT_EVERYTHING`, `STRIPE_WEBHOOK_SECRET`.
+6. Buy one template with a real card, refund it in the Dashboard, and check the unlock
+   disappears from the dashboard. Then you're live.
+
+Keep the test keys in `.env.local`, so local development keeps using the sandbox.
+
+## Guest checkout
+
+Buyers don't need an account before paying. The publish sheet and the pricing page create a
+Checkout Session with `metadata.guest = "1"`; after payment, fulfilment (webhook or success
+page, whichever runs first) finds or creates the user from the email Stripe collected, records
+the paid purchase and the unlocks, and the success page signs that browser in with a one-time
+token and returns to the editor, which publishes the gift on its own. Signed-in users keep
+the pre-created pending purchase row.
+
 ## What the code does with all of it
 
 1. `POST /api/stripe/checkout` — signed-in user picks a product (+ template slugs for

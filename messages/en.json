@@ -445,7 +445,10 @@
       "payAll": "Or unlock every template for {price}",
       "payNote": "No subscription. Card, Apple Pay or Google Pay.",
       "paying": "Opening secure checkout…",
-      "signInBlurbPaid": "Your draft is saved on this device. Sign in, pay {price} once, and it's sent."
+      "signInBlurbPaid": "Your draft is saved on this device. Sign in, pay {price} once, and it's sent.",
+      "payGuestBlurb": "This gift uses {features}. Pay {price} once and it's sent. Your account is created from the email you give at checkout, no password needed.",
+      "signInInstead": "Already have an account? Sign in instead",
+      "uploadsAfterPay": "Photos upload right after payment."
     },
     "share": {
       "title": "It's live.",
@@ -686,7 +689,7 @@
   "checkout": {
     "paid": {
       "title": "Unlocked.",
-      "detail": "Your purchase is on your account. Go back and publish — no footer, no limits."
+      "detail": "Your purchase is on your account. Go back and publish: no footer, no limits."
     },
     "pending": {
       "title": "Almost there.",
