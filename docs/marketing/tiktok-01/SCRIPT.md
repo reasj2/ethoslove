@@ -40,7 +40,32 @@ Slide 9 is the trap. Nothing on screen is dramatic. Three blue bubbles, one grey
 "Read 11:49 PM", no reply. That heart on her apology is the single most hateable pixel in
 the carousel. Do not add text over it. Let them find it.
 
-## Slides
+## The short cut (post this one)
+
+Six chat screenshots in `short/`, `slide-01.png` to `slide-06.png`. Same story, packed
+tighter, because a 22-slide carousel loses people around slide 8. Your gift screenshots go
+in one block between 5 and 6.
+
+| # | On screen | Text over it |
+|---|---|---|
+| 1 | the photo · "who is she" · "why were u on my phone" · "thats not even me" · "ur seeing things again" | `caught him and this is what he sent me 4 days later 😭` |
+| 2 | "ok its me but its nothing" · sofia → jess → "thats her middle name" · "yes mia. my mums." | `the lie changed 3 times` |
+| 3 | the gym receipt · "this is why ur ex left u" · "did he tho" · "and now ur the victim. classic." | |
+| 4 | "shes the problem" · "i havent eaten since yesterday" · "im sorry" · "dont text me for a bit" | `why am i the one apologising` |
+| 5 | her apology, hearted, no reply · then 1:52am "u up" "made u smth" + the link | (nothing. this is the one) |
+| — | **your gift screenshots** | `he made me a whole website at 2am` on the first |
+| 6 | "we're okay now" to Lea · Lea: "he sent me the exact same one" · "2 weeks ago" | |
+
+Slide 5 does two jobs in one frame: the heart on her apology with no reply under it, then
+the love bomb three hours later. That contrast is the whole video.
+
+Slide 6 is one thread with Lea, so grey is Lea. She brags, and the receipt lands in the
+same breath. Ending on "2 weeks ago" leaves the argument to the comments.
+
+The long version below is still rendered as `slide-01.png` to `slide-22.png` in this folder
+if you ever want to run the story out in full.
+
+## Slides (the long cut, 22 screenshots)
 
 All 22 chat screenshots are rendered: `slide-01.png` to `slide-22.png`, 1080×1920, iMessage
 dark mode. Your own gift screenshots go in one block between slide 16 and slide 17. That is
