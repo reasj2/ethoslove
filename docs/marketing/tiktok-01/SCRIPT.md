@@ -1,103 +1,166 @@
-# TikTok carousel 01 · "caught him, he lied, she folded"
+# TikTok carousel 01 · "he made me apologise"
 
-Rage bait with a happy face on it. She has receipts. His lie changes three times. He never
-explains. He sends a love-bombing gift, she cries, forgives him, and he replies "k". The
-comments do the rest: "the lie changed 3 times", "SHE IS SO STUPID", "he said k after all
-that", "girl run". Every one of those comments pushes the post, and the gift is on screen
-the whole time. tryethos.io shows once, on the link card, and never in the caption.
+Version 5. The v4 cut got three comments because the story was only *cheating*, and cheating
+is background noise on this app. Nobody argues about it. This version is built so the
+comments write themselves, because it is not about the girl in the photo any more. It is
+about him dismantling her in nine slides and her thanking him for it.
 
-Her: Mia. Him: Jay. She types long, lowercase, emotional. He types one word, late, no
-punctuation. That contrast is the joke, keep it in every slide.
+The engine: **every slide she gets closer to being right, and further from being allowed to
+say it.** By slide 9 she is apologising to the person who lied to her. That is the thing
+people cannot scroll past without typing.
+
+Her: Mia. Him: Jay. Her best friend: Lea. Mia types long, lowercase, emotional. Jay types
+one word, late, no punctuation, and never once answers the question. Keep that contrast in
+every single slide, it is the whole joke.
+
+## The gaslighting ladder
+
+Each slide is a different move, in the order people actually experience them. Do not reorder
+them, the escalation is what keeps people swiping.
+
+| Slide | The move | The line that gets quoted |
+|---|---|---|
+| 1 | Blame flip | "why were u on my phone" |
+| 2 | Denying what she can see | "ur seeing things again" |
+| 3 | Denying his own text, with the receipt on screen | "i never said that" |
+| 4 | Dragging up an old fight to bury this one | "see. this is u not me" |
+| 5 | Rewriting her past | "did he tho" |
+| 6 | Cutting off her best friend | "shes the problem" |
+| 7 | Making himself the victim | "im the one whos hurting here" |
+| 8 | Silence as punishment | two days of Delivered |
+| 9 | She apologises. He hearts it. He does not reply. | the heart on "im sorry" |
+| 10 | Love bomb at 1:52 AM | "made u smth" |
+| 11 | She folds completely, he says "k" | "k" |
+| 12 | Lea: he sent her the same gift two weeks ago | "2 weeks ago" |
+
+Slide 5 is the one that turns viewers into commenters. She says her ex cheated on her, and
+he says "did he tho". People will lose their minds at that.
+
+Slide 9 is the trap. Nothing on screen is dramatic. Three blue bubbles, one grey heart,
+"Read 11:49 PM", no reply. That heart on her apology is the single most hateable pixel in
+the carousel. Do not add text over it. Let them find it.
 
 ## Slides
 
-Chat slides are rendered: `slide-01.png` to `slide-08.png` (1080×1920, iMessage dark mode).
-Gift slides 9 to 13 are your own screenshots of the gift on your phone.
+Chat slides are rendered: `slide-01.png` to `slide-12.png` (1080×1920, iMessage dark mode).
+Gift slides go between slide 10 and slide 11, they are your own screenshots.
 
 | # | On screen | Text you type over it in TikTok |
 |---|---|---|
-| 1 | "who is this" + the blurred photo + "dont say u dont know her" | `caught my bf with another girl and this is what he sent me after 😭` |
-| 2 | "thats my cousin" / "with her hand on ur thigh" / "u told me u were at the gym" | |
-| 3 | "we went after" / "at 1am" / "to a bar" / "with ur cousin" / "yea" | |
-| 4 | "WHAT IS HER NAME JAY" / "sofia" / "her insta says jess" / "middle name" | `the lie is changing in real time` (optional, but it primes the comments) |
-| 5 | "shes not my cousin" / "shes my mates girl" / "i was helping him out" / "dont text me again" | |
-| 6 | "u up" / "mia" / "mia" / "made u smth" / "just open it" + link card | |
-| 7 | Gift: closed jar. `JAY → MIA`, `12 reasons you're my whole world`, `12/12` | `he made me a whole website 😭😭` |
-| 8 | Gift: note 1 open, with your photo | |
-| 9 | Gift: note 11 open, text only | |
-| 10 | Gift: the letter half typed | |
-| 11 | Gift: surprise revealed, `I'm outside. Open the door.` above `Made by Jay for Mia` | |
-| 12 | "im literally crying rn" / "i love you so much 😭😭😭" / "told u" with her heart on it / "so we good" | |
-| 13 | "im sorry i went crazy" / "come over" / "k" / "i love uuuu ❤️❤️" / "u too" | `we're good now 🥹` |
+| 1 | photo + "who is she" + "why were u on my phone" | `he never answered the question btw` |
+| 2 | "thats not even me" / "ur seeing things again" | |
+| 3 | "i never said that" + her screenshot of his text | `im literally holding the receipt` |
+| 4 | "this is exactly what u did in march" | |
+| 5 | "this is why ur ex left u" / "he cheated on me jay" / "did he tho" | |
+| 6 | "lea sent u that didnt she" / "shes the problem" | |
+| 7 | "i havent eaten since yesterday" / "im sorry" | `why am i apologising` |
+| 8 | "dont text me for a bit" + Delivered, Delivered | |
+| 9 | her apology, hearted, no reply | (nothing. leave it) |
+| 10 | "u up" / "made u smth" + the link card | |
+| G1 | Gift: closed jar. `JAY → MIA`, `12 reasons ur my whole world`, `12/12` | `he made me a whole website at 2am` |
+| G2 | Gift: note 1 open with your photo | |
+| G3 | Gift: note 11 open | `i sobbed` |
+| G4 | Gift: the letter, half typed | |
+| G5 | Gift: surprise revealed, `im outside. open the door.` | |
+| 11 | "i love you so much" (hearted) / "k" / "so we good?" / "yea" | `we're okay now 🥹` |
+| 12 | Lea: "he sent me the exact same one" / "2 weeks ago" | |
 
-The blurred photo on slide 1 is rendered as a blur, which is exactly what people do when
-they post receipts. If you want a real one, put any photo of a guy with a girl on top of it
-and blur it in CapCut.
+Slide 12 is a different thread, so it is grey on the left. If anyone asks in the comments,
+that is Lea, and yes, she waited two weeks. That is another fight in the replies, for free.
 
-## Editor fields (tryethos.io → Jar of Reasons)
+## The gift
 
-Their name `Mia` · Your name `Jay` · Title `For Mia` (it is the link preview on slide 6) ·
-Jar label `12 reasons you're my whole world` · Note paper `Pastel mix` · Accent: the red ·
+Everything in it is enormous and none of it is specific. That is what love bombing sounds
+like: volume instead of detail. He never mentions the photo, the girl, the gym, or the two
+days of silence. He just turns the dial to maximum and waits.
+
+### Editor fields (tryethos.io → Jar of Reasons)
+
+Their name `Mia` · Your name `Jay` · Title `For Mia` (this is the link preview on slide 10) ·
+Jar label `12 reasons ur my whole world` · Note paper `Pastel mix` · Accent: the red ·
 Typed out · Reaction on · Countdown off · Final surprise on, reveal by holding:
-`I'm outside. Open the door.` · Music: library "Slow Dance" · Password empty · Schedule off.
+`im outside. open the door.` · Music: library "Slow Dance" · Password empty · Schedule off.
 
-### The 12 reasons, one per line in the Reasons box
+### The 12 reasons
 
-Every one of them is a grand statement and none of them mentions the girl. That is the point.
+One per row in the Reasons box. Number 7 is the tell, leave it exactly as written.
 
-1. `You're the only girl I have ever looked at. Ever.`
-2. `I would literally die without you.`
-3. `Nobody else even comes close to you. Nobody.`
-4. `You're my best friend, my girl, my whole world.`
-5. `I love how jealous you get. It means you care.`
-6. `I think about you every single second of every day.`
-7. `You're the most beautiful girl I have ever seen, and I've seen a lot of girls.`
-8. `I want to marry you one day. Not even joking.`
-9. `You forgive me when I don't deserve it. That's how I know it's real.`
-10. `Nobody will ever love you like I love you. Nobody.`
-11. `I'd delete every girl off my phone for you. Say the word.`
-12. `You're it for me. Forever. Even when I mess up.`
+1. `ur the only girl ive ever looked at. ever.`
+2. `i would literally die without u`
+3. `nobody else even comes close. nobody.`
+4. `ur my best friend and my girl and my whole world`
+5. `i love how jealous u get. it means u care.`
+6. `i think about u every second of every day`
+7. `ur laugh when u came down the stairs at the lake house. i think about it every day.`
+8. `i want to marry u one day. not even joking.`
+9. `u forgive me when i dont deserve it. thats how i know its real.`
+10. `nobody will ever love u like i love u. nobody.`
+11. `id delete every girl off my phone for u. say the word.`
+12. `ur it for me. forever. even when i mess up.`
 
-Number 11 is the one that gets screenshotted. Pull it for slide 9.
+Mia has never been to a lake house. Nobody in the comments will let that go, and every
+single one of them will scroll back to check number 7. That is a second view for free.
 
-### Photos (they attach to notes 1 to 4, in order)
+Pull number 11 for slide G3. "id delete every girl off my phone for u" from the guy who
+just got caught is the most screenshotted line in the whole carousel.
 
-Four couple photos of your own, blurry and phone-quality. Captions: `my girl` · `us` ·
-`forever` · `mine`. Nothing clever. He is not a captions guy.
+### Photos
 
-### Message (the "Read the letter" screen), 112 words. Paste as is
+Four of your own, blurry, phone quality. Captions: `my girl` · `us` · `forever` · `mine`.
+Nothing clever. He is not a captions guy.
 
-> Mia. I don't know how to say this so I'm just gonna say it. You are the best thing that
-> has ever happened to me and I mean that. I have never felt like this about anyone in my
-> life. When you're not around I literally can't function. You're my whole world, my best
-> friend, my everything.
+### Message (the "Read the letter" screen). Paste exactly as written, including the S.
+
+> Mia. I don't know how to say this properly so I'm just going to say it.
 >
-> I know I mess up sometimes but that's because I'm scared of losing you. Nobody will ever
-> love you like I do. Nobody. I'd do anything for you and I'm going to prove it every single
-> day.
+> You are the best thing that has ever happened to me. I have never felt like this about
+> anyone in my life and I never will again. When you're not here I can't function, I can't
+> eat, I can't think straight. You're my whole world.
 >
-> Please don't give up on us. I can't lose you. You're it for me. Forever.
+> I know I mess up. I know I get defensive. That's only because I'm terrified of losing
+> you, and everyone I've ever cared about has left. I'm not going to be that person any
+> more. You have my word, S.
 >
-> J
+> Nobody will ever love you the way I love you. Nobody. I'd burn my whole life down for
+> you and I'd do it twice.
+>
+> I'm outside. Please open the door.
 
-Not one line about the girl, the bar, or the name. Readers notice. She doesn't.
+Yes, the S stays. She is crying at 2am and she does not notice. The comments will.
 
 ## Caption, tags, sound
 
-Caption: `he's so sweet i literally cannot stay mad at him 🥹 #boyfriend #couplegoals #fyp`
+Caption: `he made me apologise for going through his phone and then made me this 😭 am i
+crazy or`
 
-Say nothing about the site in the caption. When the comments ask "what app is this", answer
-"it's in the link card" or let other people answer. The link card on slide 6 already says
-tryethos.io. Pin the first comment that says "girl the lie changed 3 times" if it appears,
-and reply "he explained everything in the letter 🥹". That reply alone will do numbers.
+That question at the end is the whole strategy. "Am I crazy" is an instruction to comment,
+and everyone answering it has to say his name.
 
-Sound: a slowed sad-romantic sound that is trending that week. Slideshow speed: default,
-no auto-advance changes. Post between 7 and 10 pm in your audience's time zone.
+Tags: `#storytime #gaslighting #relationshiptok #redflags #textstory #imessage #fyp`
 
-## Capture notes for the gift slides
+Sound: something slow, sad and recognisable, played straight. Do not use a funny sound. The
+carousel has to look sincere for the comments to be angry. Check what is trending the day
+you post, and turn it down to about 40% so the text is readable.
 
-Add the gift to your home screen first (Share → Add to Home Screen), so it opens without
-Safari bars and the screenshot is already 9:16. Tap "Enable motion" once before you start
-so the black pill disappears. Tap the jar to pull a note, tap the note to fold it back, and
-tap "Read the letter" when you have the notes you want. Hold the surprise until it opens,
-then screenshot with the door line and "Made by Jay for Mia" both on screen.
+Post between 7pm and 10pm. Slideshows get pushed hardest in the evening.
+
+## Making the comments work for you
+
+The video is the bait. The comment section is the product.
+
+- **Pin this comment yourself, first, from the account:** `guys he did answer eventually. he
+  said "why are u still on this"` — a fake update keeps people arguing under the pin.
+- **Reply to "girl leave him" with** `i did. friday.` It closes the story, it feels like a
+  real person, and it doubles the replies on the top comment.
+- **Reply to "what website is that"** with only `ethos, its called jar of reasons` and
+  nothing else. No link, no pitch. People who want it will search. TikTok throttles comments
+  with links in them.
+- **Never defend him in the replies.** Every reply you write should make people angrier at
+  him and sadder for her.
+- If a comment says the S is a typo, reply `it isnt`.
+
+## Reusing this
+
+The same twelve chat slides work for any gift template, so this can run again in four weeks
+with a different one. Swap the jar for Birthday Cinema and change the love bomb to a
+premiere with her name in the credits. Same story, same slides 1 to 9, new gift.

@@ -2,268 +2,131 @@
   "slides": [
     {
       "type": "chat",
-      "timestamp": "Yesterday 1:12 AM",
+      "timestamp": "Today 1:06 AM",
       "messages": [
-        {
-          "from": "me",
-          "text": "who is this"
-        },
-        {
-          "from": "me",
-          "image": true
-        },
-        {
-          "from": "me",
-          "text": "and dont say u dont know her"
-        },
-        {
-          "from": "them",
-          "text": "?"
-        },
-        {
-          "from": "them",
-          "text": "who sent u that"
-        }
+        { "from": "me", "image": true },
+        { "from": "me", "text": "who is she" },
+        { "from": "me", "text": "and dont lie to me jay", "status": "Read 1:06 AM" },
+        { "from": "them", "typing": true },
+        { "from": "them", "text": "why were u on my phone" }
       ]
     },
     {
       "type": "chat",
       "messages": [
-        {
-          "from": "me",
-          "text": "answer the question"
-        },
-        {
-          "from": "them",
-          "text": "thats my cousin"
-        },
-        {
-          "from": "me",
-          "text": "ur cousin"
-        },
-        {
-          "from": "me",
-          "text": "with her hand on ur thigh"
-        },
-        {
-          "from": "them",
-          "text": "shes touchy idk"
-        },
-        {
-          "from": "me",
-          "text": "u told me u were at the gym"
-        }
+        { "from": "me", "text": "answer the question" },
+        { "from": "them", "text": "thats not even me" },
+        { "from": "me", "text": "its ur jacket" },
+        { "from": "me", "text": "and ur watch" },
+        { "from": "them", "text": "ur seeing things again" },
+        { "from": "them", "text": "u do this every time" }
       ]
     },
     {
       "type": "chat",
       "messages": [
-        {
-          "from": "them",
-          "text": "i was"
-        },
-        {
-          "from": "them",
-          "text": "we went after"
-        },
-        {
-          "from": "me",
-          "text": "at 1am"
-        },
-        {
-          "from": "me",
-          "text": "to a bar"
-        },
-        {
-          "from": "me",
-          "text": "with ur cousin"
-        },
-        {
-          "from": "them",
-          "text": "yea",
-          "status": "Read 1:19 AM"
-        },
-        {
-          "from": "me",
-          "text": "whats her name then"
-        }
+        { "from": "me", "text": "u told me u were at the gym till 11" },
+        { "from": "them", "text": "i never said that" },
+        { "from": "them", "text": "u made that up in ur head" },
+        { "from": "me", "image": true },
+        { "from": "me", "text": "thats ur own text", "status": "Read 1:14 AM" },
+        { "from": "them", "text": "thats not what i meant" }
       ]
     },
     {
       "type": "chat",
       "messages": [
-        {
-          "from": "them",
-          "text": "why"
-        },
-        {
-          "from": "me",
-          "text": "WHAT IS HER NAME JAY"
-        },
-        {
-          "from": "them",
-          "text": "sofia"
-        },
-        {
-          "from": "me",
-          "text": "her insta says jess"
-        },
-        {
-          "from": "them",
-          "text": "middle name"
-        },
-        {
-          "from": "me",
-          "text": "im done",
-          "status": "Read 1:24 AM"
-        },
-        {
-          "from": "them",
-          "typing": true
-        }
-      ]
-    },
-    {
-      "type": "chat",
-      "timestamp": "Yesterday 1:41 AM",
-      "messages": [
-        {
-          "from": "them",
-          "text": "ok"
-        },
-        {
-          "from": "them",
-          "text": "shes not my cousin"
-        },
-        {
-          "from": "them",
-          "text": "shes my mates girl"
-        },
-        {
-          "from": "them",
-          "text": "i was helping him out"
-        },
-        {
-          "from": "me",
-          "text": "helping him by taking his girl to a bar at 1am"
-        },
-        {
-          "from": "them",
-          "text": "u wouldnt get it"
-        },
-        {
-          "from": "me",
-          "text": "dont text me again"
-        }
-      ]
-    },
-    {
-      "type": "chat",
-      "timestamp": "Yesterday 9:03 AM",
-      "messages": [
-        {
-          "from": "them",
-          "text": "u up"
-        },
-        {
-          "from": "them",
-          "text": "mia"
-        },
-        {
-          "from": "them",
-          "text": "mia"
-        },
-        {
-          "ts": "Yesterday 2:47 PM"
-        },
-        {
-          "from": "them",
-          "text": "im not doing this over text"
-        },
-        {
-          "from": "them",
-          "text": "made u smth"
-        },
-        {
-          "from": "them",
-          "text": "just open it"
-        },
-        {
-          "from": "them",
-          "link": {
-            "title": "For Mia",
-            "domain": "tryethos.io"
-          }
-        }
-      ]
-    },
-    {
-      "type": "chat",
-      "timestamp": "Yesterday 3:02 PM",
-      "messages": [
-        {
-          "from": "me",
-          "text": "omg"
-        },
-        {
-          "from": "me",
-          "text": "jay"
-        },
-        {
-          "from": "me",
-          "text": "im literally crying rn"
-        },
-        {
-          "from": "me",
-          "text": "nobody has ever done something like this for me"
-        },
-        {
-          "from": "me",
-          "text": "i love you so much 😭😭😭"
-        },
-        {
-          "from": "them",
-          "text": "told u",
-          "tapback": "heart"
-        },
-        {
-          "from": "them",
-          "text": "so we good"
-        }
+        { "from": "them", "text": "u twist everything i say" },
+        { "from": "them", "text": "this is exactly what u did in march" },
+        { "from": "me", "text": "in march u lied about the party" },
+        { "from": "them", "text": "and ur still on about it" },
+        { "from": "me", "text": "because u lied" },
+        { "from": "them", "text": "see. this is u not me" }
       ]
     },
     {
       "type": "chat",
       "messages": [
-        {
-          "from": "me",
-          "text": "yes 😭 im sorry i went crazy"
-        },
-        {
-          "from": "me",
-          "text": "i should have trusted u"
-        },
-        {
-          "from": "me",
-          "text": "come over"
-        },
-        {
-          "from": "them",
-          "text": "k"
-        },
-        {
-          "from": "me",
-          "text": "i love uuuu ❤️❤️"
-        },
-        {
-          "from": "them",
-          "text": "u too"
-        },
-        {
-          "from": "me",
-          "text": "❤️❤️❤️❤️❤️",
-          "status": "Delivered"
-        }
+        { "from": "them", "text": "this is why ur ex left u" },
+        { "from": "them", "text": "u accuse people till they go" },
+        { "from": "me", "text": "he cheated on me jay" },
+        { "from": "me", "text": "u know that" },
+        { "from": "them", "text": "did he tho" }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        { "from": "them", "text": "lea sent u that pic didnt she" },
+        { "from": "them", "text": "shes obsessed w u" },
+        { "from": "them", "text": "she wants us done" },
+        { "from": "me", "text": "shes my best friend" },
+        { "from": "them", "text": "shes the problem" },
+        { "from": "them", "text": "its always been her" }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        { "from": "them", "text": "do u know what its like being accused every single day" },
+        { "from": "them", "text": "i havent eaten since yesterday" },
+        { "from": "them", "text": "im the one whos hurting here" },
+        { "from": "me", "text": "im sorry" },
+        { "from": "me", "text": "i didnt mean to make u feel like that", "status": "Read 1:41 AM" }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        { "from": "them", "text": "im done arguing" },
+        { "from": "them", "text": "dont text me for a bit" },
+        { "from": "me", "ts": "Tuesday" },
+        { "from": "me", "text": "can we talk" },
+        { "from": "me", "text": "jay" },
+        { "from": "me", "text": "please", "status": "Delivered" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Wednesday 11:48 PM",
+      "messages": [
+        { "from": "me", "text": "i shouldnt have gone through ur phone" },
+        { "from": "me", "text": "that was wrong of me" },
+        { "from": "me", "text": "im sorry", "tapback": "heart", "status": "Read 11:49 PM" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thursday 1:52 AM",
+      "messages": [
+        { "from": "them", "text": "u up" },
+        { "from": "them", "text": "made u smth" },
+        { "from": "them", "text": "just open it" },
+        { "from": "them", "link": { "title": "For Mia", "domain": "tryethos.io" } }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thursday 2:31 AM",
+      "messages": [
+        { "from": "me", "text": "im literally shaking" },
+        { "from": "me", "text": "nobody has ever done anything like this for me" },
+        { "from": "me", "text": "i love you so much", "tapback": "heart" },
+        { "from": "me", "text": "im sorry for everything i said" },
+        { "from": "them", "text": "k" },
+        { "from": "me", "text": "so we good?" },
+        { "from": "them", "text": "yea" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Friday 9:02 AM",
+      "messages": [
+        { "from": "them", "text": "mia" },
+        { "from": "them", "text": "please dont hate me" },
+        { "from": "them", "image": true },
+        { "from": "them", "text": "he sent me the exact same one" },
+        { "from": "them", "text": "2 weeks ago" }
       ]
     }
   ]
