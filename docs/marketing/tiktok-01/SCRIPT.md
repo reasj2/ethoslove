@@ -42,40 +42,58 @@ the carousel. Do not add text over it. Let them find it.
 
 ## Slides
 
-Everything is rendered and sitting in this folder, all 1080×1920, ready to upload:
-`slide-01.png` to `slide-12.png` are the chat, `gift-01` to `gift-06` are the gift. The gift
-slides go between slide 10 and slide 11.
+All 22 chat screenshots are rendered: `slide-01.png` to `slide-22.png`, 1080×1920, iMessage
+dark mode. Your own gift screenshots go in one block between slide 16 and slide 17. That is
+the only gap.
 
-The gift itself is live at **tryethos.io/g/jayandmya** — open it on your phone if you would
-rather record it yourself, or to reshoot a slide. Its four photos are placeholders from the
-demo set; swap them for your own in the editor and re-shoot `gift-02` if you want them to
-look like a real couple's camera roll.
+Text you type over a slide in TikTok is in the third column. Empty means put nothing on it,
+the messages carry it. Never cover a bubble.
 
-| # | On screen | Text you type over it in TikTok |
+| # | On screen | Text over it |
 |---|---|---|
-| 1 | photo + "who is she" + "why were u on my phone" | `he never answered the question btw` |
-| 2 | "thats not even me" / "ur seeing things again" | |
-| 3 | "i never said that" + her screenshot of his text | `im literally holding the receipt` |
-| 4 | "this is exactly what u did in march" | |
-| 5 | "this is why ur ex left u" / "he cheated on me jay" / "did he tho" | |
-| 6 | "lea sent u that didnt she" / "shes the problem" | |
-| 7 | "i havent eaten since yesterday" / "im sorry" | `why am i apologising` |
-| 8 | "dont text me for a bit" + Delivered, Delivered | |
-| 9 | her apology, hearted, no reply | (nothing. leave it) |
-| 10 | "u up" / "made u smth" + the link card | |
-| G1 | `gift-01-jar` — closed jar, `JAY → MIA`, `12/12` | `he made me a whole website at 2am` |
-| G2 | `gift-02-note-photo` — a note with a photo taped to it | |
-| G3 | `gift-03-note-delete` — "id delete every girl off my phone for u" | `i sobbed` |
-| G4 | `gift-04-letter` — the letter typing itself out | |
-| G5 | `gift-05-surprise` — the whole letter, the S, and the P.S. | (nothing. this is the one they screenshot) |
-| G6 | `gift-06-end` — "The end. For now." · Made by Jay for Mia | |
-| 11 | "i love you so much" (hearted) / "k" / "so we good?" / "yea" | `we're okay now 🥹` |
-| 12 | Lea: "he sent me the exact same one" / "2 weeks ago" | |
+| 1 | the photo · "who is she" · "why were u on my phone" | `caught him and this is what he sent me 4 days later 😭` |
+| 2 | "thats not even me" / jacket / watch / "ur seeing things again" | |
+| 3 | "ok its me but its nothing" / "u literally just said it wasnt" | `lie 1` |
+| 4 | "i never said that" + her screenshot of his 9:41pm text | `im holding the receipt` |
+| 5 | "just some girl from work" / "u work in a warehouse w ur uncle" | `lie 2` |
+| 6 | "sofia" / "the tag says jess" / "thats her middle name" | `lie 3` |
+| 7 | "why is she in ur bed" / "thats my mums" / "yes mia. my mums." | |
+| 8 | "this is exactly what u did in march" / "see. this is u. not me." | |
+| 9 | "this is why ur ex left u" / "he cheated on me jay" / "did he tho" | |
+| 10 | "u cant keep anyone" / "im crying" / "and now ur the victim. classic." | |
+| 11 | "lea sent u that didnt she" / "shes the problem" | `he started on my best friend` |
+| 12 | "i havent eaten since yesterday" / "im sorry" | `why am i apologising` |
+| 13 | "dont text me for a bit" / "please dont do this" / Delivered | |
+| 14 | Tuesday. "can we talk" · "i know ur seeing these" · Delivered | `2 days of this` |
+| 15 | Wednesday 11:48pm. her apology. hearted. no reply. | (nothing. this is the one) |
+| 16 | Thursday 1:52am. "u up" / "made u smth" + the link | |
+| — | **your gift screenshots go here** | `he made me a whole website at 2am` on the first one |
+| 17 | 2:31am. "i love you so much" (hearted) / "k" / "so we good?" / "yea" | `we're okay now 🥹` |
+| 18 | her telling Lea, all caps, excited, Lea starts typing | |
+| 19 | Lea: "please dont hate me" · screenshot · "he sent me the exact same one" · "2 weeks ago" | |
+| 20 | "why does lea have the same link" / "shes lying" / "u believe her over me" | |
+| 21 | "after everything i made for u" / "at 2am mia" / "i know" / "im sorry" | `im apologising again` |
+| 22 | "come over" / "and stop talking to lea" / "ok" / "see u at 8" | |
 
-Slide 12 is a different thread, so it is grey on the left. If anyone asks in the comments,
-that is Lea, and yes, she waited two weeks. That is another fight in the replies, for free.
+Slide 15 is the trap. Three blue bubbles, a grey heart on "im sorry", Read 11:49 PM, no
+reply. Nothing happens on it, which is exactly why people stop.
 
-## The gift
+Slide 22 is the ending, and it is the reason this version works. She has the proof in her
+hand and she goes anyway, and the last thing she agrees to is dropping her best friend.
+Nobody scrolls past that without commenting.
+
+Slides 18 and 19 are her thread with Lea, so the grey bubbles are Lea, not Jay. If anyone
+asks in the comments, that is another argument you did not have to write.
+
+## The gift, which you shoot yourself
+
+Build it at tryethos.io with the values below, open it on your phone (Share → Add to Home
+Screen so there are no Safari bars) and shoot five: the closed jar, a note with a photo, the
+"id delete every girl off my phone" note, the letter typing, and the letter finished with
+the P.S. showing. There is a built copy at **tryethos.io/g/jayandmya** if you want to see
+what it should look like before you make your own.
+
+
 
 Everything in it is enormous and none of it is specific. That is what love bombing sounds
 like: volume instead of detail. He never mentions the photo, the girl, the gym, or the two
