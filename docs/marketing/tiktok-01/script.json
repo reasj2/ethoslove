@@ -1,45 +1,43 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 23:12", "messages": [
-      { "from": "them", "text": "you asleep?" },
-      { "from": "me", "text": "no" },
-      { "from": "me", "text": "why" },
-      { "from": "them", "text": "no reason" }
+    { "type": "chat", "timestamp": "Today 00:41", "messages": [
+      { "from": "them", "text": "You still awake" },
+      { "from": "me", "text": "yeah" },
+      { "from": "them", "text": "You went quiet after dinner" },
+      { "from": "me", "text": "i'm fine" }
     ]},
     { "type": "chat", "messages": [
-      { "from": "me", "text": "that's never no reason" },
-      { "from": "them", "text": "ok fine" },
-      { "from": "them", "text": "I made you something" },
-      { "from": "me", "text": "made me what" }
+      { "from": "them", "text": "You only say fine when you're not" },
+      { "from": "me", "text": "i'm not mad" },
+      { "from": "me", "text": "i'm just tired of being the only one who says things" },
+      { "from": "them", "text": "I know" }
     ]},
     { "type": "chat", "messages": [
-      { "from": "them", "text": "just open it" },
-      { "from": "me", "text": "is this a prank" },
-      { "from": "them", "text": "no" },
-      { "from": "them", "text": "maybe a bit cheesy" },
-      { "from": "me", "text": "how cheesy" }
+      { "from": "them", "text": "I'm bad at saying it" },
+      { "from": "them", "text": "So I made something instead" },
+      { "from": "me", "text": "made what" },
+      { "from": "them", "text": "Don't laugh" }
     ]},
     { "type": "chat", "messages": [
-      { "from": "them", "text": "on a scale of 1 to 10" },
-      { "from": "them", "text": "an 11" },
-      { "from": "me", "text": "oh no" },
-      { "from": "me", "text": "ok send it" }
+      { "from": "me", "text": "why would i laugh" },
+      { "from": "them", "text": "It's a lot" },
+      { "from": "them", "text": "Like properly a lot" },
+      { "from": "me", "text": "send it" },
+      { "from": "them", "text": "Promise you'll read the whole thing" }
     ]},
     { "type": "chat", "messages": [
+      { "from": "me", "text": "promise" },
       { "from": "them", "link": { "title": "For Ana", "domain": "tryethos.io" } },
-      { "from": "me", "text": "opening" },
-      { "from": "them", "text": "sound on" },
-      { "from": "them", "text": "and be nice" },
-      { "from": "me", "text": "no promises" },
-      { "from": "them", "text": "fair" }
+      { "from": "them", "text": "Sound on" },
+      { "from": "them", "text": "And put your phone down after. I'm coming over" }
     ]},
-    { "type": "chat", "timestamp": "Today 23:31", "messages": [
-      { "from": "me", "text": "ok" },
-      { "from": "me", "text": "I'm crying in the bathroom at work" },
-      { "from": "me", "text": "you MADE this??" },
-      { "from": "them", "text": "took me ten minutes" },
-      { "from": "me", "text": "lies" },
-      { "from": "them", "text": "tryethos.io. go look" }
+    { "type": "chat", "timestamp": "Today 01:07", "messages": [
+      { "from": "me", "text": "i read it three times" },
+      { "from": "me", "text": "i'm crying" },
+      { "from": "me", "text": "you don't get to say you're bad at this anymore" },
+      { "from": "them", "text": "I'm downstairs" },
+      { "from": "me", "text": "what" },
+      { "from": "them", "text": "Open the door" }
     ]}
   ]
 }

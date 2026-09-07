@@ -1,82 +1,79 @@
-# TikTok carousel 01 · "he made me something at 11pm"
+# TikTok carousel 01 · "we had a fight. then this arrived at 00:41."
 
-Format: 10-slide photo carousel (TikTok "Photo" mode, swipe, 1080×1920). The first five
-slides are a late-night chat that turns into a link; the rest is the gift itself. The
-viewer is not told what the product is until slide 5, and by then they want to see it.
+Format: 10-slide photo carousel (TikTok "Photo" mode, swipe, 1080×1920). Her point of
+view (blue bubbles). A small fight after dinner, a boyfriend who never says things, and a
+gift instead of an apology. The product is never named out loud: the domain only appears
+inside the link preview on slide 5, the way it would in a real thread, and in your caption.
 
-Why this format works: slide 1 reads in under a second, every slide ends on something
-unresolved, the chat feels overheard rather than advertised, and the payoff (the gift)
-is genuinely nice to look at. The link preview on slide 5 and the last line on slide 10
-carry the domain; the caption carries it again.
+Why this one travels: slide 1 is tension you can read in a second ("You went quiet after
+dinner"), every slide ends unresolved, the letter says the thing people wish their partner
+would say, and the last slide is a door, not an ad.
 
 ## Slides
 
-Slides 1–5 and 10 are rendered for you: `slide-01.png` … `slide-06.png` (slide-06.png is
-slide 10 of the carousel). Regenerate after editing `script.json`:
+Slides 1–5 and 10 are rendered: `slide-01.png` … `slide-06.png` (slide-06.png is slide 10 of
+the carousel). Edit `script.json` and re-run:
 `node scripts/tiktok-slides.mjs docs/marketing/tiktok-01/script.json docs/marketing/tiktok-01`
 
 | # | What | Content |
 | --- | --- | --- |
-| 1 | chat | "you asleep?" / "no" / "why" / "no reason" (timestamp Today 23:12) |
-| 2 | chat | "that's never no reason" / "ok fine" / "I made you something" / "made me what" |
-| 3 | chat | "just open it" / "is this a prank" / "no" / "maybe a bit cheesy" / "how cheesy" |
-| 4 | chat | "on a scale of 1 to 10" / "an 11" / "oh no" / "ok send it" |
-| 5 | chat | link card **For Ana · tryethos.io** / "opening" / "sound on" / "and be nice" / "no promises" / "fair" |
-| 6 | gift | The Letter, closed: the envelope with the wax seal and "For Ana". Add the TikTok text sticker `Continue →` bottom right (pink pill, small). |
-| 7 | gift | The letter open, handwriting fully typed out (screenshot after the typewriter finishes). Letter text below. |
-| 8 | gift | Photos on the desk, captions visible. Six photos, captions below. |
-| 9 | gift | The song. Either the Vinyl template screen ("Drop the needle", the record with their song title) or the end screen credit "Music: …". Sticker: `their song plays the whole time`. |
-| 10 | chat | "ok" / "I'm crying in the bathroom at work" / "you MADE this??" / "took me ten minutes" / "lies" / "tryethos.io. go look" (timestamp Today 23:31) |
+| 1 | chat | "You still awake" / "yeah" / "You went quiet after dinner" / "i'm fine" (Today 00:41) |
+| 2 | chat | "You only say fine when you're not" / "i'm not mad" / "i'm just tired of being the only one who says things" / "I know" |
+| 3 | chat | "I'm bad at saying it" / "So I made something instead" / "made what" / "Don't laugh" |
+| 4 | chat | "why would i laugh" / "It's a lot" / "Like properly a lot" / "send it" / "Promise you'll read the whole thing" |
+| 5 | chat | "promise" / link card **For Ana · tryethos.io** / "Sound on" / "And put your phone down after. I'm coming over" |
+| 6 | gift | The Letter, closed: envelope, wax seal, "For Ana". TikTok text sticker `Continue →` bottom right, small. |
+| 7 | gift | The letter open, handwriting fully typed. Text below. |
+| 8 | gift | The photos on the desk with captions. Six photos, captions below. |
+| 9 | gift | The song: the Vinyl screen with the record and the title, or the end screen with the music credit. Sticker: `it plays the whole time` |
+| 10 | chat | "i read it three times" / "i'm crying" / "you don't get to say you're bad at this anymore" / "I'm downstairs" / "what" / "Open the door" (Today 01:07) |
 
-### The letter (slide 7), 92 words
+### The letter (slide 7), 108 words
 
-> Ana. It's 11pm, you're doing your skincare, and I'm lying here thinking about how you
-> always answer "almost" when I ask if you're in bed. I don't know when that became my
-> favourite word. I don't want a big life. I want the one where you say almost and I
-> wait. I made this instead of a card because a card can't play our song, and because I
-> wanted you to have something you can open twice. Happy birthday. Come to bed.
+> Ana. You said tonight that I don't say things. You're right, and I hate that you're
+> right. So here they are, in order. I fell for you on the second date, when you cried at
+> the dog outside the pharmacy. I think about the night you said "maybe we're done" more
+> than I think about anything, and we weren't done, we were just tired. I have never been
+> more sure of anything than I am of you, and I have never once said it out loud. That
+> stops tonight. I'm not asking you to forgive the quiet. I'm asking you to read this
+> twice. I'm on my way.
 
-Change "birthday" to whatever the occasion is. Keep one specific, slightly stupid detail
-(the skincare, the "almost"). That's what makes it read as real.
+Keep the pharmacy dog. One odd, specific detail is what makes the whole thing believable.
 
 ### The six photos (slide 8), captions
 
-Use your own photos. They should look like phone photos, not a shoot: one slightly
-blurry, one badly lit, one where nobody is looking at the camera.
+Phone photos, not a shoot: one blurry, one badly lit, one where nobody looks at the camera.
 
-1. The first coffee, half drunk. Caption: *the coffee you didn't finish*
-2. A train or car window, road ahead. *first trip, zero plans*
-3. Dark tent or a sky with stars. *the night with no signal*
-4. A kitchen in morning light. *your kitchen, 7am*
-5. Them mid-laugh, bad angle. *the one you hate (I love it)*
-6. Airport, arrivals or departures board. *airport, again*
+1. A dog outside a shop, from a distance. *the second date. the pharmacy dog.*
+2. A dark street or a parked car at night. *the night we almost ended it. we didn't.*
+3. Her asleep against a train window. *you, asleep on the train*
+4. A messy flat in morning light. *the flat, the first morning*
+5. A selfie she once sent. *the one you sent when I was away*
+6. Her building's door at night, taken from the street. *00:58. outside.*
 
 ### Making the gift (10 minutes)
 
-On tryethos.io → The Letter → recipient "Ana", sender "Marco" (or real names) → paste the
-letter → the six photos with the captions → Music: "A real song", search the song you want
-(a 30-second preview loops; the credit shows at the end) → accent colour: leave the wax red.
-Your account has every template unlocked, so no payment step. Open the published link on
-your phone, sound on, and screen-record it from the seal to the end; take slides 6–9 as
-frames or screenshots from that recording.
+tryethos.io → The Letter → "Ana" / "Marco" (or real names) → paste the letter → the six
+photos with the captions → Music → A real song → pick the song → publish. Your account
+has everything unlocked. Open the link on your phone, sound on, screen-record from the seal
+to the end, and take slides 6–9 as frames from that recording.
 
 ## Caption, tags, sound
 
 Caption (pick one):
-- "he said it was maybe a bit cheesy. it was an 11 😭 tryethos.io"
-- "ten minutes, he said. TEN. tryethos.io"
+- "we had a fight. then this arrived at 00:41."
+- "he said he's bad at saying things. read slide 7."
+- "the pharmacy dog. i'm not okay."
 
-Tags: #loveletter #digitalgift #boyfriend #giftideas #longdistance #anniversary #fyp #romance
+Tags: #loveletter #boyfriend #relationship #couplegoals #apology #fyp #romance #crying
 
-Sound: something slow and known. The reference used Sufjan Stevens ("Mystery of Love");
-similar: "Visions of Gideon", "The Night We Met", "Apocalypse (slowed)". Keep the volume
-low so the slides feel quiet.
+Sound: slow, known, a little sad: "The Night We Met", "Francis Forever (slowed)", "Mystery
+of Love", "Apocalypse (slowed)". Volume low; the slides should feel like 1am.
 
-Post between 21:00 and 23:00 local. Pin a comment with just `tryethos.io`. Reply to the
-first 20 comments within the hour; each reply is a new impression. Make three versions of
-this carousel (birthday, long distance, apology) with the same first four slides and a
-different letter, and post them a day apart to see which hook wins.
-
+Post between 21:00 and 23:00 local. Don't put the link in the caption of the first
+version; pin a comment with `tryethos.io` once the comments ask "where did he make this".
+Reply to the first 20 comments within the hour. Make three versions with the same first
+four slides and a different letter (birthday, long distance, "I'm sorry") a day apart.
 ## Your own chat screenshots, if you want variations
 
 - Most authentic: two phones (or a second Apple ID) in a real iMessage thread, dark mode,
