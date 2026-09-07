@@ -18,13 +18,16 @@ const esc = (s) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
 function html(slide) {
   const rows = slide.messages
     .map((m, i, all) => {
+      if (m.ts) return `<div class="ts mid">${esc(m.ts)}</div>`;
       const next = all[i + 1];
-      const last = !next || next.from !== m.from;
+      const last = !next || next.from !== m.from || Boolean(next.ts);
       const cls = `${m.from === "me" ? "out" : "in"}${last ? " last" : ""}`;
+      if (m.typing) return `<div class="row l"><div class="bubble in last typing"><span></span><span></span><span></span></div></div>`;
+      const status = m.status ? `<div class="status">${esc(m.status)}</div>` : "";
       if (m.link) {
         return `<div class="row ${m.from === "me" ? "r" : "l"}"><div class="bubble ${cls} link"><div class="lt"><div class="title">${esc(m.link.title)}</div><div class="domain">${esc(m.link.domain)}</div></div><div class="icon">${SEAL}</div></div></div>`;
       }
-      return `<div class="row ${m.from === "me" ? "r" : "l"}"><div class="bubble ${cls}">${esc(m.text)}</div></div>`;
+      return `<div class="row ${m.from === "me" ? "r" : "l"} ${status ? "has-status" : ""}"><div class="bubble ${cls}">${esc(m.text)}</div>${status}</div>`;
     })
     .join("");
   return `<!doctype html><html><head><meta charset="utf-8"><style>
@@ -32,7 +35,13 @@ function html(slide) {
     body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;-webkit-font-smoothing:antialiased}
     .stage{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 40px}
     .ts{text-align:center;color:#8e8e93;font-size:30px;font-weight:600;margin-bottom:34px;letter-spacing:-.2px}
-    .row{display:flex;width:100%}
+    .row{display:flex;width:100%;flex-wrap:wrap}
+    .row.has-status{row-gap:8px}
+    .status{flex-basis:100%;text-align:right;color:#8e8e93;font-size:28px;font-weight:600;padding-right:14px}
+    .ts.mid{margin:34px 0 26px}
+    .typing{display:flex;gap:10px;align-items:center;padding:30px 34px}
+    .typing span{width:18px;height:18px;border-radius:50%;background:#8e8e93;display:block}
+    .typing span:nth-child(2){opacity:.75}.typing span:nth-child(3){opacity:.5}
     .row.r{justify-content:flex-end}
     .row + .row{margin-top:6px}
     .row.l + .row.r, .row.r + .row.l{margin-top:26px}

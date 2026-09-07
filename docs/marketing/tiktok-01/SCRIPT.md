@@ -1,79 +1,102 @@
-# TikTok carousel 01 · "we had a fight. then this arrived at 00:41."
+# TikTok carousel 01 · "who was that girl"
 
-Format: 10-slide photo carousel (TikTok "Photo" mode, swipe, 1080×1920). Her point of
-view (blue bubbles). A small fight after dinner, a boyfriend who never says things, and a
-gift instead of an apology. The product is never named out loud: the domain only appears
-inside the link preview on slide 5, the way it would in a real thread, and in your caption.
+Format: 13-slide photo carousel (TikTok "Photo" mode, 1080×1920), her point of view (blue
+bubbles). A friend sends a photo of him with his arm around a girl at the station. He
+denies nothing and explains nothing, which reads as guilt. Then a link. The girl was his
+half-sister, who came to help him make the gift, and there's a second gift that unlocks on
+Sunday. The product is never named in the chat; the domain only appears inside the link
+preview on slide 7, the way it would in a real thread.
 
-Why this one travels: slide 1 is tension you can read in a second ("You went quiet after
-dinner"), every slide ends unresolved, the letter says the thing people wish their partner
-would say, and the last slide is a door, not an ad.
+Why this one travels: slide 1 is a fight everyone has had or watched ("who was that
+girl"), the denial sounds guilty, the twist only lands after the gift, and the last slide is
+her going over at 10pm. Comments will argue about the sister for days, which is the point.
 
 ## Slides
 
-Slides 1–5 and 10 are rendered: `slide-01.png` … `slide-06.png` (slide-06.png is slide 10 of
-the carousel). Edit `script.json` and re-run:
-`node scripts/tiktok-slides.mjs docs/marketing/tiktok-01/script.json docs/marketing/tiktok-01`
+Chat slides are rendered: `slide-01.png` … `slide-09.png`. Slides 8 to 11 of the carousel
+are the gift (see below), so the file order maps like this:
 
-| # | What | Content |
+| # | File | Content |
 | --- | --- | --- |
-| 1 | chat | "You still awake" / "yeah" / "You went quiet after dinner" / "i'm fine" (Today 00:41) |
-| 2 | chat | "You only say fine when you're not" / "i'm not mad" / "i'm just tired of being the only one who says things" / "I know" |
-| 3 | chat | "I'm bad at saying it" / "So I made something instead" / "made what" / "Don't laugh" |
-| 4 | chat | "why would i laugh" / "It's a lot" / "Like properly a lot" / "send it" / "Promise you'll read the whole thing" |
-| 5 | chat | "promise" / link card **For Ana · tryethos.io** / "Sound on" / "And put your phone down after. I'm coming over" |
-| 6 | gift | The Letter, closed: envelope, wax seal, "For Ana". TikTok text sticker `Continue →` bottom right, small. |
-| 7 | gift | The letter open, handwriting fully typed. Text below. |
-| 8 | gift | The photos on the desk with captions. Six photos, captions below. |
-| 9 | gift | The song: the Vinyl screen with the record and the title, or the end screen with the music credit. Sticker: `it plays the whole time` |
-| 10 | chat | "i read it three times" / "i'm crying" / "you don't get to say you're bad at this anymore" / "I'm downstairs" / "what" / "Open the door" (Today 01:07) |
+| 1 | slide-01 | Yesterday 23:52 · "who was that girl" / "at the station" / "dont say what girl" / "What girl" / "im not doing this" |
+| 2 | slide-02 | "Ana it's not what you think" / "you had your arm around her" / "lea sent me the pic" / "Lea sent you a pic??" / "so you dont deny it" |
+| 3 | slide-03 | "I'm not denying I was there" / "I'm saying it's not what you think" / "thats literally what people say when it is what i think" / "dont come tomorrow" (Read 23:58) / "Ana" / "Please" / typing… |
+| 4 | slide-04 | Today 07:14 · "You up" / "I didn't sleep" / "Can I just explain" · 09:31 · "no" / "It was my sister" / "you dont have a sister loool" |
+| 5 | slide-05 | "Half sister. Nora. From my dad" / "I told you about her once and you said "cute" and forgot" / "...." / "why was your arm around her at 11pm at a train station" / "Because she came from Valencia to help me with something" / "with what" |
+| 6 | slide-06 | "I can't tell you yet" / "wow ok" / "so convenient" / "istg if this is a lie" (Read 09:40) / typing… |
+| 7 | slide-07 | Today 21:58 · "Ok" / "Just look at this. Then you can block me" / link card **Just look at this first · tryethos.io** / "what is this" / "It's what Nora came to help me with" / "I'm bad at this stuff. She did the photos" |
+| 8 | gift | The Letter, closed: envelope, wax seal, "For Ana". Sticker `Continue →`. |
+| 9 | gift | The letter, fully typed. Text below. |
+| 10 | gift | The photos with captions. Six photos, captions below. The first one is the twist. |
+| 11 | gift | The end screen with "A voice message from Marco · Tap to listen" and the final surprise line, or the Vinyl screen with the song. |
+| 12 | slide-08 | Today 22:31 · "im literally sobbing" / "your SISTER" / "why didnt you just say" / "Because you'd have asked what she was helping with" / "And I wanted sunday to be a surprise" / "what's sunday" / "There's a second one. It unlocks sunday" |
+| 13 | slide-09 | "i hate you" / "im coming over" / "It's 10pm" / "i said what i said" / "Door's open" / "tell nora i owe her a coffee loool" / "She says two" |
 
-### The letter (slide 7), 108 words
+Regenerate after editing `script.json`:
+`node scripts/tiktok-slides.mjs docs/marketing/tiktok-01/script.json docs/marketing/tiktok-01`
+(supports `"status": "Read 23:58"` under a blue bubble, `{ "ts": "Today 09:31" }` for a
+time gap, and `{ "from": "them", "typing": true }` for the dots.)
 
-> Ana. You said tonight that I don't say things. You're right, and I hate that you're
-> right. So here they are, in order. I fell for you on the second date, when you cried at
-> the dog outside the pharmacy. I think about the night you said "maybe we're done" more
-> than I think about anything, and we weren't done, we were just tired. I have never been
-> more sure of anything than I am of you, and I have never once said it out loud. That
-> stops tonight. I'm not asking you to forgive the quiet. I'm asking you to read this
-> twice. I'm on my way.
+### The letter (slide 9), 126 words. Paste into Message; Greeting stays empty.
 
-Keep the pharmacy dog. One odd, specific detail is what makes the whole thing believable.
+> I know exactly how the station looked. If Lea had sent me that photo of you, I'd have
+> been worse than you were. So here's all of it, in order, because I should have said it
+> at 23:52 instead of "what girl".
+>
+> Nora is my sister. She came from Valencia for two days because every time I try to write
+> to you I delete it, and she doesn't. She chose the photos. She said the one of you asleep
+> on the train was the one, and she's right.
+>
+> I'm not good at saying things. I'm going to get better at it, and this is the first one:
+> I have never once looked at anyone the way I look at you when you're not watching.
+>
+> I'm sorry for the silence. I'm not sorry for the surprise.
 
-### The six photos (slide 8), captions
+Sign-off: `Nora says hi,` (it lands under the letter with his name, and it's the punchline).
 
-Phone photos, not a shoot: one blurry, one badly lit, one where nobody looks at the camera.
+Final surprise (Extras → Final surprise, on): `Sunday, 11am. Wear the green thing.`
 
-1. A dog outside a shop, from a distance. *the second date. the pharmacy dog.*
-2. A dark street or a parked car at night. *the night we almost ended it. we didn't.*
-3. Her asleep against a train window. *you, asleep on the train*
-4. A messy flat in morning light. *the flat, the first morning*
-5. A selfie she once sent. *the one you sent when I was away*
-6. Her building's door at night, taken from the street. *00:58. outside.*
+### The six photos (slide 10), captions
 
-### Making the gift (10 minutes)
+Phone photos, not a shoot. The first photo is the whole twist, so it has to look like the
+"evidence": him and a girl, side by side, arm around her, at a station at night.
 
-tryethos.io → The Letter → "Ana" / "Marco" (or real names) → paste the letter → the six
-photos with the captions → Music → A real song → pick the song → publish. Your account
-has everything unlocked. Open the link on your phone, sound on, screen-record from the seal
-to the end, and take slides 6–9 as frames from that recording.
+1. Him and Nora at the station, the same angle Lea's photo would have. *nora. my sister. the arm-around-her at the station.*
+2. Her asleep against a train window. *you asleep on the train. nora says this is the one*
+3. Two coffees on a table. *first coffee. you ordered for me and got it wrong*
+4. A messy flat, morning light. *the flat, the first morning*
+5. A photo of her she hates, mid-laugh. *the one you hate. keeping it forever*
+6. A blurred photo of something wrapped, or a door. *sunday. wait for it.*
+
+### Editor fields (tryethos.io → The Letter)
+
+Their name `Ana` · Your name `Marco` · Title `Just look at this first` (it's the link
+preview) · Message: the letter above · Typed out · Photos: the six above · Music: A real
+song, something slow ("The Night We Met", "Mystery of Love") · Your voice: record 15
+seconds, low, tired: "Hey. It's me. Nora made me do this part. I'm sorry. I'm outside on
+Sunday at eleven, okay? Okay." · Look: first swatch (wax red), Editorial, seal letter `M`,
+Cream, Walnut, black ink · Greeting empty · Sign-off `Nora says hi,` · Reaction on ·
+Countdown off · Final surprise on with the line above · Password empty · Schedule off ·
+Footer: leave it.
 
 ## Caption, tags, sound
 
 Caption (pick one):
-- "we had a fight. then this arrived at 00:41."
-- "he said he's bad at saying things. read slide 7."
-- "the pharmacy dog. i'm not okay."
+- "my friend sent me a photo of him with another girl. this was 24 hours later."
+- "he said "what girl". read slide 7."
+- "the sister twist. i'm not ok."
 
-Tags: #loveletter #boyfriend #relationship #couplegoals #apology #fyp #romance #crying
+Tags: #boyfriend #relationship #cheating #plottwist #apology #storytime #fyp #couples
 
-Sound: slow, known, a little sad: "The Night We Met", "Francis Forever (slowed)", "Mystery
-of Love", "Apocalypse (slowed)". Volume low; the slides should feel like 1am.
+Sound: slow and a little sad for the first half so the reveal lands: "The Night We Met",
+"Francis Forever (slowed)", "Apocalypse (slowed)". Low volume.
 
-Post between 21:00 and 23:00 local. Don't put the link in the caption of the first
-version; pin a comment with `tryethos.io` once the comments ask "where did he make this".
-Reply to the first 20 comments within the hour. Make three versions with the same first
-four slides and a different letter (birthday, long distance, "I'm sorry") a day apart.
+Post between 21:00 and 23:00. No link in the caption on the first post; pin `tryethos.io`
+as a comment once people ask where he made it (they will ask about the sister first, let
+them). Reply to the first 20 comments within the hour. Make two more versions with the
+same first six slides and a different reveal (he was buying the ring; he was at her mum's
+place planning her birthday) and post them a day apart.
+
 ## Your own chat screenshots, if you want variations
 
 - Most authentic: two phones (or a second Apple ID) in a real iMessage thread, dark mode,

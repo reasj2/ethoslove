@@ -1,43 +1,77 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 00:41", "messages": [
-      { "from": "them", "text": "You still awake" },
-      { "from": "me", "text": "yeah" },
-      { "from": "them", "text": "You went quiet after dinner" },
-      { "from": "me", "text": "i'm fine" }
+    { "type": "chat", "timestamp": "Yesterday 23:52", "messages": [
+      { "from": "me", "text": "who was that girl" },
+      { "from": "me", "text": "at the station" },
+      { "from": "me", "text": "dont say what girl" },
+      { "from": "them", "text": "What girl" },
+      { "from": "me", "text": "im not doing this" }
     ]},
     { "type": "chat", "messages": [
-      { "from": "them", "text": "You only say fine when you're not" },
-      { "from": "me", "text": "i'm not mad" },
-      { "from": "me", "text": "i'm just tired of being the only one who says things" },
-      { "from": "them", "text": "I know" }
+      { "from": "them", "text": "Ana it's not what you think" },
+      { "from": "me", "text": "you had your arm around her" },
+      { "from": "me", "text": "lea sent me the pic" },
+      { "from": "them", "text": "Lea sent you a pic??" },
+      { "from": "me", "text": "so you dont deny it" }
     ]},
     { "type": "chat", "messages": [
-      { "from": "them", "text": "I'm bad at saying it" },
-      { "from": "them", "text": "So I made something instead" },
-      { "from": "me", "text": "made what" },
-      { "from": "them", "text": "Don't laugh" }
+      { "from": "them", "text": "I'm not denying I was there" },
+      { "from": "them", "text": "I'm saying it's not what you think" },
+      { "from": "me", "text": "thats literally what people say when it is what i think" },
+      { "from": "me", "text": "dont come tomorrow", "status": "Read 23:58" },
+      { "from": "them", "text": "Ana" },
+      { "from": "them", "text": "Please" },
+      { "from": "them", "typing": true }
+    ]},
+    { "type": "chat", "timestamp": "Today 07:14", "messages": [
+      { "from": "them", "text": "You up" },
+      { "from": "them", "text": "I didn't sleep" },
+      { "from": "them", "text": "Can I just explain" },
+      { "ts": "Today 09:31" },
+      { "from": "me", "text": "no" },
+      { "from": "them", "text": "It was my sister" },
+      { "from": "me", "text": "you dont have a sister loool" }
     ]},
     { "type": "chat", "messages": [
-      { "from": "me", "text": "why would i laugh" },
-      { "from": "them", "text": "It's a lot" },
-      { "from": "them", "text": "Like properly a lot" },
-      { "from": "me", "text": "send it" },
-      { "from": "them", "text": "Promise you'll read the whole thing" }
+      { "from": "them", "text": "Half sister. Nora. From my dad" },
+      { "from": "them", "text": "I told you about her once and you said \"cute\" and forgot" },
+      { "from": "me", "text": "...." },
+      { "from": "me", "text": "why was your arm around her at 11pm at a train station" },
+      { "from": "them", "text": "Because she came from Valencia to help me with something" },
+      { "from": "me", "text": "with what" }
     ]},
     { "type": "chat", "messages": [
-      { "from": "me", "text": "promise" },
-      { "from": "them", "link": { "title": "For Ana", "domain": "tryethos.io" } },
-      { "from": "them", "text": "Sound on" },
-      { "from": "them", "text": "And put your phone down after. I'm coming over" }
+      { "from": "them", "text": "I can't tell you yet" },
+      { "from": "me", "text": "wow ok" },
+      { "from": "me", "text": "so convenient" },
+      { "from": "me", "text": "istg if this is a lie", "status": "Read 09:40" },
+      { "from": "them", "typing": true }
     ]},
-    { "type": "chat", "timestamp": "Today 01:07", "messages": [
-      { "from": "me", "text": "i read it three times" },
-      { "from": "me", "text": "i'm crying" },
-      { "from": "me", "text": "you don't get to say you're bad at this anymore" },
-      { "from": "them", "text": "I'm downstairs" },
-      { "from": "me", "text": "what" },
-      { "from": "them", "text": "Open the door" }
+    { "type": "chat", "timestamp": "Today 21:58", "messages": [
+      { "from": "them", "text": "Ok" },
+      { "from": "them", "text": "Just look at this. Then you can block me" },
+      { "from": "them", "link": { "title": "Just look at this first", "domain": "tryethos.io" } },
+      { "from": "me", "text": "what is this" },
+      { "from": "them", "text": "It's what Nora came to help me with" },
+      { "from": "them", "text": "I'm bad at this stuff. She did the photos" }
+    ]},
+    { "type": "chat", "timestamp": "Today 22:31", "messages": [
+      { "from": "me", "text": "im literally sobbing" },
+      { "from": "me", "text": "your SISTER" },
+      { "from": "me", "text": "why didnt you just say" },
+      { "from": "them", "text": "Because you'd have asked what she was helping with" },
+      { "from": "them", "text": "And I wanted sunday to be a surprise" },
+      { "from": "me", "text": "what's sunday" },
+      { "from": "them", "text": "There's a second one. It unlocks sunday" }
+    ]},
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "i hate you" },
+      { "from": "me", "text": "im coming over" },
+      { "from": "them", "text": "It's 10pm" },
+      { "from": "me", "text": "i said what i said" },
+      { "from": "them", "text": "Door's open" },
+      { "from": "me", "text": "tell nora i owe her a coffee loool" },
+      { "from": "them", "text": "She says two", "status": "" }
     ]}
   ]
 }
