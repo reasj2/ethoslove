@@ -17,7 +17,9 @@ export const fieldMeta: Record<"en" | "es", Record<string, FieldMeta>> = {
     },
     stops: {
       label: "Stopovers",
-      help: "Optional. One city per line, in order — every place you've met halfway.",
+      help: "Optional. In order, every place you've met halfway.",
+      addLabel: "Add a stop",
+      placeholder: "Lisbon",
     },
     nationality: { label: "Nationality line", help: "e.g. “Citizen of wherever you are”" },
     cover: {
@@ -41,7 +43,9 @@ export const fieldMeta: Record<"en" | "es", Record<string, FieldMeta>> = {
     },
     stops: {
       label: "Escalas",
-      help: "Opcional. Una ciudad por línea, en orden: cada sitio donde os visteis a medio camino.",
+      help: "Opcional. En orden: cada sitio donde os visteis a medio camino.",
+      addLabel: "Añadir una parada",
+      placeholder: "Lisboa",
     },
     nationality: { label: "Línea de nacionalidad", help: "p. ej. «Ciudadana de donde estés tú»" },
     cover: {

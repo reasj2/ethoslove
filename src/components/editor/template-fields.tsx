@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Field, Segmented } from "./field";
 import { ColorInput } from "./color-input";
+import { ListField } from "./list-field";
 
 function humanize(key: string) {
   return key.replace(/([A-Z])/g, " $1").replace(/^./, (c) => c.toUpperCase());
@@ -77,17 +78,26 @@ export function TemplateFields({ mod, locale }: { mod: TemplateModule; locale: G
                 <Input id={id} type="number" value={Number(value ?? 0)} min={d.min} max={d.max} onChange={(e) => patchFields({ [d.key]: Number(e.target.value) })} className="h-11" />
               </Field>
             );
-          case "textarea":
           case "list":
             return (
-              <Field key={d.key} id={id} label={label} help={m?.help ?? (d.widget === "list" ? "One per line" : undefined)}>
-                <Textarea
+              <Field key={d.key} id={id} label={label} help={m?.help}>
+                <ListField
                   id={id}
-                  rows={d.widget === "list" ? 6 : 4}
-                  value={Array.isArray(value) ? (value as string[]).join("\n") : String(value)}
-                  maxLength={d.maxLength}
-                  onChange={(e) => patchFields({ [d.key]: d.widget === "list" ? e.target.value.split("\n").filter(Boolean) : e.target.value })}
+                  ariaLabel={label}
+                  value={Array.isArray(value) ? (value as string[]) : []}
+                  onChange={(v) => patchFields({ [d.key]: v })}
+                  minItems={d.minItems}
+                  maxItems={d.maxItems}
+                  itemMaxLength={d.itemMaxLength}
+                  addLabel={m?.addLabel}
+                  placeholder={m?.placeholder}
                 />
+              </Field>
+            );
+          case "textarea":
+            return (
+              <Field key={d.key} id={id} label={label} help={m?.help}>
+                <Textarea id={id} rows={4} value={String(value)} maxLength={d.maxLength} onChange={(e) => patchFields({ [d.key]: e.target.value })} />
               </Field>
             );
           default:

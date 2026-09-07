@@ -11,6 +11,10 @@ export type FieldDescriptor = {
   maxLength?: number;
   min?: number;
   max?: number;
+  /** Arrays only: per-item character limit and item count bounds. */
+  itemMaxLength?: number;
+  minItems?: number;
+  maxItems?: number;
 };
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
@@ -56,6 +60,18 @@ function readChecks(inner: any): { maxLength?: number; min?: number; max?: numbe
   return out;
 }
 
+function readArray(inner: any): { minItems?: number; maxItems?: number; itemMaxLength?: number } {
+  const def = defOf(inner);
+  const out: { minItems?: number; maxItems?: number; itemMaxLength?: number } = {};
+  for (const c of def.checks ?? []) {
+    const d = c?._zod?.def ?? c?.def ?? c ?? {};
+    if (d.check === "min_length" && typeof d.minimum === "number") out.minItems = d.minimum;
+    if (d.check === "max_length" && typeof d.maximum === "number") out.maxItems = d.maximum;
+  }
+  if (def.element) out.itemMaxLength = readChecks(unwrap(def.element).inner).maxLength;
+  return out;
+}
+
 /** Turns a template's Zod `fields` object into widget descriptors for the dynamic form. */
 export function describeObjectSchema(schema: z.ZodObject<any>): FieldDescriptor[] {
   const shape: Record<string, any> = (schema as any).shape ?? {};
@@ -75,7 +91,8 @@ export function describeObjectSchema(schema: z.ZodObject<any>): FieldDescriptor[
       if (checks.isColor || /colou?r$/i.test(key)) widget = "color";
       else if ((checks.maxLength ?? 0) > 120) widget = "textarea";
     }
-    return { key, widget, optional, defaultValue, options, maxLength: checks.maxLength, min: checks.min, max: checks.max };
+    const array = widget === "list" ? readArray(inner) : {};
+    return { key, widget, optional, defaultValue, options, maxLength: checks.maxLength, min: checks.min, max: checks.max, ...array };
   });
 }
 /* eslint-enable @typescript-eslint/no-explicit-any */

@@ -339,7 +339,10 @@
       "handwritten": "Handwritten",
       "handwrittenHint": "Script display, clean body",
       "showReactionCta": "Ask for a reaction at the end",
-      "showReactionCtaHelp": "They can send you back an emoji, a note or a voice message."
+      "showReactionCtaHelp": "They can send you back an emoji, a note or a voice message.",
+      "listAdd": "Add another",
+      "listRemove": "Remove",
+      "listMin": "at least {n}"
     },
     "photos": {
       "drop": "Drop photos here, or",

@@ -50,7 +50,14 @@ export interface TemplateProps<TFields = Record<string, unknown>> {
   onMakeOne?: () => void;
 }
 
-export type FieldMeta = { label: string; help?: string; options?: Record<string, string> };
+export type FieldMeta = {
+  label: string;
+  help?: string;
+  options?: Record<string, string>;
+  /** List fields: the add button's label and the first row's placeholder. */
+  addLabel?: string;
+  placeholder?: string;
+};
 
 export interface TemplateModule<TFields = Record<string, unknown>> {
   manifest: TemplateManifest;

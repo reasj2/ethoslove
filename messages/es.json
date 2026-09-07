@@ -339,7 +339,10 @@
       "handwritten": "Manuscrita",
       "handwrittenHint": "Caligrafía para títulos, limpia para el texto",
       "showReactionCta": "Pedir una reacción al final",
-      "showReactionCtaHelp": "Podrán devolverte un emoji, una nota o un mensaje de voz."
+      "showReactionCtaHelp": "Podrán devolverte un emoji, una nota o un mensaje de voz.",
+      "listAdd": "Añadir otra",
+      "listRemove": "Quitar",
+      "listMin": "mínimo {n}"
     },
     "photos": {
       "drop": "Suelta fotos aquí, o",
