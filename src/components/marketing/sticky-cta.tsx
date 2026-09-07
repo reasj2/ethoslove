@@ -10,8 +10,8 @@ import { useScrolledPast } from "@/hooks/use-scrolled-past";
 export function StickyCta() {
   const t = useTranslations("common");
   const pathname = usePathname();
-  // Only where the page has no strong call to action of its own: home, gallery, occasions.
-  const wanted = pathname === "/" || pathname === "/templates" || pathname.startsWith("/occasions");
+  // Only where the page has no strong call to action of its own (cards and detail pages carry theirs).
+  const wanted = pathname === "/" || pathname === "/occasions";
   const visible = useScrolledPast(480) && wanted;
 
   return (
