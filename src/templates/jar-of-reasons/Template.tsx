@@ -141,7 +141,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
       {/* Hint */}
       <AnimatePresence>
         {open === null && stage === "jar" ? (
-          <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-x-0 bottom-[max(2.5rem,calc(env(safe-area-inset-bottom)+2rem))] z-20 flex flex-col items-center gap-3 px-8 text-center">
+          <motion.div key="hint" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="absolute inset-x-0 bottom-[max(4.5rem,calc(env(safe-area-inset-bottom)+4rem))] z-20 flex flex-col items-center gap-3 px-8 text-center">
             {remaining > 0 ? (
               <>
                 <motion.p animate={reduce ? undefined : { rotate: [0, -6, 6, -4, 0] }} transition={{ duration: 1.2, repeat: Infinity, repeatDelay: 1.6 }} className="text-[13px] tracking-[0.22em] text-ink/70 uppercase">
@@ -230,7 +230,7 @@ function LetterBody({ data, mode, blocks, reduce, onEvent, onReact, onMakeOne, o
     return () => io.disconnect();
   }, [onEvent]);
   return (
-    <div className="mx-auto flex w-[min(88cqw,560px)] flex-col gap-6 pt-[max(8cqh,48px)] pb-[max(2rem,env(safe-area-inset-bottom))]">
+    <div className="mx-auto flex w-[min(88cqw,560px)] flex-col gap-6 pt-[max(8cqh,48px)] pb-[calc(3.5rem+env(safe-area-inset-bottom))]">
       <div>
         <h2 className="text-[clamp(1.7rem,7cqw,2.2rem)]" style={{ fontFamily: "var(--gift-font-hand)" }}>{t("dear", { name: data.recipientName })}</h2>
         <div className={cn("mt-4 text-[clamp(1.25rem,5.2cqw,1.5rem)] leading-[1.45] text-ink [&_p+p]:mt-4 [&_strong]:font-bold [&_em]:text-[var(--gift-accent)]")} style={{ fontFamily: "var(--gift-font-hand)" }}>

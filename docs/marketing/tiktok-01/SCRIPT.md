@@ -42,8 +42,14 @@ the carousel. Do not add text over it. Let them find it.
 
 ## Slides
 
-Chat slides are rendered: `slide-01.png` to `slide-12.png` (1080×1920, iMessage dark mode).
-Gift slides go between slide 10 and slide 11, they are your own screenshots.
+Everything is rendered and sitting in this folder, all 1080×1920, ready to upload:
+`slide-01.png` to `slide-12.png` are the chat, `gift-01` to `gift-06` are the gift. The gift
+slides go between slide 10 and slide 11.
+
+The gift itself is live at **tryethos.io/g/jayandmya** — open it on your phone if you would
+rather record it yourself, or to reshoot a slide. Its four photos are placeholders from the
+demo set; swap them for your own in the editor and re-shoot `gift-02` if you want them to
+look like a real couple's camera roll.
 
 | # | On screen | Text you type over it in TikTok |
 |---|---|---|
@@ -57,11 +63,12 @@ Gift slides go between slide 10 and slide 11, they are your own screenshots.
 | 8 | "dont text me for a bit" + Delivered, Delivered | |
 | 9 | her apology, hearted, no reply | (nothing. leave it) |
 | 10 | "u up" / "made u smth" + the link card | |
-| G1 | Gift: closed jar. `JAY → MIA`, `12 reasons ur my whole world`, `12/12` | `he made me a whole website at 2am` |
-| G2 | Gift: note 1 open with your photo | |
-| G3 | Gift: note 11 open | `i sobbed` |
-| G4 | Gift: the letter, half typed | |
-| G5 | Gift: surprise revealed, `im outside. open the door.` | |
+| G1 | `gift-01-jar` — closed jar, `JAY → MIA`, `12/12` | `he made me a whole website at 2am` |
+| G2 | `gift-02-note-photo` — a note with a photo taped to it | |
+| G3 | `gift-03-note-delete` — "id delete every girl off my phone for u" | `i sobbed` |
+| G4 | `gift-04-letter` — the letter typing itself out | |
+| G5 | `gift-05-surprise` — the whole letter, the S, and the P.S. | (nothing. this is the one they screenshot) |
+| G6 | `gift-06-end` — "The end. For now." · Made by Jay for Mia | |
 | 11 | "i love you so much" (hearted) / "k" / "so we good?" / "yea" | `we're okay now 🥹` |
 | 12 | Lea: "he sent me the exact same one" / "2 weeks ago" | |
 
