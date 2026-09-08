@@ -30,13 +30,13 @@ Her: Ella. Him: never named, which is deliberate. People fill him in with someon
 | 2 | `slide-02.png` | "do u remember what u said in the car in july" · "u said nobody ever remembers the small stuff" · "i remembered the small stuff" | |
 | 3 | `slide-03.png` | "check ur other messages" · "why is there another one" · "just look" · "u will" | |
 | 4 | `slide-04.png` | the link · "what is this" · "headphones" · "im scared" · "ur gonna cry tho" | |
-| 5 | yours | the night sky, stars scattered, `For Ella` | `he made me a whole sky` |
+| 5 | yours | the night sky, ten stars scattered, `For Ella` | `he made me a whole sky` |
 | 6 | yours | one star opened, a photo inside it, the caption showing | |
 | 7 | yours | half the stars joined up, the shape starting to appear | |
 | 8 | yours | the constellation complete, a heart in the stars | `it was a heart the whole time` |
 | 9 | yours | the message under the stars, the window seat line in frame | (nothing) |
 | 10 | yours | the surprise revealed: `december. window seat. obviously.` | |
-| 11 | `slide-05.png` and `slide-06.png` | "since july" · "SINCE JULY" · then 01:26 "it made a heart" · "i know" | `i didnt sleep` |
+| 11 | `slide-05.png` and `slide-06.png` | "there are ten" · "since july" · "SINCE JULY" · then 01:26 "it made a heart" · "i know" | `i didnt sleep` |
 
 That is 12 if you post both closing slides, which you should. TikTok allows 35.
 
@@ -55,38 +55,42 @@ her. That single line is what gets stitched, screenshotted, and sent to boyfrien
 
 ## The gift, which you shoot yourself
 
-Constellations, at tryethos.io. It is free, which matters here. When the comments ask what
-it is, they can go make one that night, and free is the fastest way to get a hundred people
-inside the editor from one video.
+Constellations, at tryethos.io. Built the way it is written below it costs nothing, which
+matters here: when the comments ask what it is, they can go make one that night, and free is
+the fastest way to get a hundred people into the editor from one video.
 
 Build it, open it on your phone, Share → Add to Home Screen, and shoot it from the home
-screen so there are no Safari bars. Twelve stars, so give yourself a minute.
+screen so there are no Safari bars. Ten stars, so give yourself a minute.
 
 ### Editor fields (tryethos.io → Constellations)
 
 Their name `Ella` · Your name: leave your own · Title `For Ella` (this is the link preview
 on slide 4) · Sky `Midnight` · Shape `Heart` · Line when the constellation completes:
-`twelve nights. it was always this shape.` · Typed out · Music: library "Under the Stars" ·
+`ten nights. it was always this shape.` · Typed out · Music: library "Under the Stars" ·
 Reaction on · Countdown off · Final surprise on, reveal by holding: `december. window seat.
 obviously.` · Password empty · Schedule off.
 
-### The twelve photos and their captions
+### The ten photos and their captions
 
 Order matters, they become the stars in sequence. Use real phone photos, badly lit, slightly
 blurry. Polished ones kill it.
 
 1. `july. the car. you said nobody remembers.`
-2. `you fell asleep in the first twenty minutes`
-3. `and then said you'd seen it`
-4. `the window seat. as always.`
-5. `you at the sink at 1am doing the ten steps`
-6. `you laughing at something off camera`
-7. `you asleep on the train`
-8. `the shoes you swore you didn't buy`
-9. `your hand on the gearstick, august`
-10. `you in my hoodie pretending it's yours now`
-11. `the balcony. the one good night in october.`
-12. `you, not looking, which is when you look like this`
+2. `you fell asleep in the first twenty minutes and then said you'd seen it`
+3. `the window seat. as always.`
+4. `you at the sink at 1am doing the ten steps`
+5. `you laughing at something off camera`
+6. `you asleep on the train`
+7. `the shoes you swore you didn't buy`
+8. `you in my hoodie pretending it's yours now`
+9. `the balcony. the one good night in october.`
+10. `you, not looking, which is when you look like this`
+
+Ten and not twelve on purpose. The template holds twelve, but a gift with more than ten
+photos counts as a premium extra, and this whole post depends on the answer to "what is
+that" being "it's free, go make one". Ten photos, the library track, the hidden surprise and
+the countdown are all free. A real song from Spotify, a video, a voice note, an eleventh
+photo, a password or a schedule are what cost money.
 
 ### The message (paste as written)
 
@@ -98,7 +102,7 @@ blurry. Polished ones kill it.
 > the afterthought, and I have spent every day since making sure you never have to think
 > that again.
 >
-> Twelve stars. One for every night I wanted to say this and didn't.
+> Ten stars. One for every night I wanted to say this and didn't.
 >
 > I'm not good at saying it out loud. So I built it instead.
 
@@ -143,7 +147,7 @@ when the person reading it is also awake and shouldn't be.
 
 ## If you want a second one from this
 
-The same six texts work with Our Timeline instead. Change "there are twelve" to "it goes all
+The same six texts work with Our Timeline instead. Change "there are ten" to "it goes all
 the way back to the first message" and shoot the road drawing itself instead of the stars.
 Same chat, same "since july", different gift. That gives you a second post from one script,
 two weeks apart, without either looking recycled.
