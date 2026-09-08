@@ -30,13 +30,13 @@ Her: Ella. Him: never named, which is deliberate. People fill him in with someon
 | 2 | `slide-02.png` | "do u remember what u said in the car in july" · "u said nobody ever remembers the small stuff" · "i remembered the small stuff" | |
 | 3 | `slide-03.png` | "check ur other messages" · "why is there another one" · "just look" · "u will" | |
 | 4 | `slide-04.png` | the link · "what is this" · "headphones" · "im scared" · "ur gonna cry tho" | |
-| 5 | yours | the night sky, ten stars scattered, `For Ella` | `he made me a whole sky` |
+| 5 | yours | the night sky, five stars scattered, `For Ella` | `he made me a whole sky` |
 | 6 | yours | one star opened, a photo inside it, the caption showing | |
 | 7 | yours | half the stars joined up, the shape starting to appear | |
 | 8 | yours | the constellation complete, a heart in the stars | `it was a heart the whole time` |
 | 9 | yours | the message under the stars, the window seat line in frame | (nothing) |
-| 10 | yours | the surprise revealed: `december. window seat. obviously.` | |
-| 11 | `slide-05.png` and `slide-06.png` | "there are ten" · "since july" · "SINCE JULY" · then 01:26 "it made a heart" · "i know" | `i didnt sleep` |
+| 10 | yours | the surprise revealed: `top of the wardrobe. i kept them.` | `the shark hats. he kept the shark hats.` |
+| 11 | `slide-05.png` and `slide-06.png` | "im crying" · "did u take these on purpose" · "since july" · "SINCE JULY" · then 01:26 "it made a heart" · "i know" | `i didnt sleep` |
 
 That is 12 if you post both closing slides, which you should. TikTok allows 35.
 
@@ -60,55 +60,60 @@ matters here: when the comments ask what it is, they can go make one that night,
 the fastest way to get a hundred people into the editor from one video.
 
 Build it, open it on your phone, Share → Add to Home Screen, and shoot it from the home
-screen so there are no Safari bars. Ten stars, so give yourself a minute.
+screen so there are no Safari bars. Five stars, so it is quick to shoot.
 
 ### Editor fields (tryethos.io → Constellations)
 
 Their name `Ella` · Your name: leave your own · Title `For Ella` (this is the link preview
 on slide 4) · Sky `Midnight` · Shape `Heart` · Line when the constellation completes:
-`ten nights. it was always this shape.` · Typed out · Music: library "Under the Stars" ·
-Reaction on · Countdown off · Final surprise on, reveal by holding: `december. window seat.
-obviously.` · Password empty · Schedule off.
+`it was always going to be this shape.` · Typed out · Music: library "Under the Stars" ·
+Reaction on · Countdown off · Final surprise on, reveal by holding: `top of the wardrobe. i kept
+them.` · Password empty · Schedule off.
 
-### The ten photos and their captions
+### The five photos and their captions
 
-Order matters, they become the stars in sequence. Use real phone photos, badly lit, slightly
-blurry. Polished ones kill it.
+Upload in this order, they become the stars in sequence and the last one is the one she is
+still looking at when the constellation finishes.
 
-1. `july. the car. you said nobody remembers.`
-2. `you fell asleep in the first twenty minutes and then said you'd seen it`
-3. `the window seat. as always.`
-4. `you at the sink at 1am doing the ten steps`
-5. `you laughing at something off camera`
-6. `you asleep on the train`
-7. `the shoes you swore you didn't buy`
-8. `you in my hoodie pretending it's yours now`
-9. `the balcony. the one good night in october.`
-10. `you, not looking, which is when you look like this`
+1. **The face masks, both pulling a face** — `you said it was five minutes. it was an hour. i didn't mind.`
+2. **The picnic with the dog** — `she picked you first. i'd have picked you too.`
+3. **The shark hats in the shop** — `you said we should keep them. we didn't keep them.`
+4. **The sunset, you with the wine** — `you talked through the whole sunset. best one i've seen.`
+5. **The close one, in bed, her hair** — `you say you look bad in these. you have never once looked bad in these.`
 
-Ten and not twelve on purpose. The template holds twelve, but a gift with more than ten
-photos counts as a premium extra, and this whole post depends on the answer to "what is
-that" being "it's free, go make one". Ten photos, the library track, the hidden surprise and
-the countdown are all free. A real song from Spotify, a video, a voice note, an eleventh
-photo, a password or a schedule are what cost money.
+Number 3 is the setup. The hidden surprise is the payoff: `top of the wardrobe. i kept
+them.` That is the line people watch it twice for, and it is better than any grand gesture
+because it costs nothing and proves he was listening.
+
+Rotate the shark photo before you upload it, it is sideways. The editor has a rotate control
+on each photo.
+
+Five, not ten. The template holds twelve and the free tier holds ten, but five candid photos
+with these captions beat ten with filler, and the whole post depends on the answer to "what
+is that" being "it's free, go make one". Five photos, the library track, the hidden surprise
+and the countdown are all free. A real song from Spotify, a video, a voice note, an eleventh
+photo, a password or a schedule are the things that cost money.
+
+If you want more than five, add them from the same night as the ones above rather than
+reaching for better-looking pictures. Every photo here is unposed and that is why it works.
 
 ### The message (paste as written)
 
 > You said in the car in July that nobody remembers the small stuff.
 >
-> I remember the small stuff. I remember you fall asleep in the first twenty minutes of
-> every film and wake up and tell me you've seen it. I remember you take the window seat
-> every single time and call it a coincidence. I remember what you said about always being
-> the afterthought, and I have spent every day since making sure you never have to think
-> that again.
+> I remember the small stuff. I remember the dog picked you first and I wasn't surprised.
+> I remember you talked through an entire sunset and I didn't hear a word of it because I
+> was watching you do it. I remember the face mask that was going to take five minutes. I
+> remember what you said about always being the afterthought, and I have spent every day
+> since making sure you never have to think that again.
 >
-> Ten stars. One for every night I wanted to say this and didn't.
+> There are five here. There are hundreds. I picked the ones where you weren't posing.
 >
-> I'm not good at saying it out loud. So I built it instead.
+> I'm not good at saying this out loud, so I built it instead.
 
-The window seat is the setup. The surprise is the payoff: `december. window seat.
-obviously.` Do not change one and forget the other, that callback is the reason people
-watch it twice.
+"I picked the ones where you weren't posing" is the line to leave alone. It is the reason
+the bad lighting and the tongue out and the sideways shark hats are the point rather than a
+compromise.
 
 ## Caption, tags, sound
 
@@ -147,7 +152,7 @@ when the person reading it is also awake and shouldn't be.
 
 ## If you want a second one from this
 
-The same six texts work with Our Timeline instead. Change "there are ten" to "it goes all
+The same six texts work with Our Timeline instead. Change "did u take these on purpose" to "it goes all
 the way back to the first message" and shoot the road drawing itself instead of the stars.
 Same chat, same "since july", different gift. That gives you a second post from one script,
 two weeks apart, without either looking recycled.
