@@ -1,0 +1,50 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Today 23:41", "messages": [
+      { "from": "them", "text": "u asleep" },
+      { "from": "me", "text": "yes" },
+      { "from": "them", "text": "cool" },
+      { "from": "them", "text": "so anyway" },
+      { "from": "me", "text": "oh my god what" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "them", "text": "do u remember what u said in the car in july" },
+      { "from": "me", "text": "i say a lot of things in cars" },
+      { "from": "them", "text": "u said nobody ever remembers the small stuff" },
+      { "from": "me", "text": "ok" },
+      { "from": "them", "text": "i remembered the small stuff" },
+      { "from": "me", "text": "what does that mean" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "what did you do" },
+      { "from": "them", "text": "check ur other messages" },
+      { "from": "me", "text": "why is there another one" },
+      { "from": "them", "text": "just look" },
+      { "from": "me", "text": "i dont like this" },
+      { "from": "them", "text": "u will" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "them", "link": { "title": "For Ella", "domain": "tryethos.io" } },
+      { "from": "me", "text": "what is this" },
+      { "from": "them", "text": "headphones" },
+      { "from": "me", "text": "im scared" },
+      { "from": "them", "text": "ur not scared" },
+      { "from": "them", "text": "ur gonna cry tho", "status": "Read 23:48" } ] },
+
+    { "type": "chat", "timestamp": "Today 00:12", "messages": [
+      { "from": "me", "text": "there are twelve" },
+      { "from": "me", "text": "did u take these on purpose" },
+      { "from": "them", "text": "yea" },
+      { "from": "me", "text": "when" },
+      { "from": "them", "text": "since july" },
+      { "from": "me", "text": "SINCE JULY" },
+      { "from": "them", "text": "go to sleep ella" } ] },
+
+    { "type": "chat", "timestamp": "Today 01:26", "messages": [
+      { "from": "me", "text": "im not going to sleep" },
+      { "from": "me", "text": "i found the last one" },
+      { "from": "me", "text": "it made a heart" },
+      { "from": "them", "text": "i know" },
+      { "from": "them", "text": "goodnight ella", "tapback": "heart" } ] }
+  ]
+}
