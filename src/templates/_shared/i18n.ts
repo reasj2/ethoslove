@@ -8,6 +8,7 @@ const STRINGS = {
   en: {
     loadingFor: "Someone made this for you, {name}…",
     loading: "Someone made this for you…",
+    introEyebrow: "Someone made this for you",
     tapToOpen: "Tap to open",
     soundOn: "Turn your sound on",
     tapSeal: "Tap the seal",
@@ -49,6 +50,7 @@ const STRINGS = {
   es: {
     loadingFor: "Alguien hizo esto para ti, {name}…",
     loading: "Alguien hizo esto para ti…",
+    introEyebrow: "Alguien hizo esto para ti",
     tapToOpen: "Toca para abrir",
     soundOn: "Activa el sonido",
     tapSeal: "Toca el sello",

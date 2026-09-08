@@ -9,8 +9,10 @@ test.describe("template engine", () => {
 
   test("The Letter opens from the seal to the signed letter", async ({ page }) => {
     await page.goto("/demo/the-letter");
-    const loading = page.getByText(/someone made this for you, ana/i);
+    // The intro screen shows the line and the recipient's name as separate elements.
+    const loading = page.getByText(/someone made this for you/i);
     await expect(loading).toBeVisible();
+    await expect(page.getByText("Ana", { exact: true }).first()).toBeVisible();
     await expect(loading).toBeHidden({ timeout: 20000 });
     const seal = page.getByRole("button", { name: /tap the seal/i });
     await expect(seal).toBeVisible();

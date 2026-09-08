@@ -9,6 +9,7 @@ import { loadTemplate } from "../registry";
 import { giftThemeVars } from "./theme";
 import { usePreloadAssets } from "./hooks/use-preload-assets";
 import { LoadingScreen } from "./LoadingScreen";
+import { introVariantFor } from "./intro-variants";
 import { Watermark } from "./Watermark";
 import { TemplateErrorBoundary } from "./ErrorBoundary";
 
@@ -103,6 +104,7 @@ export function GiftRenderer({
               recipientName={resolved?.recipientName}
               progress={mod ? preload.progress : 0}
               locale={resolved?.locale ?? demoLocale}
+              variant={introVariantFor(slug, mod?.manifest)}
             />
           ) : null}
         </AnimatePresence>
