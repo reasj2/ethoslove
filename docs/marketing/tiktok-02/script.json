@@ -1,5 +1,42 @@
 {
   "slides": [
+    { "type": "chat", "timestamp": "Today 21:12", "messages": [
+      { "from": "me", "text": "i hate my job" },
+      { "from": "me", "text": "like actually" },
+      { "from": "them", "text": "what happened" },
+      { "from": "me", "text": "im not even gonna get into it" },
+      { "from": "me", "text": "im just gonna lie on the floor for a bit" },
+      { "from": "them", "text": "ok" },
+      { "from": "them", "text": "did u eat" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "no" },
+      { "from": "them", "text": "ella" },
+      { "from": "me", "text": "i wasnt hungry" },
+      { "from": "them", "text": "u say that and then at 11 ur eating cereal standing up in the dark" },
+      { "from": "me", "text": "thats not true" },
+      { "from": "me", "text": "(its true)" },
+      { "from": "them", "text": "im ordering u the thing u like" },
+      { "from": "me", "text": "no dont" },
+      { "from": "them", "text": "already did" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "ur so annoying" },
+      { "from": "them", "text": "yea" },
+      { "from": "me", "text": "i love u tho", "tapback": "heart" },
+      { "from": "me", "text": "say it back" },
+      { "from": "them", "text": "no" },
+      { "from": "me", "text": "SAY IT BACK" },
+      { "from": "them", "text": "eat ur food ella" } ] },
+
+    { "type": "chat", "timestamp": "Today 22:40", "messages": [
+      { "from": "me", "text": "ur quiet" },
+      { "from": "them", "text": "im doing something" },
+      { "from": "me", "text": "doing what" },
+      { "from": "them", "text": "nothing" },
+      { "from": "me", "text": "thats worse" },
+      { "from": "them", "text": "go do ur skincare" } ] },
+
     { "type": "chat", "timestamp": "Today 23:41", "messages": [
       { "from": "them", "text": "u asleep" },
       { "from": "me", "text": "yes" },
@@ -16,35 +53,50 @@
       { "from": "me", "text": "what does that mean" } ] },
 
     { "type": "chat", "messages": [
-      { "from": "me", "text": "what did you do" },
+      { "from": "me", "text": "what did u do" },
       { "from": "them", "text": "check ur other messages" },
       { "from": "me", "text": "why is there another one" },
       { "from": "them", "text": "just look" },
-      { "from": "me", "text": "i dont like this" },
-      { "from": "them", "text": "u will" } ] },
+      { "from": "me", "text": "im scared" },
+      { "from": "them", "text": "ur not scared" } ] },
 
     { "type": "chat", "messages": [
       { "from": "them", "link": { "title": "For Ella", "domain": "tryethos.io" } },
-      { "from": "me", "text": "what is this" },
       { "from": "them", "text": "headphones" },
-      { "from": "me", "text": "im scared" },
-      { "from": "them", "text": "ur not scared" },
+      { "from": "them", "text": "and dont skip any of it" },
+      { "from": "me", "text": "opening it" },
       { "from": "them", "text": "ur gonna cry tho", "status": "Read 23:48" } ] },
 
     { "type": "chat", "timestamp": "Today 00:12", "messages": [
       { "from": "me", "text": "im crying" },
+      { "from": "me", "text": "IM ACTUALLY CRYING" },
+      { "from": "me", "text": "the dog one" },
+      { "from": "me", "text": "the DOG one" },
+      { "from": "them", "text": "i knew that would be the one" } ] },
+
+    { "type": "chat", "messages": [
       { "from": "me", "text": "did u take these on purpose" },
       { "from": "them", "text": "yea" },
       { "from": "me", "text": "when" },
       { "from": "them", "text": "since july" },
       { "from": "me", "text": "SINCE JULY" },
+      { "from": "me", "text": "u took photos of me for 3 months and said nothing" },
+      { "from": "them", "text": "yea" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "why" },
+      { "from": "them", "text": "because u said nobody remembers" },
+      { "from": "them", "text": "i wanted to be someone who does" },
+      { "from": "me", "text": "im not ok" },
+      { "from": "me", "text": "im so not ok" },
       { "from": "them", "text": "go to sleep ella" } ] },
 
     { "type": "chat", "timestamp": "Today 01:26", "messages": [
-      { "from": "me", "text": "im not going to sleep" },
       { "from": "me", "text": "i found the last one" },
       { "from": "me", "text": "it made a heart" },
-      { "from": "them", "text": "i know" },
+      { "from": "me", "text": "also" },
+      { "from": "me", "text": "u kept the shark hats" },
+      { "from": "them", "text": "top of the wardrobe" },
       { "from": "them", "text": "goodnight ella", "tapback": "heart" } ] }
   ]
 }

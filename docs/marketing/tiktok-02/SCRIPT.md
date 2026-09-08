@@ -26,32 +26,50 @@ Her: Ella. Him: never named, which is deliberate. People fill him in with someon
 
 | # | File | On screen | Text you put over it |
 |---|---|---|---|
-| 1 | `slide-01.png` | 23:41 "u asleep" · "yes" · "cool" · "so anyway" · "oh my god what" | `23:41 on a wednesday btw` |
-| 2 | `slide-02.png` | "do u remember what u said in the car in july" · "u said nobody ever remembers the small stuff" · "i remembered the small stuff" | |
-| 3 | `slide-03.png` | "check ur other messages" · "why is there another one" · "just look" · "u will" | |
-| 4 | `slide-04.png` | the link · "what is this" · "headphones" · "im scared" · "ur gonna cry tho" | |
-| 5 | yours | the night sky, five stars scattered, `For Ella` | `he made me a whole sky` |
-| 6 | yours | one star opened, a photo inside it, the caption showing | |
-| 7 | yours | half the stars joined up, the shape starting to appear | |
-| 8 | yours | the constellation complete, a heart in the stars | `it was a heart the whole time` |
-| 9 | yours | the message under the stars, the window seat line in frame | (nothing) |
-| 10 | yours | the surprise revealed: `top of the wardrobe. i kept them.` | `the shark hats. he kept the shark hats.` |
-| 11 | `slide-05.png` and `slide-06.png` | "im crying" · "did u take these on purpose" · "since july" · "SINCE JULY" · then 01:26 "it made a heart" · "i know" | `i didnt sleep` |
+| 1 | `slide-01.png` | 21:12 "i hate my job" · "im just gonna lie on the floor" · "ok" · "did u eat" | `he asks every single night` |
+| 2 | `slide-02.png` | "no" · "ella" · the cereal line · "im ordering u the thing u like" · "already did" | |
+| 3 | `slide-03.png` | "ur so annoying" · "i love u tho" (hearted) · "say it back" · "no" · "eat ur food ella" | |
+| 4 | `slide-04.png` | 22:40 "ur quiet" · "im doing something" · "nothing" · "go do ur skincare" | `he was doing something` |
+| 5 | `slide-05.png` | 23:41 "u asleep" · "yes" · "cool" · "so anyway" | |
+| 6 | `slide-06.png` | "u said nobody ever remembers the small stuff" · "i remembered the small stuff" | |
+| 7 | `slide-07.png` | "check ur other messages" · "just look" · "im scared" · "ur not scared" | |
+| 8 | `slide-08.png` | the link · "headphones" · "and dont skip any of it" · "ur gonna cry tho" | |
+| 9 | yours | the night sky, five stars, `For Ella` | `he made me a whole sky` |
+| 10 | yours | one star open, a photo inside it, the caption showing | |
+| 11 | yours | the dog photo star, caption `she picked you first` | `the DOG one` |
+| 12 | yours | the constellation complete, a heart in the stars | `it was a heart the whole time` |
+| 13 | yours | the letter under the stars | (nothing) |
+| 14 | yours | the surprise revealed: `top of the wardrobe. i kept them.` | `he kept the shark hats` |
+| 15 | `slide-09.png` | 00:12 "IM ACTUALLY CRYING" · "the dog one" · "i knew that would be the one" | |
+| 16 | `slide-10.png` | "did u take these on purpose" · "since july" · "u took photos of me for 3 months and said nothing" | |
+| 17 | `slide-11.png` | "why" · "because u said nobody remembers" · "i wanted to be someone who does" | (nothing. this is the one) |
+| 18 | `slide-12.png` | 01:26 "u kept the shark hats" · "top of the wardrobe" · "goodnight ella" (hearted) | |
 
-That is 12 if you post both closing slides, which you should. TikTok allows 35.
+Eighteen is a lot. If you want it shorter, cut 4, 7, 10 and 12 and it still reads. Never cut
+2, 11, 16 or 17.
 
-Never cover a bubble. The top third of every chat slide is empty on purpose.
+Never cover a bubble. The top of every chat slide is empty on purpose.
 
-## The two slides that do the work
+## The four slides that make people send it to someone
 
-**Slide 2 is the hook that is not a hook.** He is not being romantic, he is being annoying
-at midnight about something she said in a car three months ago. People stay because they
-want to know what he did, not because they are moved yet.
+**Slide 2 is the whole reason this gets forwarded.** Not the gift. He asks if she ate, she
+says she wasn't hungry, he knows exactly what she does at 11pm, and he orders the food
+before she can argue. That is the most repeatable act of love in the carousel and every girl
+watching knows whether her boyfriend does it. Do not cut this slide to save a swipe.
 
-**"since july" is the whole video.** Everything before it is setup and everything after it
-is payoff. It is proof he was collecting photographs of her for three months without telling
-her. That single line is what gets stitched, screenshotted, and sent to boyfriends. Put your
-`i didnt sleep` text on the slide after it, never on it.
+**Slide 3 is why they believe the couple is real.** She says i love u, he hearts it and
+refuses to say it back, and then tells her to eat her food. That is love with the volume
+turned down, and it reads as a real relationship instead of a performance.
+
+**Slide 16, "since july".** He was photographing her for three months and said nothing.
+Everything before it is setup and everything after is payoff.
+
+**Slide 17 is the screenshot.** "because u said nobody remembers" / "i wanted to be someone
+who does". It is the only sentence in the entire carousel where he says what he means, and
+it lands because he has been dry for sixteen slides. Put nothing over it.
+
+The gap is the format. Boy who is funny and unbothered in the chat, quietly devastating in
+the gift, and only breaks once. Copy the gap, not the pink.
 
 ## The gift, which you shoot yourself
 
@@ -99,28 +117,49 @@ reaching for better-looking pictures. Every photo here is unposed and that is wh
 
 ### The message (paste as written)
 
-> You said in the car in July that nobody remembers the small stuff.
->
-> I remember the small stuff. I remember the dog picked you first and I wasn't surprised.
-> I remember you talked through an entire sunset and I didn't hear a word of it because I
-> was watching you do it. I remember the face mask that was going to take five minutes. I
-> remember what you said about always being the afterthought, and I have spent every day
-> since making sure you never have to think that again.
->
-> There are five here. There are hundreds. I picked the ones where you weren't posing.
->
-> I'm not good at saying this out loud, so I built it instead.
+Written the way someone actually writes at 2am, not the way a card is written. The awkward
+bits stay, they are what make it real.
 
-"I picked the ones where you weren't posing" is the line to leave alone. It is the reason
-the bad lighting and the tongue out and the sideways shark hats are the point rather than a
-compromise.
+> Ella.
+>
+> I'm not good at this so I'm going to write it how I'd say it.
+>
+> You said in the car in July that nobody remembers the small stuff. You said it like it was
+> normal. Like you'd already decided that's just how it is.
+>
+> I've been taking photos since that day. They're not good photos. You're not even looking in
+> most of them. That's on purpose. The ones where you're posing aren't you, and I wanted the
+> actual you.
+>
+> The dog picked you first. You talked through an entire sunset and I didn't hear a word of
+> it. The face mask that was going to take five minutes took an hour and I didn't mind. I
+> kept the shark hats.
+>
+> That's the small stuff. I remember all of it.
+>
+> I don't know how to say the rest out loud, so I made you this instead. Sorry it's not a
+> real present.
+>
+> It's 2am. Go to sleep.
+
+Three lines do the work and none of them are romantic on paper.
+
+"They're not good photos" is why the badly lit ones belong. "Sorry it's not a real present"
+is the line that will be quoted in the comments, because he spent three months on it and
+still thinks it doesn't count. "It's 2am. Go to sleep." is him going straight back to being
+dry, one line after the most open thing he has ever written.
+
+Do not add "I love you" anywhere in it. He never says it in the chat and he does not say it
+here. That is the point, and it is the thing people will argue about in the comments.
 
 ## Caption, tags, sound
 
-Caption: `he said he'd been collecting them since july 😭 i havent slept`
+Caption: `he said he'd been collecting them since july and i havent slept since 😭 send this
+to urs`
 
-No question in this one. Carousel 01 asks "am i crazy" because it wants an argument. This
-one wants envy, and envy comments arrive on their own.
+Those last three words are doing more work than the whole video. "Send this to urs" turns a
+view into a share, and a share is worth about ten likes. Carousel 01 asks "am i crazy"
+because it wants an argument. This one asks for a forward.
 
 Tags: `#fyp #loveletter #romance #boyfriend #digitalgift #longdistance #fyou`
 
@@ -143,10 +182,12 @@ when the person reading it is also awake and shouldn't be.
   checked`. Never argue further.
 - **Do not thank people for compliments.** The account is a girl who got a gift, not a brand.
   Every reply should sound like her.
+- **When someone says their boyfriend would never**, reply `mine wouldn't have either 2
+  years ago`. It turns envy into hope, and hope is what gets sent on.
 
 ## Files in this folder
 
-- `slide-01.png` to `slide-06.png` — the six text screenshots, 1080×1920
+- `slide-01.png` to `slide-12.png` — the twelve text screenshots, 1080×1920
 - `script.json` — their source. Re-render with
   `node scripts/tiktok-slides.mjs docs/marketing/tiktok-02/script.json docs/marketing/tiktok-02`
 
