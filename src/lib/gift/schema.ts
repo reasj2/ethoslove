@@ -55,6 +55,10 @@ export const giftSurpriseSchema = z.object({
 });
 
 export const FONT_PAIRINGS = ["editorial", "modern", "handwritten"] as const;
+
+/** The screen a recipient taps to open the gift. "classic" is the plain name-and-hairline intro. */
+export const COVER_IDS = ["gingham", "picnic", "starry", "polka", "garden", "lovecore", "classic"] as const;
+export type CoverId = (typeof COVER_IDS)[number];
 export type FontPairing = (typeof FONT_PAIRINGS)[number];
 
 /**
@@ -79,6 +83,7 @@ export const giftDataBaseSchema = z.object({
   surprise: giftSurpriseSchema.optional(),
   accentColor: z.string().regex(HEX_COLOR).default("#E8604C"),
   fontPairing: z.enum(FONT_PAIRINGS).default("editorial"),
+  cover: z.enum(COVER_IDS).optional(),
   showReactionCta: z.boolean().default(true),
   /** Set server-side from entitlements. Client-supplied values are ignored. */
   watermark: z.boolean().default(true),

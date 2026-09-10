@@ -8,6 +8,8 @@ import { Switch } from "@/components/ui/switch";
 import { Field, SectionHeader, Segmented } from "../field";
 import { ColorInput, ACCENT_SWATCHES } from "../color-input";
 import { TemplateFields } from "../template-fields";
+import { CoverPicker } from "../cover-picker";
+import { defaultCoverFor } from "@/templates/_shared/covers/looks";
 
 export function LookSection({ manifest, mod, locale }: { manifest: TemplateManifest; mod: TemplateModule; locale: GiftLocale }) {
   const t = useTranslations("editor");
@@ -18,7 +20,15 @@ export function LookSection({ manifest, mod, locale }: { manifest: TemplateManif
   return (
     <section>
       <SectionHeader n={t("sections.look.n")} title={t("sections.look.title")} blurb={t("sections.look.blurb")} />
-      <Field label={t("fields.accentColor")}>
+      <Field label={t("covers.label")} help={t("covers.help")}>
+        <CoverPicker
+          value={data.cover ?? defaultCoverFor(manifest.slug)}
+          onChange={(cover) => patch({ cover })}
+          recipientName={data.recipientName}
+          locale={data.locale}
+        />
+      </Field>
+      <Field label={t("fields.accentColor")} className="mt-6">
         <ColorInput value={data.accentColor} onChange={(accentColor) => patch({ accentColor })} swatches={swatches} />
       </Field>
       <Field label={t("fields.fontPairing")} className="mt-5">

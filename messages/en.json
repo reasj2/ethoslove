@@ -523,6 +523,21 @@
       "remove": "Remove",
       "premium": "Premium",
       "hint": "Works best somewhere quiet. Recipients hear it after the last screen."
+    },
+    "covers": {
+      "label": "Cover",
+      "help": "The first screen they see. They tap it to open the gift.",
+      "theirName": "Their name",
+      "classicEyebrow": "For you",
+      "names": {
+        "gingham": "Gingham",
+        "picnic": "Picnic",
+        "starry": "Starry",
+        "polka": "Polka",
+        "garden": "Garden",
+        "lovecore": "Lovecore",
+        "classic": "Classic"
+      }
     }
   },
   "gift": {

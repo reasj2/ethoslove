@@ -523,6 +523,21 @@
       "remove": "Quitar",
       "premium": "Premium",
       "hint": "Mejor en un sitio tranquilo. Lo escucharán después de la última pantalla."
+    },
+    "covers": {
+      "label": "Portada",
+      "help": "La primera pantalla que ven. La tocan para abrir el regalo.",
+      "theirName": "Su nombre",
+      "classicEyebrow": "Para ti",
+      "names": {
+        "gingham": "Vichy",
+        "picnic": "Pícnic",
+        "starry": "Estrellas",
+        "polka": "Lunares",
+        "garden": "Jardín",
+        "lovecore": "Amor",
+        "classic": "Clásica"
+      }
     }
   },
   "gift": {

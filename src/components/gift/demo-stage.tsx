@@ -3,9 +3,10 @@
 import { useState } from "react";
 import { ArrowLeft, RotateCcw, Sparkles } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { toast } from "sonner";
 import { Link, useRouter } from "@/i18n/navigation";
-import type { GiftLocale } from "@/lib/gift/schema";
+import { COVER_IDS, type CoverId, type GiftLocale } from "@/lib/gift/schema";
 import { GiftRenderer } from "@/templates/_shared/GiftRenderer";
 import { LogoMark } from "@/components/shared/logo";
 
@@ -18,6 +19,8 @@ export function DemoStage({ slug, backHref = "/templates" }: { slug: string; bac
   const router = useRouter();
   const t = useTranslations("templates");
   const [replayKey, setReplayKey] = useState(0);
+  const coverParam = useSearchParams().get("cover");
+  const cover = (COVER_IDS as readonly string[]).includes(coverParam ?? "") ? (coverParam as CoverId) : undefined;
 
   return (
     <div className="flex h-dvh w-full flex-col bg-night">
@@ -42,6 +45,7 @@ export function DemoStage({ slug, backHref = "/templates" }: { slug: string; bac
           slug={slug}
           mode="demo"
           demoLocale={locale}
+          coverOverride={cover}
           replayKey={replayKey}
           onReact={() => toast(t("demoReactionToast"))}
           onMakeOne={() => router.push(`/create/${slug}`)}

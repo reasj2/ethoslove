@@ -330,3 +330,8 @@
     @apply text-coral underline underline-offset-4;
   }
 }
+
+/* Gift cover stickers: the soft shadow of a die-cut sticker stuck on paper. */
+.sticker {
+  filter: drop-shadow(0 3px 4px rgba(70, 30, 45, 0.18)) drop-shadow(0 1px 1px rgba(70, 30, 45, 0.12));
+}

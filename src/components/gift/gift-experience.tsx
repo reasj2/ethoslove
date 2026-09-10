@@ -9,18 +9,26 @@ import { SoundGate } from "./sound-gate";
 import { ReactionSheet } from "./reaction-sheet";
 import { HomeScreenTip } from "./home-screen-tip";
 
-/** The recipient's whole visit: gate → template → reaction, with anonymous view tracking. */
+/**
+ * The recipient's whole visit: gate → template → reaction, with anonymous view tracking.
+ * A gift with a decorated cover skips the plain gate: tapping the cover is the gesture that
+ * lets sound play, so asking for a second tap would only get in the way.
+ */
 export function GiftExperience({ shortId, data, locale }: { shortId: string; data: GiftData; locale: GiftLocale }) {
   const router = useRouter();
-  const [opened, setOpened] = useState(false);
+  const hasCover = Boolean(data.cover && data.cover !== "classic");
+  const [opened, setOpened] = useState(hasCover);
   const [reactOpen, setReactOpen] = useState(false);
   const [ended, setEnded] = useState(false);
   const [replayKey, setReplayKey] = useState(0);
   const viewId = useRef<string | null>(null);
+  const viewed = useRef(false);
   const lastPct = useRef(0);
 
-  const open = useCallback(() => {
-    setOpened(true);
+  // Once per visit; a replay shows the cover again but is not a new view.
+  const recordView = useCallback(() => {
+    if (viewed.current) return;
+    viewed.current = true;
     fetch(`/api/gift/${shortId}/view`, { method: "POST" })
       .then((r) => (r.ok ? r.json() : null))
       .then((j) => {
@@ -28,6 +36,11 @@ export function GiftExperience({ shortId, data, locale }: { shortId: string; dat
       })
       .catch(() => {});
   }, [shortId]);
+
+  const open = useCallback(() => {
+    setOpened(true);
+    recordView();
+  }, [recordView]);
 
   const onEvent = useCallback(
     (e: TemplateEvent) => {
@@ -56,6 +69,7 @@ export function GiftExperience({ shortId, data, locale }: { shortId: string; dat
           onEvent={onEvent}
           onReact={data.showReactionCta ? () => setReactOpen(true) : undefined}
           onMakeOne={() => router.push(`/?ref=${shortId}`)}
+          onCoverOpened={hasCover ? recordView : undefined}
         />
       ) : null}
       {!opened ? <SoundGate recipientName={data.recipientName} senderName={data.senderName} locale={locale} onOpen={open} /> : null}

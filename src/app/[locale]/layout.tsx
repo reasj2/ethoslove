@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Caveat, Fraunces, JetBrains_Mono, Newsreader, Schibsted_Grotesk } from "next/font/google";
+import { Caveat, Caveat_Brush, Fraunces, JetBrains_Mono, Newsreader, Schibsted_Grotesk } from "next/font/google";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -36,6 +36,13 @@ const fraunces = Fraunces({
   variable: "--font-gift-display",
   display: "swap",
   axes: ["opsz", "SOFT", "WONK"],
+});
+
+const coverScript = Caveat_Brush({
+  weight: "400",
+  subsets: ["latin", "latin-ext"],
+  variable: "--font-cover",
+  display: "block",
 });
 
 const caveat = Caveat({
@@ -87,7 +94,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
     <html
       lang={locale}
       suppressHydrationWarning
-      className={`${sans.variable} ${fraunces.variable} ${display.variable} ${mono.variable} ${caveat.variable} h-full`}
+      className={`${sans.variable} ${fraunces.variable} ${display.variable} ${mono.variable} ${caveat.variable} ${coverScript.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
         <NextIntlClientProvider>

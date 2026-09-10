@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { defaultCoverFor } from "@/templates/_shared/covers/looks";
 import { useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import type { GiftData, GiftLocale } from "@/lib/gift/schema";
@@ -49,6 +50,7 @@ function blankGift(manifest: TemplateManifest, locale: GiftLocale, mod: Template
     photos: [],
     accentColor: manifest.defaultAccent,
     fontPairing: "editorial",
+    cover: defaultCoverFor(manifest.slug),
     showReactionCta: true,
     watermark: true,
     fields,

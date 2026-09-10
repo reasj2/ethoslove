@@ -49,3 +49,18 @@ test.describe("later batch demos", () => {
     });
   }
 });
+
+test.describe("gift covers", () => {
+  test("a cover shows the name, then opens into the gift", async ({ page }) => {
+    await page.goto("/demo/constellations?cover=starry");
+    const cover = page.locator("[data-cover=starry]");
+    await expect(cover).toBeVisible({ timeout: 20000 });
+    await expect(cover.getByText(/for sof/i)).toBeVisible();
+    // The hint only appears once the gift's photos and music have loaded.
+    const open = page.getByRole("button", { name: /tap to open/i });
+    await expect(page.getByText(/tap to open/i)).toBeVisible({ timeout: 25000 });
+    await open.click();
+    await expect(cover).toBeHidden({ timeout: 5000 });
+    await expect(page.locator("[data-star]").first()).toBeVisible({ timeout: 15000 });
+  });
+});

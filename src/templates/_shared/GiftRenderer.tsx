@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, MotionConfig } from "motion/react";
-import type { GiftData, GiftLocale } from "@/lib/gift/schema";
+import type { CoverId, GiftData, GiftLocale } from "@/lib/gift/schema";
 import { cn } from "@/lib/utils";
 import type { TemplateEvent, TemplateMode, TemplateModule } from "../types";
 import { loadTemplate } from "../registry";
@@ -10,6 +10,8 @@ import { giftThemeVars } from "./theme";
 import { usePreloadAssets } from "./hooks/use-preload-assets";
 import { LoadingScreen } from "./LoadingScreen";
 import { introVariantFor } from "./intro-variants";
+import { Cover } from "./covers/Cover";
+import { COVER_LOOKS } from "./covers/looks";
 import { Watermark } from "./Watermark";
 import { TemplateErrorBoundary } from "./ErrorBoundary";
 
@@ -26,6 +28,10 @@ export type GiftRendererProps = {
   onMakeOne?: () => void;
   /** Change to remount the template (replay). */
   replayKey?: number;
+  /** Show this cover regardless of the gift's own choice (demo pages, `?cover=`). */
+  coverOverride?: CoverId;
+  /** Called when the recipient opens the cover: the moment a view counts. */
+  onCoverOpened?: () => void;
   className?: string;
 };
 
@@ -43,10 +49,14 @@ export function GiftRenderer({
   onReact,
   onMakeOne,
   replayKey = 0,
+  coverOverride,
+  onCoverOpened,
   className,
 }: GiftRendererProps) {
   const [loaded, setLoaded] = useState<{ slug: string; mod: TemplateModule | null }>({ slug: "", mod: null });
   const [minElapsed, setMinElapsed] = useState(mode === "preview");
+  // The replay the cover was last opened for; a replay shows the cover again.
+  const [openedFor, setOpenedFor] = useState<number | null>(null);
   const mod = loaded.slug === slug ? loaded.mod : null;
   const failed = loaded.slug === slug && loaded.mod === null && loaded.slug !== "";
 
@@ -66,7 +76,8 @@ export function GiftRenderer({
     return () => clearTimeout(id);
   }, [mode, replayKey]);
 
-  const resolved: GiftData | null = data ?? mod?.demoData[demoLocale] ?? mod?.demoData.en ?? null;
+  const base: GiftData | null = data ?? mod?.demoData[demoLocale] ?? mod?.demoData.en ?? null;
+  const resolved = useMemo(() => (base && coverOverride ? { ...base, cover: coverOverride } : base), [base, coverOverride]);
   const preload = usePreloadAssets(resolved, Boolean(mod) && mode !== "preview");
   const ready = Boolean(mod && resolved) && (mode === "preview" || (preload.done && minElapsed));
 
@@ -76,6 +87,8 @@ export function GiftRenderer({
   );
 
   const Template = mod?.Template;
+  const coverLook = resolved?.cover && resolved.cover !== "classic" && mode !== "preview" ? COVER_LOOKS[resolved.cover] : null;
+  const coverOpen = !coverLook || openedFor === replayKey;
 
   return (
     <MotionConfig reducedMotion="user">
@@ -85,7 +98,7 @@ export function GiftRenderer({
         data-mode={mode}
         data-template={slug}
       >
-        {ready && Template && resolved ? (
+        {ready && coverOpen && Template && resolved ? (
           <TemplateErrorBoundary locale={resolved.locale}>
             <Template
               key={replayKey}
@@ -98,7 +111,19 @@ export function GiftRenderer({
           </TemplateErrorBoundary>
         ) : null}
         <AnimatePresence>
-          {!ready ? (
+          {coverLook && resolved && !coverOpen ? (
+            <Cover
+              key={`cover-${replayKey}`}
+              look={coverLook}
+              recipientName={resolved.recipientName}
+              locale={resolved.locale}
+              ready={ready}
+              onOpened={() => {
+                setOpenedFor(replayKey);
+                onCoverOpened?.();
+              }}
+            />
+          ) : !coverLook && !ready ? (
             <LoadingScreen
               key="loading"
               recipientName={resolved?.recipientName}

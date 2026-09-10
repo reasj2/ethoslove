@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
@@ -19,5 +20,9 @@ export default async function DemoPage({ params }: PageProps<"/[locale]/demo/[sl
   const { locale, slug } = await params;
   if (!getManifest(slug)) notFound();
   setRequestLocale(locale);
-  return <DemoStage slug={slug} backHref={`/templates/${slug}`} />;
+  return (
+    <Suspense fallback={<div className="h-dvh w-full bg-night" />}>
+      <DemoStage slug={slug} backHref={`/templates/${slug}`} />
+    </Suspense>
+  );
 }
