@@ -23,7 +23,7 @@ export const fieldMeta: Record<"en" | "es", Record<string, FieldMeta>> = {
     },
     nationality: { label: "Nationality line", help: "e.g. “Citizen of wherever you are”" },
     cover: {
-      label: "Cover",
+      label: "Passport colour",
       options: { navy: "Navy", burgundy: "Burgundy", forest: "Forest green", black: "Black" },
     },
   },
@@ -49,7 +49,7 @@ export const fieldMeta: Record<"en" | "es", Record<string, FieldMeta>> = {
     },
     nationality: { label: "Línea de nacionalidad", help: "p. ej. «Ciudadana de donde estés tú»" },
     cover: {
-      label: "Portada",
+      label: "Color del pasaporte",
       options: { navy: "Azul marino", burgundy: "Burdeos", forest: "Verde bosque", black: "Negro" },
     },
   },

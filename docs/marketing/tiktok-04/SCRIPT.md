@@ -41,9 +41,9 @@ it on the phone rather than screen-recording a laptop.
 
 ### Editor fields (tryethos.io → Passport)
 
-Their name `Nina` · Title `For Nina` (the link preview on slide 5) · Your city `London` ·
+Their name `Nina` · Cover `Starry` (shoot it as your first gift slide, it is the frame people screenshot) · Title `For Nina` (the link preview on slide 5) · Your city `London` ·
 Their city `Lisbon` · Stopovers, one per row: `Paris`, `Porto`, `Frankfurt`, `Bordeaux`,
-`Brussels`, `Madrid` · Nationality line `Citizen of wherever you are` · Cover `Burgundy` ·
+`Brussels`, `Madrid` · Nationality line `Citizen of wherever you are` · Passport colour `Burgundy` ·
 Typed out · Music: library "Under the Stars" · Reaction on · Final surprise on, reveal by
 holding: `one way. march 14th. i got the job.`
 
