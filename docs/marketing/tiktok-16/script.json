@@ -1,0 +1,25 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Fri 23:02", "messages": [
+      { "from": "me", "text": "u love that game more than me" },
+      { "from": "them", "text": "false" },
+      { "from": "me", "text": "prove it" },
+      { "from": "them", "text": "give me 2 days" },
+      { "from": "me", "text": "thats not the answer i wanted" } ] },
+
+    { "type": "chat", "timestamp": "Sun 21:15", "messages": [
+      { "from": "them", "text": "ok" },
+      { "from": "them", "link": { "title": "For Kiera", "domain": "tryethos.io" } },
+      { "from": "them", "text": "made u a game" },
+      { "from": "them", "text": "catch the hearts" },
+      { "from": "me", "text": "u MADE a game??" } ] },
+
+    { "type": "chat", "timestamp": "Sun 21:40", "messages": [
+      { "from": "me", "text": "i finished it" },
+      { "from": "me", "text": "why is the last level a photo of me" },
+      { "from": "them", "text": "final boss" },
+      { "from": "me", "text": "IM THE FINAL BOSS??" },
+      { "from": "them", "text": "took me 3 months to get u to text back" },
+      { "from": "them", "text": "hardest level ive ever played", "tapback": "heart" } ] }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Sat 18:20", "messages": [
+      { "from": "me", "text": "my mum wants to meet u next weekend" },
+      { "from": "them", "text": "ok" },
+      { "from": "me", "text": "she doesnt speak english" },
+      { "from": "them", "text": "i know" },
+      { "from": "me", "text": "?? what do u mean u know" } ] },
+
+    { "type": "chat", "timestamp": "Sat 22:02", "messages": [
+      { "from": "them", "link": { "title": "Para Lucía", "domain": "tryethos.io" } },
+      { "from": "them", "text": "dont help me" },
+      { "from": "me", "text": "why is it in spanish" },
+      { "from": "me", "text": "HARRY" } ] },
+
+    { "type": "chat", "timestamp": "Sat 22:15", "messages": [
+      { "from": "me", "text": "since when do u speak spanish" },
+      { "from": "them", "text": "march" },
+      { "from": "them", "text": "the owl has been threatening me every day" },
+      { "from": "me", "text": "u did this for my mum??" },
+      { "from": "them", "text": "and u. mostly u", "tapback": "heart" } ] }
+  ]
+}

@@ -131,5 +131,13 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 08 | cardio | amusement | Jar of Reasons | Picnic |
 | 09 | love dad | warmth + humour | Our Timeline | Garden |
 | 10 | what are we | dread → relief, envy | Bloom | Gingham |
+| 11 | not a words person | the gap | The Letter (free) | Classic |
+| 12 | 3am | envy | Vinyl + voice note | Starry |
+| 13 | i moved it | dread → amusement | Museum | Gingham |
+| 14 | stay there | sadness → warmth | Fortune Cookie | Polka |
+| 15 | the charger | envy, callback | Text Thread | Lovecore |
+| 16 | final boss | amusement | Arcade | Starry |
+| 17 | i would never | amusement | Front Page | Picnic |
+| 18 | the owl | envy, amusement | Jar of Reasons (Spanish) | Garden |
 
-06 to 10 are the short ones, written to these rules.
+06 to 18 are the short ones, written to these rules. 11 to 18 each use a different template, so the account shows the whole range.

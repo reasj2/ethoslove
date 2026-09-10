@@ -1,0 +1,26 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Sun 22:14", "messages": [
+      { "from": "me", "text": "u never actually say how u feel" },
+      { "from": "them", "text": "im not a words person" },
+      { "from": "them", "text": "i show it" },
+      { "from": "me", "text": "how" },
+      { "from": "them", "text": "i walked to urs at 1am when u were sad" },
+      { "from": "me", "text": "that was ONE time" },
+      { "from": "them", "text": "it was raining" } ] },
+
+    { "type": "chat", "timestamp": "Wed 23:51", "messages": [
+      { "from": "them", "text": "ok" },
+      { "from": "them", "text": "tried the words thing" },
+      { "from": "them", "link": { "title": "For Maddie", "domain": "tryethos.io" } },
+      { "from": "them", "text": "its bad dont read it out loud" },
+      { "from": "me", "text": "oh my god" } ] },
+
+    { "type": "chat", "timestamp": "Thu 00:04", "messages": [
+      { "from": "me", "text": "sam" },
+      { "from": "me", "text": "u ARE a words person" },
+      { "from": "them", "text": "only for u", "tapback": "heart" },
+      { "from": "them", "text": "dont tell anyone" },
+      { "from": "me", "text": "im telling everyone" } ] }
+  ]
+}
