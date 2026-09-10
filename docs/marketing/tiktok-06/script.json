@@ -1,0 +1,25 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Today 16:03", "messages": [
+      { "from": "them", "text": "we need to talk" },
+      { "from": "me", "text": "??" },
+      { "from": "me", "text": "about what" },
+      { "from": "them", "text": "tonight. call me at 9" },
+      { "from": "me", "text": "theo ur scaring me", "status": "Read 16:04" } ] },
+
+    { "type": "chat", "timestamp": "Today 21:00", "messages": [
+      { "from": "me", "text": "ok its 9" },
+      { "from": "me", "text": "just say it" },
+      { "from": "them", "text": "open this first" },
+      { "from": "them", "link": { "title": "For Ava", "domain": "tryethos.io" } },
+      { "from": "me", "text": "if this is a breakup website im blocking u" } ] },
+
+    { "type": "chat", "timestamp": "Today 21:06", "messages": [
+      { "from": "me", "text": "THEO" },
+      { "from": "me", "text": "U SAID WE NEED TO TALK" },
+      { "from": "them", "text": "we do" },
+      { "from": "them", "text": "about which side of the bed u want" },
+      { "from": "me", "text": "i was crying in the bathroom at work" },
+      { "from": "them", "text": "i know. sorry. worth it tho", "tapback": "heart" } ] }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Sat 19:22", "messages": [
+      { "from": "me", "text": "u have never once been romantic" },
+      { "from": "them", "text": "i carried ur bags round ikea for 4 hours" },
+      { "from": "me", "text": "thats not romantic thats cardio" },
+      { "from": "them", "text": "💀" } ] },
+
+    { "type": "chat", "timestamp": "Sat 23:58", "messages": [
+      { "from": "them", "text": "ok" },
+      { "from": "them", "link": { "title": "For Chloe", "domain": "tryethos.io" } },
+      { "from": "them", "text": "dont laugh" },
+      { "from": "me", "text": "why would i laugh" },
+      { "from": "them", "text": "just dont" } ] },
+
+    { "type": "chat", "timestamp": "Sun 00:09", "messages": [
+      { "from": "me", "text": "the ikea one 😭😭" },
+      { "from": "me", "text": "ok i take it back" },
+      { "from": "them", "text": "say it" },
+      { "from": "me", "text": "ur romantic" },
+      { "from": "them", "text": "louder" },
+      { "from": "me", "text": "UR ROMANTIC" },
+      { "from": "them", "text": "thank u" } ] }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Mon 23:12", "messages": [
+      { "from": "me", "image": true },
+      { "from": "me", "text": "this is so cute" },
+      { "from": "me", "text": "just saying" },
+      { "from": "them", "text": "ok" },
+      { "from": "me", "text": "ok??" },
+      { "from": "them", "text": "i saw it" } ] },
+
+    { "type": "chat", "timestamp": "Thu 22:40", "messages": [
+      { "from": "them", "text": "u free rn" },
+      { "from": "me", "text": "yeah why" },
+      { "from": "them", "link": { "title": "For Lily", "domain": "tryethos.io" } },
+      { "from": "them", "text": "headphones in" },
+      { "from": "them", "text": "u said just saying so" } ] },
+
+    { "type": "chat", "timestamp": "Thu 22:51", "messages": [
+      { "from": "me", "text": "U MADE ONE" },
+      { "from": "me", "text": "i sent u that as a JOKE" },
+      { "from": "them", "text": "no u didnt" },
+      { "from": "me", "text": "no i didnt" },
+      { "from": "me", "text": "im crying" },
+      { "from": "them", "text": "next time just ask lol", "tapback": "heart" } ] }
+  ]
+}
