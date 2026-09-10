@@ -1,15 +1,15 @@
-# TikTok carousel 04 · "one way"
+# TikTok carousel 04 · "not halfway"
 
-Long distance, 1,400 km apart. She texts him at 7am because she misses him. He keeps saying
-he's "working on a thing". Late at night he asks her to count how many times they've met
-halfway, then sends a passport: every city they met in, stamped in order, with the route
-drawn on a globe. The last stamp is her city, and it says one way.
+Long distance, 1,400 km apart, both students. She texts him at 7am because she misses him. He
+keeps saying he's "working on a thing". Late at night he asks her to count how many times
+they've met halfway, then sends a passport: every city they met in, stamped in order, with
+the route drawn on a globe. The last stamp isn't halfway. It's her city.
 
-He got a job in her city and didn't tell her he applied.
+He's been picking up extra shifts since March, and he lands tomorrow at 8:55.
 
 Long distance is one of the biggest relationship audiences on TikTok, and it is an audience
 that shares everything. Anyone in one sends this to their partner. Everyone else sends it
-because it plays like a proposal.
+because it's the kind of effort anyone could make and almost nobody does.
 
 Her: Nina, in Lisbon. Him: in London, never named.
 
@@ -25,14 +25,15 @@ Her: Nina, in Lisbon. Him: in London, never named.
 | 6 | yours | the passport cover, `Citizen of wherever you are` | `he made me a passport` |
 | 7 | yours | the stamps page, all six cities | |
 | 8 | yours | the globe with the route drawing from London | |
-| 9 | yours | the last stamp, Lisbon | `why does it say one way` |
-| 10 | yours | the letter, "I'm done with halfway" in frame | (nothing) |
-| 11 | `slide-06.png` | "why does the last stamp say one way" · "WAIT" · "ur moving here??" | |
-| 12 | `slide-07.png` | "march" · "i got the job" · "didnt want u to hope in case i didnt get it" | |
-| 13 | `slide-08.png` | "im crying on the kitchen floor" · "no more airports" · "save me a side of the bed" | |
+| 9 | yours | the last stamp: Lisbon | `why is the last one lisbon` |
+| 10 | yours | the letter, "I land at 8:55" in frame | (nothing) |
+| 11 | `slide-06.png` | "why is the last stamp lisbon" · "WAIT" · "ur coming HERE??" | |
+| 12 | `slide-07.png` | "6am ryanair" · "i picked up extra shifts since march" · "U SAID U WERE BROKE" · "i was saving" | |
+| 13 | `slide-08.png` | "im crying on the kitchen floor" · "get off the floor" · "and tidy ur room" · "save me the good pillow" | |
 
-Slide 12 is the one that gets screenshotted. He didn't tell her he applied because he didn't
-want her to hope for something he might not be able to give her.
+Slide 12 is the one that gets screenshotted. "U SAID U WERE BROKE" / "i was" / "i was saving".
+Every student watching knows what three months of extra shifts for one flight costs, and
+that is worth more to them than anything he could have bought.
 
 ## The gift
 
@@ -45,7 +46,7 @@ Their name `Nina` · Cover `Starry` (shoot it as your first gift slide, it is th
 Their city `Lisbon` · Stopovers, one per row: `Paris`, `Porto`, `Frankfurt`, `Bordeaux`,
 `Brussels`, `Madrid` · Nationality line `Citizen of wherever you are` · Passport colour `Burgundy` ·
 Typed out · Music: library "Under the Stars" · Reaction on · Final surprise on, reveal by
-holding: `one way. march 14th. i got the job.`
+holding: `not halfway this time. landing 8:55.`
 
 ### Photos (six, one per city)
 
@@ -69,10 +70,10 @@ holding: `one way. march 14th. i got the job.`
 >
 > I'm done with halfway.
 >
-> I didn't tell you I applied because I didn't want you to hope for something I couldn't give
-> you. I got it. I start in March.
+> I've been picking up extra shifts since March. I didn't tell you because I didn't want you
+> counting days if it fell through. It didn't. I land at 8:55.
 >
-> Save me a side of the bed.
+> Save me the good pillow.
 
 ## Caption, tags, sound
 
@@ -85,7 +86,7 @@ is always one trending.
 
 ## The comments
 
-- **Pin your own:** `update: he moved in on the 14th. he brought the passport printed out.`
+- **Pin your own:** `update: he landed at 8:55 and the first thing he said was "u didnt tidy ur room"`
 - **"what website is that"** → `ethos, the template is called passport`. No link.
 - **"my ldr bf could never"** → `mine said "working on a thing" for four months. keep him.`
 - Long distance comment sections turn into people sharing their own countdowns. Reply to

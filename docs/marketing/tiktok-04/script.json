@@ -1,64 +1,228 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 07:02", "messages": [
-      { "from": "me", "text": "good morning from 1,400 km away" },
-      { "from": "them", "text": "its 6am here why are u awake" },
-      { "from": "me", "text": "missed u" },
-      { "from": "them", "text": "u saw me 11 days ago" },
-      { "from": "me", "text": "exactly. 11 DAYS" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "i hate this" },
-      { "from": "me", "text": "i hate the goodbye bit at the airport" },
-      { "from": "me", "text": "every single time" },
-      { "from": "them", "text": "i know" },
-      { "from": "me", "text": "u always say i know" },
-      { "from": "them", "text": "because i always know" } ] },
-
-    { "type": "chat", "timestamp": "Today 22:10", "messages": [
-      { "from": "me", "text": "when do i see u next" },
-      { "from": "them", "text": "dont know yet" },
-      { "from": "me", "text": "u said that last month" },
-      { "from": "them", "text": "working on it" },
-      { "from": "me", "text": "working on what" },
-      { "from": "them", "text": "a thing" } ] },
-
-    { "type": "chat", "timestamp": "Today 23:30", "messages": [
-      { "from": "them", "text": "how many times have we met halfway" },
-      { "from": "me", "text": "what" },
-      { "from": "them", "text": "count" },
-      { "from": "me", "text": "idk like 5?" },
-      { "from": "them", "text": "6" },
-      { "from": "them", "text": "paris. the train to porto. that awful airport in frankfurt" },
-      { "from": "me", "text": "why are u listing them" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "link": { "title": "For Nina", "domain": "tryethos.io" } },
-      { "from": "them", "text": "open this" },
-      { "from": "them", "text": "all the way to the last page" },
-      { "from": "me", "text": "is this a passport" },
-      { "from": "them", "text": "keep going" } ] },
-
-    { "type": "chat", "timestamp": "Today 23:44", "messages": [
-      { "from": "me", "text": "why does the last stamp say one way" },
-      { "from": "them", "text": "read the last page" },
-      { "from": "me", "text": "wait" },
-      { "from": "me", "text": "WAIT" },
-      { "from": "me", "text": "ur moving here??" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "march" },
-      { "from": "them", "text": "i got the job" },
-      { "from": "me", "text": "YOU DIDNT EVEN TELL ME U APPLIED" },
-      { "from": "them", "text": "didnt want u to hope" },
-      { "from": "them", "text": "in case i didnt get it" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "im crying on the kitchen floor" },
-      { "from": "them", "text": "get off the floor" },
-      { "from": "me", "text": "no more airports" },
-      { "from": "them", "text": "no more airports" },
-      { "from": "me", "text": "i love you so much", "tapback": "heart" },
-      { "from": "them", "text": "save me a side of the bed" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Today 07:02",
+      "messages": [
+        {
+          "from": "me",
+          "text": "good morning from 1,400 km away"
+        },
+        {
+          "from": "them",
+          "text": "its 6am here why are u awake"
+        },
+        {
+          "from": "me",
+          "text": "missed u"
+        },
+        {
+          "from": "them",
+          "text": "u saw me 11 days ago"
+        },
+        {
+          "from": "me",
+          "text": "exactly. 11 DAYS"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "i hate this"
+        },
+        {
+          "from": "me",
+          "text": "i hate the goodbye bit at the airport"
+        },
+        {
+          "from": "me",
+          "text": "every single time"
+        },
+        {
+          "from": "them",
+          "text": "i know"
+        },
+        {
+          "from": "me",
+          "text": "u always say i know"
+        },
+        {
+          "from": "them",
+          "text": "because i always know"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 22:10",
+      "messages": [
+        {
+          "from": "me",
+          "text": "when do i see u next"
+        },
+        {
+          "from": "them",
+          "text": "dont know yet"
+        },
+        {
+          "from": "me",
+          "text": "u said that last month"
+        },
+        {
+          "from": "them",
+          "text": "working on it"
+        },
+        {
+          "from": "me",
+          "text": "working on what"
+        },
+        {
+          "from": "them",
+          "text": "a thing"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 23:30",
+      "messages": [
+        {
+          "from": "them",
+          "text": "how many times have we met halfway"
+        },
+        {
+          "from": "me",
+          "text": "what"
+        },
+        {
+          "from": "them",
+          "text": "count"
+        },
+        {
+          "from": "me",
+          "text": "idk like 5?"
+        },
+        {
+          "from": "them",
+          "text": "6"
+        },
+        {
+          "from": "them",
+          "text": "paris. the train to porto. that awful airport in frankfurt"
+        },
+        {
+          "from": "me",
+          "text": "why are u listing them"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "link": {
+            "title": "For Nina",
+            "domain": "tryethos.io"
+          }
+        },
+        {
+          "from": "them",
+          "text": "open this"
+        },
+        {
+          "from": "them",
+          "text": "all the way to the last page"
+        },
+        {
+          "from": "me",
+          "text": "is this a passport"
+        },
+        {
+          "from": "them",
+          "text": "keep going"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 23:44",
+      "messages": [
+        {
+          "from": "me",
+          "text": "why is the last stamp lisbon"
+        },
+        {
+          "from": "them",
+          "text": "read the last page"
+        },
+        {
+          "from": "me",
+          "text": "wait"
+        },
+        {
+          "from": "me",
+          "text": "WAIT"
+        },
+        {
+          "from": "me",
+          "text": "ur coming HERE??"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "6am ryanair"
+        },
+        {
+          "from": "them",
+          "text": "i picked up extra shifts since march"
+        },
+        {
+          "from": "me",
+          "text": "U SAID U WERE BROKE"
+        },
+        {
+          "from": "them",
+          "text": "i was"
+        },
+        {
+          "from": "them",
+          "text": "i was saving"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "im crying on the kitchen floor"
+        },
+        {
+          "from": "them",
+          "text": "get off the floor"
+        },
+        {
+          "from": "them",
+          "text": "and tidy ur room"
+        },
+        {
+          "from": "me",
+          "text": "i love you so much",
+          "tapback": "heart"
+        },
+        {
+          "from": "them",
+          "text": "save me the good pillow"
+        }
+      ]
+    }
   ]
 }

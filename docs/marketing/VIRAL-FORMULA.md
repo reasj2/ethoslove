@@ -77,6 +77,22 @@ The fastest way to kill a carousel is dialogue that sounds written. Rules:
 - Parents text like parents: capital letters, full sentences, signing off "Love Dad".
 - Never mention the website in the chat. The link card does that once.
 
+## Keep it real for 18 to 25
+
+The gift is never money. Nobody watching has a flat, a car or a job in another country to
+offer, and the moment a story needs one it stops being about them and starts reading as fake.
+At this age the biggest moments are free: the first "i love you", "what are we", the first
+anniversary, turning up at the station.
+
+- **Effort beats expense.** Three hours making something. Extra shifts to afford one cheap
+  flight. A supermarket cake. Small money is fine when it is a sacrifice, never when it is a flex.
+- **Surprises are things a 20-year-old actually has:** a hoodie, the shark hats kept in the
+  wardrobe, a napkin from the first date, flowers from the corner shop, standing outside the door.
+- **Milestones, not purchases.** First "i love you", making it official, one year, the first
+  birthday together, a week without long distance.
+
+Run one check on every script: could the viewer's boyfriend do this by Friday? If not, rewrite it.
+
 ## What flopped, and why
 
 Carousel 01 v4 got three comments. The story was only "he cheated", which is background noise:
@@ -86,6 +102,10 @@ had a side to take.
 
 The 22-slide cut of the same story was better written and worse to post. Every slide past the
 sixth costs viewers.
+
+Carousel 06 first ended with him asking her to move in, keys in her coat pocket, and 04 with
+him moving countries for a job. Neither is something this audience can do, so both read as
+written. 06 is now the first "i love you" and 04 is three months of extra shifts for one flight.
 
 ## Posting
 
@@ -104,7 +124,7 @@ sixth costs viewers.
 | 01 | he made me apologise | anger | Jar of Reasons | Gingham |
 | 02 | since july | envy | Constellations | Starry |
 | 03 | bin day | dread → relief | Midnight Countdown | Starry |
-| 04 | one way | awe, envy | Passport | Starry |
+| 04 | not halfway | effort, envy | Passport | Starry |
 | 05 | hbd | sadness → relief | Birthday Cinema | Polka |
 | 06 | we need to talk | dread → relief | Scratch Card | Lovecore |
 | 07 | the hint | social currency | Constellations | Starry |

@@ -16,10 +16,10 @@
 
     { "type": "chat", "timestamp": "Today 21:06", "messages": [
       { "from": "me", "text": "THEO" },
+      { "from": "me", "text": "i was crying in the bathroom at work" },
       { "from": "me", "text": "U SAID WE NEED TO TALK" },
       { "from": "them", "text": "we do" },
-      { "from": "them", "text": "about which side of the bed u want" },
-      { "from": "me", "text": "i was crying in the bathroom at work" },
-      { "from": "them", "text": "i know. sorry. worth it tho", "tapback": "heart" } ] }
+      { "from": "them", "text": "u havent said it back yet" },
+      { "from": "me", "text": "i love u too", "tapback": "heart" } ] }
   ]
 }

@@ -33,8 +33,8 @@ Our Timeline at tryethos.io (premium).
 
 **Editor fields:** Their name `Linda` · Cover `Garden` · Title `For Linda` · Road style
 `Ink line` · Closing line `...and i'd marry you again tomorrow.` · Typed out · Music:
-library "Quiet Hours" · Final surprise on, reveal by tapping: `I booked the hotel from our
-honeymoon. Pack a bag.`
+library "Quiet Hours" · Final surprise on, reveal by tapping: `Top drawer. I kept the
+napkin from our first date.`
 
 **Milestone dates, one per photo (fill the middle with your own years):**
 `June 2001 · the wedding` · `2002 · the flat with no heating` · `2004 · you became a mum` ·
