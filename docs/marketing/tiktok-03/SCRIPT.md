@@ -41,7 +41,7 @@ it counting down in real time. Set it for a few minutes after you start recordin
 
 ### Editor fields (tryethos.io → Midnight Countdown)
 
-Their name `Maya` · Title `For Maya` (the link preview on slide 5) · Horizon `City skyline` ·
+Their name `Maya` · Cover `Starry` (shoot it as your first gift slide, it is the frame people screenshot) · Title `For Maya` (the link preview on slide 5) · Horizon `City skyline` ·
 Headline above the timer `until it's been two years` · Line at zero `two years, maya.` ·
 Extras → Countdown on, set to midnight · Typed out · Music: library "Slow Dance" ·
 Reaction on · Final surprise on, reveal by tapping: `front step. now.`

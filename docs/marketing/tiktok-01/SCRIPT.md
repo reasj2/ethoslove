@@ -60,7 +60,7 @@ days of silence. He turns the dial to maximum and waits.
 
 ### Editor fields (tryethos.io → Jar of Reasons)
 
-Their name `Mia` · Your name `Jay` · Title `For Mia` (this is the link preview on slide 5) ·
+Their name `Mia` · Cover `Gingham` (shoot it as your first gift slide, it is the frame people screenshot) · Your name `Jay` · Title `For Mia` (this is the link preview on slide 5) ·
 Jar label `12 reasons ur my whole world` · Note paper `Pastel mix` · Accent: the red ·
 Typed out · Reaction on · Countdown off · Final surprise on, reveal by holding:
 `im outside. open the door.` · Music: library "Slow Dance" · Password empty · Schedule off.

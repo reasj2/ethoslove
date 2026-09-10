@@ -82,7 +82,7 @@ screen so there are no Safari bars. Five stars, so it is quick to shoot.
 
 ### Editor fields (tryethos.io → Constellations)
 
-Their name `Ella` · Your name: leave your own · Title `For Ella` (this is the link preview
+Their name `Ella` · Cover `Starry` (shoot it as your first gift slide, it is the frame people screenshot) · Your name: leave your own · Title `For Ella` (this is the link preview
 on slide 4) · Sky `Midnight` · Shape `Heart` · Line when the constellation completes:
 `it was always going to be this shape.` · Typed out · Music: library "Under the Stars" ·
 Reaction on · Countdown off · Final surprise on, reveal by holding: `top of the wardrobe. i kept

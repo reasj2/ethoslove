@@ -42,7 +42,7 @@ the one people rewatch.
 
 ### Editor fields (tryethos.io → Birthday Cinema)
 
-Their name `Zoe` · Title `For Zoe` (the link preview on slide 5) · Age `23` · Marquee line
+Their name `Zoe` · Cover `Polka` (shoot it as your first gift slide, it is the frame people screenshot) · Title `For Zoe` (the link preview on slide 5) · Age `23` · Marquee line
 `Now showing: Zoe turns 23` · Curtain `Crimson velvet` · Blowing out the candles `Microphone,
 swipe as backup` · Typed out · Music: library "Home" · Reaction on · Final surprise on,
 reveal by tapping: `look out the window.`
