@@ -13,6 +13,39 @@ at slide 6 of 18 tells the platform it was boring.
 Instagram can show a carousel again to someone who scrolled past it, sometimes opening on the
 second slide. So slide 2 has to work as a hook on its own, not just as the next line.
 
+## The 3.1M post, and what it changed
+
+Two carousels, same names (Mia and Liam), same iMessage screenshots:
+
+- 17 slides about an abusive boyfriend, love bombing between the fights: **3.8K likes**, 53
+  comments.
+- 8 slides where she messed up something small, he's dry with her, and she pesters him until
+  he caves ("i'm coming over now" / "i thought you were busy" / "shut up"): **3.1M likes,
+  326.8K saves, 166.5K shares**.
+
+The light one won by roughly a thousand times. What it tells us:
+
+- **Identification beats shock and envy.** People save and share what looks like their own
+  relationship, or the one they want. Saves and shares are the signals that spread a post,
+  and "this is literally us" is what earns them.
+- **The stakes are tiny.** The fight is never even explained. Low stakes means everyone fits.
+- **Push and pull.** One of them is dry and "mad", the other is persistent and cute, and the
+  dry one caves at the end, on a callback.
+- **One flirty line and a pet name.** "come over and teach me" / "are you gonna say no?" /
+  "i wish i could".
+- **Nothing else.** No gift, no villain, no text overlays, no timestamps. Just the chat.
+
+What we do differently now:
+
+- The chat has to be good enough to go viral with no product in it. If it isn't, the product
+  won't save it.
+- When the product appears, it's one move in the banter. The link card is how someone makes
+  up, not what the story is about.
+- Two in every five posts have no product at all (21, 23). They build the account that the
+  product posts need. The link lives in the bio.
+- Light beats dark. The dark stories in this folder, 01 especially, are the weakest bets. Post
+  the light ones first.
+
 ## The psychology, in the order it happens
 
 **1. The hook is an open loop.** People are driven to finish what they started (the
@@ -139,5 +172,10 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 16 | final boss | amusement | Arcade | Starry |
 | 17 | i would never | amusement | Front Page | Picnic |
 | 18 | the owl | envy, amusement | Jar of Reasons (Spanish) | Garden |
+| 19 | the pasta | identification (she's the one sorry) | Jar of Reasons | Picnic |
+| 20 | k | identification, callback | The Letter (free) | Classic |
+| 21 | night babe | identification (no product) | none | none |
+| 22 | everything i deleted | identification (dry texter) | Text Thread | Gingham |
+| 23 | the fringe | identification (no product) | none | none |
 
-06 to 18 are the short ones, written to these rules. 11 to 18 each use a different template, so the account shows the whole range.
+06 to 18 are the short ones. 19 to 23 follow the 3.1M post: pure banter, product as one move or not at all. Post those first.

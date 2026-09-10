@@ -1,0 +1,38 @@
+{
+  "slides": [
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "why are u so dry" },
+      { "from": "them", "text": "am i" },
+      { "from": "me", "text": "yes" },
+      { "from": "them", "text": "ok" },
+      { "from": "me", "text": "SEE" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "i send u 40 messages and u reply with one word" },
+      { "from": "them", "text": "i read all 40" },
+      { "from": "me", "text": "and u say ok" },
+      { "from": "them", "text": "yea" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "do u even like texting me" },
+      { "from": "them", "text": "yes" },
+      { "from": "me", "text": "then why are ur texts so short" },
+      { "from": "them", "text": "i write them long" },
+      { "from": "them", "text": "then delete them" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "what" },
+      { "from": "them", "text": "hold on" },
+      { "from": "them", "link": { "title": "everything i deleted", "domain": "tryethos.io" } },
+      { "from": "me", "text": "callum what is this" },
+      { "from": "them", "text": "every text i typed and didnt send" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "theres like 60 messages in here" },
+      { "from": "me", "text": "\"i miss u already and u literally left 10 mins ago\"" },
+      { "from": "me", "text": "U WROTE THAT??" },
+      { "from": "them", "text": "and deleted it" },
+      { "from": "me", "text": "never delete anything again" },
+      { "from": "them", "text": "i miss u", "tapback": "heart" } ] }
+  ]
+}

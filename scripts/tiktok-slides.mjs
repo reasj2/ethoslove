@@ -35,7 +35,9 @@ function html(slide) {
         return `<div class="row ${m.from === "me" ? "r" : "l"}"><div class="bubble ${cls} img"><div class="ph"><i class="a"></i><i class="b"></i><i class="c"></i><i class="d"></i></div>${m.tapback ? tapback(m) : ""}</div></div>`;
       }
       if (m.link) {
-        return `<div class="row ${m.from === "me" ? "r" : "l"}"><div class="bubble ${cls} link"><div class="lt"><div class="title">${esc(m.link.title)}</div><div class="domain">${esc(m.link.domain)}</div></div><div class="icon">${SEAL}</div></div></div>`;
+        // iMessage draws a rich link as a grey card whichever side sent it; only the alignment and tail change.
+        const side = m.from === "me" ? `outlink${last ? " last" : ""}` : cls;
+        return `<div class="row ${m.from === "me" ? "r" : "l"}"><div class="bubble ${side} link"><div class="lt"><div class="title">${esc(m.link.title)}</div><div class="domain">${esc(m.link.domain)}</div></div><div class="icon">${SEAL}</div></div></div>`;
       }
       return `<div class="row ${m.from === "me" ? "r" : "l"} ${status ? "has-status" : ""}"><div class="bubble ${cls}${m.tapback ? " tb" : ""}">${esc(m.text)}${m.tapback ? tapback(m) : ""}</div>${status}</div>`;
     })
@@ -62,6 +64,9 @@ function html(slide) {
     .in.last::after{content:"";position:absolute;bottom:0;left:-24px;width:24px;height:44px;background:#000;border-bottom-right-radius:22px}
     .out.last::before{content:"";position:absolute;bottom:0;right:-16px;width:44px;height:44px;background:#0a84ff;border-bottom-left-radius:34px 30px}
     .out.last::after{content:"";position:absolute;bottom:0;right:-24px;width:24px;height:44px;background:#000;border-bottom-left-radius:22px}
+    .outlink{background:#262628;color:#fff}
+    .outlink.last::before{content:"";position:absolute;bottom:0;right:-16px;width:44px;height:44px;background:#262628;border-bottom-left-radius:34px 30px}
+    .outlink.last::after{content:"";position:absolute;bottom:0;right:-24px;width:24px;height:44px;background:#000;border-bottom-left-radius:22px}
     .img{padding:0;overflow:visible;background:transparent}
     .ph{width:520px;height:660px;border-radius:40px;overflow:hidden;position:relative;background:#3a3233}
     .ph i{position:absolute;border-radius:50%;filter:blur(38px);opacity:.9}

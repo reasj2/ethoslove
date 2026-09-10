@@ -1,0 +1,34 @@
+{
+  "slides": [
+    { "type": "chat", "messages": [
+      { "from": "them", "text": "u fell asleep on facetime again" },
+      { "from": "me", "text": "no i didnt" },
+      { "from": "them", "text": "u were snoring" },
+      { "from": "me", "text": "i do NOT snore" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "them", "text": "i have proof" },
+      { "from": "me", "text": "no u dont" },
+      { "from": "them", "text": "screen recorded it" },
+      { "from": "me", "text": "MAX" },
+      { "from": "me", "text": "delete it rn" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "them", "text": "no its my ringtone now" },
+      { "from": "me", "text": "i hate u" },
+      { "from": "them", "text": "u also said goodnight while asleep" },
+      { "from": "me", "text": "i did not" },
+      { "from": "them", "text": "u said night babe and then snored" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "thats so embarrassing" },
+      { "from": "them", "text": "it was cute" },
+      { "from": "me", "text": "why didnt u just hang up" },
+      { "from": "them", "text": "didnt want u to wake up alone" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "stop" },
+      { "from": "me", "text": "ur actually so annoying" },
+      { "from": "them", "text": "night babe", "tapback": "heart" } ] }
+  ]
+}

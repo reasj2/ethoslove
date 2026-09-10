@@ -1,0 +1,39 @@
+{
+  "slides": [
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "hi" },
+      { "from": "them", "text": "no" },
+      { "from": "me", "text": "u cant say no to hi" },
+      { "from": "them", "text": "watch me" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "is this about the pasta" },
+      { "from": "them", "text": "it was MY pasta" },
+      { "from": "me", "text": "it was in the fridge" },
+      { "from": "them", "text": "with a note on it" },
+      { "from": "me", "text": "i thought the note was flirting" },
+      { "from": "them", "text": "it said DONT" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "ok im sorry" },
+      { "from": "me", "text": "how do i fix this" },
+      { "from": "them", "text": "u cant" },
+      { "from": "me", "text": "what if i make it up to u" },
+      { "from": "them", "text": "how" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "link": { "title": "12 reasons to forgive me", "domain": "tryethos.io" } },
+      { "from": "them", "text": "what is this" },
+      { "from": "me", "text": "open it" },
+      { "from": "them", "typing": true },
+      { "from": "them", "text": "number 7 just says im cute" },
+      { "from": "me", "text": "is it working" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "them", "text": "a bit" },
+      { "from": "them", "text": "number 12 got me" },
+      { "from": "me", "text": "so im forgiven?" },
+      { "from": "them", "text": "bring pasta" },
+      { "from": "them", "text": "and come here", "tapback": "heart" } ] }
+  ]
+}
