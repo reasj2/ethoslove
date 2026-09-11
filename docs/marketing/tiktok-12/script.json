@@ -1,26 +1,96 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Tue 03:12", "messages": [
-      { "from": "me", "text": "u up" },
-      { "from": "them", "text": "am now" },
-      { "from": "me", "text": "cant sleep" },
-      { "from": "me", "text": "exam in 6 hours" },
-      { "from": "them", "text": "facetime" },
-      { "from": "me", "text": "u have work at 7" },
-      { "from": "them", "text": "facetime" } ] },
-
-    { "type": "chat", "timestamp": "Tue 21:40", "messages": [
-      { "from": "them", "text": "for tonight" },
-      { "from": "them", "link": { "title": "For Zara", "domain": "tryethos.io" } },
-      { "from": "them", "text": "put it on when u cant sleep" },
-      { "from": "me", "text": "why is there a voice note" },
-      { "from": "them", "text": "listen to it in bed" } ] },
-
-    { "type": "chat", "timestamp": "Fri 03:05", "messages": [
-      { "from": "me", "text": "its 3am and im listening to it again" },
-      { "from": "them", "text": "go to sleep" },
-      { "from": "me", "text": "u literally say that in it" },
-      { "from": "them", "text": "then listen to me" },
-      { "from": "me", "text": "i passed btw", "tapback": "heart" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Tue 03:12",
+      "messages": [
+        {
+          "from": "me",
+          "text": "u up"
+        },
+        {
+          "from": "them",
+          "text": "am now"
+        },
+        {
+          "from": "me",
+          "text": "cant sleep"
+        },
+        {
+          "from": "me",
+          "text": "exam in 6 hours"
+        },
+        {
+          "from": "them",
+          "text": "facetime"
+        },
+        {
+          "from": "me",
+          "text": "u have work at 7"
+        },
+        {
+          "from": "them",
+          "text": "facetime"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Tue 21:40",
+      "messages": [
+        {
+          "from": "them",
+          "text": "for tonight"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "For Zara",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Zara"
+          }
+        },
+        {
+          "from": "them",
+          "text": "put it on when u cant sleep"
+        },
+        {
+          "from": "me",
+          "text": "why is there a voice note"
+        },
+        {
+          "from": "them",
+          "text": "listen to it in bed"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Fri 03:05",
+      "messages": [
+        {
+          "from": "me",
+          "text": "its 3am and im listening to it again"
+        },
+        {
+          "from": "them",
+          "text": "go to sleep"
+        },
+        {
+          "from": "me",
+          "text": "u literally say that in it"
+        },
+        {
+          "from": "them",
+          "text": "then listen to me"
+        },
+        {
+          "from": "me",
+          "text": "i passed btw",
+          "tapback": "heart"
+        }
+      ]
+    }
   ]
 }

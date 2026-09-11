@@ -1,25 +1,93 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Fri 22:31", "messages": [
-      { "from": "me", "text": "can i ask u something" },
-      { "from": "them", "text": "ya" },
-      { "from": "me", "text": "what are we" },
-      { "from": "me", "text": "like actually", "status": "Read 22:32" } ] },
-
-    { "type": "chat", "timestamp": "Sat 01:47", "messages": [
-      { "from": "me", "text": "ok nvm" },
-      { "from": "me", "text": "forget i said anything" },
-      { "from": "them", "text": "no" },
-      { "from": "them", "text": "hold on" },
-      { "from": "them", "link": { "title": "For Grace", "domain": "tryethos.io" } },
-      { "from": "them", "text": "hold ur finger on it" } ] },
-
-    { "type": "chat", "timestamp": "Sat 01:55", "messages": [
-      { "from": "me", "text": "wait" },
-      { "from": "me", "text": "is this real" },
-      { "from": "them", "text": "took me 3 hours so yeah" },
-      { "from": "them", "text": "so?" },
-      { "from": "me", "text": "YES" },
-      { "from": "me", "text": "obviously yes", "tapback": "heart" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Fri 22:31",
+      "messages": [
+        {
+          "from": "me",
+          "text": "can i ask u something"
+        },
+        {
+          "from": "them",
+          "text": "ya"
+        },
+        {
+          "from": "me",
+          "text": "what are we"
+        },
+        {
+          "from": "me",
+          "text": "like actually",
+          "status": "Read 22:32"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Sat 01:47",
+      "messages": [
+        {
+          "from": "me",
+          "text": "ok nvm"
+        },
+        {
+          "from": "me",
+          "text": "forget i said anything"
+        },
+        {
+          "from": "them",
+          "text": "no"
+        },
+        {
+          "from": "them",
+          "text": "hold on"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "For Grace",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Grace"
+          }
+        },
+        {
+          "from": "them",
+          "text": "hold ur finger on it"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Sat 01:55",
+      "messages": [
+        {
+          "from": "me",
+          "text": "wait"
+        },
+        {
+          "from": "me",
+          "text": "is this real"
+        },
+        {
+          "from": "them",
+          "text": "took me 3 hours so yeah"
+        },
+        {
+          "from": "them",
+          "text": "so?"
+        },
+        {
+          "from": "me",
+          "text": "YES"
+        },
+        {
+          "from": "me",
+          "text": "obviously yes",
+          "tapback": "heart"
+        }
+      ]
+    }
   ]
 }

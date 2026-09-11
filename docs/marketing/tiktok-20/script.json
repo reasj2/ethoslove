@@ -1,35 +1,123 @@
 {
   "slides": [
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "ok so i know ive been weird this week and its not u its uni and my mum and everything and i just want u to know i appreciate u even when im being annoying and i dont say it enough" },
-      { "from": "them", "text": "k" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "k??" },
-      { "from": "me", "text": "i sent u a whole paragraph" },
-      { "from": "me", "text": "and u said k" },
-      { "from": "them", "text": "yea" },
-      { "from": "me", "text": "noah" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "im actually upset" },
-      { "from": "them", "text": "i know" },
-      { "from": "me", "text": "then say something" },
-      { "from": "them", "text": "im typing" },
-      { "from": "me", "text": "its been 10 minutes" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "ok" },
-      { "from": "them", "text": "u sent me a paragraph" },
-      { "from": "them", "link": { "title": "my paragraph", "domain": "tryethos.io" } },
-      { "from": "me", "text": "what" },
-      { "from": "them", "text": "this is mine" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "NOAH" },
-      { "from": "me", "text": "this is not a paragraph this is a whole letter" },
-      { "from": "them", "text": "u said i never say anything" },
-      { "from": "me", "text": "im crying in the library" },
-      { "from": "them", "text": "k", "tapback": "heart" } ] }
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "ok so i know ive been weird this week and its not u its uni and my mum and everything and i just want u to know i appreciate u even when im being annoying and i dont say it enough"
+        },
+        {
+          "from": "them",
+          "text": "k"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "k??"
+        },
+        {
+          "from": "me",
+          "text": "i sent u a whole paragraph"
+        },
+        {
+          "from": "me",
+          "text": "and u said k"
+        },
+        {
+          "from": "them",
+          "text": "yea"
+        },
+        {
+          "from": "me",
+          "text": "noah"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "im actually upset"
+        },
+        {
+          "from": "them",
+          "text": "i know"
+        },
+        {
+          "from": "me",
+          "text": "then say something"
+        },
+        {
+          "from": "them",
+          "text": "im typing"
+        },
+        {
+          "from": "me",
+          "text": "its been 10 minutes"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "ok"
+        },
+        {
+          "from": "them",
+          "text": "u sent me a paragraph"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "my paragraph",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Amy"
+          }
+        },
+        {
+          "from": "me",
+          "text": "what"
+        },
+        {
+          "from": "them",
+          "text": "this is mine"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "NOAH"
+        },
+        {
+          "from": "me",
+          "text": "this is not a paragraph this is a whole letter"
+        },
+        {
+          "from": "them",
+          "text": "u said i never say anything"
+        },
+        {
+          "from": "me",
+          "text": "im crying in the library"
+        },
+        {
+          "from": "them",
+          "text": "k",
+          "tapback": "heart"
+        }
+      ]
+    }
   ]
 }

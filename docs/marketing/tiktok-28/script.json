@@ -1,0 +1,24 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Today 13:08", "messages": [
+      { "from": "them", "text": "i was wrong" },
+      { "from": "me", "text": "about what" },
+      { "from": "them", "text": "what i said about ur friends" },
+      { "from": "them", "text": "i was jealous and i said it like it was a fact" },
+      { "from": "me", "text": "u did" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "them", "text": "im not doing the rest over text" },
+      { "from": "them", "link": { "title": "Leah, someone made you something 💌", "domain": "tryethos.io", "image": "og", "name": "Leah" } },
+      { "from": "them", "text": "i wrote it properly" },
+      { "from": "me", "text": "dan" },
+      { "from": "them", "text": "take ur time" } ] },
+
+    { "type": "chat", "timestamp": "Today 13:31", "messages": [
+      { "from": "me", "text": "u said i was wrong first" },
+      { "from": "me", "text": "nobody has ever said i was wrong first" },
+      { "from": "them", "text": "u werent wrong" },
+      { "from": "them", "text": "i was" },
+      { "from": "me", "text": "come over", "tapback": "heart" } ] }
+  ]
+}

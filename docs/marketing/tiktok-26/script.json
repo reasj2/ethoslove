@@ -1,0 +1,17 @@
+{
+  "slides": [
+    { "type": "chat", "timestamp": "Today 22:53", "messages": [
+      { "from": "me", "text": "JORDAN" },
+      { "from": "me", "text": "u made me a whole museum" },
+      { "from": "me", "text": "with the photo from our first week??" },
+      { "from": "them", "text": "told u" },
+      { "from": "them", "text": "this is where i post u" } ] },
+
+    { "type": "chat", "messages": [
+      { "from": "me", "text": "can i post it" },
+      { "from": "them", "text": "only if u tag me" },
+      { "from": "me", "text": "u literally just said u dont post" },
+      { "from": "them", "text": "i dont" },
+      { "from": "them", "text": "u do", "tapback": "heart" } ] }
+  ]
+}

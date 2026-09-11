@@ -126,7 +126,9 @@
           "from": "them",
           "link": {
             "title": "For Nina",
-            "domain": "tryethos.io"
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Nina"
           }
         },
         {

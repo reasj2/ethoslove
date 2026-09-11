@@ -1,60 +1,219 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 09:02", "messages": [
-      { "from": "them", "text": "hbd" },
-      { "from": "me", "text": "thats it?" },
-      { "from": "them", "text": "happy birthday*" },
-      { "from": "me", "text": "wow the effort" } ] },
-
-    { "type": "chat", "timestamp": "Today 13:15", "messages": [
-      { "from": "me", "text": "nobody at work has said anything" },
-      { "from": "me", "text": "not one person" },
-      { "from": "them", "text": "thats rough" },
-      { "from": "me", "text": "and u said hbd" },
-      { "from": "them", "text": "i corrected it" } ] },
-
-    { "type": "chat", "timestamp": "Today 17:40", "messages": [
-      { "from": "me", "text": "my own mum put happy bday x" },
-      { "from": "me", "text": "x" },
-      { "from": "me", "text": "not even a heart" },
-      { "from": "them", "text": "ur mum loves u" },
-      { "from": "me", "text": "i kind of feel invisible today tbh", "status": "Read 17:41" } ] },
-
-    { "type": "chat", "timestamp": "Today 20:28", "messages": [
-      { "from": "them", "text": "are u home" },
-      { "from": "me", "text": "yeah why" },
-      { "from": "them", "text": "put ur headphones in" },
-      { "from": "them", "text": "and turn the big light off" },
-      { "from": "me", "text": "ur scaring me" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "link": { "title": "For Zoe", "domain": "tryethos.io" } },
-      { "from": "them", "text": "open it" },
-      { "from": "them", "text": "and when it tells u to blow" },
-      { "from": "them", "text": "actually blow" },
-      { "from": "me", "text": "what" } ] },
-
-    { "type": "chat", "timestamp": "Today 20:36", "messages": [
-      { "from": "me", "text": "IT HAD MY NAME ON THE SIGN" },
-      { "from": "me", "text": "the candles went out when i blew??" },
-      { "from": "them", "text": "yea" },
-      { "from": "me", "text": "HOW" },
-      { "from": "them", "text": "i know a guy" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "i thought u forgot" },
-      { "from": "them", "text": "i said hbd at 9am" },
-      { "from": "me", "text": "THAT DOESNT COUNT" },
-      { "from": "them", "text": "i was busy" },
-      { "from": "me", "text": "doing THIS??" },
-      { "from": "them", "text": "since 6am" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "i felt invisible all day" },
-      { "from": "them", "text": "not to me" },
-      { "from": "them", "text": "go look out the window" },
-      { "from": "me", "text": "why" },
-      { "from": "me", "text": "OH MY GOD" },
-      { "from": "me", "text": "ARE U HOLDING A CAKE" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Today 09:02",
+      "messages": [
+        {
+          "from": "them",
+          "text": "hbd"
+        },
+        {
+          "from": "me",
+          "text": "thats it?"
+        },
+        {
+          "from": "them",
+          "text": "happy birthday*"
+        },
+        {
+          "from": "me",
+          "text": "wow the effort"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 13:15",
+      "messages": [
+        {
+          "from": "me",
+          "text": "nobody at work has said anything"
+        },
+        {
+          "from": "me",
+          "text": "not one person"
+        },
+        {
+          "from": "them",
+          "text": "thats rough"
+        },
+        {
+          "from": "me",
+          "text": "and u said hbd"
+        },
+        {
+          "from": "them",
+          "text": "i corrected it"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 17:40",
+      "messages": [
+        {
+          "from": "me",
+          "text": "my own mum put happy bday x"
+        },
+        {
+          "from": "me",
+          "text": "x"
+        },
+        {
+          "from": "me",
+          "text": "not even a heart"
+        },
+        {
+          "from": "them",
+          "text": "ur mum loves u"
+        },
+        {
+          "from": "me",
+          "text": "i kind of feel invisible today tbh",
+          "status": "Read 17:41"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 20:28",
+      "messages": [
+        {
+          "from": "them",
+          "text": "are u home"
+        },
+        {
+          "from": "me",
+          "text": "yeah why"
+        },
+        {
+          "from": "them",
+          "text": "put ur headphones in"
+        },
+        {
+          "from": "them",
+          "text": "and turn the big light off"
+        },
+        {
+          "from": "me",
+          "text": "ur scaring me"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "link": {
+            "title": "For Zoe",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Zoe"
+          }
+        },
+        {
+          "from": "them",
+          "text": "open it"
+        },
+        {
+          "from": "them",
+          "text": "and when it tells u to blow"
+        },
+        {
+          "from": "them",
+          "text": "actually blow"
+        },
+        {
+          "from": "me",
+          "text": "what"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 20:36",
+      "messages": [
+        {
+          "from": "me",
+          "text": "IT HAD MY NAME ON THE SIGN"
+        },
+        {
+          "from": "me",
+          "text": "the candles went out when i blew??"
+        },
+        {
+          "from": "them",
+          "text": "yea"
+        },
+        {
+          "from": "me",
+          "text": "HOW"
+        },
+        {
+          "from": "them",
+          "text": "i know a guy"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "i thought u forgot"
+        },
+        {
+          "from": "them",
+          "text": "i said hbd at 9am"
+        },
+        {
+          "from": "me",
+          "text": "THAT DOESNT COUNT"
+        },
+        {
+          "from": "them",
+          "text": "i was busy"
+        },
+        {
+          "from": "me",
+          "text": "doing THIS??"
+        },
+        {
+          "from": "them",
+          "text": "since 6am"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "i felt invisible all day"
+        },
+        {
+          "from": "them",
+          "text": "not to me"
+        },
+        {
+          "from": "them",
+          "text": "go look out the window"
+        },
+        {
+          "from": "me",
+          "text": "why"
+        },
+        {
+          "from": "me",
+          "text": "OH MY GOD"
+        },
+        {
+          "from": "me",
+          "text": "ARE U HOLDING A CAKE"
+        }
+      ]
+    }
   ]
 }

@@ -1,24 +1,88 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Mon 22:10", "messages": [
-      { "from": "me", "text": "do u remember the first thing u ever said to me" },
-      { "from": "them", "text": "yeah" },
-      { "from": "me", "text": "no u dont" },
-      { "from": "them", "text": "yes i do" },
-      { "from": "me", "text": "go on then" },
-      { "from": "them", "text": "wait" } ] },
-
-    { "type": "chat", "timestamp": "Mon 22:31", "messages": [
-      { "from": "them", "link": { "title": "For Lola", "domain": "tryethos.io" } },
-      { "from": "them", "text": "this" },
-      { "from": "me", "text": "is this our first convo??" },
-      { "from": "them", "text": "read it all" } ] },
-
-    { "type": "chat", "timestamp": "Mon 22:40", "messages": [
-      { "from": "me", "text": "\"is this ur charger or can i steal it\"" },
-      { "from": "me", "text": "REECE" },
-      { "from": "me", "text": "u kept the screenshots??" },
-      { "from": "them", "text": "every single one" },
-      { "from": "them", "text": "since the charger", "tapback": "heart" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Mon 22:10",
+      "messages": [
+        {
+          "from": "me",
+          "text": "do u remember the first thing u ever said to me"
+        },
+        {
+          "from": "them",
+          "text": "yeah"
+        },
+        {
+          "from": "me",
+          "text": "no u dont"
+        },
+        {
+          "from": "them",
+          "text": "yes i do"
+        },
+        {
+          "from": "me",
+          "text": "go on then"
+        },
+        {
+          "from": "them",
+          "text": "wait"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Mon 22:31",
+      "messages": [
+        {
+          "from": "them",
+          "link": {
+            "title": "For Lola",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Lola"
+          }
+        },
+        {
+          "from": "them",
+          "text": "this"
+        },
+        {
+          "from": "me",
+          "text": "is this our first convo??"
+        },
+        {
+          "from": "them",
+          "text": "read it all"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Mon 22:40",
+      "messages": [
+        {
+          "from": "me",
+          "text": "\"is this ur charger or can i steal it\""
+        },
+        {
+          "from": "me",
+          "text": "REECE"
+        },
+        {
+          "from": "me",
+          "text": "u kept the screenshots??"
+        },
+        {
+          "from": "them",
+          "text": "every single one"
+        },
+        {
+          "from": "them",
+          "text": "since the charger",
+          "tapback": "heart"
+        }
+      ]
+    }
   ]
 }

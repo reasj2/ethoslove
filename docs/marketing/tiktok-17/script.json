@@ -1,24 +1,88 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Wed 20:04", "messages": [
-      { "from": "me", "text": "its our 6 months tomorrow" },
-      { "from": "me", "text": "dont make it weird" },
-      { "from": "them", "text": "i would never" },
-      { "from": "me", "text": "alfie" },
-      { "from": "them", "text": "i would never" } ] },
-
-    { "type": "chat", "timestamp": "Thu 07:30", "messages": [
-      { "from": "them", "text": "morning" },
-      { "from": "them", "link": { "title": "For Ruby", "domain": "tryethos.io" } },
-      { "from": "them", "text": "todays paper" },
-      { "from": "me", "text": "what paper" },
-      { "from": "them", "text": "read the headline" } ] },
-
-    { "type": "chat", "timestamp": "Thu 07:36", "messages": [
-      { "from": "me", "text": "\"LOCAL MAN STILL NOT OVER GIRLFRIEND, SIX MONTHS IN\"" },
-      { "from": "me", "text": "U MADE IT WEIRD" },
-      { "from": "them", "text": "page 2 is worse" },
-      { "from": "me", "text": "the classified ads 😭😭" },
-      { "from": "them", "text": "all true", "tapback": "haha" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Wed 20:04",
+      "messages": [
+        {
+          "from": "me",
+          "text": "its our 6 months tomorrow"
+        },
+        {
+          "from": "me",
+          "text": "dont make it weird"
+        },
+        {
+          "from": "them",
+          "text": "i would never"
+        },
+        {
+          "from": "me",
+          "text": "alfie"
+        },
+        {
+          "from": "them",
+          "text": "i would never"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thu 07:30",
+      "messages": [
+        {
+          "from": "them",
+          "text": "morning"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "For Ruby",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Ruby"
+          }
+        },
+        {
+          "from": "them",
+          "text": "todays paper"
+        },
+        {
+          "from": "me",
+          "text": "what paper"
+        },
+        {
+          "from": "them",
+          "text": "read the headline"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thu 07:36",
+      "messages": [
+        {
+          "from": "me",
+          "text": "\"LOCAL MAN STILL NOT OVER GIRLFRIEND, SIX MONTHS IN\""
+        },
+        {
+          "from": "me",
+          "text": "U MADE IT WEIRD"
+        },
+        {
+          "from": "them",
+          "text": "page 2 is worse"
+        },
+        {
+          "from": "me",
+          "text": "the classified ads 😭😭"
+        },
+        {
+          "from": "them",
+          "text": "all true",
+          "tapback": "haha"
+        }
+      ]
+    }
   ]
 }

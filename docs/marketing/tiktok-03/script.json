@@ -1,66 +1,247 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Wed 08:12", "messages": [
-      { "from": "me", "text": "morning" },
-      { "from": "me", "text": "do u know what tomorrow is 👀" },
-      { "from": "them", "text": "thursday" },
-      { "from": "me", "text": "yes. and" },
-      { "from": "them", "text": "bin day" } ] },
-
-    { "type": "chat", "timestamp": "Wed 14:30", "messages": [
-      { "from": "me", "text": "so ur really not gonna say anything" },
-      { "from": "them", "text": "about what" },
-      { "from": "me", "text": "tomorrow" },
-      { "from": "them", "text": "oh" },
-      { "from": "them", "text": "yea the bins" },
-      { "from": "me", "text": "i hate u" } ] },
-
-    { "type": "chat", "timestamp": "Wed 19:05", "messages": [
-      { "from": "me", "text": "my mum asked what we're doing for our anniversary" },
-      { "from": "them", "text": "whens that" },
-      { "from": "me", "text": "ur joking" },
-      { "from": "them", "text": "remind me" },
-      { "from": "me", "text": "TOMORROW" },
-      { "from": "them", "text": "oh right" },
-      { "from": "them", "text": "cool" } ] },
-
-    { "type": "chat", "timestamp": "Wed 21:40", "messages": [
-      { "from": "me", "text": "not even gonna lie that actually hurt" },
-      { "from": "me", "text": "its been 2 years" },
-      { "from": "them", "text": "i know how long its been" },
-      { "from": "me", "text": "then act like it", "status": "Read 21:41" } ] },
-
-    { "type": "chat", "timestamp": "Wed 23:47", "messages": [
-      { "from": "me", "text": "ok well" },
-      { "from": "me", "text": "goodnight i guess" },
-      { "from": "them", "text": "wait" },
-      { "from": "them", "text": "dont go to sleep yet" },
-      { "from": "me", "text": "why" },
-      { "from": "them", "link": { "title": "For Maya", "domain": "tryethos.io" } } ] },
-
-    { "type": "chat", "timestamp": "Wed 23:49", "messages": [
-      { "from": "me", "text": "its a timer" },
-      { "from": "me", "text": "why is it counting down" },
-      { "from": "them", "text": "watch it" },
-      { "from": "me", "text": "11 minutes??" },
-      { "from": "them", "text": "yea" },
-      { "from": "them", "text": "stay with me" } ] },
-
-    { "type": "chat", "timestamp": "Thu 00:00", "messages": [
-      { "from": "me", "text": "IT HAD FIREWORKS" },
-      { "from": "me", "text": "u knew the whole time" },
-      { "from": "them", "text": "i always know" },
-      { "from": "me", "text": "the BINS??" },
-      { "from": "them", "text": "the bins are also today" },
-      { "from": "them", "text": "happy anniversary maya", "tapback": "heart" } ] },
-
-    { "type": "chat", "timestamp": "Thu 00:04", "messages": [
-      { "from": "me", "text": "i was so upset all day" },
-      { "from": "them", "text": "i know" },
-      { "from": "them", "text": "i needed u to be surprised" },
-      { "from": "me", "text": "i was about to break up with u" },
-      { "from": "them", "text": "over the bins?" },
-      { "from": "me", "text": "I LOVE YOU" },
-      { "from": "them", "text": "love u. go to sleep." } ] }
+    {
+      "type": "chat",
+      "timestamp": "Wed 08:12",
+      "messages": [
+        {
+          "from": "me",
+          "text": "morning"
+        },
+        {
+          "from": "me",
+          "text": "do u know what tomorrow is 👀"
+        },
+        {
+          "from": "them",
+          "text": "thursday"
+        },
+        {
+          "from": "me",
+          "text": "yes. and"
+        },
+        {
+          "from": "them",
+          "text": "bin day"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Wed 14:30",
+      "messages": [
+        {
+          "from": "me",
+          "text": "so ur really not gonna say anything"
+        },
+        {
+          "from": "them",
+          "text": "about what"
+        },
+        {
+          "from": "me",
+          "text": "tomorrow"
+        },
+        {
+          "from": "them",
+          "text": "oh"
+        },
+        {
+          "from": "them",
+          "text": "yea the bins"
+        },
+        {
+          "from": "me",
+          "text": "i hate u"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Wed 19:05",
+      "messages": [
+        {
+          "from": "me",
+          "text": "my mum asked what we're doing for our anniversary"
+        },
+        {
+          "from": "them",
+          "text": "whens that"
+        },
+        {
+          "from": "me",
+          "text": "ur joking"
+        },
+        {
+          "from": "them",
+          "text": "remind me"
+        },
+        {
+          "from": "me",
+          "text": "TOMORROW"
+        },
+        {
+          "from": "them",
+          "text": "oh right"
+        },
+        {
+          "from": "them",
+          "text": "cool"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Wed 21:40",
+      "messages": [
+        {
+          "from": "me",
+          "text": "not even gonna lie that actually hurt"
+        },
+        {
+          "from": "me",
+          "text": "its been 2 years"
+        },
+        {
+          "from": "them",
+          "text": "i know how long its been"
+        },
+        {
+          "from": "me",
+          "text": "then act like it",
+          "status": "Read 21:41"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Wed 23:47",
+      "messages": [
+        {
+          "from": "me",
+          "text": "ok well"
+        },
+        {
+          "from": "me",
+          "text": "goodnight i guess"
+        },
+        {
+          "from": "them",
+          "text": "wait"
+        },
+        {
+          "from": "them",
+          "text": "dont go to sleep yet"
+        },
+        {
+          "from": "me",
+          "text": "why"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "For Maya",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Maya"
+          }
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Wed 23:49",
+      "messages": [
+        {
+          "from": "me",
+          "text": "its a timer"
+        },
+        {
+          "from": "me",
+          "text": "why is it counting down"
+        },
+        {
+          "from": "them",
+          "text": "watch it"
+        },
+        {
+          "from": "me",
+          "text": "11 minutes??"
+        },
+        {
+          "from": "them",
+          "text": "yea"
+        },
+        {
+          "from": "them",
+          "text": "stay with me"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thu 00:00",
+      "messages": [
+        {
+          "from": "me",
+          "text": "IT HAD FIREWORKS"
+        },
+        {
+          "from": "me",
+          "text": "u knew the whole time"
+        },
+        {
+          "from": "them",
+          "text": "i always know"
+        },
+        {
+          "from": "me",
+          "text": "the BINS??"
+        },
+        {
+          "from": "them",
+          "text": "the bins are also today"
+        },
+        {
+          "from": "them",
+          "text": "happy anniversary maya",
+          "tapback": "heart"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thu 00:04",
+      "messages": [
+        {
+          "from": "me",
+          "text": "i was so upset all day"
+        },
+        {
+          "from": "them",
+          "text": "i know"
+        },
+        {
+          "from": "them",
+          "text": "i needed u to be surprised"
+        },
+        {
+          "from": "me",
+          "text": "i was about to break up with u"
+        },
+        {
+          "from": "them",
+          "text": "over the bins?"
+        },
+        {
+          "from": "me",
+          "text": "I LOVE YOU"
+        },
+        {
+          "from": "them",
+          "text": "love u. go to sleep."
+        }
+      ]
+    }
   ]
 }

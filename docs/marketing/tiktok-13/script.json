@@ -1,25 +1,92 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Sat 14:02", "messages": [
-      { "from": "me", "text": "why did u delete our first photo" },
-      { "from": "me", "text": "from ur camera roll" },
-      { "from": "me", "text": "i saw" },
-      { "from": "them", "text": "i didnt delete it" },
-      { "from": "me", "text": "its GONE finn" },
-      { "from": "them", "text": "i moved it" } ] },
-
-    { "type": "chat", "timestamp": "Sat 20:30", "messages": [
-      { "from": "them", "text": "found it" },
-      { "from": "them", "link": { "title": "For Isla", "domain": "tryethos.io" } },
-      { "from": "them", "text": "its in a museum now" },
-      { "from": "me", "text": "what" },
-      { "from": "them", "text": "go to the main room" } ] },
-
-    { "type": "chat", "timestamp": "Sat 20:41", "messages": [
-      { "from": "me", "text": "U MADE US A MUSEUM" },
-      { "from": "me", "text": "with little plaques??" },
-      { "from": "them", "text": "every museum has plaques" },
-      { "from": "me", "text": "the one under the meal deal photo 😭" },
-      { "from": "them", "text": "priceless. obviously", "tapback": "heart" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Sat 14:02",
+      "messages": [
+        {
+          "from": "me",
+          "text": "why did u delete our first photo"
+        },
+        {
+          "from": "me",
+          "text": "from ur camera roll"
+        },
+        {
+          "from": "me",
+          "text": "i saw"
+        },
+        {
+          "from": "them",
+          "text": "i didnt delete it"
+        },
+        {
+          "from": "me",
+          "text": "its GONE finn"
+        },
+        {
+          "from": "them",
+          "text": "i moved it"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Sat 20:30",
+      "messages": [
+        {
+          "from": "them",
+          "text": "found it"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "For Isla",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Isla"
+          }
+        },
+        {
+          "from": "them",
+          "text": "its in a museum now"
+        },
+        {
+          "from": "me",
+          "text": "what"
+        },
+        {
+          "from": "them",
+          "text": "go to the main room"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Sat 20:41",
+      "messages": [
+        {
+          "from": "me",
+          "text": "U MADE US A MUSEUM"
+        },
+        {
+          "from": "me",
+          "text": "with little plaques??"
+        },
+        {
+          "from": "them",
+          "text": "every museum has plaques"
+        },
+        {
+          "from": "me",
+          "text": "the one under the meal deal photo 😭"
+        },
+        {
+          "from": "them",
+          "text": "priceless. obviously",
+          "tapback": "heart"
+        }
+      ]
+    }
   ]
 }

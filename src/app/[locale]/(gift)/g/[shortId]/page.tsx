@@ -17,7 +17,10 @@ export async function generateMetadata({ params }: Omit<PageProps<"/[locale]/g/[
   const gift = isShortId(shortId) ? await fetchPublicGift(shortId) : null;
   if (!gift) return { title: "Gift", robots: { index: false, follow: false } };
   const es = gift.locale === "es";
-  const title = es ? `${gift.recipientName}, alguien te ha hecho algo 💌` : `${gift.recipientName}, someone made you something 💌`;
+  // The editor promises the Title shows in the link preview; without one, the invitation stands in.
+  const title =
+    gift.data?.title?.trim() ||
+    (es ? `${gift.recipientName}, alguien te ha hecho algo 💌` : `${gift.recipientName}, someone made you something 💌`);
   const description = es ? "Ábrelo con el sonido activado." : "Open it with your sound on.";
   return {
     title,

@@ -1,25 +1,92 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Thu 11:48", "messages": [
-      { "from": "me", "text": "failed" },
-      { "from": "me", "text": "i hit the kerb on the parallel park" },
-      { "from": "me", "text": "i want to disappear" },
-      { "from": "them", "text": "where are u" },
-      { "from": "me", "text": "test centre car park crying" },
-      { "from": "them", "text": "stay there" } ] },
-
-    { "type": "chat", "timestamp": "Thu 19:20", "messages": [
-      { "from": "them", "text": "open this" },
-      { "from": "them", "link": { "title": "For Nia", "domain": "tryethos.io" } },
-      { "from": "them", "text": "crack one" },
-      { "from": "me", "text": "fortune cookies??" },
-      { "from": "them", "text": "crack one nia" } ] },
-
-    { "type": "chat", "timestamp": "Thu 19:34", "messages": [
-      { "from": "me", "text": "\"you will hit the kerb again and still be the best driver i know\"" },
-      { "from": "me", "text": "BEN 😭" },
-      { "from": "them", "text": "the last one is the true one" },
-      { "from": "me", "text": "\"next time im sitting in the car park the whole time\"" },
-      { "from": "them", "text": "with snacks", "tapback": "heart" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Thu 11:48",
+      "messages": [
+        {
+          "from": "me",
+          "text": "failed"
+        },
+        {
+          "from": "me",
+          "text": "i hit the kerb on the parallel park"
+        },
+        {
+          "from": "me",
+          "text": "i want to disappear"
+        },
+        {
+          "from": "them",
+          "text": "where are u"
+        },
+        {
+          "from": "me",
+          "text": "test centre car park crying"
+        },
+        {
+          "from": "them",
+          "text": "stay there"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thu 19:20",
+      "messages": [
+        {
+          "from": "them",
+          "text": "open this"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "For Nia",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Nia"
+          }
+        },
+        {
+          "from": "them",
+          "text": "crack one"
+        },
+        {
+          "from": "me",
+          "text": "fortune cookies??"
+        },
+        {
+          "from": "them",
+          "text": "crack one nia"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thu 19:34",
+      "messages": [
+        {
+          "from": "me",
+          "text": "\"you will hit the kerb again and still be the best driver i know\""
+        },
+        {
+          "from": "me",
+          "text": "BEN 😭"
+        },
+        {
+          "from": "them",
+          "text": "the last one is the true one"
+        },
+        {
+          "from": "me",
+          "text": "\"next time im sitting in the car park the whole time\""
+        },
+        {
+          "from": "them",
+          "text": "with snacks",
+          "tapback": "heart"
+        }
+      ]
+    }
   ]
 }

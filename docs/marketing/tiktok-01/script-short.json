@@ -1,66 +1,251 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 1:06 AM", "messages": [
-      { "from": "me", "image": true },
-      { "from": "me", "text": "who is she" },
-      { "from": "me", "text": "and dont lie to me jay", "status": "Read 1:06 AM" },
-      { "from": "them", "typing": true },
-      { "from": "them", "text": "why were u on my phone" },
-      { "from": "me", "text": "answer the question" },
-      { "from": "them", "text": "thats not even me" },
-      { "from": "me", "text": "its ur jacket. and ur watch." },
-      { "from": "them", "text": "ur seeing things again" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "ok its me but its nothing" },
-      { "from": "me", "text": "u literally just said it wasnt u" },
-      { "from": "me", "text": "WHATS HER NAME" },
-      { "from": "them", "text": "sofia" },
-      { "from": "me", "text": "the tag on the pic says jess" },
-      { "from": "them", "text": "thats her middle name" },
-      { "from": "me", "text": "why is she in ur bed" },
-      { "from": "them", "text": "thats my mums" },
-      { "from": "them", "text": "yes mia. my mums." } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "u told me u were at the gym till 11" },
-      { "from": "them", "text": "i never said that" },
-      { "from": "me", "image": true },
-      { "from": "me", "text": "ur own text. 9:41pm.", "status": "Read 1:14 AM" },
-      { "from": "them", "text": "this is why ur ex left u" },
-      { "from": "me", "text": "he cheated on me jay" },
-      { "from": "them", "text": "did he tho" },
-      { "from": "me", "text": "im crying" },
-      { "from": "them", "text": "and now ur the victim. classic." } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "lea sent u that pic didnt she" },
-      { "from": "them", "text": "shes obsessed w u. shes the problem." },
-      { "from": "me", "text": "shes my best friend" },
-      { "from": "them", "text": "do u know what its like being accused every day" },
-      { "from": "them", "text": "i havent eaten since yesterday" },
-      { "from": "me", "text": "im sorry" },
-      { "from": "them", "text": "im done arguing" },
-      { "from": "them", "text": "dont text me for a bit" },
-      { "from": "me", "text": "please", "status": "Delivered" } ] },
-
-    { "type": "chat", "timestamp": "Wednesday 11:48 PM", "messages": [
-      { "from": "me", "text": "i shouldnt have gone through ur phone" },
-      { "from": "me", "text": "that was wrong of me" },
-      { "from": "me", "text": "im sorry", "tapback": "heart", "status": "Read 11:49 PM" },
-      { "from": "me", "ts": "Thursday 1:52 AM" },
-      { "from": "them", "text": "u up" },
-      { "from": "them", "text": "made u smth" },
-      { "from": "them", "link": { "title": "For Mia", "domain": "tryethos.io" } } ] },
-
-    { "type": "chat", "timestamp": "Thursday 9:14 AM", "messages": [
-      { "from": "me", "text": "LEA he made me a whole website" },
-      { "from": "me", "text": "12 reasons he loves me. it played music 😭" },
-      { "from": "me", "text": "we're okay now" },
-      { "from": "them", "text": "mia" },
-      { "from": "them", "text": "please dont hate me" },
-      { "from": "them", "image": true },
-      { "from": "them", "text": "he sent me the exact same one" },
-      { "from": "them", "text": "2 weeks ago" } ] }
+    {
+      "type": "chat",
+      "timestamp": "Today 1:06 AM",
+      "messages": [
+        {
+          "from": "me",
+          "image": true
+        },
+        {
+          "from": "me",
+          "text": "who is she"
+        },
+        {
+          "from": "me",
+          "text": "and dont lie to me jay",
+          "status": "Read 1:06 AM"
+        },
+        {
+          "from": "them",
+          "typing": true
+        },
+        {
+          "from": "them",
+          "text": "why were u on my phone"
+        },
+        {
+          "from": "me",
+          "text": "answer the question"
+        },
+        {
+          "from": "them",
+          "text": "thats not even me"
+        },
+        {
+          "from": "me",
+          "text": "its ur jacket. and ur watch."
+        },
+        {
+          "from": "them",
+          "text": "ur seeing things again"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "ok its me but its nothing"
+        },
+        {
+          "from": "me",
+          "text": "u literally just said it wasnt u"
+        },
+        {
+          "from": "me",
+          "text": "WHATS HER NAME"
+        },
+        {
+          "from": "them",
+          "text": "sofia"
+        },
+        {
+          "from": "me",
+          "text": "the tag on the pic says jess"
+        },
+        {
+          "from": "them",
+          "text": "thats her middle name"
+        },
+        {
+          "from": "me",
+          "text": "why is she in ur bed"
+        },
+        {
+          "from": "them",
+          "text": "thats my mums"
+        },
+        {
+          "from": "them",
+          "text": "yes mia. my mums."
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "u told me u were at the gym till 11"
+        },
+        {
+          "from": "them",
+          "text": "i never said that"
+        },
+        {
+          "from": "me",
+          "image": true
+        },
+        {
+          "from": "me",
+          "text": "ur own text. 9:41pm.",
+          "status": "Read 1:14 AM"
+        },
+        {
+          "from": "them",
+          "text": "this is why ur ex left u"
+        },
+        {
+          "from": "me",
+          "text": "he cheated on me jay"
+        },
+        {
+          "from": "them",
+          "text": "did he tho"
+        },
+        {
+          "from": "me",
+          "text": "im crying"
+        },
+        {
+          "from": "them",
+          "text": "and now ur the victim. classic."
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "lea sent u that pic didnt she"
+        },
+        {
+          "from": "them",
+          "text": "shes obsessed w u. shes the problem."
+        },
+        {
+          "from": "me",
+          "text": "shes my best friend"
+        },
+        {
+          "from": "them",
+          "text": "do u know what its like being accused every day"
+        },
+        {
+          "from": "them",
+          "text": "i havent eaten since yesterday"
+        },
+        {
+          "from": "me",
+          "text": "im sorry"
+        },
+        {
+          "from": "them",
+          "text": "im done arguing"
+        },
+        {
+          "from": "them",
+          "text": "dont text me for a bit"
+        },
+        {
+          "from": "me",
+          "text": "please",
+          "status": "Delivered"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Wednesday 11:48 PM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "i shouldnt have gone through ur phone"
+        },
+        {
+          "from": "me",
+          "text": "that was wrong of me"
+        },
+        {
+          "from": "me",
+          "text": "im sorry",
+          "tapback": "heart",
+          "status": "Read 11:49 PM"
+        },
+        {
+          "from": "me",
+          "ts": "Thursday 1:52 AM"
+        },
+        {
+          "from": "them",
+          "text": "u up"
+        },
+        {
+          "from": "them",
+          "text": "made u smth"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "For Mia",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Mia"
+          }
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Thursday 9:14 AM",
+      "messages": [
+        {
+          "from": "me",
+          "text": "LEA he made me a whole website"
+        },
+        {
+          "from": "me",
+          "text": "12 reasons he loves me. it played music 😭"
+        },
+        {
+          "from": "me",
+          "text": "we're okay now"
+        },
+        {
+          "from": "them",
+          "text": "mia"
+        },
+        {
+          "from": "them",
+          "text": "please dont hate me"
+        },
+        {
+          "from": "them",
+          "image": true
+        },
+        {
+          "from": "them",
+          "text": "he sent me the exact same one"
+        },
+        {
+          "from": "them",
+          "text": "2 weeks ago"
+        }
+      ]
+    }
   ]
 }

@@ -46,6 +46,31 @@ What we do differently now:
 - Light beats dark. The dark stories in this folder, 01 especially, are the weakest bets. Post
   the light ones first.
 
+## Comments are designed, not hoped for
+
+A post that asks for nothing gets nothing. Every post ends on something the viewer answers:
+
+- **A question with two sides.** "green flag or bare minimum?", "rate his apology 1-10",
+  "whats ur tell". An easy answer that people disagree about. The disagreement is the
+  engagement.
+- **A topic people already argue about.** Posting your partner, exes texting, "im fine.",
+  apologies. You don't have to start the argument, just give it somewhere to happen.
+- **A cliffhanger that becomes a part 2.** Part 1 ends on the link, unopened: "should i open
+  it". The comments fill with "OPEN IT" and "part 2", and part 2 inherits all of them.
+  "Part 2" is the most reliable comment on the app.
+- **Reply in character, and don't settle it.** The longer people argue, the further the post
+  travels.
+
+## The screenshots have to pass for real
+
+People can tell a fake iMessage in half a second, and the moment they can, nobody comments.
+The renderer draws iOS 18 Messages at @3x: 17pt text, 18pt corners, the red heart and the
+other colour Tapbacks, "Today" and "Read" in semibold. It draws link previews the way
+iMessage does, as a grey card with the preview image on top and the title and domain below.
+The title is exactly what the product sends: the Title field from the editor ("my
+paragraph"), or "Bella, someone made you something 💌" when it's left empty. So every link in
+a carousel is one the viewer could actually send.
+
 ## The psychology, in the order it happens
 
 **1. The hook is an open loop.** People are driven to finish what they started (the
@@ -136,6 +161,11 @@ had a side to take.
 The 22-slide cut of the same story was better written and worse to post. Every slide past the
 sixth costs viewers.
 
+Carousel 19 (the pasta) got no likes. Pasta has no stakes and nothing to take a side on, the
+gift was the point of the story instead of a move in it, and the rendering gave it away: a blue
+Tapback heart and a link drawn as a bubble, neither of which iOS shows. The renderer is fixed
+and 24 to 28 are built for comments.
+
 Carousel 06 first ended with him asking her to move in, keys in her coat pocket, and 04 with
 him moving countries for a job. Neither is something this audience can do, so both read as
 written. 06 is now the first "i love you" and 04 is three months of extra shifts for one flight.
@@ -177,5 +207,10 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 21 | night babe | identification (no product) | none | none |
 | 22 | everything i deleted | identification (dry texter) | Text Thread | Gingham |
 | 23 | the fringe | identification (no product) | none | none |
+| 24 | green flag or bare minimum | debate (no product) | none | none |
+| 25 | where i post u · part 1 | debate + cliffhanger | Museum (in part 2) | Lovecore |
+| 26 | where i post u · part 2 | payoff | Museum | Lovecore |
+| 27 | im fine. | "whats ur tell" (no product) | none | none |
+| 28 | rate his apology | "rate it 1-10" | The Letter (free) | Classic |
 
 06 to 18 are the short ones. 19 to 23 follow the 3.1M post: pure banter, product as one move or not at all. Post those first.
