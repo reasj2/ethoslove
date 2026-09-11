@@ -5,6 +5,7 @@ import { Check, Loader2 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { toast } from "sonner";
 import type { GiftLocale } from "@/lib/gift/schema";
+import { currentRef } from "@/lib/attribution/ref";
 import {
   PRODUCTS,
   PRODUCT_ORDER,
@@ -49,7 +50,7 @@ export function PricingCards({
     const res = await fetch("/api/stripe/checkout", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({ product, templateSlugs: slugs, currency, returnTo, locale }),
+      body: JSON.stringify({ product, templateSlugs: slugs, currency, returnTo, locale, ref: currentRef() }),
     });
     const json = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
     setBusy(false);

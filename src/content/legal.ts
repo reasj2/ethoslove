@@ -13,7 +13,7 @@ export const LEGAL_ENTITY = {
   registeredAt: "27 March 2026",
 } as const;
 
-export const LEGAL_UPDATED = "2026-09-06";
+export const LEGAL_UPDATED = "2026-09-11";
 
 export type LegalSection = { heading: string; paragraphs: string[] };
 export type LegalDoc = { title: string; intro: string; sections: LegalSection[] };
@@ -214,7 +214,7 @@ const privacyEn: LegalDoc = {
       paragraphs: [
         "Account data: your email address, your name if you give it, your chosen language, sign-in tokens, and — if you sign in with Google or Apple — the identifier and basic profile those providers share.",
         "Gift content: the names, messages, photos, audio, video, captions, dates and settings you add to a gift. Photos are resized and re-encoded on your device before upload; we don't keep the originals or their metadata (EXIF, location).",
-        "Purchase data: what you bought, when, the amount and currency, and Stripe's identifiers for the transaction. Your card details go directly to Stripe; we never receive them.",
+        "Purchase data: what you bought, when, the amount and currency, the link that brought you to us (such as a gift you received or one of our posts), and Stripe's identifiers for the transaction. Your card details go directly to Stripe; we never receive them.",
         "Technical and usage data: IP address, browser and device type, pages visited and actions taken, error reports. Product analytics are collected only with your consent (see Cookies).",
       ],
     },
@@ -284,7 +284,7 @@ const privacyEs: LegalDoc = {
       paragraphs: [
         "Datos de cuenta: tu correo electrónico, tu nombre si lo indicas, el idioma elegido, tokens de acceso y, si inicias sesión con Google o Apple, el identificador y el perfil básico que esos proveedores comparten.",
         "Contenido del regalo: los nombres, mensajes, fotos, audio, vídeo, pies de foto, fechas y ajustes que añades a un regalo. Las fotos se redimensionan y recodifican en tu dispositivo antes de subirse; no conservamos los originales ni sus metadatos (EXIF, ubicación).",
-        "Datos de compra: qué compraste, cuándo, el importe y la moneda, y los identificadores de Stripe de la transacción. Los datos de tu tarjeta van directamente a Stripe; nunca los recibimos.",
+        "Datos de compra: qué compraste, cuándo, el importe y la moneda, el enlace por el que llegaste (por ejemplo, un regalo que recibiste o una de nuestras publicaciones) y los identificadores de Stripe de la transacción. Los datos de tu tarjeta van directamente a Stripe; nunca los recibimos.",
         "Datos técnicos y de uso: dirección IP, tipo de navegador y dispositivo, páginas visitadas y acciones realizadas, informes de errores. Las analíticas de producto solo se recogen con tu consentimiento (ver Cookies).",
       ],
     },

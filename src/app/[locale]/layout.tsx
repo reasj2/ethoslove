@@ -6,6 +6,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/config/site";
 import { Providers } from "@/components/shared/providers";
+import { RefCapture } from "@/components/shared/ref-capture";
 import "../globals.css";
 
 const sans = Schibsted_Grotesk({
@@ -97,6 +98,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[lo
       className={`${sans.variable} ${fraunces.variable} ${display.variable} ${mono.variable} ${caveat.variable} ${coverScript.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
+        <RefCapture />
         <NextIntlClientProvider>
           <Providers>{children}</Providers>
         </NextIntlClientProvider>

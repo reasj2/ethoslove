@@ -5,6 +5,7 @@ import { AlertCircle, Check, Loader2, Lock } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import type { GiftLocale } from "@/lib/gift/schema";
 import type { TemplateManifest } from "@/templates/types";
+import { currentRef } from "@/lib/attribution/ref";
 import { decidePublish, readinessProblems, premiumExtras } from "@/lib/gift/publish";
 import { PRODUCTS, currencyFor, formatAmount, type ProductId } from "@/lib/pricing/products";
 import { toast } from "sonner";
@@ -155,6 +156,7 @@ export function PublishSheet({
           currency,
           returnTo: next,
           locale,
+          ref: currentRef(),
         }),
       });
       const json = (await res.json().catch(() => ({}))) as { url?: string };

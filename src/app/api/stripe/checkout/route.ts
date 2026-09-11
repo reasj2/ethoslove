@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { z } from "zod";
 import { SITE } from "@/config/site";
+import { REF_PATTERN } from "@/lib/attribution/ref";
 import { PRODUCTS, currencyFor, isProductId, type Currency } from "@/lib/pricing/products";
 import { getStripe, resolvePriceId } from "@/lib/stripe/server";
 import { getSupabaseServerClient } from "@/lib/supabase/server";
@@ -14,6 +15,8 @@ const input = z.object({
   returnTo: z.string().startsWith("/").optional(),
   currency: z.enum(["usd", "eur", "gbp"]).optional(),
   locale: z.enum(["en", "es"]).optional(),
+  // Where the buyer came from (lib/attribution/ref.ts). A malformed one is dropped, never an error.
+  ref: z.string().trim().toLowerCase().regex(REF_PATTERN).optional().catch(undefined),
 });
 
 /**
@@ -35,7 +38,7 @@ export async function POST(request: NextRequest) {
   const parsed = input.safeParse(await request.json().catch(() => null));
   if (!parsed.success || !isProductId(parsed.data.product))
     return NextResponse.json({ error: "invalid_input" }, { status: 400 });
-  const { product, returnTo } = parsed.data;
+  const { product, returnTo, ref } = parsed.data;
   const price = await resolvePriceId(stripe, product).catch(() => undefined);
   if (!price) return NextResponse.json({ error: "price_not_configured" }, { status: 503 });
 
@@ -101,6 +104,7 @@ export async function POST(request: NextRequest) {
       locale,
       product,
       template_slugs: slugs.join(","),
+      ...(ref ? { ref } : {}),
     },
     allow_promotion_codes: true,
     // Shared Stripe account: make the charge recognisable on statements.
