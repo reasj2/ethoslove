@@ -1,0 +1,37 @@
+{
+  "slides": [
+    {
+      "type": "photo",
+      "note": "her, crying, with the hook: hes 1,071 miles away and still made me cry on my birthday"
+    },
+    {
+      "type": "chat",
+      "timestamp": "Yesterday 22:47",
+      "messages": [
+        { "from": "me", "text": "i hate that ur not here tomorrow" },
+        { "from": "them", "text": "i know" },
+        { "from": "them", "text": "how far is it again" },
+        { "from": "me", "text": "1,071 miles" },
+        { "from": "me", "text": "i checked today" },
+        { "from": "them", "text": "ok" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 00:00",
+      "messages": [
+        { "from": "them", "text": "happy birthday" },
+        { "from": "them", "text": "1,071 miles" },
+        { "from": "them", "text": "i checked too" },
+        {
+          "from": "them",
+          "link": { "title": "come find me", "domain": "tryethos.io", "image": "og", "name": "Hannah" }
+        }
+      ]
+    },
+    {
+      "type": "gift",
+      "note": "Passport: the globe, with the route drawing itself from Lisbon to Manchester"
+    }
+  ]
+}

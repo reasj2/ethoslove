@@ -1,0 +1,36 @@
+{
+  "slides": [
+    {
+      "type": "photo",
+      "note": "him, crying in the car, with the hook: she found the song from the first time i drove her home"
+    },
+    {
+      "type": "chat",
+      "timestamp": "Yesterday 23:40",
+      "messages": [
+        { "from": "them", "text": "whats that song from the car" },
+        { "from": "me", "text": "what car" },
+        { "from": "them", "text": "the first time u drove me home" },
+        { "from": "me", "text": "why" },
+        { "from": "them", "text": "no reason" },
+        { "from": "me", "text": "u have never once asked something for no reason", "tapback": "haha" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 08:02",
+      "messages": [
+        { "from": "them", "text": "happy 1 year" },
+        { "from": "them", "text": "i found it" },
+        {
+          "from": "them",
+          "link": { "title": "the drive home", "domain": "tryethos.io", "image": "og", "name": "Ollie" }
+        }
+      ]
+    },
+    {
+      "type": "gift",
+      "note": "Vinyl: the record spinning on the turntable"
+    }
+  ]
+}

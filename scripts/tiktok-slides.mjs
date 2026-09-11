@@ -83,8 +83,9 @@ function html(slide) {
     .row.r{justify-content:flex-end}
     .row + .row{margin-top:6px}
     .row.l + .row.r, .row.r + .row.l{margin-top:28px}
-    /* iOS opens up space above a message that carries a Tapback, so the reaction never sits on the bubble above. */
-    .row.has-tap{margin-top:72px}
+    /* iOS opens up space above a message that carries a Tapback, so the reaction never sits on the bubble above,
+       including when the message above came from the other side. */
+    .row:has(.tap), .row.l + .row.r:has(.tap), .row.r + .row.l:has(.tap){margin-top:72px}
     .status{flex-basis:100%;text-align:right;color:#8e8e93;font-size:33px;margin-top:8px;padding-right:12px;letter-spacing:-.1px}
     .status b{font-weight:600}
 

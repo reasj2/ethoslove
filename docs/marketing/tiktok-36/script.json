@@ -1,0 +1,36 @@
+{
+  "slides": [
+    {
+      "type": "photo",
+      "note": "him, crying, with the hook: i told her men only get flowers at their funeral"
+    },
+    {
+      "type": "chat",
+      "timestamp": "Yesterday 21:14",
+      "messages": [
+        { "from": "me", "text": "saw a tiktok that said men only get flowers at their funeral" },
+        { "from": "them", "text": "thats so sad" },
+        { "from": "me", "text": "its true tho" },
+        { "from": "me", "text": "never had any" },
+        { "from": "them", "text": "wait never??" },
+        { "from": "me", "text": "never", "status": "Read 21:16" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 07:30",
+      "messages": [
+        { "from": "them", "text": "happy birthday" },
+        { "from": "them", "text": "no funeral required" },
+        {
+          "from": "them",
+          "link": { "title": "flowers for sam 🌷", "domain": "tryethos.io", "image": "og", "name": "Sam" }
+        }
+      ]
+    },
+    {
+      "type": "gift",
+      "note": "Bloom: the tulip fully open, his photos floating up around it"
+    }
+  ]
+}

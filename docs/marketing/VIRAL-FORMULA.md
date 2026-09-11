@@ -78,6 +78,23 @@ questions.
 - **Some go the other way.** She makes it for him (his birthday, 33). "Men deserve this too" is
   a comment section on its own, and it shows girls they can buy.
 
+## The crying-photo opener
+
+35 to 38 open on a photo of someone crying, then two chat slides, then the gift. Four slides.
+
+- **The photo is the ending, shown first.** A face in tears opens the loop harder than any
+  first line: the viewer has to find out what did it. The hook on the photo says what
+  happened without saying how: "i told her men only get flowers at their funeral".
+- **Happy tears, not sad ones.** Smiling while crying says something good happened. Real
+  distress makes people worried instead of curious, and they scroll.
+- **A real selfie.** Front camera, bad light, messy hair. Stock and AI faces get called out in
+  the comments, and TikTok wants AI images labelled.
+- **The gift is the last slide,** straight after the link card, so "what website" is the first
+  thing people ask.
+- **Both sides.** Two are hers and two are his. On his, the blue messages are his and she sends
+  the link. A boy crying over a gift gets "men deserve this too" and girls tagging their
+  boyfriends, and it shows girls this is something they can make.
+
 ## The screenshots have to pass for real
 
 People can tell a fake iMessage in half a second, and the moment they can, nobody comments.
@@ -235,5 +252,9 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 32 | these ones dont die | Valentine's | Bloom | Lovecore |
 | 33 | for the boy who wanted nothing | his birthday | Arcade | Starry |
 | 34 | no presents (i lied) | first Christmas | The Letter (free) | Classic |
+| 35 | come find me | her birthday, long distance (her side) | Passport | Starry |
+| 36 | no funeral required | his birthday (his side) | Bloom | Garden |
+| 37 | why i like u | 6 months (her side) | Jar of Reasons | Gingham |
+| 38 | the drive home | 1 year (his side) | Vinyl | Starry |
 
-06 to 18 are the short ones. 19 to 28 follow the 3.1M post: pure banter, with the link as one move in it. 29 to 34 put that banter around real gift occasions, and are the ones to post first.
+06 to 18 are the short ones. 19 to 28 follow the 3.1M post: pure banter, with the link as one move in it. 29 to 34 put that banter around real gift occasions. 35 to 38 open on a crying photo and alternate her side and his, and are the ones to post first.

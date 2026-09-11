@@ -36,6 +36,7 @@ fast, and the whole pitch is that it's real.
 | 1 · couple | the text-story carousels, as her | `tryethos.io/?ref=tt-couple` |
 | 2 · gift ideas | the problem-first slideshows | `tryethos.io/?ref=tt-ideas` |
 | 3 · reactions (later) | opening-the-gift videos | `tryethos.io/?ref=tt-react` |
+| 4 · him (optional) | his side of the story: 33, 36, 38 | `tryethos.io/?ref=tt-him` |
 
 The `?ref=` is how you tell which account makes money. The site carries it through to checkout,
 and `node scripts/revenue-by-ref.mjs` shows checkouts started, paid, and revenue per ref. Keep

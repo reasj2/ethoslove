@@ -1,0 +1,37 @@
+{
+  "slides": [
+    {
+      "type": "photo",
+      "note": "her, crying, with the hook: i asked him why he even likes me. hes had a list since week 2"
+    },
+    {
+      "type": "chat",
+      "timestamp": "Yesterday 23:12",
+      "messages": [
+        { "from": "me", "text": "why do u even like me" },
+        { "from": "them", "text": "no idea" },
+        { "from": "me", "text": "JOSH" },
+        { "from": "them", "text": "joking" },
+        { "from": "them", "text": "i have a list" },
+        { "from": "me", "text": "since when" },
+        { "from": "them", "text": "week 2", "tapback": "heart" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 09:03",
+      "messages": [
+        { "from": "them", "text": "happy 6 months" },
+        { "from": "them", "text": "u asked" },
+        {
+          "from": "them",
+          "link": { "title": "why i like u", "domain": "tryethos.io", "image": "og", "name": "Grace" }
+        }
+      ]
+    },
+    {
+      "type": "gift",
+      "note": "Jar of Reasons: the jar, with note #1 unfolded"
+    }
+  ]
+}
