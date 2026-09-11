@@ -32,6 +32,9 @@ export function TemplateFields({ mod, locale }: { mod: TemplateModule; locale: G
         const label = m?.label ?? humanize(d.key);
         const value = fields[d.key] ?? d.defaultValue ?? "";
         const id = `field-${d.key}`;
+        const Custom = mod.fieldEditors?.[d.key];
+        if (Custom)
+          return <Custom key={d.key} id={id} label={label} help={m?.help} value={value} onChange={(v: unknown) => patchFields({ [d.key]: v })} locale={locale} />;
         switch (d.widget) {
           case "select": {
             const options = (d.options ?? []).map((o) => ({ value: o, label: m?.options?.[o] ?? humanize(o) }));

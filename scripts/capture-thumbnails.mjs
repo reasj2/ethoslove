@@ -155,6 +155,14 @@ const SCRIPTS = {
     await page.waitForTimeout(3000);
     return poster;
   },
+  bouquet: async (page) => {
+    await page.getByRole("button", { name: /open the card/i }).waitFor({ timeout: 20000 });
+    await page.waitForTimeout(800);
+    const poster = await page.screenshot();
+    await page.getByRole("button", { name: /open the card/i }).click();
+    await page.waitForTimeout(4000);
+    return poster;
+  },
   "the-letter": async (page) => {
     await page.getByRole("button", { name: /tap the seal/i }).waitFor({ timeout: 15000 });
     await page.waitForTimeout(1400);

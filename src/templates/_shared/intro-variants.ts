@@ -60,6 +60,7 @@ const BY_SLUG: Record<string, IntroVariant> = {
   vinyl: "curtain",
   museum: "curtain",
   bloom: "petals",
+  bouquet: "petals",
   "fortune-cookie": "petals",
   "scratch-card": "petals",
   arcade: "petals",

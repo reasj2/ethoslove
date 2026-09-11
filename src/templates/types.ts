@@ -59,11 +59,24 @@ export type FieldMeta = {
   placeholder?: string;
 };
 
+/** Props for a template's own editor of one field, when the generated form can't express it. */
+export type FieldEditorProps<T = unknown> = {
+  id: string;
+  label: string;
+  help?: string;
+  value: T;
+  onChange: (value: T) => void;
+  locale: GiftLocale;
+};
+
 export interface TemplateModule<TFields = Record<string, unknown>> {
   manifest: TemplateManifest;
   fieldsSchema: z.ZodType<TFields>;
   /** Labels / help for the template-specific fields, per locale. Keys match the schema. */
   fieldMeta?: Record<GiftLocale, Record<string, FieldMeta>>;
+  /** Custom editors, keyed like the schema, for fields the generated form can't express. */
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  fieldEditors?: Record<string, ComponentType<FieldEditorProps<any>>>;
   /** One complete demo per locale; the gallery, editor and detail page use it. */
   demoData: Record<GiftLocale, GiftData<TFields>>;
   Template: ComponentType<TemplateProps<TFields>>;

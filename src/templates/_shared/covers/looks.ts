@@ -152,6 +152,7 @@ export function defaultCoverFor(slug: string): CoverId {
       return "polka";
     case "our-timeline":
     case "bloom":
+    case "bouquet":
       return "garden";
     default:
       return "gingham";
