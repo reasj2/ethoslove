@@ -41,8 +41,10 @@ What we do differently now:
   won't save it.
 - When the product appears, it's one move in the banter. The link card is how someone makes
   up, not what the story is about.
-- Two in every five posts have no product at all (21, 23). They build the account that the
-  product posts need. The link lives in the bio.
+- **The link is in every carousel.** A post nobody can trace back to tryethos.io grows an
+  account but sells nothing. Every story reaches a point where someone sends the link, and the
+  link card is the last thing on that slide, at the bottom of the screenshot, where the eye
+  lands before the swipe.
 - Light beats dark. The dark stories in this folder, 01 especially, are the weakest bets. Post
   the light ones first.
 
@@ -204,13 +206,13 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 18 | the owl | envy, amusement | Jar of Reasons (Spanish) | Garden |
 | 19 | the pasta | identification (she's the one sorry) | Jar of Reasons | Picnic |
 | 20 | k | identification, callback | The Letter (free) | Classic |
-| 21 | night babe | identification (no product) | none | none |
+| 21 | night babe | identification | Vinyl + voice note | Starry |
 | 22 | everything i deleted | identification (dry texter) | Text Thread | Gingham |
-| 23 | the fringe | identification (no product) | none | none |
-| 24 | green flag or bare minimum | debate (no product) | none | none |
+| 23 | the fringe | identification | Museum | Garden |
+| 24 | green flag or bare minimum | debate | Birthday Cinema | Polka |
 | 25 | where i post u · part 1 | debate + cliffhanger | Museum (in part 2) | Lovecore |
 | 26 | where i post u · part 2 | payoff | Museum | Lovecore |
-| 27 | im fine. | "whats ur tell" (no product) | none | none |
+| 27 | im fine. | "whats ur tell" | Jar of Reasons | Picnic |
 | 28 | rate his apology | "rate it 1-10" | The Letter (free) | Classic |
 
-06 to 18 are the short ones. 19 to 23 follow the 3.1M post: pure banter, product as one move or not at all. Post those first.
+06 to 18 are the short ones. 19 to 28 follow the 3.1M post: pure banter, with the link as one move in it, at the bottom of its slide.

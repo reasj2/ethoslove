@@ -84,26 +84,26 @@
         },
         {
           "from": "them",
+          "text": "every text i typed and didnt send"
+        },
+        {
+          "from": "them",
           "link": {
             "title": "everything i deleted",
             "domain": "tryethos.io",
             "image": "og",
             "name": "Evie"
           }
-        },
-        {
-          "from": "me",
-          "text": "callum what is this"
-        },
-        {
-          "from": "them",
-          "text": "every text i typed and didnt send"
         }
       ]
     },
     {
       "type": "chat",
       "messages": [
+        {
+          "from": "me",
+          "text": "callum"
+        },
         {
           "from": "me",
           "text": "theres like 60 messages in here"

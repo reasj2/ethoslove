@@ -76,20 +76,16 @@
         },
         {
           "from": "them",
+          "text": "this is mine"
+        },
+        {
+          "from": "them",
           "link": {
             "title": "my paragraph",
             "domain": "tryethos.io",
             "image": "og",
             "name": "Amy"
           }
-        },
-        {
-          "from": "me",
-          "text": "what"
-        },
-        {
-          "from": "them",
-          "text": "this is mine"
         }
       ]
     },

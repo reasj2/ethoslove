@@ -1,23 +1,78 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 18:03", "messages": [
-      { "from": "me", "text": "why do u never post me" },
-      { "from": "them", "text": "i dont post anything" },
-      { "from": "me", "text": "u posted ur deadlift" },
-      { "from": "them", "text": "that was a pb" },
-      { "from": "me", "text": "and im not??" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "u deserve better than my story" },
-      { "from": "them", "text": "40 views and 30 of them are my mum" },
-      { "from": "me", "text": "thats not an answer" },
-      { "from": "them", "text": "ok" },
-      { "from": "them", "text": "give me till tonight" } ] },
-
-    { "type": "chat", "timestamp": "Today 22:47", "messages": [
-      { "from": "them", "link": { "title": "Bella, someone made you something 💌", "domain": "tryethos.io", "image": "og", "name": "Bella" } },
-      { "from": "them", "text": "this is where i post u" },
-      { "from": "me", "text": "what is this" },
-      { "from": "them", "text": "open it" } ] }
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "why do u never post me"
+        },
+        {
+          "from": "them",
+          "text": "i dont post anything"
+        },
+        {
+          "from": "me",
+          "text": "u posted ur deadlift"
+        },
+        {
+          "from": "them",
+          "text": "that was a pb"
+        },
+        {
+          "from": "me",
+          "text": "and im not??"
+        }
+      ],
+      "timestamp": "Today 18:03"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "u deserve better than my story"
+        },
+        {
+          "from": "them",
+          "text": "40 views and 30 of them are my mum"
+        },
+        {
+          "from": "me",
+          "text": "thats not an answer"
+        },
+        {
+          "from": "them",
+          "text": "ok"
+        },
+        {
+          "from": "them",
+          "text": "give me till tonight"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "done"
+        },
+        {
+          "from": "them",
+          "text": "this is where i post u"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "Bella, someone made you something 💌",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Bella"
+          }
+        }
+      ],
+      "timestamp": "Today 22:47"
+    }
   ]
 }

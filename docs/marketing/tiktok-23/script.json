@@ -1,39 +1,147 @@
 {
   "slides": [
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "u laughed" },
-      { "from": "them", "text": "i didnt" },
-      { "from": "me", "text": "u laughed at my fringe" },
-      { "from": "them", "text": "i smiled" },
-      { "from": "me", "text": "loudly" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "i knew i shouldnt have cut it" },
-      { "from": "them", "text": "its nice" },
-      { "from": "me", "text": "u said it was a choice" },
-      { "from": "them", "text": "a good choice" },
-      { "from": "me", "text": "kian" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "its growing on me" },
-      { "from": "me", "text": "is that a joke" },
-      { "from": "them", "text": "a little" },
-      { "from": "me", "text": "im not speaking to u" },
-      { "from": "them", "text": "ok" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "holly" },
-      { "from": "them", "text": "hollyyy" },
-      { "from": "them", "text": "u look like a french film" },
-      { "from": "me", "text": "stop" },
-      { "from": "them", "text": "a sad french film. but still" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "come here" },
-      { "from": "me", "text": "no" },
-      { "from": "them", "text": "i want to see it properly" },
-      { "from": "me", "text": "why" },
-      { "from": "them", "text": "i miss ur face. fringe and all" },
-      { "from": "me", "text": "coming" } ] }
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "u laughed"
+        },
+        {
+          "from": "them",
+          "text": "i didnt"
+        },
+        {
+          "from": "me",
+          "text": "u laughed at my fringe"
+        },
+        {
+          "from": "them",
+          "text": "i smiled"
+        },
+        {
+          "from": "me",
+          "text": "loudly"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "i knew i shouldnt have cut it"
+        },
+        {
+          "from": "them",
+          "text": "its nice"
+        },
+        {
+          "from": "me",
+          "text": "u said it was a choice"
+        },
+        {
+          "from": "them",
+          "text": "a good choice"
+        },
+        {
+          "from": "me",
+          "text": "kian"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "its growing on me"
+        },
+        {
+          "from": "me",
+          "text": "is that a joke"
+        },
+        {
+          "from": "them",
+          "text": "a little"
+        },
+        {
+          "from": "me",
+          "text": "im not speaking to u"
+        },
+        {
+          "from": "them",
+          "text": "ok"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "holly"
+        },
+        {
+          "from": "them",
+          "text": "hollyyy"
+        },
+        {
+          "from": "them",
+          "text": "u look like a french film"
+        },
+        {
+          "from": "me",
+          "text": "stop"
+        },
+        {
+          "from": "them",
+          "text": "a sad french film. but still"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "ok i made u one"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "a sad french film",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Holly"
+          }
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "KIAN"
+        },
+        {
+          "from": "me",
+          "text": "why am i in a museum"
+        },
+        {
+          "from": "them",
+          "text": "every sad french film has a museum scene"
+        },
+        {
+          "from": "them",
+          "text": "come here. i miss ur face. fringe and all"
+        },
+        {
+          "from": "me",
+          "text": "coming"
+        }
+      ]
+    }
   ]
 }

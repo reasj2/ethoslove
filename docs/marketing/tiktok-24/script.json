@@ -1,26 +1,111 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 19:42", "messages": [
-      { "from": "them", "text": "my ex just texted me happy birthday" },
-      { "from": "them", "text": "havent replied" },
-      { "from": "them", "text": "wanted u to know before u saw it anywhere" },
-      { "from": "me", "text": "oh" },
-      { "from": "me", "text": "ok" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "why are u telling me" },
-      { "from": "them", "text": "if it was the other way round id want to know" },
-      { "from": "me", "text": "are u gonna reply" },
-      { "from": "them", "text": "no" },
-      { "from": "them", "text": "u can if u want lol" },
-      { "from": "me", "text": "LMAOO" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "what would i even say" },
-      { "from": "them", "text": "thanks but hes taken" },
-      { "from": "me", "text": "hes taken?" },
-      { "from": "them", "text": "very", "tapback": "heart" },
-      { "from": "me", "text": "by who" },
-      { "from": "them", "text": "ur annoying" } ] }
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "my ex just texted me happy birthday"
+        },
+        {
+          "from": "them",
+          "text": "havent replied"
+        },
+        {
+          "from": "them",
+          "text": "wanted u to know before u saw it anywhere"
+        },
+        {
+          "from": "me",
+          "text": "oh"
+        },
+        {
+          "from": "me",
+          "text": "ok"
+        }
+      ],
+      "timestamp": "Today 19:42"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "why are u telling me"
+        },
+        {
+          "from": "them",
+          "text": "if it was the other way round id want to know"
+        },
+        {
+          "from": "me",
+          "text": "are u gonna reply"
+        },
+        {
+          "from": "them",
+          "text": "no"
+        },
+        {
+          "from": "them",
+          "text": "u can if u want lol"
+        },
+        {
+          "from": "me",
+          "text": "LMAOO"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "what would i even say"
+        },
+        {
+          "from": "them",
+          "text": "thanks but hes taken"
+        },
+        {
+          "from": "me",
+          "text": "hes taken?"
+        },
+        {
+          "from": "them",
+          "text": "very",
+          "tapback": "heart"
+        },
+        {
+          "from": "me",
+          "text": "by who"
+        },
+        {
+          "from": "them",
+          "text": "ur annoying"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "anyway"
+        },
+        {
+          "from": "me",
+          "text": "heres one from ur actual girlfriend"
+        },
+        {
+          "from": "me",
+          "link": {
+            "title": "happy birthday ryan",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Ryan"
+          }
+        }
+      ]
+    }
   ]
 }

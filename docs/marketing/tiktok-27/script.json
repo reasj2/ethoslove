@@ -1,24 +1,99 @@
 {
   "slides": [
-    { "type": "chat", "timestamp": "Today 16:21", "messages": [
-      { "from": "me", "text": "im fine." },
-      { "from": "them", "text": "ok whats wrong" },
-      { "from": "me", "text": "nothing." },
-      { "from": "them", "text": "two full stops" },
-      { "from": "them", "text": "im coming over" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "me", "text": "dont" },
-      { "from": "them", "text": "already on the bus" },
-      { "from": "me", "text": "i said im fine" },
-      { "from": "them", "text": "u never use full stops" },
-      { "from": "them", "text": "u use full stops when ur on the floor" },
-      { "from": "me", "text": "how do u know im on the floor" } ] },
-
-    { "type": "chat", "messages": [
-      { "from": "them", "text": "20 mins" },
-      { "from": "them", "text": "big chocolate or the good crisps" },
-      { "from": "me", "text": "both" },
-      { "from": "them", "text": "knew it", "tapback": "heart" } ] }
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "im fine."
+        },
+        {
+          "from": "them",
+          "text": "ok whats wrong"
+        },
+        {
+          "from": "me",
+          "text": "nothing."
+        },
+        {
+          "from": "them",
+          "text": "two full stops"
+        },
+        {
+          "from": "them",
+          "text": "im coming over"
+        }
+      ],
+      "timestamp": "Today 16:21"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "dont"
+        },
+        {
+          "from": "them",
+          "text": "already on the bus"
+        },
+        {
+          "from": "me",
+          "text": "i said im fine"
+        },
+        {
+          "from": "them",
+          "text": "u never use full stops"
+        },
+        {
+          "from": "them",
+          "text": "u use full stops when ur on the floor"
+        },
+        {
+          "from": "me",
+          "text": "how do u know im on the floor"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "20 mins"
+        },
+        {
+          "from": "them",
+          "text": "big chocolate or the good crisps"
+        },
+        {
+          "from": "me",
+          "text": "both"
+        },
+        {
+          "from": "them",
+          "text": "knew it",
+          "tapback": "heart"
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "open this till i get there"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "for the floor",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Katie"
+          }
+        }
+      ]
+    }
   ]
 }

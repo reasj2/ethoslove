@@ -72,12 +72,7 @@
         {
           "from": "them",
           "text": "how"
-        }
-      ]
-    },
-    {
-      "type": "chat",
-      "messages": [
+        },
         {
           "from": "me",
           "link": {
@@ -86,7 +81,12 @@
             "image": "og",
             "name": "Jake"
           }
-        },
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
         {
           "from": "them",
           "text": "what is this"

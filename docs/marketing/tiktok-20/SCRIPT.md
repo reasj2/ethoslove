@@ -1,13 +1,10 @@
 # TikTok carousel 20 · "k"
 
-She sends him a whole paragraph. He replies "k". She's furious. He says he's typing, and ten
-minutes later he sends her a letter titled "my paragraph". The last message is "k" again,
-and now it means everything.
+She sends a whole paragraph. He replies "k". Ten minutes of "im typing", then "u sent me a
+paragraph" / "this is mine" and the link, titled "my paragraph", at the bottom of the slide.
+It's a letter, signed "k.", and the last text is "k" again.
 
-Everyone has sent a paragraph and got "k" back. That recognition is what gets it saved, and
-the second "k" is what gets it shared.
-
-Her: Amy. Him: Noah. Five chat slides.
+Her: Amy. Him: Noah. Five chat slides. The link is the last thing on slide 4.
 
 ## The order
 
@@ -16,20 +13,17 @@ Her: Amy. Him: Noah. Five chat slides.
 | 1 | `slide-01.png` | her paragraph · "k" |
 | 2 | `slide-02.png` | "k??" · "i sent u a whole paragraph" · "and u said k" · "yea" · "noah" |
 | 3 | `slide-03.png` | "im actually upset" · "then say something" · "im typing" · "its been 10 minutes" |
-| 4 | `slide-04.png` | "u sent me a paragraph" · the link: "my paragraph" · "what" · "this is mine" |
+| 4 | `slide-04.png` | "ok" · "u sent me a paragraph" · "this is mine" · **the link: "my paragraph"** |
 | 5 | `slide-05.png` | "NOAH" · "this is not a paragraph this is a whole letter" · "im crying in the library" · "k" |
 
-No text over any slide. Optional: one screenshot of the letter between 4 and 5.
+Optional: one screenshot of the letter between 4 and 5.
 
 ## The gift
 
-The Letter at tryethos.io. **Free**, so anyone watching can send their own "paragraph" tonight.
+The Letter at tryethos.io. **Free**.
 
-**Editor fields:** Their name `Amy` · Your name `Noah` · Cover `Classic` (the letter opens
-with its own envelope) · Title `my paragraph` · Greeting `amy,` · Sign-off `k.` · Paper
-`Cream` · Desk `Linen` · Music: library "Quiet Hours"
-
-He signs the letter "k." That's the joke, and it's also the most romantic line in it.
+**Editor fields:** Their name `Amy` · Your name `Noah` · Title `my paragraph` · Cover `Classic` ·
+Greeting `amy,` · Sign-off `k.` · Paper `Cream` · Desk `Linen` · Music: library "Quiet Hours"
 
 **Message:**
 
@@ -45,8 +39,8 @@ He signs the letter "k." That's the joke, and it's also the most romantic line i
 
 ## Post
 
-Caption: `@noah he said k 💀 #fyp #couple #bf #relationship #imessage`
+Caption: `sent him a whole paragraph and he said k 💀 is k ever acceptable`
 
 - **Pin:** `he signed the letter "k." im keeping him`
-- **"the k at the end 😭"** → `it means i love u now`
+- **"k is never acceptable"** → `unless its this k`
 - **"what website"** → `ethos, its called the letter. its free`

@@ -1,14 +1,11 @@
 # TikTok carousel 23 · "the fringe"
 
-**No product in this one, on purpose,** like 21. It builds the account the product posts
-need. Link in bio.
+She got a fringe and he laughed ("i smiled" / "loudly"). It's "a choice", then "a good choice",
+then "growing on me". She stops speaking to him. He says she looks like a French film, "a sad
+french film. but still", and then makes her one: the link, "a sad french film", alone at the
+bottom of slide 5. It's a museum of her, fringe and all.
 
-She got a fringe. He laughed ("i smiled" / "loudly"). He calls it "a choice", then "a good
-choice", then says it's growing on him. She stops speaking to him. He keeps saying her name
-until she answers, tells her she looks like a French film, and asks her to come over because
-he misses her face, "fringe and all".
-
-Her: Holly. Him: Kian. Five chat slides.
+Her: Holly. Him: Kian. Six chat slides. The link is the last thing on slide 5.
 
 ## The order
 
@@ -18,15 +15,28 @@ Her: Holly. Him: Kian. Five chat slides.
 | 2 | `slide-02.png` | "i knew i shouldnt have cut it" · "its nice" · "u said it was a choice" · "a good choice" |
 | 3 | `slide-03.png` | "its growing on me" · "is that a joke" · "a little" · "im not speaking to u" · "ok" |
 | 4 | `slide-04.png` | "holly" · "hollyyy" · "u look like a french film" · "stop" · "a sad french film. but still" |
-| 5 | `slide-05.png` | "come here" · "no" · "i want to see it properly" · "i miss ur face. fringe and all" · "coming" |
+| 5 | `slide-05.png` | "ok i made u one" · **the link: "a sad french film"** |
+| 6 | `slide-06.png` | "KIAN" · "why am i in a museum" · "every sad french film has a museum scene" · "coming" |
 
-This has the 3.1M structure exactly, with the roles swapped: she's the one who's mad, he
-pesters, she caves.
+## The gift
+
+Museum at tryethos.io (premium).
+
+**Editor fields:** Their name `Holly` · Your name `Kian` · Title `a sad french film` · Cover
+`Garden` · Exhibition title `holly, with fringe` · Years on the plaques `2026` · Wall `Charcoal` ·
+Frames `Black` · Music: library "Quiet Hours"
+
+**Photos and their plaques:** `untitled (fringe), 2026. on loan from her mirror.` · `portrait
+of a woman who is not speaking to me` · `the fringe, day 3. it is growing on everyone.` ·
+`still my favourite face.`
+
+**Message:** `holly. every sad french film has a museum scene. this is yours. i miss ur face.
+fringe and all.`
 
 ## Post
 
-Caption: `@kian its growing on him apparently #fyp #couple #bf #fringe #imessage`
+Caption: `he laughed at my fringe. then made me this. do i forgive him? 😭`
 
 - **Pin:** `the fringe has grown on everyone now actually`
 - **"a sad french film 💀"** → `he has never seen a french film`
-- **"fringe and all 😭"** → `he's lucky he said that`
+- **"what website"** → `ethos, its called museum`
