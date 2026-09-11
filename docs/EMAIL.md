@@ -7,7 +7,9 @@ Two kinds of email leave the product, and they need the domain set up once.
 | Auth emails | Supabase (via your SMTP) | sign-in link + 6-digit code, confirm signup |
 | Product emails | the app, via Resend | welcome, "your gift was opened", reactions, receipts |
 
-Both go out as `Ethos <hello@tryethos.io>` once the steps below are done.
+Both go out as `Ethos <hello@tryethos.io>` once the steps below are done. Replies land on the
+contact address, `support@secuora.xyz` (`BRAND.supportEmail`), which is also the one shown in
+the footer and the legal pages.
 
 ## 1. Resend (10 minutes, free)
 

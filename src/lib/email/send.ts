@@ -4,6 +4,7 @@ import { Resend } from "resend";
 import { render } from "@react-email/render";
 import type { ReactElement } from "react";
 import { env, isConfigured } from "@/lib/env";
+import { BRAND } from "@/config/brand";
 
 let client: Resend | null = null;
 
@@ -20,7 +21,7 @@ export async function sendEmail({ to, subject, react }: { to: string; subject: s
   try {
     client ??= new Resend(env.resendApiKey);
     const html = await render(react);
-    const { data, error } = await client.emails.send({ from: env.emailFrom, to, subject, html });
+    const { data, error } = await client.emails.send({ from: env.emailFrom, to, subject, html, replyTo: BRAND.supportEmail });
     if (error) return { ok: false, error: error.message };
     return { ok: true, id: data?.id };
   } catch (e) {

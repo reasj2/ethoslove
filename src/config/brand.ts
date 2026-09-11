@@ -10,7 +10,7 @@ export const BRAND = {
     es: "Regalos que se abren como una historia.",
   },
   domain: "tryethos.io",
-  supportEmail: "hello@tryethos.io",
+  supportEmail: "support@secuora.xyz",
   socials: {
     tiktok: "https://www.tiktok.com/@tryethos",
     instagram: "https://www.instagram.com/tryethos",

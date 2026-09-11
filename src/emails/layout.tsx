@@ -3,7 +3,9 @@ import type { ReactNode } from "react";
 import { SITE_URL } from "@/config/site";
 import { BRAND } from "@/config/brand";
 
-export const EMAIL_BRAND = { name: "Ethos", site: SITE_URL, from: process.env.EMAIL_FROM || `${BRAND.name} <${BRAND.supportEmail}>` };
+// The from address is a sending domain, not the contact address: Resend only sends from a
+// domain it has verified (see docs/EMAIL.md). Replies go to the contact address.
+export const EMAIL_BRAND = { name: "Ethos", site: SITE_URL, from: process.env.EMAIL_FROM || `${BRAND.name} <hello@${BRAND.domain}>` };
 
 const paper = "#FAF7F2";
 const ink = "#1A1614";
