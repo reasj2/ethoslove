@@ -8,9 +8,10 @@ export default async function MarketingLayout({ children, params }: LayoutProps<
   setRequestLocale(locale);
 
   return (
-    <div className="flex min-h-dvh flex-col">
+    // The header floats; pages start below it, and a hero can pull itself up underneath it.
+    <div className="flex min-h-dvh flex-col" style={{ "--header-h": "76px" } as React.CSSProperties}>
       <MarketingHeader />
-      <main id="main" className="flex-1">
+      <main id="main" className="flex-1 pt-[var(--header-h)]">
         {children}
       </main>
       <MarketingFooter />

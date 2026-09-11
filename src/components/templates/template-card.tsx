@@ -41,7 +41,7 @@ export function TemplateCard({ manifest, index = 0 }: { manifest: TemplateManife
       className="group flex flex-col"
     >
       <div
-        className="relative aspect-[390/600] overflow-hidden rounded-lg border border-line bg-night shadow-soft transition-[transform,box-shadow] duration-300 ease-[var(--ease-out-quint)] group-hover:-translate-y-1 group-hover:shadow-lift"
+        className="relative aspect-[390/600] overflow-hidden rounded-[26px] bg-night shadow-[0_24px_50px_-30px_rgba(23,19,15,0.6)] ring-1 ring-black/5 transition-[transform,box-shadow] duration-500 ease-[var(--ease-out-quint)] group-hover:-translate-y-1.5 group-hover:shadow-[0_34px_70px_-30px_rgba(23,19,15,0.7)]"
         onMouseEnter={play}
         onMouseLeave={pause}
       >
@@ -73,7 +73,7 @@ export function TemplateCard({ manifest, index = 0 }: { manifest: TemplateManife
               className="absolute inset-0 flex items-end justify-center pb-5"
               aria-label={`${t("templates.tryDemo")}: ${manifest.name[locale]}`}
             >
-              <span className="flex items-center gap-2 rounded-full bg-paper/90 px-3.5 py-2 text-[13px] font-medium text-ink backdrop-blur transition-colors group-hover:bg-paper">
+              <span className="flex items-center gap-2 rounded-full bg-cream/90 px-3.5 py-2 text-[13px] font-semibold text-forest shadow-[0_8px_24px_-12px_rgba(0,0,0,0.5)] backdrop-blur transition-colors group-hover:bg-cream">
                 <Play className="size-3 fill-current" />
                 {t("templates.tryDemo")}
               </span>
@@ -82,8 +82,8 @@ export function TemplateCard({ manifest, index = 0 }: { manifest: TemplateManife
         )}
         <span
           className={cn(
-            "text-eyebrow pointer-events-none absolute top-3 left-3 rounded-sm px-2 py-1",
-            manifest.tier === "free" ? "bg-paper text-ink" : "bg-ink text-paper",
+            "pointer-events-none absolute top-3 left-3 rounded-full px-2.5 py-1 text-[11px] font-semibold tracking-wide backdrop-blur",
+            manifest.tier === "free" ? "bg-cream/90 text-forest" : "bg-forest/80 text-cream",
           )}
         >
           {manifest.tier === "free" ? t("common.free") : t("common.premium")}
@@ -93,13 +93,13 @@ export function TemplateCard({ manifest, index = 0 }: { manifest: TemplateManife
         <div className="flex items-baseline justify-between gap-3">
           <div className="flex min-w-0 items-baseline gap-3">
             <span className="text-mono-meta shrink-0 text-muted-foreground">{String(index + 1).padStart(2, "0")}</span>
-            <h3 className="font-display text-[1.3rem] leading-tight text-balance">{manifest.name[locale]}</h3>
+            <h3 className="font-display text-[1.35rem] leading-tight text-balance">{manifest.name[locale]}</h3>
           </div>
           <span className="text-mono-meta shrink-0 text-ink-soft">{manifest.tier === "free" ? t("templates.priceFree") : t("templates.priceOnce", { price })}</span>
         </div>
         <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{manifest.tagline[locale]}</p>
         <div className="mt-3 flex items-center gap-4">
-          <Link href={`/create/${manifest.slug}`} className="inline-flex h-10 flex-1 items-center justify-center gap-1.5 rounded-full bg-ink px-4 text-sm font-medium text-paper transition-colors hover:bg-ink/90 sm:flex-none">
+          <Link href={`/create/${manifest.slug}`} className="inline-flex h-10 flex-1 items-center justify-center gap-1.5 rounded-full bg-forest px-4 text-sm font-medium text-cream transition-colors hover:bg-forest-raised sm:flex-none">
             {t("templates.makeThis")}
             <ArrowRight className="size-3.5" />
           </Link>

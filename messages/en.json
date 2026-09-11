@@ -51,8 +51,8 @@
       "sub": "A personal, animated gift page with your photos, their song and your words. Sent as a link or a QR code, opened on their phone.",
       "cta": "Make a gift",
       "demo": "Watch the demo",
-      "videoAlt": "The Letter template: a wax seal breaks, a letter unfolds, photos drop onto a desk.",
-      "caption": "The Letter, one of two free templates. The real thing, not a mockup.",
+      "videoAlt": "The Bouquet template: flowers come together one by one, the paper folds round and a card drops in.",
+      "caption": "Bouquet, our newest template. The real thing, not a mockup.",
       "facts": {
         "free": {
           "a": "02",
@@ -146,6 +146,12 @@
       "title": "Say the thing.",
       "blurb": "The people we love mostly hear us in passing. This is the other way: a small, deliberate thing they can open twice.",
       "cta": "Create a gift"
+    },
+    "openings": {
+      "eyebrow": "Openings",
+      "title": "Choose how it opens.",
+      "blurb": "The first thing they see is a cover with their name on it. Pick the one that feels like them; the gift is waiting underneath.",
+      "preview": "Preview"
     }
   },
   "footer": {

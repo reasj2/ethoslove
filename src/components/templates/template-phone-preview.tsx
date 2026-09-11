@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element */
 
 import { useState } from "react";
 import { Play } from "lucide-react";
@@ -15,15 +16,16 @@ export function TemplatePhonePreview({ slug, locale, autoStart = false }: { slug
       {live ? (
         <GiftRenderer slug={slug} mode="demo" demoLocale={locale} />
       ) : (
-        <button
-          type="button"
-          onClick={() => setLive(true)}
-          className="flex h-full w-full flex-col items-center justify-center gap-3 bg-night text-paper"
-        >
-          <span className="grid size-14 place-items-center rounded-full bg-coral text-paper shadow-glow">
-            <Play className="ml-0.5 size-5 fill-current" />
+        // The poster until they tap, so the phone never sits there black.
+        <button type="button" onClick={() => setLive(true)} className="group relative h-full w-full text-paper">
+          <img src={`/templates/${slug}/poster.jpg`} alt="" className="absolute inset-0 h-full w-full object-cover" />
+          <span className="absolute inset-0 bg-black/20 transition-colors group-hover:bg-black/10" />
+          <span className="relative flex h-full flex-col items-center justify-center gap-3">
+            <span className="grid size-14 place-items-center rounded-full bg-cream text-forest shadow-[0_14px_40px_-14px_rgba(0,0,0,0.7)] transition-transform group-hover:scale-105">
+              <Play className="ml-0.5 size-5 fill-current" />
+            </span>
+            <span className="rounded-full bg-black/35 px-3 py-1 text-sm font-medium backdrop-blur">{t("tryDemo")}</span>
           </span>
-          <span className="text-sm text-paper/70">{t("tryDemo")}</span>
         </button>
       )}
     </PhoneFrame>

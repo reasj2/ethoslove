@@ -59,7 +59,8 @@ export function GiftExperience({ shortId, data, locale }: { shortId: string; dat
   );
 
   return (
-    <div className="relative h-dvh w-full bg-night">
+    <div className="gift-backdrop">
+    <div className="gift-stage bg-night">
       {opened ? (
         <GiftRenderer
           slug={data.templateSlug}
@@ -75,6 +76,7 @@ export function GiftExperience({ shortId, data, locale }: { shortId: string; dat
       {!opened ? <SoundGate recipientName={data.recipientName} senderName={data.senderName} locale={locale} onOpen={open} /> : null}
       <ReactionSheet open={reactOpen} onClose={() => setReactOpen(false)} shortId={shortId} senderName={data.senderName} locale={locale} />
       {ended ? <HomeScreenTip locale={locale} onReplay={() => setReplayKey((k) => k + 1)} /> : null}
+    </div>
     </div>
   );
 }

@@ -51,8 +51,8 @@
       "sub": "Una página-regalo personal y animada con tus fotos, su canción y tus palabras. Se envía como enlace o código QR y se abre en su móvil.",
       "cta": "Crear un regalo",
       "demo": "Ver la demo",
-      "videoAlt": "Plantilla La carta: un sello de lacre se rompe, una carta se despliega, las fotos caen sobre un escritorio.",
-      "caption": "La carta, una de las dos plantillas gratis. Es real, no una maqueta.",
+      "videoAlt": "La plantilla Ramo: las flores se juntan una a una, el papel se cierra y cae una tarjeta.",
+      "caption": "Ramo, nuestra plantilla más nueva. Es la de verdad, no una maqueta.",
       "facts": {
         "free": {
           "a": "02",
@@ -146,6 +146,12 @@
       "title": "Di lo que sientes.",
       "blurb": "A la gente que queremos casi siempre le hablamos de pasada. Esto es lo contrario: algo pequeño y deliberado que pueden abrir dos veces.",
       "cta": "Crear un regalo"
+    },
+    "openings": {
+      "eyebrow": "Aperturas",
+      "title": "Elige cómo se abre.",
+      "blurb": "Lo primero que ven es una portada con su nombre. Elige la que se parezca a esa persona; el regalo espera debajo.",
+      "preview": "Ver"
     }
   },
   "footer": {

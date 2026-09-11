@@ -10,11 +10,12 @@ export async function MarketingFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-auto border-t border-line bg-paper">
-      <div className="container-x grid gap-10 py-14 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
+    <footer className="relative mt-auto overflow-hidden bg-forest text-cream">
+      <div className="grain-overlay opacity-[0.08] mix-blend-overlay" />
+      <div className="container-x relative grid gap-10 py-16 md:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="max-w-xs">
           <Logo />
-          <p className="font-display mt-4 text-xl leading-snug text-ink-soft italic">{t("footer.blurb")}</p>
+          <p className="font-display mt-4 text-xl leading-snug text-cream/70 italic">{t("footer.blurb")}</p>
         </div>
         <FooterColumn title={t("footer.product")}>
           <FooterLink href="/templates">{t("nav.templates")}</FooterLink>
@@ -32,17 +33,17 @@ export async function MarketingFooter() {
           <FooterLink href="/legal/terms">{t("footer.terms")}</FooterLink>
           <FooterLink href="/legal/privacy">{t("footer.privacy")}</FooterLink>
           <li>
-            <a href={`mailto:${BRAND.supportEmail}`} className="inline-block py-1 text-sm text-muted-foreground transition-colors hover:text-ink">
+            <a href={`mailto:${BRAND.supportEmail}`} className="inline-block py-1 text-sm text-cream/65 transition-colors hover:text-cream">
               {t("footer.contact")}
             </a>
           </li>
         </FooterColumn>
       </div>
-      <div className="container-x text-mono-meta flex flex-col items-start justify-between gap-4 border-t border-line py-6 text-muted-foreground sm:flex-row sm:items-center">
+      <div className="container-x relative flex flex-col items-start justify-between gap-4 border-t border-white/10 py-6 text-[12px] text-cream/50 sm:flex-row sm:items-center">
         <p>{t("footer.rights", { year })}</p>
         <div className="flex items-center gap-5">
           <p className="hidden sm:block">{t("footer.madeWith")}</p>
-          <LocaleSwitcher className="h-8 text-xs" />
+          <LocaleSwitcher className="h-8 text-xs text-cream/70 hover:bg-white/10 hover:text-cream" />
         </div>
       </div>
     </footer>
@@ -52,7 +53,7 @@ export async function MarketingFooter() {
 function FooterColumn({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
-      <p className="text-eyebrow mb-4 text-muted-foreground">{title}</p>
+      <p className="mb-4 text-[11px] font-medium tracking-[0.2em] text-cream/45 uppercase">{title}</p>
       <ul className="flex flex-col gap-1.5">{children}</ul>
     </div>
   );
@@ -61,7 +62,7 @@ function FooterColumn({ title, children }: { title: string; children: React.Reac
 function FooterLink({ href, children }: { href: string; children: React.ReactNode }) {
   return (
     <li>
-      <Link href={href} className="inline-block py-1 text-sm text-muted-foreground transition-colors hover:text-ink">
+      <Link href={href} className="inline-block py-1 text-sm text-cream/65 transition-colors hover:text-cream">
         {children}
       </Link>
     </li>

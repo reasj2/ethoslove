@@ -7,12 +7,12 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { OCCASIONS } from "@/config/occasions";
 import { PhoneFrame } from "@/components/shared/phone-frame";
-import { LogoMark } from "@/components/shared/logo";
-import { Button } from "@/components/ui/button";
+import { BotanicalBackdrop } from "@/components/marketing/botanical-backdrop";
 
 /**
- * Hero: an editorial 12-column grid. Real product footage in a phone that tilts toward the
- * cursor, a handwritten envelope behind it, and a slow ticker of occasions underneath.
+ * The night garden: a deep green ground framed by our own flowers, the words on the left,
+ * a live Bouquet gift in a phone on the right that tilts toward the cursor, and a slow ticker
+ * of occasions underneath. It starts under the floating header.
  */
 export function Hero() {
   const t = useTranslations("home.hero");
@@ -20,8 +20,8 @@ export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
-  const rx = useSpring(useTransform(my, [-1, 1], [7, -7]), { stiffness: 80, damping: 18 });
-  const ry = useSpring(useTransform(mx, [-1, 1], [-9, 9]), { stiffness: 80, damping: 18 });
+  const rx = useSpring(useTransform(my, [-1, 1], [6, -6]), { stiffness: 80, damping: 18 });
+  const ry = useSpring(useTransform(mx, [-1, 1], [-8, 8]), { stiffness: 80, damping: 18 });
   const ticker = [...OCCASIONS, ...OCCASIONS].map((o) => tAll(`occasions.${o}`));
 
   return (
@@ -37,64 +37,61 @@ export function Hero() {
         mx.set(0);
         my.set(0);
       }}
-      className="relative overflow-hidden border-b border-line"
+      className="relative isolate -mt-[var(--header-h)] overflow-hidden bg-forest pt-[var(--header-h)] text-cream"
     >
-      <div className="container-x grid items-center gap-14 pt-12 pb-14 sm:pt-16 lg:grid-cols-12 lg:gap-8 lg:pt-20 lg:pb-20">
+      <BotanicalBackdrop />
+      <div className="container-x relative grid items-center gap-14 pt-12 pb-16 sm:pt-16 lg:grid-cols-12 lg:gap-8 lg:pt-20 lg:pb-24">
         <div className="lg:col-span-7">
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="text-eyebrow text-ink-soft">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }} className="text-[12px] font-medium tracking-[0.22em] text-cream/60 uppercase">
             {t("eyebrow")}
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 90, damping: 18, delay: 0.05 }}
-            className="display-hero mt-6 max-w-[11ch] text-balance"
+            className="display-hero mt-6 max-w-[11ch] text-balance text-cream"
           >
-            {t("h1a")} <em className="text-coral">{t("h1b")}</em> {t("h1c")}
+            {t("h1a")} <em className="text-blush">{t("h1b")}</em> {t("h1c")}
           </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-7 max-w-xl text-lg leading-relaxed text-ink-soft sm:text-xl">
+          <motion.p initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-7 max-w-xl text-lg leading-relaxed text-cream/75 sm:text-xl">
             {t("sub")}
           </motion.p>
-          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="mt-9 flex flex-wrap items-center gap-x-7 gap-y-4">
-            <Button asChild size="lg" className="h-13 rounded-full px-7 text-base">
-              <Link href="/templates">
-                {t("cta")}
-                <ArrowRight className="size-4" data-icon="inline-end" />
-              </Link>
-            </Button>
-            <Link href="/demo/the-letter" className="group inline-flex items-center gap-3 text-base font-medium text-ink">
-              <span className="grid size-10 place-items-center rounded-full border border-ink transition-colors group-hover:bg-ink group-hover:text-paper">
+          <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="mt-9 flex flex-wrap items-center gap-3">
+            <Link href="/templates" className="inline-flex h-13 items-center gap-2 rounded-full bg-cream px-7 text-base font-semibold text-forest shadow-[0_14px_40px_-16px_rgba(0,0,0,0.6)] transition-transform hover:-translate-y-0.5">
+              {t("cta")}
+              <ArrowRight className="size-4" />
+            </Link>
+            <Link href="/demo/bouquet" className="glass-cream inline-flex h-13 items-center gap-3 rounded-full pr-6 pl-2 text-base font-medium text-cream transition-colors hover:bg-white/15">
+              <span className="grid size-9 place-items-center rounded-full bg-cream text-forest">
                 <Play className="ml-0.5 size-3.5 fill-current" />
               </span>
               {t("demo")}
             </Link>
           </motion.div>
-          <p className="mt-4 text-sm text-muted-foreground">{t("ctaNote")}</p>
+          <p className="mt-4 text-sm text-cream/55">{t("ctaNote")}</p>
 
-          <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-px border border-line bg-line sm:grid-cols-4">
+          <dl className="mt-12 grid max-w-2xl grid-cols-2 gap-3 sm:grid-cols-4">
             {(["free", "noAccount", "once", "langs"] as const).map((k) => (
-              <div key={k} className="bg-paper px-4 py-4">
-                <dt className="font-display text-[2rem] leading-none tracking-tight">{t(`facts.${k}.a`)}</dt>
-                <dd className="text-mono-meta mt-2 text-muted-foreground">{t(`facts.${k}.b`)}</dd>
+              <div key={k} className="glass-cream rounded-2xl px-4 py-4">
+                <dt className="font-display text-[1.9rem] leading-none tracking-tight text-cream">{t(`facts.${k}.a`)}</dt>
+                <dd className="mt-2 text-[12px] leading-snug text-cream/60">{t(`facts.${k}.b`)}</dd>
               </div>
             ))}
           </dl>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[480px] lg:col-span-5 lg:justify-self-end">
-          {/* The envelope beside the phone: the free template, in paper. */}
+        <div className="relative mx-auto w-full max-w-[460px] lg:col-span-5 lg:justify-self-end">
           <motion.div
-            initial={{ opacity: 0, rotate: -12, y: 20 }}
-            animate={{ opacity: 1, rotate: -7, y: 0 }}
-            transition={{ type: "spring", stiffness: 70, damping: 16, delay: 0.35 }}
+            initial={{ opacity: 0, rotate: -14, y: 20 }}
+            animate={{ opacity: 1, rotate: -8, y: 0 }}
+            transition={{ type: "spring", stiffness: 70, damping: 16, delay: 0.45 }}
             aria-hidden="true"
-            className="absolute bottom-24 left-0 z-0 hidden w-[230px] rounded-sm border border-line bg-[#fbf7ef] p-5 shadow-lift sm:block"
+            className="absolute bottom-28 -left-2 z-20 hidden w-[200px] rounded-md bg-[#fbf7ef] p-5 text-ink shadow-[0_24px_60px_-20px_rgba(0,0,0,0.6)] sm:block"
           >
-            <p className="font-hand text-[2rem] leading-none text-ink">{t("card.to")}</p>
+            <p className="font-hand text-[2rem] leading-none">{t("card.to")}</p>
             <p className="font-hand mt-2 text-xl text-ink-soft">{t("card.from")}</p>
-            <div className="mt-8 h-px w-full bg-line" />
+            <div className="mt-6 h-px w-full bg-line" />
             <div className="mt-2 h-px w-2/3 bg-line" />
-            <LogoMark className="absolute right-4 bottom-4 size-9 rotate-6" />
           </motion.div>
 
           <motion.div
@@ -102,13 +99,14 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 70, damping: 16, delay: 0.15 }}
             style={{ rotateX: rx, rotateY: ry, transformPerspective: 1200 }}
-            className="relative z-10 mx-auto w-[270px] sm:mr-2 sm:ml-auto sm:w-[300px] lg:w-[310px]"
+            className="relative z-10 mx-auto w-[260px] sm:mr-4 sm:ml-auto sm:w-[290px] lg:w-[300px]"
           >
-            <PhoneFrame width={310} className="!w-full">
+            <div aria-hidden="true" className="absolute -inset-10 -z-10 rounded-full bg-blush/25 blur-3xl" />
+            <PhoneFrame width={300} className="!w-full">
               <video
                 className="h-full w-full object-cover"
-                src="/templates/the-letter/preview.webm"
-                poster="/templates/the-letter/poster.jpg"
+                src="/templates/bouquet/preview.webm"
+                poster="/templates/bouquet/poster.jpg"
                 autoPlay
                 muted
                 loop
@@ -122,22 +120,22 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.1, type: "spring", stiffness: 200, damping: 18 }}
               aria-hidden="true"
-              className="text-mono-meta absolute -right-3 bottom-24 flex items-center gap-2 rounded-full border border-line bg-paper px-3 py-1.5 shadow-soft"
+              className="glass-forest absolute -right-4 bottom-24 flex items-center gap-2 rounded-full px-3.5 py-2 text-[12px] font-medium text-cream"
             >
-              <span className="size-1.5 rounded-full bg-moss" />
+              <span className="size-1.5 rounded-full bg-sage" />
               {t("card.opened")}
             </motion.div>
           </motion.div>
-          <p className="mt-5 text-center text-xs text-muted-foreground sm:text-right">{t("caption")}</p>
+          <p className="mt-6 text-center text-xs text-cream/50 sm:text-right">{t("caption")}</p>
         </div>
       </div>
 
-      <div className="overflow-hidden border-t border-line py-3" aria-hidden="true">
+      <div className="relative overflow-hidden border-t border-white/10 py-3.5" aria-hidden="true">
         <div className="animate-ticker flex w-max items-center gap-8 whitespace-nowrap pl-8">
           {ticker.map((label, i) => (
-            <span key={i} className="font-display flex items-center gap-8 text-[1.35rem] italic text-ink-soft">
+            <span key={i} className="font-display flex items-center gap-8 text-[1.35rem] text-cream/70 italic">
               {label}
-              <span className="size-1.5 rounded-full bg-coral" />
+              <span className="size-1.5 rounded-full bg-blush" />
             </span>
           ))}
         </div>

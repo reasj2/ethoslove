@@ -41,15 +41,19 @@ export function DemoStage({ slug, backHref = "/templates" }: { slug: string; bac
         </div>
       </div>
       <div className="relative min-h-0 flex-1">
-        <GiftRenderer
-          slug={slug}
-          mode="demo"
-          demoLocale={locale}
-          coverOverride={cover}
-          replayKey={replayKey}
-          onReact={() => toast(t("demoReactionToast"))}
-          onMakeOne={() => router.push(`/create/${slug}`)}
-        />
+        <div className="gift-backdrop in-demo">
+          <div className="gift-stage">
+            <GiftRenderer
+              slug={slug}
+              mode="demo"
+              demoLocale={locale}
+              coverOverride={cover}
+              replayKey={replayKey}
+              onReact={() => toast(t("demoReactionToast"))}
+              onMakeOne={() => router.push(`/create/${slug}`)}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

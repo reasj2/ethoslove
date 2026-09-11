@@ -81,12 +81,12 @@ export function PricingCards({
             <article
               key={id}
               className={cn(
-                "relative flex flex-col rounded-xl border p-7 sm:p-8",
-                dominant ? "border-night bg-night text-paper shadow-lift" : "border-line bg-card",
+                "relative flex flex-col rounded-3xl border p-7 sm:p-8",
+                dominant ? "border-forest bg-forest text-paper shadow-lift" : "border-line bg-card",
               )}
             >
               {dominant ? (
-                <span className="absolute -top-3 left-7 rounded-sm bg-paper px-2.5 py-1 text-eyebrow text-ink">
+                <span className="absolute -top-3 left-7 rounded-full bg-blush px-3 py-1 text-eyebrow text-forest">
                   {t("bestValue")}
                 </span>
               ) : null}
