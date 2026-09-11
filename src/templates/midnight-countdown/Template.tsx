@@ -93,7 +93,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
       <div className="absolute inset-0 transition-opacity duration-[4000ms] ease-linear" style={{ background: "linear-gradient(180deg,#02030c 0%,#0a0f2c 55%,#1a1f45 100%)", opacity: phase }} />
       <Stars phase={phase} reduced={!!reduce} />
       <div className="absolute right-[10%] top-[36%]" style={{ opacity: 0.35 + phase * 0.65 }}>
-        <div className="size-[14cqw] max-w-[90px] rounded-full bg-[#f6efd8] shadow-[0_0_60px_20px_rgba(246,239,216,0.22)]" style={{ transform: `translateY(${(1 - phase) * 60}px)` }} />
+        <div className="size-[calc(14*var(--u))] max-w-[90px] rounded-full bg-[#f6efd8] shadow-[0_0_60px_20px_rgba(246,239,216,0.22)]" style={{ transform: `translateY(${(1 - phase) * 60}px)` }} />
       </div>
       <Skyline kind={skyline} />
       <canvas ref={canvasRef} className="absolute inset-0" aria-hidden="true" />

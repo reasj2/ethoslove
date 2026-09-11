@@ -191,7 +191,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
                     ease: "easeInOut",
                   },
                 }}
-                className="absolute z-20 w-[22cqw] max-w-[110px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-white p-1 pb-3 shadow-[0_18px_30px_-12px_rgba(0,0,0,0.45)]"
+                className="absolute z-20 w-[calc(22*var(--u))] max-w-[110px] -translate-x-1/2 -translate-y-1/2 rounded-sm bg-white p-1 pb-3 shadow-[0_18px_30px_-12px_rgba(0,0,0,0.45)]"
                 style={{ left: `${sp.x}%`, top: `${sp.y}%` }}
                 data-bloom-photo={i}
               >

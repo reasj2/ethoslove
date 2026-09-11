@@ -24,7 +24,7 @@ export type CoverLook = {
 };
 
 /** Gingham from two half-tinted stripe layers; the overlap gives the darker squares. */
-const gingham = (tint: string, ground: string, cell = "12cqw") =>
+const gingham = (tint: string, ground: string, cell = "calc(12*var(--u))") =>
   `linear-gradient(90deg, ${tint} 50%, transparent 0) 0 0/${cell} ${cell}, linear-gradient(${tint} 50%, transparent 0) 0 0/${cell} ${cell}, ${ground}`;
 
 export const COVER_LOOKS: Record<CoverLook["id"], CoverLook> = {
@@ -69,7 +69,7 @@ export const COVER_LOOKS: Record<CoverLook["id"], CoverLook> = {
     id: "starry",
     tone: "dark",
     background:
-      "radial-gradient(rgba(255,255,255,.85) .32cqw, transparent .45cqw) 0 0/13cqw 13cqw, radial-gradient(rgba(255,255,255,.5) .22cqw, transparent .34cqw) 6cqw 7cqw/17cqw 17cqw, radial-gradient(120% 90% at 50% 18%, #33387a, #181a45 58%, #0c0c26)",
+      "radial-gradient(rgba(255,255,255,.85) calc(.32*var(--u)), transparent calc(.45*var(--u))) 0 0/calc(13*var(--u)) calc(13*var(--u)), radial-gradient(rgba(255,255,255,.5) calc(.22*var(--u)), transparent calc(.34*var(--u))) calc(6*var(--u)) calc(7*var(--u))/calc(17*var(--u)) calc(17*var(--u)), radial-gradient(120% 90% at 50% 18%, #33387a, #181a45 58%, #0c0c26)",
     script: "#fff3cf",
     hint: "rgba(255,243,207,.75)",
     piece: { kind: "envelope", colors: { body: "#d6c9f6", flap: "#e4dafb", inner: "#b7a3ea", seal: "#6a4bc4", mark: "star", letter: "#fffdf6" } },
@@ -87,7 +87,7 @@ export const COVER_LOOKS: Record<CoverLook["id"], CoverLook> = {
     id: "polka",
     tone: "light",
     background:
-      "radial-gradient(#f7aec2 1.5cqw, transparent 1.65cqw) 0 0/10cqw 10cqw, radial-gradient(#f7aec2 1.5cqw, transparent 1.65cqw) 5cqw 5cqw/10cqw 10cqw, #fff7ef",
+      "radial-gradient(#f7aec2 calc(1.5*var(--u)), transparent calc(1.65*var(--u))) 0 0/calc(10*var(--u)) calc(10*var(--u)), radial-gradient(#f7aec2 calc(1.5*var(--u)), transparent calc(1.65*var(--u))) calc(5*var(--u)) calc(5*var(--u))/calc(10*var(--u)) calc(10*var(--u)), #fff7ef",
     script: "#d6336c",
     hint: "#b8567a",
     piece: { kind: "gift", colors: { body: "#fffaf3", lid: "#fff2e4", ribbon: "#e84c6b" } },
@@ -121,7 +121,7 @@ export const COVER_LOOKS: Record<CoverLook["id"], CoverLook> = {
   lovecore: {
     id: "lovecore",
     tone: "dark",
-    background: "repeating-linear-gradient(45deg, #b3122e 0 4.5cqw, #c41f3a 4.5cqw 9cqw)",
+    background: "repeating-linear-gradient(45deg, #b3122e 0 calc(4.5*var(--u)), #c41f3a calc(4.5*var(--u)) calc(9*var(--u)))",
     script: "#fff5ee",
     hint: "rgba(255,245,238,.8)",
     piece: { kind: "envelope", colors: { body: "#fff6ee", flap: "#fdeadf", inner: "#f0cdb7", seal: "#b8860b", mark: "heart", letter: "#ffffff" } },

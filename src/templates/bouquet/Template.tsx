@@ -84,7 +84,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
           cardText={cardText}
           animate={animate}
           onCard={ready ? openCard : undefined}
-          className="h-full w-auto max-w-[96cqw] drop-shadow-[0_24px_30px_rgba(40,25,20,0.18)]"
+          className="h-full w-auto max-w-[calc(96*var(--u))] drop-shadow-[0_24px_30px_rgba(40,25,20,0.18)]"
         />
       </div>
 

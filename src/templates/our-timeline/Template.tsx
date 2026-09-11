@@ -124,7 +124,7 @@ function Milestone({ photo, index, date, left, scroller, paper, chapter, reduce,
   // The card lights up once the road has reached it.
   const reached = useTransform(progress, (p) => (p * n >= index + 0.45 ? 1 : 0.35));
   return (
-    <div ref={ref} className="relative flex h-[100cqh] items-center" style={{ justifyContent: left ? "flex-start" : "flex-end", padding: "0 7cqw" }}>
+    <div ref={ref} className="relative flex h-[100cqh] items-center" style={{ justifyContent: left ? "flex-start" : "flex-end", padding: "0 calc(7*var(--u))" }}>
       <motion.div style={{ y: yBack, opacity: reached }} className={cn("absolute text-[clamp(4.5rem,26cqw,8rem)] leading-none italic opacity-[0.07]", left ? "right-[6%]" : "left-[6%]")} aria-hidden="true">
         <span style={{ fontFamily: "var(--gift-font-display)" }}>{String(index + 1).padStart(2, "0")}</span>
       </motion.div>

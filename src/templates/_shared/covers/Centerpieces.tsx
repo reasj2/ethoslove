@@ -30,18 +30,18 @@ export function Envelope({ colors, opening }: { colors: EnvelopeColors; opening:
   return (
     <div className="relative w-full" style={{ aspectRatio: "1.45 / 1", perspective: "900px" }}>
       {/* Inside back of the envelope. */}
-      <div className="absolute inset-0 rounded-[3%]" style={{ background: colors.inner, boxShadow: "0 3cqw 6cqw -2cqw rgba(60,20,30,.28)" }} />
+      <div className="absolute inset-0 rounded-[3%]" style={{ background: colors.inner, boxShadow: "0 calc(3*var(--u)) calc(6*var(--u)) calc(-2*var(--u)) rgba(60,20,30,.28)" }} />
 
       <motion.div
         className="absolute inset-x-[8%] top-[8%] h-[84%] rounded-[3%]"
-        style={{ background: colors.letter, zIndex: 5, boxShadow: "0 .6cqw 1.6cqw rgba(0,0,0,.12)" }}
+        style={{ background: colors.letter, zIndex: 5, boxShadow: "0 calc(.6*var(--u)) calc(1.6*var(--u)) rgba(0,0,0,.12)" }}
         initial={false}
         animate={opening ? { opacity: 1, y: "-58%" } : { opacity: 0, y: "0%" }}
         transition={{ opacity: { delay: 0.28, duration: 0.2 }, y: { delay: 0.42, duration: 0.7, ease: EASE } }}
       >
         <div className="absolute inset-x-[14%] top-[18%] space-y-[7%]">
           {[88, 100, 72, 94].map((w, i) => (
-            <div key={i} className="h-[0.7cqw] rounded-full" style={{ width: `${w}%`, background: "rgba(120,90,90,.16)" }} />
+            <div key={i} className="h-[calc(0.7*var(--u))] rounded-full" style={{ width: `${w}%`, background: "rgba(120,90,90,.16)" }} />
           ))}
         </div>
       </motion.div>
@@ -81,7 +81,7 @@ export function Envelope({ colors, opening }: { colors: EnvelopeColors; opening:
           style={{
             backfaceVisibility: "hidden",
             background: `radial-gradient(circle at 35% 30%, color-mix(in srgb, ${colors.seal} 70%, white), ${colors.seal} 55%, color-mix(in srgb, ${colors.seal} 75%, black))`,
-            boxShadow: "0 .8cqw 1.6cqw rgba(0,0,0,.25), inset 0 -.6cqw 1cqw rgba(0,0,0,.2)",
+            boxShadow: "0 calc(.8*var(--u)) calc(1.6*var(--u)) rgba(0,0,0,.25), inset 0 calc(-.6*var(--u)) calc(1*var(--u)) rgba(0,0,0,.2)",
           }}
         >
           <svg viewBox="0 0 24 24" className="w-[44%]" aria-hidden="true">
@@ -106,7 +106,7 @@ export function GiftBox({ colors, opening }: { colors: GiftBoxColors; opening: b
       />
       <div
         className="absolute inset-x-[10%] bottom-0 h-[64%] rounded-[5%]"
-        style={{ background: `linear-gradient(180deg, ${colors.body}, color-mix(in srgb, ${colors.body} 88%, black))`, boxShadow: "0 3cqw 6cqw -2cqw rgba(60,20,30,.3)" }}
+        style={{ background: `linear-gradient(180deg, ${colors.body}, color-mix(in srgb, ${colors.body} 88%, black))`, boxShadow: "0 calc(3*var(--u)) calc(6*var(--u)) calc(-2*var(--u)) rgba(60,20,30,.3)" }}
       >
         <div className="absolute inset-y-0 left-1/2 w-[17%] -translate-x-1/2" style={{ background: colors.ribbon }} />
         <div className="absolute inset-x-0 top-0 h-[16%]" style={{ background: "rgba(0,0,0,.07)" }} />
@@ -117,7 +117,7 @@ export function GiftBox({ colors, opening }: { colors: GiftBoxColors; opening: b
         animate={opening ? { y: "-190%", rotate: -16, opacity: 0 } : { y: "0%", rotate: 0, opacity: 1 }}
         transition={{ duration: 0.75, ease: EASE, opacity: { delay: 0.45, duration: 0.3 } }}
       >
-        <div className="absolute inset-0 rounded-[6%]" style={{ background: `linear-gradient(180deg, ${colors.lid}, color-mix(in srgb, ${colors.lid} 90%, black))`, boxShadow: "0 1cqw 2cqw rgba(0,0,0,.14)" }} />
+        <div className="absolute inset-0 rounded-[6%]" style={{ background: `linear-gradient(180deg, ${colors.lid}, color-mix(in srgb, ${colors.lid} 90%, black))`, boxShadow: "0 calc(1*var(--u)) calc(2*var(--u)) rgba(0,0,0,.14)" }} />
         <div className="absolute inset-y-0 left-1/2 w-[15.5%] -translate-x-1/2" style={{ background: colors.ribbon }} />
         <svg viewBox="0 0 120 70" className="absolute bottom-[78%] left-1/2 w-[46%] -translate-x-1/2" aria-hidden="true">
           <path d="M58 44 C40 8 6 10 12 38 C16 58 44 54 58 46Z" fill={colors.ribbon} />

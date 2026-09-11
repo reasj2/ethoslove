@@ -168,7 +168,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
                 onClick={() => setCover(i)}
                 animate={{ rotateY: i === cover ? 0 : -12, y: i === cover ? -8 : 0 }}
                 transition={{ type: "spring", stiffness: 160, damping: 18 }}
-                className={cn("relative aspect-square w-[42cqw] max-w-[190px] shrink-0 snap-center overflow-hidden rounded-[4px] shadow-[0_18px_30px_-16px_rgba(0,0,0,0.7)]", i === cover ? "ring-2" : "")}
+                className={cn("relative aspect-square w-[calc(42*var(--u))] max-w-[190px] shrink-0 snap-center overflow-hidden rounded-[4px] shadow-[0_18px_30px_-16px_rgba(0,0,0,0.7)]", i === cover ? "ring-2" : "")}
                 style={{ transformStyle: "preserve-3d", ["--tw-ring-color" as string]: "var(--gift-accent)" }}
               >
                 <img src={p.url} alt={p.alt ?? ""} className="h-full w-full object-cover" draggable={false} loading="lazy" />

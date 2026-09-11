@@ -221,7 +221,7 @@ function Marquee({ text, reduced }: { text: string; reduced: boolean }) {
   const bulbs = 18;
   return (
     <div className="relative rounded-2xl border-4 border-[#3b2a1a] bg-[#f6e7c6] px-6 py-3 text-center shadow-[0_10px_40px_rgba(0,0,0,0.5),inset_0_0_0_2px_#d9c39a]">
-      <p className="max-w-[70cqw] truncate font-display text-[clamp(0.95rem,4.2cqw,1.25rem)] font-semibold tracking-[0.08em] text-[#3b2a1a] uppercase" style={{ fontFamily: "var(--gift-font-display)" }}>
+      <p className="max-w-[calc(70*var(--u))] truncate font-display text-[clamp(0.95rem,4.2cqw,1.25rem)] font-semibold tracking-[0.08em] text-[#3b2a1a] uppercase" style={{ fontFamily: "var(--gift-font-display)" }}>
         {text}
       </p>
       {Array.from({ length: bulbs }, (_, i) => {
@@ -300,9 +300,9 @@ function FilmPanel({ data, mode, blocks, reduce, onEvent, onReact, onMakeOne, on
         {/* Film strip */}
         <div className="relative -rotate-2 bg-[#111] py-3 shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
           <Sprockets />
-          <div className="scrollbar-none flex snap-x gap-3 overflow-x-auto px-[10cqw] py-1">
+          <div className="scrollbar-none flex snap-x gap-3 overflow-x-auto px-[calc(10*var(--u))] py-1">
             {data.photos.map((p, i) => (
-              <motion.figure key={p.id} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.08, type: "spring", stiffness: 120, damping: 16 }} className={cn("shrink-0 snap-center", landscape ? "w-[34cqw]" : "w-[62cqw]")} onClick={() => setActive(i)}>
+              <motion.figure key={p.id} initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 + i * 0.08, type: "spring", stiffness: 120, damping: 16 }} className={cn("shrink-0 snap-center", landscape ? "w-[calc(34*var(--u))]" : "w-[calc(62*var(--u))]")} onClick={() => setActive(i)}>
                 <div className="aspect-[4/3] overflow-hidden rounded-[3px] bg-black">
                   <img src={p.url} alt={p.alt ?? ""} className="h-full w-full object-cover" draggable={false} />
                 </div>

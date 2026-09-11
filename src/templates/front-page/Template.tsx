@@ -63,7 +63,7 @@ export function Template({ data, mode, onEvent, onReact, onMakeOne }: TemplatePr
         className="absolute inset-0 overflow-x-hidden overflow-y-auto overscroll-contain scrollbar-none"
         style={{ pointerEvents: started ? "auto" : "none" }}
       >
-        <article className="mx-auto min-h-full w-[min(96cqw,720px)] bg-[#f5efe2] px-[5cqw] pt-[max(4cqh,22px)] pb-[max(2rem,env(safe-area-inset-bottom))] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] sm:px-8" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")" }}>
+        <article className="mx-auto min-h-full w-[min(96cqw,720px)] bg-[#f5efe2] px-[calc(5*var(--u))] pt-[max(4cqh,22px)] pb-[max(2rem,env(safe-area-inset-bottom))] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.6)] sm:px-8" style={{ backgroundImage: "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.3 0 0 0 0 0.25 0 0 0 0 0.2 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")" }}>
           {/* Masthead */}
           <header className="text-center">
             <div className="flex items-center justify-between border-y text-[9px] tracking-[0.18em] uppercase" style={{ borderColor: ink }}>
