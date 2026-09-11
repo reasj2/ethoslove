@@ -1,0 +1,80 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "what do u want for ur birthday"
+        },
+        {
+          "from": "them",
+          "text": "nothing"
+        },
+        {
+          "from": "me",
+          "text": "u have to want something"
+        },
+        {
+          "from": "them",
+          "text": "i dont need anything"
+        },
+        {
+          "from": "me",
+          "text": "ok"
+        }
+      ],
+      "timestamp": "Mon 20:15"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "happy birthday"
+        },
+        {
+          "from": "me",
+          "text": "u said nothing"
+        },
+        {
+          "from": "me",
+          "link": {
+            "title": "for the boy who wanted nothing",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Tyler"
+          }
+        }
+      ],
+      "timestamp": "Tue 00:00"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "u made me a game??"
+        },
+        {
+          "from": "them",
+          "text": "nobodys ever made me anything"
+        },
+        {
+          "from": "me",
+          "text": "i know"
+        },
+        {
+          "from": "them",
+          "text": "ok im crying",
+          "tapback": "heart"
+        },
+        {
+          "from": "them",
+          "text": "dont tell anyone"
+        }
+      ],
+      "timestamp": "Tue 00:21"
+    }
+  ]
+}

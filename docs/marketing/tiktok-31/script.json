@@ -1,0 +1,79 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "do u know what today is"
+        },
+        {
+          "from": "them",
+          "text": "tuesday"
+        },
+        {
+          "from": "me",
+          "text": "and"
+        },
+        {
+          "from": "them",
+          "text": "a year since u turned up 20 mins late to the chinese place"
+        },
+        {
+          "from": "me",
+          "text": "15"
+        },
+        {
+          "from": "them",
+          "text": "20"
+        }
+      ],
+      "timestamp": "Tue 12:40"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "i was counting"
+        },
+        {
+          "from": "them",
+          "text": "made u something"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "table for two",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Jess"
+          }
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "FORTUNE COOKIES"
+        },
+        {
+          "from": "me",
+          "text": "\"you will be 20 minutes late. he will wait anyway.\""
+        },
+        {
+          "from": "them",
+          "text": "i did"
+        },
+        {
+          "from": "them",
+          "text": "id wait again",
+          "tapback": "heart"
+        }
+      ],
+      "timestamp": "Tue 12:52"
+    }
+  ]
+}

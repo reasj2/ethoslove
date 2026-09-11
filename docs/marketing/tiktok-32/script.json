@@ -1,0 +1,76 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "are we doing anything for valentines"
+        },
+        {
+          "from": "them",
+          "text": "its a scam"
+        },
+        {
+          "from": "me",
+          "text": "ok."
+        },
+        {
+          "from": "them",
+          "text": "flowers die in 3 days"
+        },
+        {
+          "from": "me",
+          "text": "wow so romantic"
+        }
+      ],
+      "timestamp": "Fri 21:10"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "morning"
+        },
+        {
+          "from": "them",
+          "text": "got u flowers"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "these ones dont die",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Erin"
+          }
+        }
+      ],
+      "timestamp": "Sat 07:02"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "IT OPENED WHEN I HELD IT"
+        },
+        {
+          "from": "me",
+          "text": "i thought valentines was a scam"
+        },
+        {
+          "from": "them",
+          "text": "it is"
+        },
+        {
+          "from": "them",
+          "text": "ur not",
+          "tapback": "heart"
+        }
+      ],
+      "timestamp": "Sat 07:15"
+    }
+  ]
+}

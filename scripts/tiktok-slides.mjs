@@ -83,7 +83,8 @@ function html(slide) {
     .row.r{justify-content:flex-end}
     .row + .row{margin-top:6px}
     .row.l + .row.r, .row.r + .row.l{margin-top:28px}
-    .row.has-tap{margin-top:40px}
+    /* iOS opens up space above a message that carries a Tapback, so the reaction never sits on the bubble above. */
+    .row.has-tap{margin-top:72px}
     .status{flex-basis:100%;text-align:right;color:#8e8e93;font-size:33px;margin-top:8px;padding-right:12px;letter-spacing:-.1px}
     .status b{font-weight:600}
 

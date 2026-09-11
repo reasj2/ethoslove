@@ -1,0 +1,79 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "happy 1 year 🥹"
+        },
+        {
+          "from": "them",
+          "text": "1 year of what"
+        },
+        {
+          "from": "me",
+          "text": "WILL"
+        },
+        {
+          "from": "them",
+          "text": "of u stealing the duvet?"
+        },
+        {
+          "from": "me",
+          "text": "i hate u"
+        }
+      ],
+      "timestamp": "Today 08:03"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "365 days of it"
+        },
+        {
+          "from": "them",
+          "text": "i counted"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "365 days of u",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Millie"
+          }
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "u put the first photo i ever sent u"
+        },
+        {
+          "from": "me",
+          "text": "the blurry one"
+        },
+        {
+          "from": "them",
+          "text": "day 1"
+        },
+        {
+          "from": "them",
+          "text": "u stole the duvet on 212 of them"
+        },
+        {
+          "from": "them",
+          "text": "worth it",
+          "tapback": "heart"
+        }
+      ],
+      "timestamp": "Today 08:19"
+    }
+  ]
+}

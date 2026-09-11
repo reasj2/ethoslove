@@ -1,0 +1,80 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "are u awake"
+        },
+        {
+          "from": "me",
+          "text": "no"
+        },
+        {
+          "from": "them",
+          "text": "stay awake 2 more mins"
+        },
+        {
+          "from": "me",
+          "text": "why"
+        },
+        {
+          "from": "them",
+          "text": "just do it"
+        }
+      ],
+      "timestamp": "Fri 23:58"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "happy birthday"
+        },
+        {
+          "from": "them",
+          "text": "first one to say it"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "happy 21st poppy",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Poppy"
+          }
+        }
+      ],
+      "timestamp": "Sat 00:00"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "i blew out the candles on my PHONE"
+        },
+        {
+          "from": "me",
+          "text": "how did it know"
+        },
+        {
+          "from": "them",
+          "text": "ur loud"
+        },
+        {
+          "from": "me",
+          "text": "im crying"
+        },
+        {
+          "from": "them",
+          "text": "happy birthday old woman",
+          "tapback": "heart"
+        }
+      ],
+      "timestamp": "Sat 00:04"
+    }
+  ]
+}

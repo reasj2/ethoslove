@@ -63,6 +63,21 @@ A post that asks for nothing gets nothing. Every post ends on something the view
 - **Reply in character, and don't settle it.** The longer people argue, the further the post
   travels.
 
+## Anchor every story on a real gift occasion
+
+Nobody buys a gift for a pasta argument. The story can be banter, but it has to happen around
+a moment people already give gifts for: an anniversary, a birthday (hers or his), the first
+date's anniversary, six months, Valentine's, their first Christmas. That's what viewers are
+searching for when they're ready to buy, and it gives the link a reason to exist that no one
+questions.
+
+- **The occasion is in the first two slides.** "happy 1 year 🥹", "are u awake" at 23:58, "what
+  do u want for ur birthday". The viewer knows what day it is before the gift arrives.
+- **Post seasonal ones in season.** Valentine's in the first two weeks of February, Christmas in
+  December. Birthdays and anniversaries work any week.
+- **Some go the other way.** She makes it for him (his birthday, 33). "Men deserve this too" is
+  a comment section on its own, and it shows girls they can buy.
+
 ## The screenshots have to pass for real
 
 People can tell a fake iMessage in half a second, and the moment they can, nobody comments.
@@ -214,5 +229,11 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 26 | where i post u · part 2 | payoff | Museum | Lovecore |
 | 27 | im fine. | "whats ur tell" | Jar of Reasons | Picnic |
 | 28 | rate his apology | "rate it 1-10" | The Letter (free) | Classic |
+| 29 | 365 days of u | 1-year anniversary | Our Timeline | Lovecore |
+| 30 | first one to say it | her 21st birthday | Birthday Cinema | Polka |
+| 31 | table for two | first-date anniversary | Fortune Cookie | Polka |
+| 32 | these ones dont die | Valentine's | Bloom | Lovecore |
+| 33 | for the boy who wanted nothing | his birthday | Arcade | Starry |
+| 34 | no presents (i lied) | first Christmas | The Letter (free) | Classic |
 
-06 to 18 are the short ones. 19 to 28 follow the 3.1M post: pure banter, with the link as one move in it, at the bottom of its slide.
+06 to 18 are the short ones. 19 to 28 follow the 3.1M post: pure banter, with the link as one move in it. 29 to 34 put that banter around real gift occasions, and are the ones to post first.

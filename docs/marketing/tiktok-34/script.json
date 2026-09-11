@@ -1,0 +1,76 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "remember we said no presents this year"
+        },
+        {
+          "from": "them",
+          "text": "yeah"
+        },
+        {
+          "from": "me",
+          "text": "i mean it"
+        },
+        {
+          "from": "them",
+          "text": "me too"
+        }
+      ],
+      "timestamp": "Sat 18:40"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "them",
+          "text": "merry christmas"
+        },
+        {
+          "from": "them",
+          "text": "i lied"
+        },
+        {
+          "from": "them",
+          "text": "technically its not a present"
+        },
+        {
+          "from": "them",
+          "link": {
+            "title": "no presents (i lied)",
+            "domain": "tryethos.io",
+            "image": "og",
+            "name": "Rosie"
+          }
+        }
+      ],
+      "timestamp": "Thu 08:14"
+    },
+    {
+      "type": "chat",
+      "messages": [
+        {
+          "from": "me",
+          "text": "WE SAID NO PRESENTS"
+        },
+        {
+          "from": "me",
+          "text": "i didnt get u anything"
+        },
+        {
+          "from": "them",
+          "text": "good"
+        },
+        {
+          "from": "them",
+          "text": "then i win",
+          "tapback": "heart"
+        }
+      ],
+      "timestamp": "Thu 08:31"
+    }
+  ]
+}
