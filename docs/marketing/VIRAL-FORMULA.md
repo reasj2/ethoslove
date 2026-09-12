@@ -95,6 +95,21 @@ questions.
   the link. A boy crying over a gift gets "men deserve this too" and girls tagging their
   boyfriends, and it shows girls this is something they can make.
 
+## Our own hit: 30, and what to copy from it
+
+Carousel 30 ("are u awake" at 23:58, "first one to say it" at midnight) went viral. What it was
+made of, in the order the viewer meets it:
+
+- **A two-word question as the first bubble.** "are u awake" cannot be left unanswered.
+- **An instruction with no reason.** "stay awake 2 more mins" / "just do it". He refuses to
+  explain, so the viewer has to swipe to find out.
+- **A clock.** 23:58 to 00:00. The reader counts down with her.
+- **A payoff measured in seconds, not money.** Being the first person to say it.
+- **A caption everyone can answer about their own life.** "whos first to text u on ur birthday?"
+
+39 is the first variation: same bones, a new clock (a gift that will not open until 20:04) and a
+new occasion. Keep making these until one stops working.
+
 ## The screenshots have to pass for real
 
 People can tell a fake iMessage in half a second, and the moment they can, nobody comments.
@@ -256,5 +271,6 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 36 | no funeral required | his birthday (his side) | Bloom | Garden |
 | 37 | why i like u | 6 months (her side) | Jar of Reasons | Gingham |
 | 38 | the drive home | 1 year (his side) | Vinyl | Starry |
+| 39 | 8:04 | 1 year, the wait (variation of 30) | Midnight Countdown | Starry |
 
 06 to 18 are the short ones. 19 to 28 follow the 3.1M post: pure banter, with the link as one move in it. 29 to 34 put that banter around real gift occasions. 35 to 38 open on a crying photo and alternate her side and his, and are the ones to post first.

@@ -1,0 +1,41 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "timestamp": "Today 08:02",
+      "messages": [
+        { "from": "them", "text": "happy 1 year" },
+        { "from": "them", "text": "dont open this till 8" },
+        {
+          "from": "them",
+          "link": { "title": "8:04", "domain": "tryethos.io", "image": "og", "name": "Ruby" }
+        }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 17:39",
+      "messages": [
+        { "from": "me", "text": "its been 9 hours" },
+        { "from": "me", "text": "can i open it now" },
+        { "from": "them", "text": "no" },
+        { "from": "me", "text": "i tried. it showed me a timer" },
+        { "from": "them", "text": "i know" },
+        { "from": "me", "text": "CHARLIE" },
+        { "from": "them", "text": "2 more hours", "tapback": "haha" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 20:04",
+      "messages": [
+        { "from": "me", "text": "IT OPENED AT 8:04" },
+        { "from": "me", "text": "not 8" },
+        { "from": "me", "text": "8:04" },
+        { "from": "them", "text": "thats when u sat down" },
+        { "from": "me", "text": "im crying" },
+        { "from": "them", "text": "happy 1 year", "tapback": "heart" }
+      ]
+    }
+  ]
+}
