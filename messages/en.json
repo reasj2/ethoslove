@@ -724,5 +724,9 @@
       "detail": "If you were charged, your unlock will appear within a few minutes. Otherwise, try again from the pricing page."
     },
     "continue": "Continue"
+  },
+  "promo": {
+    "line": "20% off every gift with code",
+    "code": "LOVE"
   }
 }

@@ -724,5 +724,9 @@
       "detail": "Si se te ha cobrado, el desbloqueo aparecerá en unos minutos. Si no, inténtalo de nuevo desde la página de precios."
     },
     "continue": "Continuar"
+  },
+  "promo": {
+    "line": "20% de descuento en cualquier regalo con el código",
+    "code": "LOVE"
   }
 }
