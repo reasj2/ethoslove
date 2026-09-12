@@ -457,7 +457,9 @@
       "signInBlurbPaid": "Your draft is saved on this device. Sign in, pay {price} once, and it's sent.",
       "payGuestBlurb": "This gift uses {features}. Pay {price} once and it's sent. Your account is created from the email you give at checkout, no password needed.",
       "signInInstead": "Already have an account? Sign in instead",
-      "uploadsAfterPay": "Photos upload right after payment."
+      "uploadsAfterPay": "Photos upload right after payment.",
+      "ownedElsewhere": "Your purchase covers {templates}. This is a different template.",
+      "openOwned": "Open {template} instead"
     },
     "share": {
       "title": "It's live.",

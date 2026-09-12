@@ -8,6 +8,7 @@ import type { TemplateManifest } from "@/templates/types";
 import { currentRef } from "@/lib/attribution/ref";
 import { decidePublish, readinessProblems, premiumExtras } from "@/lib/gift/publish";
 import { PRODUCTS, currencyFor, formatAmount, type ProductId } from "@/lib/pricing/products";
+import { getManifest } from "@/templates/registry";
 import { toast } from "sonner";
 import { useEditor } from "@/lib/editor/store";
 import { getEntitlement, publishGift } from "@/app/actions/gift";
@@ -45,8 +46,8 @@ export function PublishSheet({
   const tCommon = useTranslations("common");
   const locale = useLocale() as GiftLocale;
   const state = useEditor();
-  const [fetchedEntitlement, setFetchedEntitlement] = useState<{ unlocked: boolean } | null>(null);
-  const entitlement = state.authed ? fetchedEntitlement : { unlocked: false };
+  const [fetchedEntitlement, setFetchedEntitlement] = useState<{ unlocked: boolean; owned: string[] } | null>(null);
+  const entitlement = state.authed ? fetchedEntitlement : { unlocked: false, owned: [] };
   const [busy, setBusy] = useState(false);
   const [paying, setPaying] = useState<ProductId | null>(null);
   const [showSignIn, setShowSignIn] = useState(false);
@@ -86,6 +87,15 @@ export function PublishSheet({
   };
   const decision =
     entitlement && serialized ? decidePublish(manifest, serialized, entitlement, options) : null;
+  // What they have already paid for, so the paywall can name it instead of asking again blindly.
+  const ownedElsewhere = useMemo(
+    () =>
+      (state.authed ? (fetchedEntitlement?.owned ?? []) : [])
+        .filter((s) => s !== slug && s !== "*")
+        .map((s) => getManifest(s))
+        .filter((m): m is TemplateManifest => Boolean(m)),
+    [fetchedEntitlement, state.authed, slug],
+  );
   const premiumFeatures = [
     manifest.tier === "premium" && t("featurePremiumTemplate"),
     options.removeWatermark && t("featureNoWatermark"),
@@ -331,6 +341,11 @@ export function PublishSheet({
                     <p className="mt-1 text-sm text-ink-soft">
                       {t("payBlurb", { features: premiumFeatures.join(", ") })}
                     </p>
+                    {ownedElsewhere.length ? (
+                      <p className="mt-3 text-sm text-ink-soft">
+                        {t("ownedElsewhere", { templates: ownedElsewhere.map((m) => m.name[locale]).join(", ") })}
+                      </p>
+                    ) : null}
                   </div>
                   <p className="shrink-0 font-display text-[2rem] leading-none tracking-tight">
                     {priceOne}
@@ -355,6 +370,14 @@ export function PublishSheet({
                     >
                       {t("payAll", { price: priceAll })}
                     </button>
+                    {ownedElsewhere.length === 1 ? (
+                      <a
+                        href={`/create/${ownedElsewhere[0].slug}`}
+                        className="mt-3 block w-full text-center text-sm font-medium text-coral underline-offset-4 hover:underline"
+                      >
+                        {t("openOwned", { template: ownedElsewhere[0].name[locale] })}
+                      </a>
+                    ) : null}
                     <p className="mt-3 text-center text-mono-meta text-muted-foreground">
                       {t("payNote")}
                     </p>

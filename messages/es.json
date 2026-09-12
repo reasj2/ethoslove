@@ -457,7 +457,9 @@
       "signInBlurbPaid": "Tu borrador está guardado en este dispositivo. Inicia sesión, paga {price} una vez y se envía.",
       "payGuestBlurb": "Este regalo usa {features}. Pagas {price} una vez y se envía. Tu cuenta se crea con el email que das al pagar, sin contraseña.",
       "signInInstead": "¿Ya tienes cuenta? Inicia sesión",
-      "uploadsAfterPay": "Las fotos se suben justo después del pago."
+      "uploadsAfterPay": "Las fotos se suben justo después del pago.",
+      "ownedElsewhere": "Tu compra incluye {templates}. Esta es otra plantilla.",
+      "openOwned": "Abrir {template}"
     },
     "share": {
       "title": "Ya está publicado.",

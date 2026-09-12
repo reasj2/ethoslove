@@ -202,11 +202,15 @@ export async function loadGiftForEdit(giftId: string): Promise<ActionResult<{ id
 }
 
 /** Does the current user own this template (or Everything)? False when signed out. */
-export async function getEntitlement(templateSlug: string): Promise<{ unlocked: boolean }> {
+export async function getEntitlement(templateSlug: string): Promise<{ unlocked: boolean; owned: string[] }> {
   const ctx = await requireContext();
-  if (!ctx.ok) return { unlocked: false };
-  const { data } = await ctx.supabase.rpc("has_template_unlock", { p_user: ctx.user.id, p_slug: templateSlug });
-  return { unlocked: Boolean(data) };
+  if (!ctx.ok) return { unlocked: false, owned: [] };
+  // `owned` lets the editor say which template the buyer already paid for instead of a bare paywall.
+  const [{ data }, { data: unlocks }] = await Promise.all([
+    ctx.supabase.rpc("has_template_unlock", { p_user: ctx.user.id, p_slug: templateSlug }),
+    ctx.supabase.from("template_unlocks").select("template_slug").eq("user_id", ctx.user.id),
+  ]);
+  return { unlocked: Boolean(data), owned: (unlocks ?? []).map((u) => u.template_slug) };
 }
 
 /** Dashboard: duplicate a gift as a new draft (assets are shared by reference until edited). */
