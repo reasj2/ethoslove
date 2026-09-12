@@ -11,6 +11,11 @@ import { chromium } from "@playwright/test";
 import { mkdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
+// The link card is drawn with the same serif the product embeds in its real og:image.
+const face = (file) => readFileSync(join(import.meta.dirname, "../src/fonts", file)).toString("base64");
+const SERIF = face("newsreader-regular.ttf");
+const SERIF_ITALIC = face("newsreader-italic.ttf");
+
 const [scriptPath, outDir] = [process.argv[2], process.argv[3] ?? "."];
 const script = JSON.parse(readFileSync(scriptPath, "utf8"));
 mkdirSync(outDir, { recursive: true });
@@ -76,6 +81,8 @@ function html(slide) {
     .join("");
 
   return `<!doctype html><html><head><meta charset="utf-8"><style>
+    @font-face{font-family:Newsreader;src:url(data:font/ttf;base64,${SERIF}) format("truetype");font-style:normal}
+    @font-face{font-family:Newsreader;src:url(data:font/ttf;base64,${SERIF_ITALIC}) format("truetype");font-style:italic}
     html,body{margin:0;background:#000;width:1080px;height:1920px;overflow:hidden}
     body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif;color:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
     .stage{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;padding:0 48px 0 42px}
@@ -151,10 +158,10 @@ function html(slide) {
     .og-frame{position:absolute;inset:14px;border:1px solid rgba(23,19,15,.14);border-radius:10px}
     .og-seal{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 30%,#F4C7C3,#E8604C 48%,#B23A2E 100%);box-shadow:0 10px 24px rgba(232,96,76,.32)}
     .og-seal svg{width:22px;height:22px}
-    .og-eyebrow{margin-top:18px;font-size:17px;letter-spacing:5.9px;color:rgba(23,19,15,.5)}
-    .og-name{margin-top:6px;font-family:Georgia,"Times New Roman",serif;font-size:82px;line-height:1;letter-spacing:-2px;white-space:nowrap}
-    .og-line{margin-top:8px;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:31px;color:rgba(23,19,15,.62);white-space:nowrap}
-    .og-domain{position:absolute;bottom:30px;font-size:15px;letter-spacing:4px;color:rgba(23,19,15,.4)}
+    .og-eyebrow{margin-top:18px;font-family:Newsreader,Georgia,serif;font-size:17px;letter-spacing:5.9px;color:rgba(23,19,15,.5)}
+    .og-name{margin-top:6px;font-family:Newsreader,Georgia,serif;font-size:82px;line-height:1;letter-spacing:-2px;white-space:nowrap}
+    .og-line{margin-top:8px;font-family:Newsreader,Georgia,serif;font-style:italic;font-size:31px;color:rgba(23,19,15,.62);white-space:nowrap}
+    .og-domain{position:absolute;bottom:30px;font-family:Newsreader,Georgia,serif;font-size:15px;letter-spacing:4px;color:rgba(23,19,15,.4)}
   </style></head><body><div class="stage">${slide.timestamp ? `<div class="ts">${stamp(slide.timestamp)}</div>` : ""}${rows}</div></body></html>`;
 }
 

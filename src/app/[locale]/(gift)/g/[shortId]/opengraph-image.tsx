@@ -1,3 +1,4 @@
+import { readFile } from "node:fs/promises";
 import { ImageResponse } from "next/og";
 import { BRAND } from "@/config/brand";
 import { fetchPublicGift } from "@/lib/gift/public";
@@ -11,8 +12,13 @@ export const contentType = "image/png";
 const HEART =
   "data:image/svg+xml;utf8," +
   encodeURIComponent(
-    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20.8s-7.2-4.4-9.2-8.8C1.4 8.6 3.1 4.8 6.8 4.8c2 0 3.5 1.1 5.2 3.2 1.7-2.1 3.2-3.2 5.2-3.2 3.7 0 5.4 3.8 4 7.2-2 4.4-9.2 8.8-9.2 8.8Z" fill="%23FFF8F4"/></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20.8s-7.2-4.4-9.2-8.8C1.4 8.6 3.1 4.8 6.8 4.8c2 0 3.5 1.1 5.2 3.2 1.7-2.1 3.2-3.2 5.2-3.2 3.7 0 5.4 3.8 4 7.2-2 4.4-9.2 8.8-9.2 8.8Z" fill="#FFF8F4"/></svg>`,
   );
+
+// The image generator only knows the fonts it is handed, so the site's display serif ships with
+// it. Both paths are spelled out: a template literal here resolves to one file for both faces.
+const serifFont = () => readFile(new URL("../../../../../fonts/newsreader-regular.ttf", import.meta.url));
+const italicFont = () => readFile(new URL("../../../../../fonts/newsreader-italic.ttf", import.meta.url));
 
 /**
  * The card every gift link shows in Messages, WhatsApp and everywhere else: a pressed
@@ -21,6 +27,7 @@ const HEART =
 export default async function Image({ params }: { params: Promise<{ shortId: string }> }) {
   const { shortId } = await params;
   const gift = isShortId(shortId) ? await fetchPublicGift(shortId) : null;
+  const [serif, serifItalic] = await Promise.all([serifFont(), italicFont()]);
   const name = gift?.recipientName || "Hey";
   const es = gift?.locale === "es";
   const eyebrow = es ? "UN REGALO PARA" : "A GIFT FOR";
@@ -40,7 +47,7 @@ export default async function Image({ params }: { params: Promise<{ shortId: str
           backgroundImage:
             "radial-gradient(70% 90% at 16% 6%, #F6DAD3 0%, rgba(246,218,211,0) 62%), radial-gradient(62% 85% at 88% 94%, #DDE7D9 0%, rgba(221,231,217,0) 60%)",
           color: "#17130F",
-          fontFamily: "Georgia, serif",
+          fontFamily: "Newsreader",
           paddingBottom: 90,
         }}
       >
@@ -59,14 +66,20 @@ export default async function Image({ params }: { params: Promise<{ shortId: str
         >
           <img src={HEART} width={66} height={66} alt="" />
         </div>
-        <div style={{ marginTop: 54, fontSize: 52, letterSpacing: 18, color: "rgba(23,19,15,0.5)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>{eyebrow}</div>
-        <div style={{ marginTop: 18, fontSize: 250, lineHeight: 1, letterSpacing: -6, display: "flex" }}>{name}</div>
-        <div style={{ marginTop: 26, fontSize: 96, fontStyle: "italic", color: "rgba(23,19,15,0.62)", display: "flex" }}>{line}</div>
-        <div style={{ position: "absolute", bottom: 96, fontSize: 46, letterSpacing: 12, color: "rgba(23,19,15,0.4)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>
+        <div style={{ marginTop: 54, fontSize: 52, letterSpacing: 18, color: "rgba(23,19,15,0.5)", fontStyle: "normal", display: "flex" }}>{eyebrow}</div>
+        <div style={{ marginTop: 18, fontSize: 250, lineHeight: 1, letterSpacing: -6, fontStyle: "normal", display: "flex" }}>{name}</div>
+        <div style={{ marginTop: 26, fontSize: 96, fontFamily: "Newsreader Italic", color: "rgba(23,19,15,0.62)", display: "flex" }}>{line}</div>
+        <div style={{ position: "absolute", bottom: 96, fontSize: 46, letterSpacing: 12, color: "rgba(23,19,15,0.4)", fontStyle: "normal", display: "flex" }}>
           {BRAND.domain.toUpperCase()}
         </div>
       </div>
     ),
-    { ...size },
+    {
+      ...size,
+      fonts: [
+        { name: "Newsreader", data: serif, weight: 400, style: "normal" },
+        { name: "Newsreader Italic", data: serifItalic, weight: 400, style: "normal" },
+      ],
+    },
   );
 }
