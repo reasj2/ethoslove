@@ -107,7 +107,7 @@ made of, in the order the viewer meets it:
 - **A payoff measured in seconds, not money.** Being the first person to say it.
 - **A caption everyone can answer about their own life.** "whos first to text u on ur birthday?"
 
-39 is the first variation: same bones, a new clock (a gift that will not open until 20:04) and a
+39 and 40 are the first variations: same bones, a new thing to argue about in the caption, and a
 new occasion. Keep making these until one stops working.
 
 ## The screenshots have to pass for real
@@ -271,6 +271,7 @@ written. 06 is now the first "i love you" and 04 is three months of extra shifts
 | 36 | no funeral required | his birthday (his side) | Bloom | Garden |
 | 37 | why i like u | 6 months (her side) | Jar of Reasons | Gingham |
 | 38 | the drive home | 1 year (his side) | Vinyl | Starry |
-| 39 | 8:04 | 1 year, the wait (variation of 30) | Midnight Countdown | Starry |
+| 39 | 62 days | two months, "is that even an anniversary" | Constellations (free) | Starry |
+| 40 | one year of tuesdays | 1 year, he let her think he forgot | Our Timeline | Lovecore |
 
 06 to 18 are the short ones. 19 to 28 follow the 3.1M post: pure banter, with the link as one move in it. 29 to 34 put that banter around real gift occasions. 35 to 38 open on a crying photo and alternate her side and his, and are the ones to post first.

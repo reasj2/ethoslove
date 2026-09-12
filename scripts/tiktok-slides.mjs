@@ -41,9 +41,12 @@ const ogImage = (name, lang) => {
   const es = lang === "es";
   return `
   <div class="og">
-    <div class="og-seal"><span></span></div>
-    <div class="og-line">${esc(name ?? "Hey")}, ${es ? "alguien te ha hecho algo" : "someone made you something"} 💌</div>
-    <div class="og-sub">${es ? "Ábrelo con el sonido activado" : "Open it with your sound on"}</div>
+    <div class="og-frame"></div>
+    <div class="og-seal"><svg viewBox="0 0 24 24"><path d="M12 20.8s-7.2-4.4-9.2-8.8C1.4 8.6 3.1 4.8 6.8 4.8c2 0 3.5 1.1 5.2 3.2 1.7-2.1 3.2-3.2 5.2-3.2 3.7 0 5.4 3.8 4 7.2-2 4.4-9.2 8.8-9.2 8.8Z" fill="#FFF8F4"/></svg></div>
+    <div class="og-eyebrow">${es ? "UN REGALO PARA" : "A GIFT FOR"}</div>
+    <div class="og-name">${esc(name ?? "Hey")}</div>
+    <div class="og-line">${es ? "alguien te ha hecho algo" : "someone made you something"}</div>
+    <div class="og-domain">TRYETHOS.IO</div>
   </div>`;
 };
 
@@ -140,15 +143,18 @@ function html(slide) {
     .lk-title{font-weight:600;font-size:44px;line-height:54px;letter-spacing:-.6px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .lk-domain{color:#8e8e93;font-size:37px;margin-top:4px;letter-spacing:-.3px}
     .lk-thumb{flex:none;width:136px;height:136px;border-radius:24px;overflow:hidden}
-    .lk-thumb .og-line,.lk-thumb .og-sub{display:none}
+    .lk-thumb .og-eyebrow,.lk-thumb .og-name,.lk-thumb .og-line,.lk-thumb .og-domain,.lk-thumb .og-frame{display:none}
     .lk-thumb .og-seal{width:64px;height:64px;margin:0}
-    .lk-thumb .og-seal span{width:22px;height:22px}
+    .lk-thumb .og-seal svg{width:28px;height:28px}
 
-    .og{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(80% 60% at 50% 0%,#3a2a26 0%,#141110 60%);color:#FAF7F2;text-align:center;padding:0 22px;box-sizing:border-box}
-    .og-seal{width:80px;height:80px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 30%,#F4C7C3,#E8604C 48%,#B23A2E 100%);box-shadow:0 14px 40px rgba(232,96,76,.35)}
-    .og-seal span{width:27px;height:27px;border-radius:50%;background:#FFF8F4;opacity:.95}
-    .og-line{margin-top:30px;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:39px;line-height:1.1;letter-spacing:-.5px;white-space:nowrap}
-    .og-sub{margin-top:14px;font-size:20px;color:rgba(250,247,242,.6)}
+    .og{position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(70% 90% at 16% 6%,#F6DAD3 0%,rgba(246,218,211,0) 62%),radial-gradient(62% 85% at 88% 94%,#DDE7D9 0%,rgba(221,231,217,0) 60%),#F7F1E7;color:#17130F;text-align:center;padding:0 24px 30px;box-sizing:border-box}
+    .og-frame{position:absolute;inset:14px;border:1px solid rgba(23,19,15,.14);border-radius:10px}
+    .og-seal{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 36% 30%,#F4C7C3,#E8604C 48%,#B23A2E 100%);box-shadow:0 10px 24px rgba(232,96,76,.32)}
+    .og-seal svg{width:22px;height:22px}
+    .og-eyebrow{margin-top:18px;font-size:17px;letter-spacing:5.9px;color:rgba(23,19,15,.5)}
+    .og-name{margin-top:6px;font-family:Georgia,"Times New Roman",serif;font-size:82px;line-height:1;letter-spacing:-2px;white-space:nowrap}
+    .og-line{margin-top:8px;font-family:Georgia,"Times New Roman",serif;font-style:italic;font-size:31px;color:rgba(23,19,15,.62);white-space:nowrap}
+    .og-domain{position:absolute;bottom:30px;font-size:15px;letter-spacing:4px;color:rgba(23,19,15,.4)}
   </style></head><body><div class="stage">${slide.timestamp ? `<div class="ts">${stamp(slide.timestamp)}</div>` : ""}${rows}</div></body></html>`;
 }
 

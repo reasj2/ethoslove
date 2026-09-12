@@ -1,0 +1,33 @@
+{
+  "slides": [
+    {
+      "type": "chat",
+      "timestamp": "Today 20:15",
+      "messages": [
+        { "from": "me", "text": "do u know what today is" },
+        { "from": "them", "text": "tuesday" },
+        { "from": "me", "text": "ok.", "status": "Read 20:16" }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 20:21",
+      "messages": [
+        { "from": "them", "text": "its also our 1 year" },
+        { "from": "them", "text": "happy 1 year" },
+        { "from": "them", "link": { "title": "one year of tuesdays", "domain": "tryethos.io", "image": "og", "name": "Mae" } }
+      ]
+    },
+    {
+      "type": "chat",
+      "timestamp": "Today 20:44",
+      "messages": [
+        { "from": "me", "text": "u KNEW" },
+        { "from": "me", "text": "u let me sit here" },
+        { "from": "them", "text": "u do a face when u think ive forgotten" },
+        { "from": "me", "text": "im deleting u" },
+        { "from": "them", "text": "happy 1 year", "tapback": "heart" }
+      ]
+    }
+  ]
+}

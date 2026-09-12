@@ -2,39 +2,34 @@
   "slides": [
     {
       "type": "chat",
-      "timestamp": "Today 08:02",
+      "timestamp": "Today 09:14",
       "messages": [
-        { "from": "them", "text": "happy 1 year" },
-        { "from": "them", "text": "dont open this till 8" },
-        {
-          "from": "them",
-          "link": { "title": "8:04", "domain": "tryethos.io", "image": "og", "name": "Ruby" }
-        }
+        { "from": "them", "text": "happy 2 month anniversary" },
+        { "from": "me", "text": "2 months isnt an anniversary" },
+        { "from": "them", "text": "ok" },
+        { "from": "me", "text": "wait" },
+        { "from": "me", "text": "is it" }
       ]
     },
     {
       "type": "chat",
-      "timestamp": "Today 17:39",
+      "timestamp": "Today 09:19",
       "messages": [
-        { "from": "me", "text": "its been 9 hours" },
-        { "from": "me", "text": "can i open it now" },
-        { "from": "them", "text": "no" },
-        { "from": "me", "text": "i tried. it showed me a timer" },
-        { "from": "them", "text": "i know" },
-        { "from": "me", "text": "CHARLIE" },
-        { "from": "them", "text": "2 more hours", "tapback": "haha" }
+        { "from": "them", "text": "it is to me" },
+        { "from": "them", "text": "made u something" },
+        { "from": "them", "link": { "title": "62 days", "domain": "tryethos.io", "image": "og", "name": "Ruby" } }
       ]
     },
     {
       "type": "chat",
-      "timestamp": "Today 20:04",
+      "timestamp": "Today 09:41",
       "messages": [
-        { "from": "me", "text": "IT OPENED AT 8:04" },
-        { "from": "me", "text": "not 8" },
-        { "from": "me", "text": "8:04" },
-        { "from": "them", "text": "thats when u sat down" },
-        { "from": "me", "text": "im crying" },
-        { "from": "them", "text": "happy 1 year", "tapback": "heart" }
+        { "from": "me", "text": "u counted the days" },
+        { "from": "me", "text": "its 61" },
+        { "from": "them", "text": "62" },
+        { "from": "them", "text": "i counted from the night we met" },
+        { "from": "me", "text": "im crying in a tesco car park" },
+        { "from": "them", "text": "happy 2 months", "tapback": "heart" }
       ]
     }
   ]

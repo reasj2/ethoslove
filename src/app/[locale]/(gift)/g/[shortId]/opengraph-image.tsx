@@ -8,26 +8,63 @@ export const alt = "Someone made you something";
 export const size = { width: 2400, height: 1256 };
 export const contentType = "image/png";
 
-/** Never reveals template content — just the name and the invitation. */
+const HEART =
+  "data:image/svg+xml;utf8," +
+  encodeURIComponent(
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20.8s-7.2-4.4-9.2-8.8C1.4 8.6 3.1 4.8 6.8 4.8c2 0 3.5 1.1 5.2 3.2 1.7-2.1 3.2-3.2 5.2-3.2 3.7 0 5.4 3.8 4 7.2-2 4.4-9.2 8.8-9.2 8.8Z" fill="%23FFF8F4"/></svg>`,
+  );
+
+/**
+ * The card every gift link shows in Messages, WhatsApp and everywhere else: a pressed
+ * invitation with their name on it. It never reveals the gift, only who it is for.
+ */
 export default async function Image({ params }: { params: Promise<{ shortId: string }> }) {
   const { shortId } = await params;
   const gift = isShortId(shortId) ? await fetchPublicGift(shortId) : null;
   const name = gift?.recipientName || "Hey";
   const es = gift?.locale === "es";
+  const eyebrow = es ? "UN REGALO PARA" : "A GIFT FOR";
   const line = es ? "alguien te ha hecho algo" : "someone made you something";
-  const sub = es ? "Ábrelo con el sonido activado" : "Open it with your sound on";
 
   return new ImageResponse(
     (
-      <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", background: "radial-gradient(80% 60% at 50% 0%, #3a2a26 0%, #141110 60%)", color: "#FAF7F2", fontFamily: "Georgia, serif" }}>
-        <div style={{ width: 240, height: 240, borderRadius: 999, background: "radial-gradient(circle at 36% 30%, #F4C7C3, #E8604C 48%, #B23A2E 100%)", display: "flex", alignItems: "center", justifyContent: "center", boxShadow: "0 40px 120px rgba(232,96,76,0.35)" }}>
-          <div style={{ width: 80, height: 80, borderRadius: 999, background: "#FFF8F4", opacity: 0.95 }} />
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "#F7F1E7",
+          backgroundImage:
+            "radial-gradient(70% 90% at 16% 6%, #F6DAD3 0%, rgba(246,218,211,0) 62%), radial-gradient(62% 85% at 88% 94%, #DDE7D9 0%, rgba(221,231,217,0) 60%)",
+          color: "#17130F",
+          fontFamily: "Georgia, serif",
+          paddingBottom: 90,
+        }}
+      >
+        <div style={{ position: "absolute", top: 44, right: 44, bottom: 44, left: 44, border: "2px solid rgba(23,19,15,0.14)", borderRadius: 30 }} />
+        <div
+          style={{
+            width: 150,
+            height: 150,
+            borderRadius: 999,
+            background: "radial-gradient(circle at 36% 30%, #F4C7C3, #E8604C 48%, #B23A2E 100%)",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0 30px 70px rgba(232,96,76,0.32)",
+          }}
+        >
+          <img src={HEART} width={66} height={66} alt="" />
         </div>
-        <div style={{ marginTop: 88, fontSize: 136, fontStyle: "italic", letterSpacing: -2, display: "flex" }}>
-          {name}, {line} 💌
+        <div style={{ marginTop: 54, fontSize: 52, letterSpacing: 18, color: "rgba(23,19,15,0.5)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>{eyebrow}</div>
+        <div style={{ marginTop: 18, fontSize: 250, lineHeight: 1, letterSpacing: -6, display: "flex" }}>{name}</div>
+        <div style={{ marginTop: 26, fontSize: 96, fontStyle: "italic", color: "rgba(23,19,15,0.62)", display: "flex" }}>{line}</div>
+        <div style={{ position: "absolute", bottom: 96, fontSize: 46, letterSpacing: 12, color: "rgba(23,19,15,0.4)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>
+          {BRAND.domain.toUpperCase()}
         </div>
-        <div style={{ marginTop: 36, fontSize: 60, color: "rgba(250,247,242,0.6)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>{sub}</div>
-        <div style={{ position: "absolute", bottom: 80, fontSize: 48, color: "rgba(250,247,242,0.45)", fontFamily: "Helvetica, Arial, sans-serif", display: "flex" }}>{BRAND.domain}</div>
       </div>
     ),
     { ...size },

@@ -1,56 +1,55 @@
-# TikTok carousel 39 · "8:04" (1-year anniversary)
+# TikTok carousel 39 · "62 days" (two months)
 
-08:02: "happy 1 year" / "dont open this till 8", and the link. All day she asks, he says no, and
-the gift itself refuses: "i tried. it showed me a timer". At 20:04 it opens: "IT OPENED AT 8:04"
-/ "not 8" / "8:04" / "thats when u sat down".
+09:14: "happy 2 month anniversary" / "2 months isnt an anniversary" / "ok" / "wait" / "is it".
+Five minutes later: "it is to me" / "made u something", and the link. Then: "u counted the days"
+/ "its 61" / "62" / "i counted from the night we met".
 
-This is carousel 30 rebuilt. 30 worked on four things, and all four are here: a message that
-makes no sense until later ("stay awake 2 more mins" → "dont open this till 8"), him refusing to
-explain, a clock the viewer is counting with, and a payoff timed to the minute. What is new is
-that the waiting happens in public: the reader spends the whole middle slide wanting to open it
-too, and the caption asks them to admit it. That is the argument the comments will have.
+Two things carry this one. The argument in the caption is real, and everybody has a side:
+monthly anniversaries are either sweet or ridiculous, and nobody is neutral. And the extra day
+is the whole romance in one word: she counts from the day they made it official, he counts from
+the night they met.
 
-Her: Ruby. Him: Charlie. Three chat slides. The link is the last thing on slide 1, which is
-earlier than usual: here the link is the thing she can't open, so it has to be in her hands from
-the start.
+It is built on the same bones as 30, the one that went viral: a short line that lands wrong, a
+dry "ok" that makes her doubt herself, and a payoff measured in a single day rather than money.
+
+Her: Ruby. Him: Charlie. Three chat slides. The link is the last thing on slide 2.
 
 ## The order
 
 | # | File | On screen |
 |---|---|---|
-| 1 | `slide-01.png` | Today 08:02 "happy 1 year" · "dont open this till 8" · **the link: "8:04"** |
-| 2 | `slide-02.png` | Today 17:39 "its been 9 hours" · "can i open it now" · "no" · "i tried. it showed me a timer" · "i know" · "CHARLIE" · "2 more hours" |
-| 3 | yours (optional) | the countdown ticking, then the fireworks at zero |
-| 4 | `slide-03.png` | Today 20:04 "IT OPENED AT 8:04" · "not 8" · "8:04" · "thats when u sat down" · "im crying" · "happy 1 year" |
+| 1 | `slide-01.png` | Today 09:14 "happy 2 month anniversary" · "2 months isnt an anniversary" · "ok" · "wait" · "is it" |
+| 2 | `slide-02.png` | Today 09:19 "it is to me" · "made u something" · **the link: "62 days"** |
+| 3 | yours (optional) | the night sky, one star per photo |
+| 4 | `slide-03.png` | Today 09:41 "u counted the days" · "its 61" · "62" · "i counted from the night we met" · "im crying in a tesco car park" · "happy 2 months" |
 
 ## The gift
 
-Midnight Countdown at tryethos.io (premium). It shows a live countdown and only unlocks at the
-moment you set, which is the whole story: she cannot open it early even if she wants to.
+Constellations at tryethos.io. **Free**, which matters here: two months in, nobody is spending
+money, and "it's free" is the reply that makes people try it.
 
-**Editor fields:** Their name `Ruby` · Your name `Charlie` · Title `8:04` · Cover `Starry` ·
-Horizon `City skyline` · Headline above the timer `until 8:04` · Line at zero `8:04. you sat
-down.` · Extras → Countdown: the anniversary date at `20:04` · Music: library "Slow Dance"
+**Editor fields:** Their name `Ruby` · Your name `Charlie` · Title `62 days` · Cover `Starry` ·
+Shape `Heart` · Music: library "Quiet Hours"
 
-**Photos:** `8:04. u sat down.` · `week 3, asleep on the train` · `the night we missed the last
-bus` · `today`
+**Photos, one star each:** `the night we met. day 0.` · `week 2, u fell asleep mid sentence` ·
+`the chips incident` · `u, last tuesday` · `day 62`
 
-**Message:** `ruby. a year ago at 8:04 you sat down opposite me and i forgot what i was going to
-say. i've been making up for it ever since. happy 1 year.`
+**Message:** `ruby. u said two months isnt an anniversary. sixty two days ago i met u and i've
+been counting since, so it is to me. happy 2 months.`
 
 ## Post
 
-Caption: `he made me wait 12 hours and then it opened at 8:04 😭 could u have waited?`
+Caption: `he made me something for 2 MONTHS 😭 is 2 months an anniversary or am i being crazy?`
 
 Five hooks for slide 1, one per repost:
 
-1. he made me wait 12 hours to open it
-2. i tried to open it early and it showed me a timer 😭
-3. he sent it at 8am and said dont open it till 8
-4. why 8:04 and not 8
-5. pov: ur bf locks ur anniversary gift until one exact minute
+1. he said happy 2 month anniversary and i said thats not real
+2. is 2 months an anniversary? he thinks so
+3. pov: ur bf celebrates every month
+4. i told him 2 months isnt an anniversary. then he sent this.
+5. he counted the days. all 62 of them.
 
-- **Pin:** `8:04 is when i sat down at our first date. he set it to the minute.`
-- **"i could never wait"** → `i tried at 9am. and 11. and 2.`
-- **"what if u opened it early"** → `it literally doesnt open. u get a countdown`
-- **"what website"** → `ethos, its called midnight countdown`
+- **Pin:** `he counts from the night we met. i count from the day we made it official. hence 62.`
+- **"2 months is NOT an anniversary"** → `tell him that. hes very confident.`
+- **"my bf forgets our actual anniversary"** → `swap?`
+- **"what website"** → `ethos, its called constellations. its free`
